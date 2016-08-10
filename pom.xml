@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+    <groupId>com.rbi</groupId>
+    <artifactId>rbi-cms</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
+	<artifactId>rbi-cms-frontend</artifactId>
+	<packaging>war</packaging>
+	<name>rbi-cms Frontend</name>
+	<description>RBI Website Frontend</description>
+	<dependencies>
+	</dependencies>
+	<build>
+		<resources>
+		</resources>
+		<finalName>frontend</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<webResources>
+						<resource>
+							<directory>public</directory>
+							<includes>
+								<include>js/**/*.js</include>
+								<include>images/**/*</include>
+								<include>css/**/*</include>
+								<include>fonts/**/*</include>
+							</includes>
+                       </resource>
+					</webResources>
+				</configuration>
+			</plugin>
+			<plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+            </plugin>
+            <plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>0.0.23</version>
+				<configuration>
+					<workingDirectory>./</workingDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+						<phase>initialize</phase>
+						<configuration>
+							<nodeVersion>v0.12.4</nodeVersion>
+							<npmVersion>2.7.6</npmVersion>
+						</configuration>
+					</execution>
+					<execution>
+						<id>npm install</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<phase>initialize</phase>
+						<configuration>
+							<arguments>install</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>gulp default</id>
+						<goals>
+							<goal>gulp</goal>
+						</goals>
+						<phase>initialize</phase>
+						<configuration>
+							<arguments>default --type=prod</arguments>
+						</configuration>
+					</execution>
+					<!-- <execution>
+						<id>grunt build</id>
+						<goals>
+							<goal>grunt</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<executable>grunt</executable>
+							<arguments>default</arguments>
+						</configuration>
+					</execution> -->
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

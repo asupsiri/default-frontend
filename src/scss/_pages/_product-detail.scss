@@ -1,0 +1,156 @@
+#product-details-and-options{
+  z-index: 2;
+  position: relative;
+  background-color: $blue;
+  background-image: url("/images/topsection-background.png");
+  background-position:center;
+  //background-size: cover;
+  box-shadow: 0 5px 10px 0px #6b6b6b;
+
+  .container{
+      padding: 30px 20px;
+      background-color: rgba(0, 0, 0, .4);
+  }
+
+  h1{
+    font-size: 45px;
+    font-weight: 200;
+    margin: 10px 0 .5em;
+    sup{
+      vertical-align: 26px;
+      font-size: 12px;
+    }
+  }
+
+  #breadcrumbs{
+    padding-bottom: 35px;
+    li{
+      display: inline;
+      &:not(:last-child){
+        &:after{
+          content: ">";
+          padding: 0 0 0 5px;
+        }
+        a{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  #product-image-wrapper{
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  #product-details{
+    padding: 0 10%;
+  }
+  #product-features{
+    text-transform: uppercase;
+    li{
+      margin-bottom: 6px;
+      line-height: 1.5em;
+    }
+  }
+
+  #product-options{
+    button{
+      color: $white;
+      background-color: #4698a4;
+    }
+  }
+
+}
+
+#product-description{
+  padding: 20px 0 185px;
+  background-color: #898989;
+
+  p{
+    font-size: 22px;
+    line-height: 1.5em;
+  }
+}
+
+#reviews{
+  background-color: #00314f;
+  padding: 45px;
+
+  .spacing-wrapper{
+      padding-left: 180px;
+  }
+
+  h1{
+    display: inline-block;
+    font-size: 45px;
+    font-weight: 200;
+    margin: 0 0 .5em;
+    padding-right: 50px;
+    sup{
+      vertical-align: 26px;
+      font-size: 12px;
+    }
+  }
+
+  a{
+    text-decoration: underline;
+  }
+
+  ul.reviews{
+    li{
+      position: relative;
+      min-height: 150px;
+      &:not(:last-child){
+        padding-bottom: 30px;
+      }
+      h2{
+        display: inline-block;
+        margin: 0 0 .5em;
+        padding-right: 10px;
+        font-size: 25px;
+        font-weight: 500;
+      }
+      .reviewer{
+        position: absolute;
+        width: 124px;
+        left: -160px;
+        top: 5px;
+      }
+      .rating{
+        display: inline-block;
+        background-image: url("/images/star.png");
+        background-repeat: repeat-x;
+        background-position: bottom left;
+        height: 20px;
+        &.rating-4-stars{ width: 80px; }
+        &.rating-3-stars{ width: 60px; }
+      }
+      .review-date{
+        font-size: 25px;
+        padding-right: 10px;
+      }
+      p{
+        line-height: 1.5em;
+      }
+    }
+  }
+
+}
+
+.remodal{
+  color: #464646;
+  text-align: left;
+
+  input[type="text"],
+  textarea {
+    border: 1px solid #d0d0d0;
+  }
+  button{
+
+  }
+}
+
+.modal-view{
+  background-color: #666;
+}

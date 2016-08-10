@@ -1,0 +1,52 @@
+footer#site-footer{
+  background-color: $black;
+  padding: 30px 0 26px;
+
+  #footer-links{
+    text-align: right;
+  }
+
+  .share, .links{
+    display: inline-block;
+    padding-top: 10px;
+    font-size: 15px;
+    li{
+      display: inline;
+    }
+  }
+  .share{
+    li{
+      a{
+        display: inline-block;
+        height: 17px;
+        background-size: auto;
+        padding-right: 30px;
+        &.facebook {
+          width:9px;
+          background-image: url("/images/fb-icon.png");
+          background-position: center 0px;
+        }
+        &.twitter	{
+          width:17px;
+          background-image: url("/images/twitter-icon.png");
+          background-position: center 4px;
+        }
+        span{
+          @extend .reader-only;
+        }
+      }
+    }
+  }
+  .links{
+    li{
+      a{
+        padding: 0 15px;
+        border-right: 1px solid $white;
+      }
+      &:last-child a{
+        padding-right: 0;
+        border-right: none;
+      }
+    }
+  }
+}

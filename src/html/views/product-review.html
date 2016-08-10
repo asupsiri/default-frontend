@@ -1,0 +1,10 @@
+<section id="">
+  <h1>Please Rate the Tough Mojo Jacket<sup>&reg;</sup></h1>
+  <label for="reviewTitle">Review Title</label>
+  <input type="text" name="reviewTitle" value="" ng-model="newReview.title" /> {{ reviewTitle }}
+  <label for="reviewTitle">Review Rating (1 to 4)</label>
+  <input type="text" name="reviewRating" value="" ng-model="newReview.rating" />
+  <textarea name="reviewBody" placeholder="- Write your review here -" rows="8" cols="40" ng-model="newReview.body"></textarea>
+  <br>
+  <button ng-click="submitProductReviewForm()" class="remodal-confirm">Submit Review</button>
+</section>

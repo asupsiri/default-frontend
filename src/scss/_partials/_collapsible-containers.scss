@@ -1,0 +1,468 @@
+/* Table of contents */
+.toc{
+  &.generic{
+    font-weight: 300;
+    position: relative;
+    font-family: $base-font-family;
+    &.icons{
+      @include screen-not-small {
+        padding-left: 34px;
+      }
+    }
+    > img {
+      display: block;
+      position: absolute;
+      left: 0px;
+      width: auto;
+      height: 24px;
+    }
+    h2 {
+      font-family: $heading-font-family;
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 400;
+      border-bottom: none;
+      margin-bottom: .2em;
+      padding-left: 34px;
+      @include screen-not-small {
+        padding-left: 0;
+      }
+    }
+    ul.collapse{
+      position:relative;
+      margin:0;
+      list-style-type: none;
+      font-family: $heading-font-family;
+      ul.collapse{
+        padding-left: 3px;
+      }
+      > li{
+        display: block;
+        position:relative;
+        list-style: none;
+        margin: 0;
+        padding: 5px 0 0 14px;
+        transition: all .25s ease;
+        > a{
+          font-size: 1rem;
+          color: #4e5153;
+          &:hover, &:focus{
+            color: $action-color;
+          }
+        }
+        &:not(.on){
+          padding-top:5px;
+          font-size: 1rem;
+        }
+        &.on > a{
+          display: block;
+          &:before {
+            position: absolute;
+            top: 8px;
+            left: 0;
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 4px 0 4px 5px;
+            border-color: transparent transparent transparent #595860;
+          }
+        }
+        &.open > a{
+          &:before {
+            top: 10px;
+            left: 1px;
+            border-width: 5px 4px 0 4px;
+            border-color: #595860 transparent transparent transparent;
+          }
+        }
+        &.close > *:not(:first-child){
+          //display: none;
+        }
+        .wrapper{
+          background: #f1f1f1;
+          padding: 12px; //12px 0 12px;
+          margin: 5px 0;
+          overflow: auto;
+          font-family: $base-font-family;
+        }
+      }
+    }
+    > ul.collapse{
+      > li{
+        border-bottom: 1px solid #a1a1a1;
+        outline: 1px solid transparent; // fixes Safari bug where junk pixels show
+        > a{
+          font-weight: 500;
+        }
+        &.on{
+          padding: 12px 0 10px 14px;
+           > a{
+            padding-bottom: 4px;
+            &:before {
+              top:16px;
+            }
+          }
+        }
+        &.open {
+          > a:before {
+            top:18px;
+          }
+        }
+        &:not(.on){
+          font-weight: 500;
+          padding-top:12px;
+          padding-bottom:12px;
+        }
+        &:last-child a{
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  /* FAQs */
+
+  &.faqs{
+    position: relative;
+    max-width: $max-width;
+    margin: 25px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 300;
+    font-family: $base-font-family;
+    &.icons{
+      @include screen-not-small {
+        padding-left: 34px;
+      }
+    }
+    > img {
+      display: block;
+      position: absolute;
+      left: 0px;
+      width: auto;
+      height: 24px;
+    }
+    h2 {
+      font-family: $heading-font-family;
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 400;
+      border-bottom: none;
+      margin-top: 25px;
+      margin-bottom: .2em;
+      padding-left: 34px;
+      @include screen-not-small {
+        padding-left: 0;
+      }
+    }
+    ul.collapse{
+      position:relative;
+      margin:0;
+      list-style-type: none;
+      font-family: $heading-font-family;
+      font-size: 0.875rem;
+      line-height: 1.375;
+      ul.collapse{
+        padding-left: 24px;
+      }
+      > li{
+        display: block;
+        position:relative;
+        list-style: none;
+        margin: 0;
+        padding: 5px 0 6px 14px;
+        transition: all .25s ease;
+        > a{
+          font-size: 1.1rem;
+          font-weight: 500;
+          color: #4e5153;
+          &:hover, &:focus{
+            color: $action-color;
+          }
+        }
+        &:not(.on){
+          padding-top:5px;
+          font-size: 1rem;
+        }
+        &.on > a{
+          display: block;
+          &:before {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 4px 0 4px 5px;
+            border-color: transparent transparent transparent #595860;
+          }
+        }
+        &.open > a{
+          &:before {
+            top: 13px;
+            left: 0 px;
+            border-width: 5px 4px 0 4px;
+            border-color: #595860 transparent transparent transparent;
+          }
+        }
+        &.close > *:not(:first-child){
+          //display: none;
+        }
+        .wrapper{
+          padding: 0px 0; //12px 0 12px;
+          margin: 5px 0 0;
+          overflow: auto;
+          font-family: $base-font-family;
+          h3{
+            font-weight: 500;
+            font-size: 1.05rem;
+            margin-bottom: .35rem;
+          }
+        }
+        ul.collapse{
+          .wrapper{
+            margin-top:10px;
+          }
+        }
+      }
+    }
+    // The root list
+    > ul.collapse{
+      > li{
+        padding-top: 7px;
+        border-bottom: 1px solid #a1a1a1;
+        > a{
+          font-weight: 500;
+          font-size: 1.25rem;
+        }
+        &.on{
+          padding: 12px 0 7px 14px;
+           > a{
+            padding-bottom: 4px;
+            &:before {
+              top:20px;
+            }
+          }
+        }
+        &.open {
+          > a:before {
+            top:22px;
+          }
+        }
+        &:not(.on){
+          padding-top:12px;
+          padding-bottom:12px;
+        }
+      }
+    }
+  }
+}
+
+/* Left navigation */
+
+aside.left-rail{
+  @include screen-small {
+    margin-bottom:-15px;
+  }
+  .toc{
+    padding-left: 0;
+    font-weight: 300;
+    position: relative;
+    font-family: $base-font-family;
+    line-height: 1.3em;
+    > img {
+      float:right;
+      display: block;
+      position: relative;
+      margin:5px 8px 0 8px;
+      left: 0px;
+      width: auto;
+      height: 24px;
+      @include screen-not-small {
+        top: 0px;
+        margin:0 -20px 10px 0;
+      }
+    }
+    > p{
+      margin-top:-.5rem;
+      font-size: .8rem;
+    }
+    h2 {
+      position: relative;
+      padding: 8px 12px 4px 22px;
+      font-family: inherit;;
+      font-size: em(15);
+      line-height: em(20);
+      font-weight: 500;
+      border: 1px solid #a1a1a1;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: $left-rail-background-color;
+      margin-bottom: 5px;
+      &:before {
+        position: absolute;
+        top: 10px;
+        left: 8px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 0px 5px 8px;
+        border-color: transparent transparent transparent #595860;
+      }
+      &.active {
+        &:before {
+          top: 11px;
+          border-width: 8px 5px 0px 5px;
+          border-color: #595860 transparent transparent transparent;
+        }
+      }
+      @include screen-small {
+        &:after{
+          content:' Menu';
+        }
+        + p{
+          display: none;
+        }
+      }
+      @include screen-not-small {
+        padding: 0;
+        border: none;
+        cursor: default;
+        background-color: transparent;
+        margin-bottom: .75em;
+        font-size: em(18);
+        &:before {
+          content: none;
+        }
+      }
+    }
+    ul.collapse{
+      position:relative;
+      margin:0;
+      list-style-type: none;
+      font-family: $heading-font-family;
+      font-size: .875rem;
+      color:#2f2f36;
+      a{
+        color: #2f2f36;
+        &:hover, &:focus{
+          color: #e9193a;
+        }
+      }
+      ul.collapse{
+        padding-left: 4px;
+        ul.collapse{
+          padding-left: 0;
+          margin-bottom:5px;
+          > li{
+            padding-left: 0px;
+          }
+        }
+      }
+      > li{
+        display: block;
+        position:relative;
+        list-style: none;
+        margin: 0;
+        padding: 3px 0 0 12px;
+        transition: all .25s ease;
+        > a{
+
+        }
+        &:not(.on){
+          padding-top:5px;
+        }
+        &.on > a{
+          display: block;
+          padding-right:12px;
+          &:before {
+            position: absolute;
+            top: 9px;
+            left: 0;
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 4px 0 4px 5px;
+            border-color: transparent transparent transparent #595860;
+          }
+        }
+        &.open > a{
+          &:before {
+            top: 10px;
+            border-width: 5px 4px 0 4px;
+            border-color: #595860 transparent transparent transparent;
+          }
+        }
+        &.close > *:not(:first-child){
+          //display: none;
+        }
+        .wrapper{
+          background: #ccc;
+          padding: 12px;
+          margin: 5px 0;
+          overflow: auto;
+        }
+      }
+    }
+    /* First collapse list */
+    > ul.collapse{
+      @include screen-small{
+        border: 1px solid #a1a1a1;
+        padding: 0px 15px;
+        background-color: $left-rail-background-color;
+        display: none;
+      }
+      @include screen-not-small {
+        display: block !important;
+      }
+      > li{
+        border-top: 1px solid #a1a1a1;
+        @include screen-small{
+          &:first-child{
+            border-top:0px;
+          }
+        }
+        > a{
+          font-weight: 500;
+          font-size: 1rem;
+        }
+        &.on{
+          padding: 12px 0 10px 0px;
+           > a{
+             font-family: $base-font-family;
+            padding-bottom: 1px;
+            &:before {
+              display:none;
+            }
+          }
+        }
+        &.open {
+          > a:before {
+            top:18px;
+          }
+        }
+        &:not(.on){
+          font-family: $base-font-family;
+          font-size: 1rem;
+          font-weight: 500;
+          padding-top:12px;
+          padding-bottom:12px;
+        }
+        &:last-child{
+
+          a{
+            margin-bottom: 10px;
+          }
+        }
+        > ul.collapse > li > a{
+          font-weight: 500;
+
+        }
+      }
+    }
+  }
+}

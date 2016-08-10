@@ -1,0 +1,77 @@
+$form-field-background-color: $white;
+
+fieldset {
+  background-color: $form-field-background-color;
+  border: $base-border;
+  margin: 0 0 $small-spacing;
+  padding: $base-spacing;
+}
+
+input,
+label,
+select {
+  display: block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  background-color: $form-field-background-color;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: $small-spacing / 2;
+
+  &.required::after {
+    content: "*";
+  }
+
+  abbr {
+    display: none;
+  }
+}
+
+#{$all-text-inputs},
+select[multiple=multiple] {
+  background-color: $form-field-background-color;
+  border: none;
+  box-sizing: border-box;
+  font-family: $base-font-family;
+  transition: border-color $base-duration $base-timing;
+  max-width: 100%;
+
+  &:disabled {
+    background-color: shade($base-background-color, 5%);
+    cursor: not-allowed;
+  }
+  @include placeholder {
+    font-style: italic;
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="search"] {
+  appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+
+  + label {
+    display: inline-block;
+  }
+}
+
+input[type="file"] {
+  margin-bottom: $small-spacing;
+  max-width: 100%;
+}
+
+select {
+  margin-bottom: $base-spacing;
+  max-width: 100%;
+  width: auto;
+}

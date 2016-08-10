@@ -1,0 +1,59 @@
+.modal{
+  h2{
+    font-size: 1.475rem;
+  }
+  caption{
+    font-size: 1.15rem;
+    margin-bottom:.25rem;
+  }
+  &.bid-history{
+    font-size: .85rem;
+    .property-id{
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+    #bid-history-data h3{
+      text-transform:uppercase;
+      padding-top:10px;
+    }
+    table{
+      font-size: .75rem;
+      th{
+        padding-left: .5em;
+        padding-right: .5em;
+        &:first-child{
+          padding-left:0;
+        }
+        &:last-child{
+          padding-right:0;
+        }
+      }
+      td{
+        vertical-align: top;
+        text-align: left;
+        padding: .5em;
+        &:first-child{
+          padding-left:0;
+        }
+        &:last-child{
+          padding-right:0;
+        }
+        .time{
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.remodal{
+  .remodal-close {
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+    &:hover, &:focus{
+      color: $white;
+    }
+  }
+}
