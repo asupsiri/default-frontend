@@ -53,7 +53,6 @@ var src = {
     },
     jquery: {
       files: [
-              'src/js/main.js',
               'src/js/vendor/jquery-plugins/**/*',
               'node_modules/remodal/dist/remodal.min.js'
       ],
@@ -243,7 +242,7 @@ gulp.task('serve', ['default'], function() {
 
   gulp.watch(src.html,        ['copy:html']);
   gulp.watch(src.styles,      ['styles']);
-  gulp.watch(src.scripts,     ['scripts', 'modernizr', 'standaloneScripts']);
+  gulp.watch(src.scripts,     ['copy:standaloneScripts', 'scripts', 'modernizr']);
   gulp.watch(src.images,      ['images']);
 });
 
