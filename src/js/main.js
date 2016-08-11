@@ -35,7 +35,10 @@ requirejs.config({
     ],
     modernizr:      'modernizr',
     scripts:        'scripts',
-    jqueryScripts:  'jquery-scripts'
+    jqueryScripts:  'jquery-scripts',
+    userPayment:    'apps/users/payment',
+    userProfile:    'apps/users/profile',
+    userSettings:   'apps/users/settings'
   },
   shim: {
     'angular':      { exports: 'angular' },
@@ -49,4 +52,23 @@ requirejs.config({
     'jqueryScripts':  { deps: ['jqueryMigrate'] },
     'scripts':        { deps: ['angular', 'modernizr', 'jqueryMigrate'] }
   }
+});
+
+// Start the main logic.
+require(['apps/modalViewApp/app', 'scripts', 'jqueryScripts', 'global/responsive-menu']);
+
+// domReady loader plugin test
+require(['domReady!'], function (doc) {
+    //This function is called once the DOM is ready,
+    //notice the value for 'domReady!' is the current
+    //document.
+    console.log('document ready');
+});
+
+// JS module test (apps/users/*)
+require(['userSettings'],function(settings){
+  settings.save();
+});
+require(['userPayment'],function(payment){
+  payment.updateBank();
 });
