@@ -4,6 +4,18 @@
  * by lazy loading JS modules and making sure their dependencies are handled.
  */
 
+// Cache busting variables. These are passed to the RequireJS urlArgs config option.
+// Different querystring values are appended for prod vs. development.
+// Prod uses the build version. Development uses a timestamp.
+var htmlTag      = document.getElementsByTagName("html")[0],
+    buildVersion = "0.1.1",
+    prodFlag     = (htmlTag.dataset.prodFlag === "true");
+
+// Set prodFlag to true if there's no data-prod-flag attribute value in the <html> tag.
+if (typeof htmlTag.dataset.prodFlag === "undefined" ) {
+   prodFlag = true;
+}
+
 requirejs.config({
   baseUrl: 'js',
   paths: {
@@ -36,9 +48,9 @@ requirejs.config({
     modernizr:      'modernizr',
     scripts:        'scripts',
     jqueryScripts:  'jquery-scripts',
-    userPayment:    'apps/users/payment',
-    userProfile:    'apps/users/profile',
-    userSettings:   'apps/users/settings'
+    userPayment:    'apps/modular-js_users/payment',
+    userProfile:    'apps/modular-js_users/profile',
+    userSettings:   'apps/modular-js_users/settings'
   },
   shim: {
     'angular':      { exports: 'angular' },
@@ -51,11 +63,15 @@ requirejs.config({
     'jqueryMigrate':  { deps: ['jquery'] },
     'jqueryScripts':  { deps: ['jqueryMigrate'] },
     'scripts':        { deps: ['angular', 'modernizr', 'jqueryMigrate'] }
-  }
+  },
+  // For cache busting
+  urlArgs: "v=" + ((prodFlag) ? buildVersion: (new Date()).getTime())
 });
 
 // Start the main logic.
-require(['apps/modalViewApp/app', 'scripts', 'jqueryScripts', 'global/responsive-menu']);
+
+// Angular project require
+require(['apps/angular_modalViewApp/app', 'scripts', 'jqueryScripts', 'global/responsive-menu']);
 
 // domReady loader plugin test
 require(['domReady!'], function (doc) {
@@ -65,7 +81,7 @@ require(['domReady!'], function (doc) {
     console.log('document ready');
 });
 
-// JS module test (apps/users/*)
+// Modular JS example
 require(['userSettings'],function(settings){
   settings.save();
 });
