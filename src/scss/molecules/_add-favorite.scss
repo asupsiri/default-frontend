@@ -1,0 +1,47 @@
+/*
+Favorite
+
+Markup:
+<div class="favorite">
+  <span>Add to Favorites</span>
+  <a href="#" class="favorite__icon">
+    <img src="./images/icon-favorite_o_gray.svg" alt="" aria-hidden="true">
+    <img src="./images/icon-favorite_gray.svg" alt="" aria-hidden="true">
+  </a>
+</div>
+<br>
+<div class="favorite">
+  <span>Add to Favorites</span>
+  <a href="#" class="favorite__icon is-active">
+    <img src="./images/icon-favorite_o_gray.svg" alt="" aria-hidden="true">
+    <img src="./images/icon-favorite_gray.svg" alt="" aria-hidden="true">
+  </a>
+</div>
+
+Styleguide 3.9
+*/
+
+@include block(favorite) {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: baseline;
+  @include element(icon) {
+    margin-left: .5em;
+    height: 1em;
+    width: 1em;
+    img:first-child {
+      display: inline;
+    }
+    img:last-child {
+      display: none;
+    }
+    @include state(active) {
+      img:first-child {
+        display: none;
+      }
+      img:last-child {
+        display: inline;
+      }
+    }
+  }
+}

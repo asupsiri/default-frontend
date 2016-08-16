@@ -1,0 +1,423 @@
+/*
+Text Box
+
+Text Box is molecule that contains a head, paragraph and an optional CTA.
+By default it has a transparent white background. 
+
+Modifiers:
+- text-box--border
+- text-box--no-bg
+- text-box--shadow
+- text-box--white
+- text-box--blue
+- text-box--gray
+- text-box--body-link-white
+- text-box--text-white
+- text-box--text-blue
+- text-box--text-gray
+- text-box--title-white
+- text-box--title-blue
+- text-box--title-gray
+- text-box--title-black
+- text-box--logo-top
+
+Styleguide 3.5
+*/
+
+/*
+Text Box Default
+
+Example with title, subtitle, body, CTA, and Links.
+
+Markup:
+<div class="text-box">
+    <div class="text-box__inner">
+        <div class="text-box__head">Bathroom Lighting</div>
+        <div class="text-box__subtitle">A subtitle</div>
+        <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated <a href="#">fixtures</a> for your bathroom. <a href="#" class="link link--icon--left"><img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a></div>
+        <div class="is-block">
+            <a href="#" class="link link--icon--left"><img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+        </div>
+        <button class="button button--secondary">Secondary Button</button> 
+    </div>
+</div>
+
+Styleguide 3.5.1
+*/
+
+/*
+Text Box Title Gray
+
+Markup:
+<div class="text-box text-box--title-gray text-box--border">
+    <div class="text-box__inner">
+        <div class="text-box__head">Bathroom Lighting</div>
+        <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated <a href="#">fixtures</a> for your bathroom.</div>
+    </div>
+</div>
+
+Styleguide 3.5.2
+*/
+
+/*
+Text Box No Background
+
+Markup:
+<div class="text-box text-box--no-bg text-box--border">
+    <div class="text-box__inner">
+        <div class="text-box__head">Bathroom Lighting</div>
+        <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated <a href="#">fixtures</a> for your bathroom.</div>
+    </div>
+</div>
+
+Styleguide 3.5.3
+*/
+
+/*
+Text Box No Background Logo top
+
+Markup:
+<div class="text-box text-box--no-bg text-box--logo-top text-box--border">
+    <div class="text-box__inner">
+        <img src="http://placehold.it/350x50?text=Moen logo text">
+        <div class="text-box__head">Bathroom Lighting</div>
+        <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated <a href="#">fixtures</a> for your bathroom.</div>
+    </div>
+</div>
+
+Styleguide 3.5.4
+*/
+
+/*
+Text Box No Background With CTA
+
+Markup:
+<div class="text-box text-box--no-bg text-box--text-blue text-box--border">
+    <div class="text-box__inner">
+        <div class="text-box__head">Bathroom Lighting</div>
+        <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated <a href="#">fixtures</a> for your bathroom.</div>
+        <button class="button button--secondary">Secondary Button</button> 
+    </div>
+</div>
+
+Styleguide 3.5.5
+*/
+
+/*
+Set Text Colors to Blue, White and Gray
+
+Markup:
+<div class="text-box text-box--no-bg text-box--text-blue text-box--border">
+    <div class="text-box__inner">
+        <div class="text-box__head">Bathroom Lighting</div>
+        <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated <a href="#">fixtures</a> for your bathroom.</div>
+    </div>
+</div>
+<br>
+<div class="text-box text-box--no-bg text-box--text-blue text-box--border">
+    <div class="text-box__inner">
+        <div class="text-box__head">Bathroom Lighting</div>
+        <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated <a href="#">fixtures</a> for your bathroom.</div>
+    </div>
+</div>
+
+Styleguide 3.5.6
+*/
+
+/*
+Text Box Text Shadow
+
+Markup:
+<div class="text-box text-box--border text-box--text-shadow text-box--text-white">
+    <div class="text-box__inner">
+        <div class="text-box__head">Bathroom Lighting</div>
+        <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated <a href="#">fixtures</a> for your bathroom.</div>
+    </div>
+</div>
+
+Styleguide 3.5.7
+*/
+
+/*
+Quote
+
+Markup:
+<div class="text-box text-box--no-bg text-box--text-blue">
+    <div class="text-box__inner">
+        <blockquote class="text-box__quote">
+            <p>Brighten any style with easy-to-install, beautifully coordinated <a href="#">fixtures</a> for your bathroom.</p>
+        </blockquote>
+    </div>
+</div>
+
+Styleguide 3.5.8
+*/
+
+/*
+Text Box lists
+
+Markup:
+<div class="text-box">
+  <div class="text-box__inner text-box--text-black">
+    <div class="text-box__head">Consumer Support</div>
+    <div class="text-box__list">
+      <ul>
+        <li><a class="link" href="#">Can I use my existing drain assembly when installing a new faucet?</a></li>
+        <li><a class="link" href="#">What tools will I need to install or fix my faucet?</a></li>
+      </ul>
+    </div>
+    <div class="is-block">
+      <a href="#" class="link link--icon--left">
+        <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Troubleshooting Guide
+      </a>
+    </div>
+  </div>
+</div>
+
+Styleguide 3.5.9
+*/
+
+@mixin text-box-font-color($font_color: $c_moen-bright-blue) {
+  /*************************************************************
+  // Change color for all elements inside the .text-box__body
+  // and change the color for <a> tags inside to contrast inside
+  // the .text-box__body, if is not a .link or a .button
+  *************************************************************/
+  .text-box__head,
+  .text-box__body,
+  .text-box__subtitle,
+  .text-box__quote {
+    color: $font_color;
+  }
+}
+
+@include block(text-box) {
+  font-size: 1rem;
+  $margin-bottom: .5em;
+  .link {
+    display: inline-block;
+    margin-bottom: $margin-bottom;
+  }
+  // Elements
+  @include element(inner) {
+    background-color: rgba($c_white, 1);
+    padding: 1em;
+    .link {
+      font-size: em(14)
+    }
+    @include media($bp-md) {
+      background-color: rgba($c_white, .9);
+    }
+    img {
+      height: auto;
+      margin-bottom: $margin-bottom;
+      max-width: 100%;
+    }
+    .link,
+    .button {
+      margin-top: 1rem;
+    }
+  }
+
+  @include element(head) {
+    color: $c_moen-bright-blue;
+    font-size: 2.8em;
+    font-family: $din-light;
+    font-weight: normal;
+    line-height: .9em;
+    margin-bottom: $margin-bottom;
+  }
+
+  @include element(subtitle) {
+    @extend .text-box__head;
+    font-size: 2em;
+    margin-bottom: $margin-bottom;
+  }
+
+  @include element(list) {
+    padding: .5em 0 0 1.5em;
+    li {
+      padding-bottom: 0.5em;
+    }
+    .link {
+      display: inline;
+      margin: 0;
+    }
+  }
+
+  @include element(body) {
+    &:empty {
+      display: none;
+      font-size: 0;
+    }
+    line-height: 1.5em;
+    margin-bottom: $margin-bottom;
+    // These is to override the Hippo content.
+    button:not(.link),
+    button:not(.button),
+    a:not(.link),
+    a:not(.button) {
+      color: $c_moen-bright-blue;
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+    p {
+      padding: 0;
+    }
+    ul,
+    ol {
+      margin-left: 1em;
+    }
+    li {
+      line-height: 1;
+      margin-bottom: .5em;
+    }
+    .link,
+    .button {
+      margin-top: 0;
+      margin-left: 0.5em;
+    }
+    .link--icon--left-white {
+      color: $c_white !important;
+    }
+  }
+
+  @include element(quote) {
+    font-size: 1rem;
+    &:after,
+    &:before {
+      background-size: cover;
+      background-repeat: no-repeat;
+      content: ' ';
+      height: 50px;
+      width: 58px;
+      display: block;
+      margin: 0 auto;
+    }
+    // This is pointing to /site/
+    &:before {
+      background-image: url('/site/binaries/content/gallery/moen/site-icons/quote-start.svg');
+    }
+    &:after {
+      background-image: url('/site/binaries/content/gallery/moen/site-icons/quote-end.svg');
+    }
+    p {
+      font-size: 1.6em;
+      margin: .5em 0;
+      padding: 0;
+      line-height: 1em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    a:not(.link),
+    a:not(.button) {
+      color: $c_moen-logo-blue;
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Modifiers
+  @include modifier(no-bg) {
+    .text-box__inner {
+      background-color: transparent;
+      background-image: none;
+    }
+  }
+
+  @include modifier(border) {
+    .text-box__inner {
+      border-bottom: .5em solid $c_moen-bright-blue;
+    }
+  }
+
+  @include modifier(title-white) {
+    .text-box__head {
+      color: $c_white;
+    }
+  }
+
+  @include modifier(title-gray) {
+    .text-box__head {
+      color: $c_text-dark;
+    }
+  }
+
+  @include modifier(title-black) {
+    .text-box__head {
+      color: $c_black;
+    }
+  }
+
+  @include modifier(title-blue) {
+    .text-box__head {
+      color: $c_moen-bright-blue;
+    }
+  }
+
+  @include modifier(white) {
+    color: $c_white !important;
+  }
+
+  @include modifier(blue) {
+    color: $c_moen-bright-blue !important;
+  }
+
+  @include modifier(gray) {
+    color: $c_text-dark !important;
+  }
+
+  @include modifier(text-white) {
+    @include text-box-font-color($c_white);
+  }
+
+  @include modifier(text-blue) {
+    @include text-box-font-color($c_moen-bright-blue);
+  }
+
+  @include modifier(text-gray) {
+    @include text-box-font-color($c_text-dark);
+  }
+
+  @include modifier(body-link-white) {
+    .text-box__body {
+      a {
+        color: $c_white;
+      }
+    }
+  }
+
+  @include modifier(logo-top) {
+    .text-box__inner {
+      padding: 0;
+      > * {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+      .text-box__head {
+        margin-top: 1rem;
+      }
+      img {
+        height: auto;
+        margin: 0;
+        width: 100%;
+      }
+      .button {
+        margin-left: 1em;
+      }
+    }
+  }
+
+  @include modifier(text-shadow) {
+    .text-box__inner {
+      text-shadow: $text-shadow;
+      .button {
+        text-shadow: none;
+      }
+    }
+  }
+}

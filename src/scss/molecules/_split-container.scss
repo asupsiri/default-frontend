@@ -1,0 +1,110 @@
+/*
+Split container
+
+Styleguide 3.19
+*/
+
+/*
+Split container
+
+Designed to be rendered full-width with a bi-color background assignment (Left-to-Right / Top-to-Bottom) that switches orientation at certain a breakpoint.
+
+Styleguide example has an inline classes to force a height.
+
+Markup:
+<section id="ID-example-1234" class="split-container" style="min-height: 200px">
+  <div class="split-container__inner" style="min-height: 200px">
+    <div class="split-container__item split-container__item--first">FIRST CONTENT</div>
+    <div class="split-container__item split-container__item--last">LAST CONTENT</div>
+  </div>
+</section>
+
+Styleguide 3.19.1
+*/
+
+@include block(split-container) {
+  $divider-width: 8px !default;
+  font-size: 1rem;
+  background-color: $c_text-base;
+  z-index: 0;
+  position: relative;
+
+  @include element(inner) {
+    @include outer-container();
+    color: $c_white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    @include media($bp-md) {
+      flex-direction: row;
+    }
+
+  }
+
+  @include element(item) {
+    padding: 2em 2em;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 50%;
+    // use these magic numbers, or leverage javascript to match heights of containers:
+    min-height: 14em;
+    @include media($bp-sm) {
+      min-height: 10em;
+    }
+
+    @include modifier(first) {
+      border-bottom: $divider-width/2 solid $c_white;
+      border-right: none;
+      background-color: $c_moen-bright-blue;
+
+      @include media($bp-md) {
+        border-bottom: none;
+        border-right: $divider-width/2 solid $c_white;
+        padding: 2em 2.5em;
+      }
+    }
+
+    @include modifier(last) {
+      border-top: $divider-width/2 solid $c_white;
+      border-left: none;
+      @include media($bp-md) {
+        border-top: none;
+        border-left: $divider-width/2 solid $c_white;
+      }
+    }
+
+    @include modifier(row) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  // secondary color background @ 'mobile' widths:
+  &::before {
+    background-color: $c_moen-bright-blue;
+    content: '';
+    left: 0;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    margin: 0 0 $divider-width;
+  }
+
+  // secondary color background @ 'tablet-desktop' widths:
+  @include media($bp-md) {
+    &::before {
+      height: 100%;
+      width: 50%;
+      margin-bottom: 0;
+    }
+  }
+}
+

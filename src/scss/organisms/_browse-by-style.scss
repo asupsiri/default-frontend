@@ -1,0 +1,252 @@
+/*
+Browse by Style
+
+Styleguide 4.20
+*/
+
+/*
+Browse by Style - default state
+
+markup:
+<div class="browse-style">
+  <div class="browse-style__inner">
+    <h3 class="browse-style__title">Browse by Style</h3>
+    <div class="browse-style__nav horizontal-nav">
+      <ul class="list list--horizontal is-centered">
+        <li class="browse-style__menu-item is-active"><a class="link--gray" href="#">MODERN</a></li>
+        <li class="browse-style__menu-item"><a class="link--gray" href="#">TRANSITIONAL</a></li>
+        <li class="browse-style__menu-item"><a class="link--gray" href="#">TRADITIONAL</a></li>
+      </ul>
+    </div>
+    <hr class="browse-style__top-rule section-rule" />
+    <div class="browse-style__products">
+      <!-- product tile -->
+      <div class="browse-style__list is-active tile-row">
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Product name</p>
+          </div>
+        </a>
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Longer product name  name  name</p>
+          </div>
+        </a>
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Another product</p>
+          </div>
+        </a>
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Another product</p>
+          </div>
+        </a>
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Another product</p>
+          </div>
+        </a>
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Another product</p>
+          </div>
+        </a>
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Another product</p>
+          </div>
+        </a>
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Another product</p>
+          </div>
+        </a>
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Another product</p>
+          </div>
+        </a>
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Another product</p>
+          </div>
+        </a>
+      </div>
+      <!-- end tiles -->
+      <!-- start tiles -->
+      <div class="browse-style__list tile-row">
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Product name</p>
+          </div>
+        </a>
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Longer product name</p>
+          </div>
+        </a>
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Another product</p>
+          </div>
+        </a>
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Another product</p>
+          </div>
+        </a>
+      </div>
+      <!-- end tiles -->
+      <!-- start tiles -->
+      <div class="browse-style__list tile-row">
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Product name</p>
+          </div>
+        </a>
+        <!-- product tile -->
+        <a class="tile product-tile" href="#">
+          <div class="product-tile__head">
+            <img src="http://placehold.it/243?text=243" class="product-tile__image" />
+            <p class="product-tile__name">Longer product name</p>
+          </div>
+        </a>
+      </div>
+      <!-- end tiles -->
+    </div>
+    <hr class="browse-style__bottom-rule section-rule section-rule--blue" />
+    <div class="is-block">
+      <button class="browse-style__show-more  button button--default button--down-pointer">Show more</button>
+    </div>
+  </div>
+</div>
+
+Styleguide 4.20.1
+*/
+
+@include block(browse-style) {
+  font-size: 1rem;
+  margin: 2em auto;
+  @include element(inner) {
+    @include outer-container();
+  }
+  @include element(title) {
+    font-size: em(30);
+    font-family: $din-light;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+  }
+
+  @include element(top-rule) {
+    margin-top: .5em;
+    &.section-rule {
+      border-top-color: $c_moen-bright-gray;
+    }
+  }
+
+  @include element(bottom-rule) {
+    margin-bottom: 0;
+  }
+
+  @include element(menu-item) {
+    position: relative;
+    text-transform: uppercase;
+    &:after {
+      bottom: em(-12px);
+      border-bottom: 4px solid $c_moen-bright-blue;
+      content: '';
+      display: none;
+      left: -15%;
+      position: absolute;
+      width: 130%;
+    }
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+      a {
+        text-decoration: none;
+      }
+      &:after {
+        display: block;
+      }
+    }
+  }
+
+  @include element(show-more) {
+    display: none;
+  }
+
+  @include element(list) {
+    display: none;
+    @include state(active) {
+      display: flex;
+    }
+  }
+
+  .is-block {
+    text-align: center;
+  }
+
+  .link--gray {
+    color: inherit;
+    font-family: $din-medium;
+    &:hover {
+      color: $c_moen-bright-blue;
+      text-decoration: none;
+    }
+  }
+
+  .tile-row {
+    justify-content: center;
+  }
+
+  .product-tile {
+    max-width: 15%;
+    margin: .2em;
+    flex-basis: 15%;
+  }
+
+  .product-tile__head {
+    max-width: 100%;
+  }
+  .product-tile__image {
+    height: auto;
+    width: 100%;
+  }
+
+  .section-rule {
+    border-top-width: 4px;
+  }
+}

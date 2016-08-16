@@ -1,0 +1,17 @@
+/*  http://franzheidl.github.io/bemify/ */
+
+// Output combined state selectors like:
+//    .block__element.is-active {}
+// Set to false to output single, non-combined state modifiers:
+//    .block__element--is-active {}
+
+$combined-state-selectors: true;
+
+// .block[separator]element:
+$element-separator: "__";
+
+// .block[separator]modifier:
+$modifier-separator: "--";
+
+// The default prefix for state modifier selectors, will be combined with $modifier-separator:
+$state-prefix: "is";

@@ -1,0 +1,70 @@
+/*
+Horizontal Rules
+
+Used as a visual separator between major sections of a page. Not necessarily related to the section tag.
+
+Styleguide 2.8
+*/
+
+/*
+Section Rule
+
+This element is used to provide a visual separation within the FAQ list view.
+
+markup:
+<hr class="section-rule" />
+<hr class="section-rule section-rule--blue" />
+<div style="color: orange">
+<p>Section rule with no explicit modifier will inherit the local font color:</p>
+<hr class="section-rule" />
+<section style="color: rebeccapurple">
+<p>Switch to <b>purple</b>:</p>
+<hr class="section-rule" />
+<hr class="section-rule section-rule--blue" />
+<p>Lorem <b>Ipsum Dolor</b> Sit Amet Consect</p>
+</section>
+</div>
+
+Styleguide 2.8.1
+*/
+@include block(section-rule) {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 2em 0;
+  border-top: 6px solid currentColor;
+  @include modifier(blue) {
+    border-color: $c_moen-bright-blue
+  }
+}
+
+/*
+Shadowed Rule
+
+This element is used to provide a visual separation within the site footer.
+
+markup:
+<hr class="shadowed-rule" />
+
+Styleguide 2.8.2
+*/
+.shadowed-rule {
+  width: 100%;
+  height: 1em;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  margin: 1em auto 0;
+
+  &:after {
+    width: 100%;
+    height: 1em;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -1.3em;
+    /* Ellipse with shadow: */
+    border-radius: 520px / 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .5);
+  }
+}

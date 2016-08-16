@@ -1,0 +1,97 @@
+/*
+Search Banner
+
+Search banner has two CMS variants, one with a solid background and one with a background image.
+
+markup:
+<div id="FAQSearchID-A" class="search-banner" style="background-image: url('http://embed.widencdn.net/img/moen/uo8p3novad/1600x470px/7626_s71409_g18191_close-up kitchen set shot.jpeg');">
+  <div class="search-banner__content">
+    <div class="row">
+      <h1 class="search-banner__heading search-banner__heading--reverse">Frequently Asked Questions</h1>
+    </div>
+    <div class="row">
+      <form action="/site/customer-support/faq/results" method="get" class="search-banner--search-form">
+        <div class="input-add-on">
+          <input itemprop="query-input" class="form-input form-input__text input-add-on__field" type="text" name="search_terms" placeholder="">
+          <button type="submit" class="button input-add-on__item button--icon button--search"><span class="hat">Search</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<br />
+<div id="FAQSearchID-B" class="search-banner">
+  <div class="search-banner__content">
+    <div class="row">
+      <h1 class="search-banner__heading">Frequently Asked Questions</h1>
+    </div>
+    <div class="row">
+      <form action="/site/customer-support/faq/results" method="get" class="search-banner__search-form">
+          <input itemprop="query-input" class="form-input form-input__text" type="text" name="search_terms" placeholder="">
+          <button type="submit" class="button button--secondary">Search</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+Styleguide 4.13
+*/
+
+@include block(search-banner) {
+  background-color: $c_white;
+  background-position: 50% 50%;
+  background-size: cover;
+
+  @include element(content) {
+    @include outer-container();
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    height: 120px;
+    @include media($bp-sm) {
+      height: 200px;
+    }
+    @include media($bp-md) {
+      max-width: 700px;
+    }
+  }
+  @include element(heading) {
+    color: $c_text-base;
+    font-size: 1.6em;
+    font-family: $din-light;
+    text-align: center;
+    letter-spacing: -.05em;
+    @include modifier(reverse) {
+      color: $c_white;
+      //text-shadow: 0 0 1px rgba(0, 0, 0, 1);
+      //text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, .5)
+    }
+    @include media($bp-xs) {
+      font-size: 2em;
+    }
+    @include media($bp-sm) {
+      font-size: 2.2em;
+    }
+    @include media($bp-md) {
+      font-size: 2.8em;
+    }
+  }
+  @include element(search-form) {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    .form-input__text {
+      flex-grow: 1;
+    }
+    .button {
+      margin-left: 1em;
+      margin-bottom: 0;
+      flex-grow: 0;
+    }
+  }
+}
+
+

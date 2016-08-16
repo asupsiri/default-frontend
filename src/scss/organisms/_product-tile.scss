@@ -1,0 +1,256 @@
+/*
+Product Tiles
+
+Styleguide 4.12
+*/
+
+/*
+Product Tile - US Market Primary Variant
+
+markup:
+<a class="tile product-tile" href="#">
+<div class="product-tile__like"></div>
+<div class="product-tile__head">
+  <img src="images/faucet-1-fpo.png" class="product-tile__image" />
+  <p class="product-tile__name">Voss one-handle high arc pullout kitchen faucet in oil rubbed bronze kitchen faucet in oil rubbed bronze</p>
+</div>
+<div class="product-tile__body">
+  <p class="product-tile__sku">Model: TS1234-5678</p>
+  <div class="rating product-tile__rating">
+    <ul class="rating__stars">
+      <li class="rating__star is-active"></li>
+      <li class="rating__star is-active"></li>
+      <li class="rating__star is-active"></li>
+      <li class="rating__star"></li>
+      <li class="rating__star"></li>
+    </ul>
+    <label class="product-tile__rating--count">(24)</label>
+  </div>
+  <p class="product-tile__msrp">$397.40 msrp</p>
+</div>
+</a>
+
+Styleguide 4.12.1
+*/
+
+@include block(product-tile) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $c_text-base;
+  align-items: center;
+  width: 50%;
+  // flex-basis: 50% !important;
+  text-align: center;
+  margin-bottom: 5px;
+  max-width: 260px;
+  overflow: hidden;
+  padding-top: 1.7em;
+  position: relative;
+  z-index: z("facets") - 1;
+  &:focus,
+  &:hover {
+    .product-tile__like {
+      display: block;
+    }
+  }
+  // For empty elements added
+  &:empty {
+    height: 0;
+    padding: 0;
+  }
+  @include media($bp-md) {
+    // flex-basis: 25% !important;
+    width: 25%;
+    max-width: 250px;
+  }
+
+  // Elements
+  @include element(head) {}
+  @include element(body) {}
+  @include element(image) {
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 1em;
+    @include media($bp-md) {
+      height: auto;
+      max-width: 165px;
+    }
+  }
+  @include element(name) {
+    font-size: inherit;
+    color: $c_moen-bright-blue;
+    max-width: 240px; // ie10, ie11 fix
+    padding: 1em .5em;
+  }
+  @include element(sku) {
+    margin-bottom: 1rem;
+    font-size: em(12);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @include element(rating) {
+    margin-bottom: 1rem;
+    line-height: em(14);
+    .rating__stars {
+      display: inline-block;
+    }
+    @include modifier(count) {
+      margin-left: .5rem;
+      font-size: em(12);
+      font-family: $din-regular;
+    }
+  }
+  @include element(msrp) {
+    font-family: $georgia;
+  }
+  @include element(like) {
+    display: none;
+    width: 1em;
+    height: 1em;
+    z-index: 1;
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    background-image: url("./images/icon-like.svg");
+    img {
+      width: 16px;
+      height: 16px;
+    }
+    @include state(selected) {
+      background-image: url("./images/icon-like_selected.svg");
+      display: flex;
+    }
+  }
+}
+
+/*
+Product Tile - US Market Primary Variant (No MSRP)
+
+markup:
+<a class="tile product-tile" href="#">
+<div class="product-tile__like"></div>
+<div class="product-tile__head">
+  <img src="images/faucet-1-fpo.png" class="product-tile__image" />
+  <p class="product-tile__name">Voss one-handle high arc pullout kitchen faucet in oil rubbed bronze kitchen faucet in oil rubbed bronze</p>
+</div>
+<div class="product-tile__body">
+  <p class="product-tile__sku">Model: TS1234-5678</p>
+  <div class="rating product-tile__rating">
+    <ul class="rating__stars">
+      <li class="rating__star is-active"></li>
+      <li class="rating__star is-active"></li>
+      <li class="rating__star is-active"></li>
+      <li class="rating__star"></li>
+      <li class="rating__star"></li>
+    </ul>
+    <label class="product-tile__rating--count">(24)</label>
+  </div>
+  <p class="product-tile__msrp">&nbsp;</p>
+</div>
+</a>
+
+Styleguide 4.12.1.1
+*/
+
+/*
+Product Tile - Like Selected
+
+A user has set an individual product as a favorite, reflected by the icon at top-right.
+
+markup:
+<a class="tile product-tile" href="#">
+<div class="product-tile__like is-selected"></div>
+<div class="product-tile__head">
+  <img src="images/faucet-1-fpo.png" class="product-tile__image" />
+  <p class="product-tile__name">Voss one-handle high arc pullout kitchen faucet in oil rubbed bronze kitchen faucet in oil rubbed bronze</p>
+</div>
+<div class="product-tile__body">
+  <p class="product-tile__sku">Model: TS1234-5678</p>
+  <div class="rating product-tile__rating">
+    <ul class="rating__stars">
+      <li class="rating__star is-active"></li>
+      <li class="rating__star is-active"></li>
+      <li class="rating__star is-active"></li>
+      <li class="rating__star"></li>
+      <li class="rating__star"></li>
+    </ul>
+    <label class="product-tile__rating--count">(24)</label>
+  </div>
+  <p class="product-tile__msrp">$397.40 msrp</p>
+</div>
+</a>
+
+Styleguide 4.12.2
+*/
+
+/*
+Product Tile - Canada Market Variant
+
+For the Canada market, no pricing (MSRP) is displayed. This variant simply omits the msrp element from the product tile.
+
+markup:
+<a class="tile product-tile" href="#">
+<div class="product-tile__like"></div>
+<div class="product-tile__head">
+  <img src="images/faucet-1-fpo.png" class="product-tile__image" />
+  <p class="product-tile__name">Voss one-handle high arc pullout kitchen faucet in oil rubbed bronze kitchen faucet in oil rubbed bronze</p>
+</div>
+<div class="product-tile__body">
+  <p class="product-tile__sku">Model: TS1234-5678</p>
+  <div class="rating product-tile__rating">
+    <ul class="rating__stars">
+      <li class="rating__star is-active"></li>
+      <li class="rating__star is-active"></li>
+      <li class="rating__star is-active"></li>
+      <li class="rating__star"></li>
+      <li class="rating__star"></li>
+    </ul>
+    <label class="product-tile__rating--count">(24)</label>
+  </div>
+</div>
+</a>
+
+Styleguide 4.12.3
+*/
+
+/*
+Product Tile - Customer Support Page Variant
+
+For the Customer Support Page, no pricing (MSRP) or reviews are displayed. This variant simply omits the msrp and rating elements from the product tile.
+
+markup:
+<a class="tile product-tile" href="#">
+<div class="product-tile__like"></div>
+<div class="product-tile__head">
+<img src="images/faucet-1-fpo.png" class="product-tile__image" />
+<p class="product-tile__name">Voss one-handle high arc pullout kitchen faucet in oil rubbed bronze kitchen faucet in oil rubbed bronze</p>
+</div>
+<div class="product-tile__body">
+<p class="product-tile__sku">Model: TS1234-5678</p>
+</div>
+</a>
+
+Styleguide 4.12.4
+*/
+
+
+
+// Layout into a pseudo-grid using flexbox instead of the 12-col grid:
+
+.tile-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  @include media ($bp-lg) {
+    justify-content: space-between;
+  }
+}
+
+.tile-row-button {
+  .button--load-more {
+    margin-top: 10px;
+  }
+}

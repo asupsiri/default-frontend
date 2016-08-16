@@ -1,0 +1,74 @@
+/*
+Icon and Label
+
+Large icon and associated text label as seen on product support page
+
+Markup:
+<div class="icon-label">
+  <img src="./images/icon-phone.svg" alt="telephone icon" class="icon-label__icon" />
+  <label class="icon-label__label">Call</label>
+</div>
+<div class="icon-label">
+  <img src="./images/icon-envelope.svg" alt="telephone icon" class="icon-label__icon" />
+  <label class="icon-label__label">Email</label>
+</div>
+<div style="background-color: #ccc; padding: 1em;">
+  <sg-insert>3.3.1</sg-insert>
+  <sg-insert>3.3.2</sg-insert>
+</div>
+
+Styleguide 3.3
+*/
+
+@include block(icon-label) {
+  font-size: 1rem;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include element(icon) {
+    font-size: inherit;
+    width: 1.8em;
+    height: 1.8em;
+  }
+
+  @include element(label) {
+    color: inherit;
+    font-family: $din-medium;
+    font-weight: normal;
+    margin: 0 1em;
+  }
+
+  @include modifier(content-reversed) {
+    .icon-label__label {
+      color: $c_white;
+      font-family: $din-bold;
+    }
+  }
+}
+
+/*
+Phone icon - reversed
+
+markup:
+<div class="icon-label icon-label--content-reversed">
+  <img src="./images/icon-phone-rev.svg" alt="telephone icon" class="icon-label__icon" />
+  <label class="icon-label__label">Phone</label>
+</div>
+
+Styleguide 3.3.1
+*/
+
+/*
+Envelope icon - reversed
+
+markup:
+<div class="icon-label icon-label--content-reversed">
+  <img src="./images/icon-envelope-rev.svg" alt="telephone icon" class="icon-label__icon" />
+  <label class="icon-label__label">Email</label>
+</div>
+
+Styleguide 3.3.2
+*/
+

@@ -1,0 +1,46 @@
+/*
+Stylized Images
+
+Styleguide 2.10
+*/
+
+/*
+Image within a circle
+
+markup:
+<img class="img--circle" width="100"  height="100" alt="WSL84502SRN-glam5" src="http://embed.widencdn.net/img/moen/6lv0hxcp5x/x100px/WSL84502SRN-glam5.jpeg?u=4wu0a0">
+
+Styleguide 2.10.1
+*/
+
+@include block(img) {
+  @include modifier(circle) {
+    border-radius: 50%;
+  }
+}
+
+/*
+Icon within a circle
+
+markup:
+<div class="icon--circle icon--border" style="background-image: url('./images/icon-tip.svg')"></div>
+<div class="icon--circle icon--border" style="background-image: url('./images/icon-list.svg')"></div>
+<div class="icon--circle icon--border" style="background-image: url('./images/icon-quote.svg')"></div>
+
+Styleguide 2.10.2
+*/
+
+@include block(icon) {
+  @include modifier(circle) {
+    font-size: 1rem;
+    border-radius: 50%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 4.125em;
+    height: 4.125em; // 66px @ 16px font size
+  }
+  @include modifier(border) {
+    border: 1px solid $c_moen-bright-gray;
+  }
+}

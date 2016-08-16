@@ -1,0 +1,53 @@
+/*
+Social follow menu
+
+Markup:
+<div class="site-footer--follow">
+<nav id="footer-menu-social-follow" class="social-follow-menu" aria-labelledby="menu-social-follow-label">
+<label id="menu-social-follow-label"><b>Stay Connected</b></label>
+<ul class="list--unstyled list--horizontal is-justified">
+<li>
+<a href="https://www.facebook.com/moen" data-social-network="facebook">
+<span class="hat">facebook</span><img src="../images/facebook.svg" alt="facebook icon">
+</a>
+</li>
+<li>
+<a href="https://twitter.com/moen" data-social-network="twitter">
+<span class="hat">twitter</span><img src="../images/twitter.svg" alt="twitter icon">
+</a>
+</li>
+<li>
+<a href="https://www.pinterest.com/moen/" data-social-network="pinterest">
+<span class="hat">pinterest</span><img src="../images/pinterest.svg" alt="pinterest icon">
+</a>
+</li>
+<li>
+<a href="http://www.houzz.com/pro/moen" data-social-network="houzz">
+<span class="hat">houzz</span><img src="../images/houzz.svg" alt="houzz icon">
+</a>
+</li>
+<li>
+<a href="https://www.instagram.com/moeninc/" data-social-network="instagram">
+<span class="hat">instagram</span><img src="../images/instagram.png" alt="instagram icon">
+</a>
+</li>
+<li>
+<a href="https://www.youtube.com/user/moenfaucets" data-social-network="youtube">
+<span class="hat">youtube</span><img src="../images/youtube.svg" alt="youtube icon">
+</a>
+</li>
+</ul>
+</nav>
+</div>
+
+Styleguide 4.2
+*/
+
+@include block(social-follow-menu) {
+  font-size: 1rem;
+  img {
+    height: auto;
+    width: 38px;
+    margin-top: .5em;
+  }
+}

@@ -1,0 +1,298 @@
+/*
+Headings
+
+HTML headings repertoire
+
+<i>*Not yet styled</i>
+
+markup:
+<h1 class="heading--1"> Heading H1 </h1>
+<h2> Heading H2* </h2>
+<h2 class="heading--2"> Heading H2 </h2>
+<h3 class="heading--3"> Heading H3 </h3>
+<h4 class="heading--4"> Heading H4 </h4>
+<h5 class="heading--5"> Heading H5 </h5>
+<h6> Heading H6* </h6>
+<h6 class="heading--6"> Heading H6 </h6>
+
+Styleguide 2.2
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: inherit;
+  line-height: 1;
+  margin-bottom: 0.5em;
+  font-weight: normal;
+}
+
+@include block(heading) {
+  @include modifier(1) {
+    font-size: em(44);
+    font-family: $din-light;
+    font-weight: normal;
+    letter-spacing: -.05em;
+  }
+  @include modifier(2) {
+    font-size: em(22);
+    font-family: $din-medium;
+    font-weight: normal;
+  }
+  @include modifier(3) {
+    font-size: em(22);
+    font-family: $din-medium;
+    font-weight: normal;
+  }
+  @include modifier(4) {
+    font-size: em(18);
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+  }
+  @include modifier(5) {
+    font-size: em(17);
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+  }
+  @include modifier(6) {
+    font-size: em(16);
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+  }
+}
+
+/*
+Heading Styles
+
+markup:
+<h1 class="section-heading--1">Section Heading h1</h1>
+<h2 class="section-heading--1">Section Heading h2</h2>
+<h3 class="section-heading--1">Section Heading h3</h3>
+<h1 class="section-heading--2">Section Heading h1</h1>
+<h2 class="section-heading--2">Section Heading h2</h2>
+<h3 class="section-heading--2">Section Heading h3</h3>
+<h1 class="section-heading--3">Section Heading h1</h1>
+<h2 class="section-heading--3">Section Heading h2</h2>
+<h3 class="section-heading--3">Section Heading h3</h3>
+<p>I'm just demo content that follows the headings</p>
+<h2 class="section-heading--2">Section Heading h2</h2>
+<h3 class="section-heading--3 section-heading--bottom-margin">Section Heading h3</h3>
+<p>I'm just demo content that follows the headings</p>
+<h2 class="section-heading--2 section-heading--bottom-margin">Section Heading h2</h2>
+<h3 class="section-heading--3 section-heading--top-margin">Section Heading h3</h3>
+<p>I'm just demo content that follows the headings</p>
+
+Styleguide 2.2.1
+*/
+
+/*
+Product Finder Heading Styles
+
+markup:
+<section class="container">
+<h3 class="question-heading--secondary">Looking to identify your product?<br />
+We’ll help you find it in just a couple of clicks.</h3>
+<h4 class="question-heading--primary">First, Which Room Are We In?</h4>
+</section>
+
+Styleguide 2.2.2
+*/
+
+@include block(question-heading) {
+  @include modifier(primary) {
+    font-size: em(32);
+    font-family: $din-regular;
+    text-align: center;
+    line-height: 1;
+  }
+  @include modifier(secondary) {
+    font-size: em(24);
+    font-family: $din-light;
+    text-align: center;
+    line-height: 1.2;
+
+    &::before {
+      content: '';
+      height: 1px;
+      width: 85px;
+      display: block;
+      background-color: $c_moen-bright-gray;
+      margin: rem(6) auto rem(25);
+    }
+
+  }
+}
+
+@mixin section-heading-core {
+  font-family: $din-light;
+  margin-bottom: 0;
+}
+
+@include block(section-heading) {
+  @include modifier(1) {
+    @include section-heading-core();
+    font-size: em(34);
+  }
+  @include modifier(2) {
+    @include section-heading-core();
+    font-size: em(30);
+  }
+  @include modifier(3) {
+    @include section-heading-core();
+    font-size: em(22);
+  }
+  @include modifier(bottom-margin) {
+    margin-bottom: 1em;
+  }
+  @include modifier(top-margin) {
+    margin-top: 1em;
+  }
+}
+
+/*
+Base Typography
+
+
+markup:
+<p>Base Paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est</p>
+<p><i>Lorem ipsum dolor sit amet,</i> consectetur adipisicing elit, <em>sed do eiusmod tempor</em> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
+<p>Lorem <b>ipsum dolor</b> sit amet, <strong>consectetur adipisicing</strong> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
+<p>Lorem <small>ipsum dolor</small> sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
+<p>Lorem <sup>ipsum</sup> dolor <sub>sit</sub> amet, consectetur adipisicing <sup><small>elit</small></sup>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
+
+Styleguide 2.3
+*/
+
+p {
+  color: inherit;
+  font-family: $din-regular;
+  font-size: 1rem;
+  padding-bottom: 1em;
+
+  & i,
+  & em {
+    font-family: inherit;
+    font-weight: inherit;
+  }
+
+  & b,
+  & strong {
+    font-family: inherit;
+    font-weight: 600;
+    //color: darken($c_text-base, 2%);
+  }
+}
+
+/*
+Subscript, Superscript
+
+markup:
+<p>This is a TradeMark<sup>&reg;</sup> entity - the line-height should not be affected. This is a footnote reference<sub>[1]</sub> entity - the line-height should not be affected. Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit
+</p>
+
+Styleguide 2.3.1
+*/
+
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+  font-size: .8em;
+}
+
+sub {
+  top: 0.4em;
+}
+
+/*
+Truncated text
+
+A class to display long text runs terminated with ellipses.
+
+markup:
+<div>Some very long text is not controlled with the truncate-ellipses class, and is therefore allowed to run on and possibly break the layout.</div>
+<br />
+<div class="truncate-ellipses">This very long text should be clipped and terminated with an ellipses character because it is assigned the truncate-ellipses class.</div>
+
+Styleguide 2.3.2
+*/
+
+@mixin truncate-ellipses-core() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.truncate-ellipses {
+  @include truncate-ellipses-core();
+}
+
+
+/*
+Text alignment
+
+markup:
+<p class="text-left">text left aligned</p>
+<p class="text-center">text center aligned</p>
+<p class="text-right">text right aligned</p>
+
+Styleguide 2.3.3
+*/
+@mixin text-alignment($alignment) {
+  .text-#{$alignment} {
+    text-align: $alignment;
+  }
+}
+
+@include text-alignment(left);
+@include text-alignment(center);
+@include text-alignment(right);
+
+
+/*
+Text transform
+
+markup:
+<p class="text-uppercase">uppercase text</p>
+<p class="text-lowercase">Lowercase Text</p>
+<p class="text-capitalize">capitalize text</p>
+
+Styleguide 2.3.4
+*/
+@mixin text-transform($case) {
+  .text-#{$case} {
+    text-transform: $case;
+  }
+}
+
+@include text-transform(uppercase);
+@include text-transform(lowercase);
+@include text-transform(capitalize);
+
+
+
+//  @mixin text-color($color) {
+//    .text--$color {
+//      color: $color;
+//    }
+// }
+//
+// @include text-color($c_moen-bright-blue);
+
+
+
+
+/*
+Label Types
+
+[Some Description]
+
+markup:
+<label class="label">Lorem LABEL Ipsum</label>
+<br />
+<span class="label">Lorem SPAN Ipsum</span>
+
+Styleguide 2.7
+*/
+
+.label {
+  text-transform: uppercase;
+}

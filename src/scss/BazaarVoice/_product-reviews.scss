@@ -1,0 +1,385 @@
+// Hide the BV rating summary in the page's Hero section:
+.hero-section__reviews {
+  #BVCustomerRatings {
+    display: none;
+  }
+}
+
+.customer-reviews {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0 .5em;
+  a {
+    color: $c_link_color;
+  }
+}
+
+.customer-reviews .stars {
+  //width: 285px;
+  //float: left;
+  //margin-top: 10px;
+}
+
+.customer-reviews .no-ratings {
+  //margin-left: 10px;
+}
+
+.customer-reviews .no-ratings .ratings-meter {
+  clear: both;
+}
+
+.no-ratings .link,
+.customer-reviews .no-ratings .link {
+  //display: block;
+  //float: left;
+  //clear: left;
+  //margin-bottom: 20px;
+  flex: 1;
+  margin-left: .5em;
+  color: $c_text-base;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+  a {
+    color: $c_link_color;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+//.customer-reviews .no-ratings .cutouts {
+//  font-size: 28px;
+//}
+
+.ratings-meter {
+  background-color: $c_pdp_collection;
+  overflow: hidden;
+  position: relative;
+  opacity: .99; // establish new stacking context for .ratings-meter-mask and .ratings-meter-bar (see below)
+  width: 126px;
+  height: 18px;
+  &.hero {
+    width: 91px;
+    height: 13px;
+  }
+}
+
+//img.ratings-meter-mask {
+//  vertical-align: top;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  z-index: 2;
+//}
+
+.ratings-meter-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: $c_moen-bright-blue;
+  z-index: 1;
+  transition: width 1s ease-in-out;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+  @include media($bp-sm) {
+    justify-content: space-around;
+  }
+}
+
+.cutouts {
+  font-size: 0;
+}
+
+.ratings-meter .cutouts {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: initial;
+  line-height: initial;
+  font-size: 0;
+  width: 126px;
+  height: 18px;
+
+  &:before {
+    content: url("data:image/svg+xml;charset=utf8,%3Csvg%20id%3D%22Layer_1%22%20data-name%3D%22Layer%201%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20126%2018%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%23fff%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M26.5%206.8H34L36.5%200H10l2.5%206.8H20l-5.83%204.4%202.08%206.8h14l2.08-6.8zM116%200l2.5%206.8h7.5V0h-10zm-6.25%2018h12.5L116%2014zm-79.5%200h12.5l-6.25-4zM10%200H0v6.8h7.5zm96%206.8h7.5L116%200H89.5L92%206.8h7.5l-5.83%204.4%202.08%206.8h14l2.08-6.8zM3.75%2018h12.5L10%2014zM0%206.8V18h3.75l2.08-6.8zm79.5%200H87L89.5%200H63l2.5%206.8H73l-5.83%204.4%202.08%206.8h14l2.08-6.8zM53%206.8h7.5L63%200H36.5L39%206.8h7.5l-5.83%204.4%202.08%206.8h14l2.08-6.8zM122.25%2018H126V6.8l-5.83%204.4zm-39%200h12.5l-6.25-4zm-26.5%200h12.5L63%2014z%22%20id%3D%22star-5%22%20data-name%3D%22star%22%2F%3E%3C%2Fsvg%3E");
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+  }
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #00a9e0;
+    z-index: 1;
+    transition: width 1s ease-in-out;
+  }
+}
+
+.ratings-meter.hero .cutouts {
+  width: 91px;
+  height: auto;
+}
+
+.customer-reviews .stars .rating {
+  //float: left;
+  color: $c_moen-bright-blue;
+  font-size: 30px;
+  font-family: DinWebMedium;
+  width: 1.5em;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.customer-reviews .overall {
+  overflow: hidden;
+  border-bottom: 3px solid #ccc;
+  padding-bottom: 1em;
+  margin: 1em 0;
+}
+
+.customer-reviews .overall .stars {;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-bottom: 1em;
+}
+
+.customer-reviews .overall .breakdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-bottom: 1em;
+  @include media($bp-sm) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.customer-reviews .overall .breakdown .criteria {
+  margin: 0 0 .5em;
+  @include media($bp-sm) {
+    flex-basis: 20%;
+    flex-shrink: 1;
+  }
+  .ratings-meter {
+    width: 100%;
+    position: relative;
+    background-color: $c_pdp_collection;
+    height: 10px;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+}
+
+.customer-reviews .overall .breakdown .criteria strong {
+  font-family: $din-medium;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.customer-reviews .overall .breakdown .criteria:first-child {
+  margin-left: 0;
+}
+
+.customer-reviews .overall .breakdown .ratings-meter {
+}
+
+.customer-reviews .overall .breakdown .ratings-meter table {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+}
+
+.customer-reviews .overall .breakdown .ratings-meter table td {
+  border-left: solid 1px $c_white;
+  height: 10px;
+}
+
+.customer-reviews .overall .breakdown .ratings-meter table td:first-child {
+  border-left: 0;
+}
+
+.customer-reviews .overall .breakdown .ratings-meter span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10px;
+  background-color: $c_moen-bright-blue;
+  z-index: 1;
+  transition: width 1s ease-in-out;
+}
+
+/* Review */
+
+.customer-reviews .review {
+  margin-top: 50px;
+}
+
+.customer-reviews .review .user-rating {
+  clear: left;
+}
+
+.customer-reviews .review .user-rating .rating {
+  font-size: 16px;
+  color: #000;
+}
+
+.customer-reviews .review .right-col .criteria {
+  clear: left;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.customer-reviews .review .right-col .criteria strong {
+  font-family: DinWebBold;
+  display: block;
+  font-size: 14px;
+}
+
+//.customer-reviews .review .right-col .ratings-meter .cutouts {
+//  font-size: 19px;
+//}
+
+.customer-reviews .review .title-bar {
+  margin: 10px 0;
+}
+
+.customer-reviews .review .title {
+  font-size: 30px;
+  color: #333;
+  font-family: DinWebRegular;
+}
+
+.customer-reviews .review .date {
+  font-size: 16px;
+  color: #999;
+  font-family: DinWebRegular;
+}
+
+.customer-reviews .review .body {
+  font-size: 16px;
+  line-height: 18px;
+  font-family: DinWebRegular;
+  margin: 20px 0;
+}
+
+.customer-reviews .review .helpful-to-others .num,
+.customer-reviews .review .helpful-to-others .total {
+  font-family: DinWebBold;
+}
+
+.customer-reviews .review .helpful-to-you {
+  margin: 10px 0;
+}
+
+.customer-reviews .review .share-review span {
+  display: block;
+  //float: left;
+}
+
+.customer-reviews .review .share-review li {
+  display: block;
+  height: 14px;
+  width: 14px;
+  //float: left;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.customer-reviews .review .share-review li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url(/assets/moencom/images/catalog/product-details-new/features-sprite.jpg) no-repeat bottom left;
+  text-indent: -100px;
+}
+
+.customer-reviews .review .share-review li.facebook a {
+  background-position: bottom left;
+}
+
+.customer-reviews .review .share-review li.twitter a {
+  background-position: -18px -222px;
+}
+
+.BVRRSortSelectWidget {
+  display: block;
+  span {
+    width: 280px !important;
+    width: auto !important;
+  }
+}
+
+#uniform-BVRRDisplayContentSelectBVFrameID {
+  width: 100% !important;
+}
+
+.BVRRSeparatorContentBodyTop:empty {
+  display: none;
+}
+
+.BVRRReviewDateContainer {
+  margin-bottom: 1em;
+}
+
+span[itemprop="review"] {
+  width: 100%;
+}
+
+.BVRRReviewFeedbackSummaryPrefix:empty,
+.BVRRReviewFeedbackSummarySuffix:empty,
+.BVRRReviewFeedbackLinksSuffix:empty
+.BVRRReviewTitlePrefix:empty {
+  display: none;
+}
+
+.BVRRContextDataValue {
+  margin-left: .5em;
+  font-weight: bold;
+}
+
+.BVRRSocialBookmarkingSharingLink {
+  padding: .5em;
+  margin: 0 .5em 0 0;
+}
+
+.BVRRReviewFeedbackLinksSeparator,
+.BVRRReviewFeedbackLink {
+  margin-right: .5em;
+}
+
+.BVRRSortAndSearch {
+  @include media($bp-xs) {
+    align-self: baseline;
+  }
+}
+
+.BVRRContextDataValueContainer {
+  margin-bottom: .5em;
+}
+
+.BVRRUserNicknameReadReviewsContainer {
+  display: none;
+}

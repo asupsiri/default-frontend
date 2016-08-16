@@ -1,0 +1,40 @@
+$visual-grid: false;
+$visual-grid-color: blue;
+$visual-grid-index: front;
+$visual-grid-opacity: 0.25;
+
+// Grid Defaults:
+$max-width: 1020px !default;
+$grid-gutter-width: rem(20) !default;
+$grid-num-cols: 12 !default;
+$grid-outside-spacing-bp-offset: 10px !default;
+$grid-outside-spacing: .5rem !default;
+
+//  Using Bootstrap-4's Breakpoint Variables:
+//  (note, these are simply the defaults as of bootstrap alpha 2, and they can be changed to suit the Moen.com strategy)
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: rem(448),
+  // Small screen / phone
+  sm: rem(544),
+  // Medium screen / tablet
+  md: rem(768),
+  // Large screen / desktop
+  lg: rem(992),
+  // Extra large screen / wide desktop
+  xl: rem(1200)
+);
+
+@function bp($bp) {
+  @return map-get($grid-breakpoints, $bp);
+}
+
+$bp-xs: bp(xs) !default; // 28em
+$bp-sm: bp(sm) !default; // 34em
+$bp-md: bp(md) !default; // 48em
+$bp-lg: bp(lg) !default; // 62em
+$bp-xl: bp(xl) !default; // 75em
+
+// This breakpoint represent the inflection point between the touch menu (hamburger menu) and the full "desktop" rendition:
+// Please try to not use this for anything other than touch/full navigation menu concerns.
+$bp-nav-full: 768px !default;

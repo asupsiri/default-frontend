@@ -1,0 +1,114 @@
+/*
+Full Navigation Menu
+
+Description blah blah...
+
+markup:
+<nav class="full-nav" role="navigation">
+  <ul class="nav-menu">
+    <li class="col-lg-2 nav-item">
+      <a href="/site/" class="full-nav__section-link is-first open">Bathroom</a>
+      <div class="full-nav__section-nav sub-nav open">
+        <div class="container">
+          <div class="row">
+            <a href="/site/press-room/press-releases/this-old-house" class="link-image-menu col-xs-6 col-md-2">
+              <span class="link-image-menu__label">Faucets</span>
+              <img src="http://embed.widencdn.net/img/moen/2ttaozcxvi/90px/ca84667srn.jpeg?u=slqlvz" alt="" class="link-image-menu__image">
+            </a>
+            <a href="/site/press-room/article/feature-media-articles2" class="link-image-menu col-xs-6 col-md-2">
+              <span class="link-image-menu__label">Shower and Spa</span>
+              <img src="http://embed.widencdn.net/img/moen/rj5zqvqotd/90px/21556k.jpeg?u=slqlvz" alt="" class="link-image-menu__image">
+            </a>
+            <a href="/site/" class="link-image-menu col-xs-6 col-md-2">
+              <span class="link-image-menu__label">Accessories</span>
+              <img src="http://embed.widencdn.net/img/moen/4qllp0kmvs/90px/dn8486ch.jpeg?u=slqlvz" alt="" class="link-image-menu__image">
+            </a>
+            <a href="/site/" class="link-image-menu col-xs-6 col-md-2">
+              <span class="link-image-menu__label">Lighting</span>
+              <img src="http://embed.widencdn.net/img/moen/4xiscyetdq/90px/yb9863ch.jpeg?u=slqlvz" alt="" class="link-image-menu__image">
+            </a>
+            <a href="/site/" class="link-image-menu col-xs-6 col-md-2">
+              <span class="link-image-menu__label">Safety</span>
+              <img src="http://embed.widencdn.net/img/moen/ahq5sdiu8n/90px/dn7110.jpeg?u=slqlvz" alt="" class="link-image-menu__image">
+            </a>
+            <span>Helpful Tools</span>
+            <a href="/site/" class="full-nav__menu-link">Shower Planner</a>
+            <a href="/site/" class="full-nav__menu-link">Faucet Selector</a>
+            <a href="/site/" class="full-nav__menu-link">Design your own Bathroom</a>
+            <div>
+              <a href="/site/" class="full-nav__menu-link">Design &amp; Planning</a>
+              <a href="/site/" class="full-nav__menu-link">Design Videos</a>
+              <a href="/site/" class="full-nav__menu-link">Inspiration Gallery</a>
+              <a href="/site/" class="full-nav__menu-link">Featured Articles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="col-lg-2 nav-item">
+      <a href="/site/" class="full-nav__section-link">Kitchen</a>
+      <div class="full-nav__section-nav sub-nav">
+        <div class="container">
+          <div class="row">
+            <a href="/site/" class="link-image-menu col-xs-6 col-md-2">
+              <span class="link-image-menu__label">Faucets</span>
+              <img src="http://embed.widencdn.net/img/moen/4bx209xfxs/90px/7402srs.jpeg?u=slqlvz" alt="" class="link-image-menu__image">
+            </a>
+            <a href="/site/" class="link-image-menu col-xs-6 col-md-2">
+              <span class="link-image-menu__label">Sinks</span>
+              <img src="http://embed.widencdn.net/img/moen/a97lamq5ik/90px/g18220.jpeg?u=slqlvz" alt="" class="link-image-menu__image">
+            </a>
+            <a href="/site/" class="link-image-menu col-xs-6 col-md-2">
+              <span class="link-image-menu__label">Garbage Disposals</span>
+              <img src="http://embed.widencdn.net/img/moen/b7zyz1mqtw/90px/gxl1000c.jpeg?u=slqlvz" alt="" class="link-image-menu__image">
+            </a>
+            <a href="/site/#" class="link-image-menu col-xs-6 col-md-2">
+              <span class="link-image-menu__label">Accessories</span>
+              <img src="http://embed.widencdn.net/img/moen/xtfdxwdftl/90px/s3945nl.jpeg?u=slqlvz" alt="" class="link-image-menu__image">
+            </a>
+            <a href="/site/" class="link-image-menu col-xs-6 col-md-2">
+              <span class="link-image-menu__label">Filtration</span>
+              <img src="http://embed.widencdn.net/img/moen/oirvid1awa/90px/s5520.jpeg?u=slqlvz" alt="" class="link-image-menu__image">
+            </a>
+            <a href="/site/" class="col-xs-6 col-md-2">
+              <span class="link-image-menu__label">Helpful Tools</span>
+            </a>
+            <a href="/site/" class="full-nav__menu-link">Kitchen 101</a>
+            <a href="/site/" class="full-nav__menu-link">Faucet Selector</a>
+            <a href="/site/" class="full-nav__menu-link">Design your Kitchen</a>
+            <div>
+              <a href="/site/" class="full-nav__menu-link">Design Videos</a>
+              <a href="/site/" class="full-nav__menu-link">Design &amp; Planning</a>
+              <a href="/site/" class="full-nav__menu-link">Inspiration Gallery</a>
+              <a href="/site/" class="full-nav__menu-link">Featured Articles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="col-lg-2 nav-item">
+      <a href="/site/" class="full-nav__section-link">Parts &amp; Support</a>
+      <div class="full-nav__section-nav sub-nav">
+        <div class="container">
+          <div class="row">
+            <span>Support</span>
+            <a href="/site/" class="full-nav__menu-link">Replacement Parts</a>
+            <a href="/site/" class="full-nav__menu-link">Replacement Filters</a>
+            <a href="/site/" class="full-nav__menu-link">Warranty Information</a>
+            <a href="/site/" class="full-nav__menu-link">Installation Help</a>
+            <a href="/site/" class="full-nav__menu-link">FAQs</a>
+            <a href="/site/" class="full-nav__menu-link">Troubleshooting</a>
+            <a href="/site/" class="full-nav__menu-link">Literature Center</a>
+            <div>
+              <a href="/site/" class="full-nav__menu-link">Register your Product</a>
+              <a href="/site/" class="full-nav__menu-link">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+Styleguide 5.3
+*/

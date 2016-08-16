@@ -1,0 +1,187 @@
+/*
+Recent Content
+
+Markup:
+<div class="recent-content">
+    <h3 class="recent-content__head">Recent News Releases Which are Super New (long title test)</h3>
+    <div class="recent-content__item">
+        <a href="#" class="recent-content__title"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</a>
+        <div class="recent-content__body">
+            <time class="time" datetime="pubdate February 21, 2016">February 21, 2016</time>&nbsp;-&nbsp;
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <div class="row">
+                <a href="#" class="link link--icon--left">
+                    <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="Read More">Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="recent-content__item">
+        <a href="#" class="recent-content__title"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</a>
+        <div class="recent-content__body">
+            <time class="time" datetime="pubdate February 21, 2016">February 21, 2016</time>&nbsp;-&nbsp;
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <div class="row">
+                <a href="#" class="link link--icon--left">
+                    <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="Read More">Read More
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide 4.5
+*/
+
+@include block(recent-content) {
+  font-size: 1rem;
+  margin-bottom: em(20);
+  @include element(head) {
+    background: $c_moen-bright-blue;
+    color: $c_white;
+    font-family: $din-light;
+    margin: 0;
+    line-height: 1;
+    min-height: em(35);
+    font-size: em(28);
+    padding: em(11);
+    display: flex;
+    align-items: center;
+  }
+  @include element(item) {
+    background-color: $c_moen-bright-gray;
+    padding: em(20);
+    &:last-child .recent-content__body {
+      border: 0;
+    }
+  }
+
+  @include element(title) {
+    color: $c_moen-bright-blue;
+    display: block;
+    font-size: em(16);
+    text-transform: uppercase;
+    margin-bottom: em(10);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include element(body) {
+    border-bottom: 1px solid lighten($c_moen-gray, 25);
+    font-size: em(14);
+    time + p {
+      display: inline;
+    }
+    &:lastchild {
+      border: 0;
+    }
+  }
+
+  .row {
+    margin-top: em(20);
+    text-align: right;
+  }
+}
+
+/*
+Recent Content Two Columns
+
+Markup:
+<div class="row">
+    <div class="col-sm-6"><div class="recent-content">
+    <h3 class="recent-content__head">Recent News Releases Which are Super New (long title test)</h3>
+    <div class="recent-content__item">
+        <a href="#" class="recent-content__title"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</a>
+        <div class="recent-content__body">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <div class="row">
+                <a href="#" class="link link--icon--left">
+                    <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="Read More">Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="recent-content__item">
+        <a href="#" class="recent-content__title"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</a>
+        <div class="recent-content__body">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <div class="row">
+                <a href="#" class="link link--icon--left">
+                    <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="Read More">Read More
+                </a>
+            </div>
+        </div>
+    </div>
+</div></div>
+    <div class="col-sm-6"><div class="recent-content">
+    <h3 class="recent-content__head">Recent News Releases</h3>
+    <div class="recent-content__item">
+        <a href="#" class="recent-content__title"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</a>
+        <div class="recent-content__body">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <div class="row">
+                <a href="#" class="link link--icon--left">
+                    <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="Read More">Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="recent-content__item">
+        <a href="#" class="recent-content__title"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</a>
+        <div class="recent-content__body">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <div class="row">
+                <a href="#" class="link link--icon--left">
+                    <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="Read More">Read More
+                </a>
+            </div>
+        </div>
+    </div>
+</div></div>
+</div>
+
+Styleguide 4.5.1
+*/

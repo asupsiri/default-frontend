@@ -1,0 +1,1050 @@
+/*.card-list__list {
+  background-color: #9c27b0 !important;
+}*/
+
+/*
+Card Lists
+
+Styleguide 4.16
+*/
+@include block(card-list) {
+  @include element(heading) {
+    letter-spacing: -.05em;
+  }
+}
+
+/*
+Whitespace Cards
+
+Variant 1
+
+markup:
+<div class="card-list">
+  <!-- card-list content -->
+  <h2 class="card-list__heading">Products with Reflex</h2>
+  <p class="card-list__subheading">Choose a style with the Reflex system to make your kitchen routine simpler.</p>
+  <a class="button button--secondary">View all products with Reflex</a>
+  <div class="card-list__list">
+    <!-- card 1 -->
+    <div class="card card--top-blue-border">
+      <div class="pointer-item is-selected"></div>
+      <h2 class="card__title">Traditional Styles</h2>
+      <img class="card__image" src="./images/styleguide/product_shot_traditional.jpg" alt="" />
+      <div class="card__links">
+        <a href="javascript:void(0);" class="link link--icon--left">
+          <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Kiran<sup>™</sup> Faucet
+        </a>
+        <a href="javascript:void(0);" class="link link--icon--left">
+          <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View All Transitional Styles
+        </a>
+      </div>
+    </div>
+    <!-- card 2 -->
+    <div class="card card--top-blue-border">
+      <div class="pointer-item is-selected"></div>
+      <h2 class="card__title">Transitional Styles</h2>
+      <img class="card__image" src="./images/styleguide/product_shot_transitional.jpg" alt="" />
+      <div class="card__links">
+        <a href="javascript:void(0);" class="link link--icon--left">
+          <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Kiran<sup>™</sup> Faucet
+        </a>
+        <a href="javascript:void(0);" class="link link--icon--left">
+          <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View All Transitional Styles
+        </a>
+      </div>
+    </div>
+    <!-- card 3 -->
+    <div class="card card--top-blue-border">
+      <div class="pointer-item is-selected"></div>
+      <h2 class="card__title">Modern Styles</h2>
+      <img class="card__image" src="./images/styleguide/product_shot_modern.jpg" alt="" />
+      <div class="card__links">
+        <a href="javascript:void(0);" class="link link--icon--left">
+          <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Kiran<sup>™</sup> Faucet
+        </a>
+        <a href="javascript:void(0);" class="link link--icon--left">
+          <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View All Transitional Styles
+        </a>
+      </div>
+    </div>
+    <!-- card 4 -->
+    <div class="card card--top-blue-border">
+      <div class="pointer-item is-selected"></div>
+      <h2 class="card__title">Traditional Styles</h2>
+      <img class="card__image" src="./images/styleguide/product_shot_traditional.jpg" alt="" />
+      <div class="card__links">
+        <a href="javascript:void(0);" class="link link--icon--left">
+          <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Kiran<sup>™</sup> Faucet
+        </a>
+        <a href="javascript:void(0);" class="link link--icon--left">
+          <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View All Transitional Styles
+        </a>
+      </div>
+    </div>
+    <!-- card 5 -->
+    <div class="card card--top-blue-border">
+      <div class="pointer-item is-selected"></div>
+      <h2 class="card__title">Transitional Styles</h2>
+      <img class="card__image" src="./images/styleguide/product_shot_transitional.jpg" alt="" />
+      <div class="card__links">
+        <a href="javascript:void(0);" class="link link--icon--left">
+          <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Kiran<sup>™</sup> Faucet
+        </a>
+        <a href="javascript:void(0);" class="link link--icon--left">
+          <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View All Transitional Styles
+        </a>
+      </div>
+    </div>
+    <!-- card 6 -->
+    <div class="card card--top-blue-border">
+      <div class="pointer-item is-selected"></div>
+      <h2 class="card__title">Modern Styles</h2>
+      <img class="card__image" src="./images/styleguide/product_shot_modern.jpg" alt="" />
+      <div class="card__links">
+        <a href="javascript:void(0);" class="link link--icon--left">
+          <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Kiran<sup>™</sup> Faucet
+        </a>
+        <a href="javascript:void(0);" class="link link--icon--left">
+          <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View All Transitional Styles
+        </a>
+      </div>
+    </div>
+    <!-- SHIMS: -->
+    <div class="card card--top-blue-border shim"></div>
+    <div class="card card--top-blue-border shim"></div>
+    <div class="card card--top-blue-border shim"></div>
+    <div class="card card--top-blue-border shim"></div>
+  </div>
+</div>
+
+
+Styleguide 4.16.1
+*/
+
+@include block(card-list) {
+  font-size: 1rem;
+  background-color: $c_moen-bright-gray;
+  color: $c_text-base;
+  text-align: center;
+  padding: em(30) 0;
+
+  @include element(heading) {
+    font-size: em(30);
+    color: inherit;
+    font-family: $din-regular;
+    font-weight: normal;
+    line-height: 1.1;
+    max-width: 100%; // ie10, ie11 fix
+  }
+
+  @include element(subheading) {
+    @include outer-container();
+    color: inherit;
+    line-height: 1.25;
+    margin: 0 auto 1em;
+    padding: 0;
+    max-width: 100%; // ie10, ie11 fix
+  }
+
+  @include element(list) {
+    @include outer-container();
+    padding: em(30) em(10) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    @include media($bp-xs) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: center;
+    }
+  }
+}
+
+/*
+Whitespace Cards
+
+Variant 2
+
+markup:
+<div class="card-list">
+  <h2 class="card-list__heading">Don’t have all your product information? Browse all support topics below.</h2>
+  <div class="card-list__list">
+    <!-- card-list content -->
+    <a class="card card--simple-white-box" href="javascript:void(0);">
+      <img class="card__image" src="./images/icon-instructions.svg" alt="" />
+      <h2 class="card__title">Parts &amp; Instruction Sheets</h2>
+      <p class="card__subtitle">Find instruction sheets, product specs, parts diagrams, and more.</p>
+    </a>
+    <!-- card-list content -->
+    <a class="card card--simple-white-box" href="javascript:void(0);">
+      <img class="card__image" src="./images/icon-warranty.svg" alt="" />
+      <h2 class="card__title">Warranty Information</h2>
+      <p class="card__subtitle">Review full product warranties, including Moen’s limited lifetime.</p>
+    </a>
+    <!-- card-list content -->
+    <a class="card card--simple-white-box" href="javascript:void(0);">
+      <img class="card__image" src="./images/icon-install_help.svg" alt="" />
+      <h2 class="card__title">Installation Help</h2>
+      <p class="card__subtitle">Watch videos, download guides, and get help installing your new product.</p>
+    </a>
+    <!-- card-list content -->
+    <a class="card card--simple-white-box" href="javascript:void(0);">
+      <img class="card__image" src="./images/icon-faqs.svg" alt="" />
+      <h2 class="card__title">Frequently Asked Questions</h2>
+      <p class="card__subtitle">Read questions other Moen customers have asked and find the answers.</p>
+    </a>
+    <!-- card-list content -->
+    <a class="card card--simple-white-box" href="javascript:void(0);">
+      <img class="card__image" src="./images/icon-literature.svg" alt="" />
+      <h2 class="card__title">Literature Center</h2>
+      <p class="card__subtitle">Download and print guides, brochures, catalogs, and other information..</p>
+    </a>
+    <!-- card-list content -->
+    <a class="card card--simple-white-box" href="javascript:void(0);">
+      <img class="card__image" src="./images/icon-register.svg" alt="" />
+      <h2 class="card__title">Register My Product</h2>
+      <p class="card__subtitle">Register your product to get technical assistance faster and ensure warranty.</p>
+    </a>
+    <!-- card-list content - new incomplete row -->
+    <a class="card card--simple-white-box" href="javascript:void(0);">
+      <img class="card__image" src="./images/icon-register.svg" alt="" />
+      <h2 class="card__title">Register My Product</h2>
+      <p class="card__subtitle">Register your product to get technical assistance faster and ensure warranty.</p>
+    </a>
+    <!-- shim -->
+    <div class="card card--simple-white-box shim"></div>
+    <div class="card card--simple-white-box shim"></div>
+    <div class="card card--simple-white-box shim"></div>
+    <div class="card card--simple-white-box shim"></div>
+  </div>
+</div>
+
+
+Styleguide 4.16.2
+*/
+
+/*
+Blue Boxes
+
+Variant 3
+
+markup:
+<div class="card-list card-list--blue-box">
+  <h2 class="card-list__heading">Inspired Innovations</h2>
+  <p class="card-list__subheading">Discover ways to turn your day-to-day tasks into extraordinary experiences.</p>
+  <div class="card-list__list">
+    <!-- card 1: -->
+    <a class="card card--blue-box" href="javascript:void(0);" style="background-image: url(./images/styleguide/innovation-motionsense.jpg);">
+      <div class="card__front-content">
+        <h3 class="card__title">MotionSense<sup>®</sup></h3>
+        <p class="card__subtitle">Hands-free convenience</p>
+      </div>
+      <div class="card__back-content">
+        <p class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/xo5sjvcu2r/100px@2x/motionsense_logo.png);">MotionSense</p>
+        <p>MotionSense<sup>®</sup> responds the instant you need it, delivering exceptional, hands-free convenience in the kitchen.</p>
+        <span class="link--icon--right-white">Explore MotionSense <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true"></span>
+      </div>
+    </a>
+    <!-- card 2: -->
+    <a class="card card--blue-box" href="javascript:void(0);" style="background-image: url(./images/styleguide/innovation-reflex.jpg);">
+      <div class="card__front-content">
+        <h3 class="card__title">Reflex<sup>®</sup></h3>
+        <p class="card__subtitle">A truly user-friendly experience</p>
+      </div>
+      <div class="card__back-content">
+        <p class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/mwuhlyttiq/100px@2x/reflexsystem.png);">MotionSense</p>
+        <p>The Reflex <sup>®</sup> system is designed to give you an exceptional range of motion combined with great self-retracting action.</p>
+        <span class="link--icon--right-white">Explore Reflex <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true"></span>
+      </div>
+    </a>
+    <!-- card 3: -->
+    <a class="card card--blue-box" href="javascript:void(0);" style="background-image: url(./images/styleguide/innovation-microban.jpg);">
+      <div class="card__front-content">
+        <h3 class="card__title">Microban<sup>®</sup></h3>
+        <p class="card__subtitle">24/7 antimicrobial protection</p>
+      </div>
+      <div class="card__back-content">
+        <p class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/e6xxg7uvb7/100px@2x/microban_logo_2c.png);">MotionSense</p>
+        <p>The Microban<sup>®</sup> finish helps prevent the growth of damaging bacteria on your faucet surface.</p>
+        <span class="link--icon--right-white">Explore Microban <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true"></span>
+      </div>
+    </a>
+    <!-- card 4: -->
+    <a class="card card--blue-box" href="javascript:void(0);" style="background-image: url(./images/styleguide/innovation-microban.jpg);">
+      <div class="card__front-content">
+        <h3 class="card__title">Microban<sup>®</sup></h3>
+        <p class="card__subtitle">24/7 antimicrobial protection</p>
+      </div>
+      <div class="card__back-content">
+        <p class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/e6xxg7uvb7/100px@2x/microban_logo_2c.png);">MotionSense</p>
+        <p>The Microban<sup>®</sup> finish helps prevent the growth of damaging bacteria on your faucet surface.</p>
+        <span class="link--icon--right-white">Explore Microban <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true"></span>
+      </div>
+    </a>
+    <!-- card 5: -->
+    <a class="card card--blue-box" href="javascript:void(0);" style="background-image: url(./images/styleguide/innovation-microban.jpg);">
+      <div class="card__front-content">
+        <h3 class="card__title">Microban<sup>®</sup></h3>
+        <p class="card__subtitle">24/7 antimicrobial protection</p>
+      </div>
+      <div class="card__back-content">
+        <p class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/e6xxg7uvb7/100px@2x/microban_logo_2c.png);">MotionSense</p>
+        <p>The Microban<sup>®</sup> finish helps prevent the growth of damaging bacteria on your faucet surface.</p>
+        <span class="link--icon--right-white">Explore Microban <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true"></span>
+      </div>
+    </a>
+    <!-- card 6: -->
+    <a class="card card--blue-box" href="javascript:void(0);" style="background-image: url(./images/styleguide/innovation-microban.jpg);">
+      <div class="card__front-content">
+        <h3 class="card__title">Microban<sup>®</sup></h3>
+        <p class="card__subtitle">24/7 antimicrobial protection</p>
+      </div>
+      <div class="card__back-content">
+        <p class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/e6xxg7uvb7/100px@2x/microban_logo_2c.png);">MotionSense</p>
+        <p>The Microban<sup>®</sup> finish helps prevent the growth of damaging bacteria on your faucet surface.</p>
+        <span class="link--icon--right-white">Explore Microban <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true"></span>
+      </div>
+    </a>
+    <!-- multi-row flexbox shims: -->
+    <div class="card card--blue-box shim"></div>
+    <div class="card card--blue-box shim"></div>
+    <div class="card card--blue-box shim"></div>
+    <div class="card card--blue-box shim"></div>
+  </div>
+  <a class="button button--secondary">View all Innovations</a>
+</div>
+
+
+Styleguide 4.16.3
+*/
+
+@include block(card-list) {
+  @include modifier(blue-box) {
+    .card-list__list {
+      padding-top: 0;
+      padding-bottom: 2em;
+    }
+  }
+}
+
+/*
+X No Variant 4 X
+
+Variant 4 Removed from Scope
+
+Styleguide 4.16.4
+*/
+
+/*
+Text Left, 3 Right
+
+Variant 5
+
+markup:
+<div class="card-list--text-left-3-right">
+  <div class="card-list__content">
+    <h1 class="card-list__heading">Convenience in the Kitchen</h1>
+    <p class="card-list__subheading">By paying close attention to how you use your kitchen, Moen develops innovations that make your everyday activities simpler.</p>
+  </div>
+  <div class="card-list__list">
+    <!-- card 1-->
+    <a class="card card--box" href="javascript:void(0);" style="background-image: url(./images/styleguide/card_motionsense-2.jpg);">
+      <div class="card__front-content">
+        <h3 class="card__title">MotionSense<sup>®</sup></h3>
+        <p class="card__subtitle">Hands-free convenience</p>
+      </div>
+      <div class="card__back-content">
+        <p class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/xo5sjvcu2r/200px/motionsense_logo.png?u=4wu0a0);">MotionSense</p>
+        <p>MotionSense<sup>®</sup> responds the instant you need it, delivering exceptional, hands-free convenience in the kitchen.</p>
+        <span class="link--icon--right-white">Explore MotionSense <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true"></span>
+      </div>
+    </a>
+    <!-- card 2 -->
+    <a class="card card--box" href="javascript:void(0);" style="background-image: url(./images/styleguide/card_powerclean.jpg);">
+      <div class="card__front-content">
+        <h3 class="card__title">Power Clean<sup>™</sup></h3>
+        <p class="card__subtitle">More force, less splash</p>
+      </div>
+      <div class="card__back-content">
+        <p class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/xo5sjvcu2r/200px/motionsense_logo.png?u=4wu0a0);">Power Clean</p>
+        <p>MotionSense<sup>®</sup> responds the instant you need it, delivering exceptional, hands-free convenience in the kitchen.</p>
+        <span class="link--icon--right-white">Explore MotionSense <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true"></span>
+      </div>
+    </a>
+    <!-- card 3 (spans full card-list width -->
+    <a class="card card--blue-box-wide" href="javascript:void(0);" style="background-image: url(./images/styleguide/card_reflex-2.jpg);">
+      <div class="card__front-content">
+        <h3 class="card__title">Reflex<sup>®</sup></h3>
+        <p class="card__subtitle">A truly user friendly experience</p>
+      </div>
+ <!-- <div class="card__back-content">
+        <div class="card__content-wrapper">
+          <p class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/xo5sjvcu2r/200px/motionsense_logo.png?u=4wu0a0);">MotionSense</p>
+          <p>MotionSense<sup>®</sup> responds the instant you need it, delivering exceptional, hands-free convenience in the kitchen.</p>
+          <span class="link--icon--right-white">Explore MotionSense <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true"></span>
+        </div>
+      </div> -->
+      <div class="card__back-content">
+        <div class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/dnf52tmesp/100px/mpact.png?u=4wu0a0);">M•PACT</div>
+        <div class="card__content-wrapper">
+          <p class="card__content">With M●PACT, you can change your faucet style without replacing any plumbing. It‘s as easy as changing a light bulb.</p>
+          <div class="card__links">
+            <span class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">Explore M●PACT
+            </span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+
+Styleguide 4.16.5
+*/
+@include block(card-list) {
+  @include modifier(text-left-3-right) {
+    background-color: $c_white;
+    padding: em(30) 1em;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+
+    .card-list__list {
+      padding: 0;
+      margin: 0;
+
+      @include media($bp-sm) {
+        width: 100%;
+        flex: 2;
+        justify-content: space-between;
+      }
+    }
+
+    .card-list__content {
+      border-top: 4px solid $c_moen-bright-blue;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      @include media($bp-sm) {
+        flex: 1;
+      }
+    }
+
+    .card-list__heading {
+      font-size: 36px;
+      line-height: 1;
+      font-family: $din-light;
+      margin: .5em 0;
+    }
+
+    .card-list__subheading {
+      margin: 0 0 1em;
+    }
+
+    @include media($bp-sm) {
+      flex-direction: row;
+    }
+
+  }
+}
+
+
+/*
+Text Left, 2 Tall Cards Right
+
+Variant 6
+
+markup:
+<div class="card-list--text-left-2-tall-right">
+  <div class="card-list__content">
+    <h1 class="card-list__heading">Change Styles Easily</h1>
+    <p class="card-list__subheading">Get a new look as often as you'd like, without ever touching the plumbing.</p>
+  </div>
+  <div class="card-list__list">
+    <!-- card 1-->
+    <a class="card card--tall-box" href="javascript:void(0);" style="background-image: url(./images/styleguide/card_microban.jpg);">
+      <div class="card__front-content">
+        <h3 class="card__title">MotionSense<sup>®</sup></h3>
+        <p class="card__subtitle">Hands-free convenience</p>
+      </div>
+      <div class="card__back-content">
+        <p class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/xo5sjvcu2r/200px/motionsense_logo.png?u=4wu0a0);">MotionSense</p>
+        <p>MotionSense<sup>®</sup> responds the instant you need it, delivering exceptional, hands-free convenience in the kitchen.</p>
+        <span class="link--icon--right-white">Explore MotionSense <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true"></span>
+      </div>
+    </a>
+    <!-- card 2 -->
+    <a class="card card--tall-box" href="javascript:void(0);" style="background-image: url(./images/styleguide/card_microban.jpg);">
+      <div class="card__front-content">
+        <h3 class="card__title">MotionSense<sup>®</sup></h3>
+        <p class="card__subtitle">Hands-free convenience</p>
+      </div>
+      <div class="card__back-content">
+        <p class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/xo5sjvcu2r/200px/motionsense_logo.png?u=4wu0a0);">MotionSense</p>
+        <p>MotionSense<sup>®</sup> responds the instant you need it, delivering exceptional, hands-free convenience in the kitchen.</p>
+        <span class="link--icon--right-white">Explore MotionSense <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true"></span>
+      </div>
+    </a>
+  </div>
+</div>
+
+Styleguide 4.16.6
+*/
+
+@include block(card-list) {
+  @include modifier(text-left-2-tall-right) {
+    background-color: $c_white;
+    padding: em(30) 1em;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+
+    .card-list__list {
+      padding: 0;
+      margin: 0;
+
+      @include media($bp-sm) {
+        width: 100%;
+        flex: 2;
+        justify-content: space-between;
+      }
+    }
+
+    .card-list__content {
+      border-top: 4px solid $c_moen-bright-blue;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      @include media($bp-sm) {
+        flex: 1;
+      }
+    }
+
+    .card-list__heading {
+      font-size: 36px;
+      line-height: 1;
+      font-family: $din-light;
+      margin: .5em 0;
+    }
+
+    .card-list__subheading {
+      margin: 0 0 1em;
+    }
+
+    @include media($bp-sm) {
+      flex-direction: row;
+    }
+
+  }
+}
+
+/*
+Text left, 1 Wide Card Right with Hover
+
+Variant 7
+
+markup:
+<div class="card-list--wide-hover-text-left">
+  <div class="card-list__content">
+    <h1 class="card-list__heading">Change Styles Easily</h1>
+    <p class="card-list__subheading">Get a new look as often as you'd like, without ever touching the plumbing.</p>
+  </div>
+  <div class="card-list__list">
+    <!-- card 1-->
+    <a class="card card--blue-box-wide" href="javascript:void(0);" style="background-image: url(./images/styleguide/card_mpact.jpg);">
+      <div class="card__front-content">
+        <h3 class="card__title">M●PACT<sup>®</sup></h3>
+        <p class="card__subtitle">Change your fixtures with ease</p>
+      </div>
+      <div class="card__back-content">
+        <div class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/dnf52tmesp/100px/mpact.png?u=4wu0a0);">M•PACT</div>
+        <div class="card__content-wrapper">
+          <p class="card__content">With M●PACT, you can change your faucet style without replacing any plumbing. It‘s as easy as changing a light bulb.</p>
+          <div class="card__links">
+            <span class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">Explore M●PACT
+            </span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+Styleguide 4.16.7
+*/
+
+@include block(card-list) {
+  @include modifier(wide-hover-text-left) {
+    background-color: $c_white;
+    padding: em(30) 1em;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+
+    .card-list__list {
+      padding: 0;
+      margin: 0;
+      @include media($bp-sm) {
+        width: 100%;
+        flex: 2;
+      }
+    }
+
+    .card-list__content {
+      border-top: 4px solid $c_moen-bright-blue;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      @include media($bp-sm) {
+        margin-right: .5em;
+        flex: 1;
+      }
+    }
+
+    .card-list__heading {
+      font-size: 36px;
+      line-height: 1;
+      font-family: $din-light;
+      margin: .5em 0;
+    }
+
+    .card-list__subheading {
+      margin: 0 0 1em;
+    }
+
+    @include media($bp-sm) {
+      flex-direction: row;
+    }
+
+  }
+}
+
+/*
+X No Variant 8 X
+
+Variant 8 Removed From Scope
+
+Styleguide 4.16.8
+*/
+
+/*
+Text Right, Image Left
+
+Variant 9
+
+markup:
+<div class="card-list--text-right-image-left">
+  <div class="card-list__content">
+    <h1 class="card-list__heading">Images and Videos</h1>
+    <p class="card-list__subheading">Easily search thousands of assets available to download, including Moen brand logos, our photography and our advertising.</p>
+  </div>
+  <div class="card-list__list">
+    <!-- card 1 (special case video poster-frame with a superimposed play button icon. (nothing specific in the requirements) -->
+    <a class="card card--blue-box-large" href="javascript:void(0);" style="background-image: url(./images/styleguide/thoughtful_design_magnetix.jpg);">
+      <div class="card__front-content">
+        <h3 class="card__title">Latest Innovation</h3>
+      </div>
+    </a>
+  </div>
+</div>
+
+Styleguide 4.16.9
+*/
+
+@include block(card-list) {
+  @include modifier(text-right-image-left) {
+    background-color: $c_white;
+    padding: em(30) 1em;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+
+    .card-list__list {
+      padding: 0;
+      margin: 0;
+      @include media($bp-sm) {
+        width: 100%;
+        flex: 7;
+      }
+    }
+
+    .card-list__content {
+      border-top: 4px solid $c_moen-bright-blue;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      @include media($bp-sm) {
+        margin-left: .5em;
+        flex: 5;
+      }
+    }
+
+    .card-list__heading {
+      font-size: 36px;
+      line-height: 1;
+      font-family: $din-light;
+      margin: .5em 0;
+    }
+
+    .card-list__subheading {
+      margin: 0 0 1em;
+    }
+
+    @include media($bp-sm) {
+      flex-direction: row-reverse;
+    }
+
+  }
+}
+
+
+/*
+No Hover
+
+Variant 10
+
+markup:
+<div class="card-list card-list--no-hover">
+  <div class="card-list__list">
+    <!-- card 1-->
+    <div class="card card--no-hover">
+      <img src="./images/styleguide/visual-assets_sub_1.jpg" alt="" class="card__image">
+      <ul class="list card__links">
+        <li class="card__link-item"><a class="link" href="javascript:void(0);" title="Moen Logos">Logos</a></li>
+        <li class="card__link-item"><a class="link" href="javascript:void(0);" title="Moen Brand Standards" target="_blank">Moen Brand Standards</a></li>
+      </ul>
+    </div>
+    <!-- card 2-->
+    <div class="card card--no-hover">
+      <img src="./images/styleguide/visual-assets_sub_2.jpg" alt="" class="card__image">
+      <ul class="list card__links">
+        <li class="card__link-item"><a class="link" href="javascript:void(0);" title="Moen Logos">Photography</a></li>
+      </ul>
+    </div>
+    <!-- card 3-->
+    <div class="card card--no-hover">
+      <img src="./images/styleguide/visual-assets_sub_3.jpg" alt="" class="card__image">
+      <ul class="list card__links">
+        <li class="card__link-item"><a class="link" href="javascript:void(0);" title="Moen Logos">Videos</a></li>
+      </ul>
+    </div>
+    <!-- card 4-->
+    <div class="card card--no-hover">
+      <img src="./images/styleguide/visual-assets_sub_4.jpg" alt="" class="card__image">
+      <ul class="list card__links">
+        <li class="card__link-item"><a class="link" href="javascript:void(0);" title="Moen Logos">Consumer Advertising</a></li>
+        <li class="card__link-item"><a class="link" href="javascript:void(0);" title="Moen Brand Standards" target="_blank">Trade Advertising</a></li>
+      </ul>
+    </div>
+    <!-- card 5-->
+    <div class="card card--no-hover">
+      <img src="./images/styleguide/visual-assets_sub_1.jpg" alt="" class="card__image">
+      <ul class="list card__links">
+        <li class="card__link-item"><a class="link" href="javascript:void(0);" title="Moen Logos">Logos</a></li>
+        <li class="card__link-item"><a class="link" href="javascript:void(0);" title="Moen Brand Standards" target="_blank">Moen Brand Standards</a></li>
+      </ul>
+    </div>
+    <!-- SHIMS: -->
+    <div class="card card--no-hover shim"></div>
+    <div class="card card--no-hover shim"></div>
+    <div class="card card--no-hover shim"></div>
+    <div class="card card--no-hover shim"></div>
+  </div>
+</div>
+
+Styleguide 4.16.10
+*/
+
+@include block(card-list) {
+  @include modifier(no-hover) {
+    text-align: left;
+
+    .card-list__list {
+      padding-top: 0;
+      padding-bottom: 2em;
+    }
+  }
+}
+
+/*
+Hover
+
+Variant 11
+
+markup:
+<div class="card-list card-list--hover">
+  <p class="card-list__subheading">Select a category to view available Moen<sup>®</sup> Warranty options.</p>
+  <div class="card-list__list">
+    <!-- card 1-->
+    <div class="card card--hover" style="background-image: url(./images/styleguide/general.jpg);">
+      <div class="card__title">Faucets &amp; Parts</div>
+      <div class="card__front-content">
+      </div>
+      <div class="card__back-content">
+        <ul class="list card__links">
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">Lifetime Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">10 year Multi-Family Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">5 Year Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">One Year Warranty - Parts
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- card 2-->
+    <div class="card card--hover" style="background-image: url(./images/styleguide/showerheads.jpg);">
+      <div class="card__title">Showerheads</div>
+      <div class="card__front-content">
+      </div>
+      <div class="card__back-content">
+        <ul class="list card__links">
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">Lifetime Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">10 year Multi-Family Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">5 Year Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">One Year Warranty - Parts
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- card 3-->
+    <div class="card card--hover" style="background-image: url(./images/styleguide/sinks.jpg);">
+      <div class="card__title">Sinks</div>
+      <div class="card__front-content">
+      </div>
+      <div class="card__back-content">
+        <ul class="list card__links">
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">Lifetime Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">10 year Multi-Family Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">5 Year Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">One Year Warranty - Parts
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- card 4-->
+    <div class="card card--hover" style="background-image: url(./images/styleguide/digital.jpg);">
+      <div class="card__title">Digital</div>
+      <div class="card__front-content">
+      </div>
+      <div class="card__back-content">
+        <ul class="list card__links">
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">Lifetime Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">10 year Multi-Family Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">5 Year Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">One Year Warranty - Parts
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- card 5-->
+    <div class="card card--hover" style="background-image: url(./images/styleguide/garbage-disposal.jpg);">
+      <div class="card__title">Garbage Disposals</div>
+      <div class="card__front-content">
+      </div>
+      <div class="card__back-content">
+        <ul class="list card__links">
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">Lifetime Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">10 year Multi-Family Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">5 Year Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">One Year Warranty - Parts
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- card 6-->
+    <div class="card card--hover" style="background-image: url(./images/styleguide/accessories.jpg);">
+      <div class="card__title">Accessories</div>
+      <div class="card__front-content">
+      </div>
+      <div class="card__back-content">
+        <ul class="list card__links">
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">Lifetime Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">10 year Multi-Family Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">5 Year Limited Warranty
+            </a>
+          </li>
+          <li class="card__link-item">
+            <a href="#" class="link link--icon--left-white">
+              <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">One Year Warranty - Parts
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- SHIMS: -->
+    <div class="card card--hover shim"></div>
+    <div class="card card--hover shim"></div>
+    <div class="card card--hover shim"></div>
+    <div class="card card--hover shim"></div>
+  </div>
+</div>
+
+Styleguide 4.16.11
+*/
+
+@include block(card-list) {
+  @include modifier(hover) {
+    .card-list__list {
+      padding: 0;
+    }
+  }
+}
+
+/*
+Card List - Questions
+
+Used in the find my product flow.
+
+markup:
+<div class="container">
+  <ul class="card-list--questions">
+    <sg-insert>3.15.11</sg-insert>
+    <sg-insert>3.15.11.1</sg-insert>
+    <sg-insert>3.15.11.2</sg-insert>
+  </ul>
+</div>
+
+Styleguide 4.16.12
+*/
+
+@include block(card-list) {
+  @include modifier(questions) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    @include media($bp-sm) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  @include element(item) {
+    flex: 0 1 auto;
+  }
+}
+
+
+
+
+
+
+
+
+@include block(card-list) {
+  @include modifier(choice) {
+    background-color: $c_white;
+    // padding: em(30) 1em;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+
+    .card-list__list {
+      padding: 0;
+      margin: 0;
+
+      @include media($bp-sm) {
+        width: 100%;
+        flex: 2;
+        justify-content: space-between;
+      }
+    }
+  }
+}

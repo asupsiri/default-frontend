@@ -1,0 +1,240 @@
+/* Global Navigation - Full Layout
+ *
+ * The mobile/touch menu SCSS is found in the slicknav directory.
+ *
+ */
+
+@include block(full-nav) {
+  font-size: 1rem;
+  $full-nav-height: 90px !default;
+  $c_menu-color: $c_dove-gray !default;
+  $c_full-menu-bg-color: $c_white !default;
+  $c_full-menu-color: $c_moen-gray;
+  $c_full-menu-border-thickness: 3px !default;
+  color: $c_full-menu-color;
+  flex-grow: 4;
+  flex-shrink: 1;
+
+  @include element(outer-container) {
+    @include background(linear-gradient($c_full-nav-grad-start, $c_full-nav-grad-end) top);
+    @include media($bp-nav-full) {
+      height: $full-nav-height;
+    }
+    z-index: z("full-nav");
+    height: auto;
+    background-color: $c_white;
+    position: relative;
+    box-shadow: 0 0 11px 0 $c_full-nav-shadow;
+    display: none; // hide on narrow widths, show at full-size navigation breakpoint.
+    @include media($bp-nav-full) {
+      display: block;
+    }
+  }
+
+  // contains the logo and search inputs:
+  @include element(inner-container) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    max-width: $max-width;
+    margin: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @include element(logo-container) {
+    @include vertical-center($full-nav-height);
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  @include element(search-container) {
+    @include vertical-center($full-nav-height);
+    flex-grow: 1;
+    flex-shrink: 1;
+    & form {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto;
+      margin-left: auto;
+      margin-right: .5em;
+      @include media($max-width + $grid-outside-spacing-bp-offset) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include element(logo) {
+    width: 100%;
+    max-width: 165px;
+    height: auto;
+    margin-left: $grid-outside-spacing;
+    @include media($max-width + $grid-outside-spacing-bp-offset) {
+      margin-left: 0;
+    }
+  }
+
+  @include element(section-link) {
+    $full-nav-height-link: $full-nav-height + $c_full-menu-border-thickness - 1px;
+    @include vertical-center($full-nav-height-link); // vertically center
+    justify-content: center;
+    color: inherit;
+    font-family: $din-medium;
+    font-size: em(18);
+    border-bottom: $c_full-menu-border-thickness solid transparent;
+    border-right: 1px solid $c_rule;
+    border-left: 1px solid transparent;
+    z-index: z("full-nav-link");
+    padding: 0 .25em;
+    position: relative;
+    text-align: center;
+
+    &.hover,
+    &.focus,
+    &.open {
+      background-color: $c_white;
+      color: $c_moen-bright-blue;
+      border-bottom-color: transparent;
+      outline-offset: -4px;
+    }
+    &.open {
+      border-bottom-color: $c_white;
+    }
+    &.focus {
+      background-color: transparent;
+    }
+    @include state(first) {
+      border-left-color: $c_rule;
+      &:hover,
+      &:focus {
+        border-left-color: $c_rule;
+      }
+    }
+    @include state(selected) {
+      border-bottom-color: $c_moen-bright-blue;
+    }
+  }
+
+  @include element(section-nav) {
+    font-size: em(14);
+    color: inherit;
+    position: absolute;
+    left: 0;
+    top: $full-nav-height + $c_full-menu-border-thickness - 1px;
+    width: 100%;
+    background-color: $c_full-menu-bg-color;
+    border-top: 3 $c_full-menu-border-thickness solid $c_moen-bright-blue;
+    margin-top: -$c_full-menu-border-thickness;
+    z-index: z("full-nav-section");
+    box-shadow: 0 1px 6px $c_shadow;
+    padding: 3em 0 0;
+    .container {
+      padding: 0 $grid-outside-spacing;
+      @include media($max-width + $grid-outside-spacing-bp-offset) {
+        padding: 0;
+      }
+    }
+  }
+
+  @include element(menu-element) {
+    display: block;
+    line-height: em(20);
+    font-family: $din-bold;
+    color: $c_moen-gray;
+  }
+
+  @include element(menu-link) {
+    display: block;
+  }
+
+  @include element(find-support) {
+    padding-right: 3em;
+    .button--icon {
+      padding: 0 1em;
+    }
+    .form-input {
+      padding: .5em;
+    }
+    .label {
+      margin-bottom: .8em;
+    }
+    .divider--horizontal {
+      display: block;
+      text-align: center;
+      font-family: $din-medium;
+      margin: 1em 0;
+    }
+    .full-nav__find-support-cta {
+      background-color: $c_nav_dark_gray_bg;
+      padding: .5em;
+      text-align: center;
+      .link--icon--left {
+        color: $c_nav_dark_gray;
+        font-family: $din-medium;
+        padding-left: 0;
+      }
+    }
+  }
+
+}
+
+@include block(parts-menu-ctas) {
+  background-color: $c_nav_dark_gray_bg;
+  margin-top: -3em;
+  padding: 1em 2em 0 1.2em;
+  margin-left: 34px;
+
+  @include media($bp-lg) {
+    padding-top: 2.6em;
+    margin-left: 38px;
+  }
+
+  @include element(item) {
+    min-height: 90px;
+    padding: 0 0 1em;
+    border-bottom: 2px solid $c_white;
+    &:last-child {
+      border-bottom: none;
+      padding-top: 1em;
+    }
+    p, a {
+      color: $c_text-base;
+      font-family: $din-bold;
+      padding-bottom: 0;
+    }
+    .link {
+      margin-top: .5em;
+      .icon {
+        height: 1em;
+      }
+    }
+  }
+  .media__left {
+    img {
+      padding-top: 5px;
+      width: 20px;
+    }
+  }
+}
+
+// Classes which are dynamically assigned via script:
+.sub-nav {
+  display: none;
+  &.open {
+    display: block;
+  }
+}
+
+.nav-menu {
+  @include clearfix();
+  @include list-base();
+  flex-grow: 1;
+  display: flex;
+}
+
+.nav-item {
+  flex-grow: 1;
+  flex-basis: 0;
+  //width: 160px;
+}

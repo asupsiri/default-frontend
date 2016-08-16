@@ -1,0 +1,313 @@
+/*
+ Parts Support Section
+
+ Styleguide 4.26
+*/
+
+/*
+Hero Section
+
+Markup:
+<!-- container element is just needed for the styleguide -->
+<div class="container">
+  <div class="hero-section hero-section--parts-support row">
+    <div class="hero-section__image">
+      <img src="http://placehold.it/400x400" alt="" aria-hidden="true">
+    </div>
+    <div class="hero-section__description">
+      <div class="hero-section__model">Model: TS1234-5678</div>
+      <h1 class="hero-section__text">90 Degree Spot Resist Stainless One-Handle High Arc Kitchen Faucet</h1>
+      <div class="hero-section__social-group">
+        <div class="hero-section__reviews">
+          <div class="rating">
+            <ul class="rating__stars">
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+            </ul>
+          </div>
+          <a class="link" href="#">2 reviews</a>
+        </div>
+        <div class="hero-section__share">
+          <span>Share</span>
+          <a href="#"><img src="./images/icon-facebook_gray.svg" alt="" aria-hidden="true"></a>
+          <a href="#"><img src="./images/icon-twitter_gray.svg" alt="" aria-hidden="true"></a>
+          <a href="#"><img src="./images/icon-pinterest_gray.svg" alt="" aria-hidden="true"></a>
+          <a href="#"><img src="./images/icon-instagram_gray.svg" alt="" aria-hidden="true"></a>
+        </div>
+        <div class="hero-section__favorite favorite">
+          <span>Add to Favorites</span>
+          <a href="#" class="favorite__icon">
+            <img src="./images/icon-favorite_o_gray.svg" alt="" aria-hidden="true">
+            <img src="./images/icon-favorite_gray.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+      <div class="hero-section__finish">
+        <div class="hero-section__left">
+          <span>Finish: Brushed Nickel</span>
+          <ul class="hero-section__finish-list">
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button is-selected">
+                <img src="http://www.moen.com/shared/swatches/brushed-nickel.png" alt="Brushed Nickel">
+              </a>
+            </li>
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button">
+                <img src="http://www.moen.com/shared/swatches/chrome.png" alt="Chrome">
+              </a>
+            </li>
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button">
+                <img src="http://www.moen.com/shared/swatches/chrome.png" alt="Chrome">
+              </a>
+            </li>
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button">
+                <img src="http://www.moen.com/shared/swatches/chrome.png" alt="Chrome">
+              </a>
+            </li>
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button">
+                <img src="http://www.moen.com/shared/swatches/chrome.png" alt="Chrome">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="hero-section__right">
+          <span>$88.50 msrp</span>
+        </div>
+      </div>
+      <div class="hero-section__buy">
+        <div class="hero-section__quantity">
+          <label for="selQuantity">Quantity</label>
+          <select id="selQuantity" name="selQuantity" class="form-select">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+        <div class="hero-section__buy-price">
+          <span>$788.50 msrp</span>
+          <a href="javacript:void(0);" class="tooltip">
+            <div class="tooltip__icon tooltip__icon--question"><img src="images/icon-question_mark.svg" alt="Help"></div>
+            <div class="tooltip__modal">Manufacturer Suggested Retail Price is suggested only. Store pricing will vary.</div>
+          </a>
+        </div>
+        <a href="#" class="hero-section__buy-button button button--secondary-flat">Add to Cart</a>
+      </div>
+      <div class="hero-section__share">
+        <a href="#"><img src="./images/icon-facebook_gray.svg" alt="" aria-hidden="true"></a>
+        <a href="#"><img src="./images/icon-twitter_gray.svg" alt="" aria-hidden="true"></a>
+        <a href="#"><img src="./images/icon-pinterest_gray.svg" alt="" aria-hidden="true"></a>
+        <a href="#"><img src="./images/icon-instagram_gray.svg" alt="" aria-hidden="true"></a>
+      </div>
+      <div class="row">
+        <a href="#" class="link">
+           Support for this product
+        </a>
+      </div>
+    </div>
+  </div>
+</div><!-- end container -->
+
+Styleguide 4.26.1
+*/
+
+@include block(hero-section--parts-support) {
+  .hero-section__quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: center;
+    label {
+      margin-right: .5em;
+    }
+  }
+  .hero-section__buy {
+    @include media($bp-md) {
+      .hero-section__buy-price {
+        order: 1;
+        margin: 0;
+      }
+      .hero-section__buy-button {
+        order: 1;
+        margin-right: 2em;
+      }
+    }
+  }
+}
+
+/*
+Parts List and Diagrams Modal
+
+Parts list is an HTML data-table. The markup includes a header row for a11y, but there is no visual styling incorporated as this is intended to be rendered by text-to-speech only.
+
+markup:
+<div id="modal-window-content" class="parts-list-modal-content">
+	<div class="parts-list-modal">
+		<div id="parts-list" class="parts-list">
+			<h4 class="parts-list__title">Parts</h4>
+			<table class="parts-list__table">
+				<caption class="parts-list__caption">Please select a part to add to your cart.</caption>
+				<tbody>
+					<tr class="parts-list__header-row">
+						<th class="parts-list__header" scope="col">SKU</th>
+						<th class="parts-list__header" scope="col">Description</th>
+						<th class="parts-list__header" scope="col">Finish</th>
+						<th class="parts-list__header" scope="col">Price</th>
+					</tr>
+					<tr class="parts-list__row">
+						<td class="parts-list__cell parts-list__cell--part-price"><a class="link part-sku" data-part-sku="100109WBL" data-part-desc="Plug Button kit" data-part-finish="" data-part-price="11.800000">100109WBL</a></td>
+						<td class="parts-list__cell parts-list__cell--part-description">Plug Button kit</td>
+						<td class="parts-list__cell parts-list__cell--part-finish"></td>
+						<td class="parts-list__cell parts-list__cell--parts-price">$11.80</td>
+					</tr>
+					<tr class="parts-list__row">
+						<td class="parts-list__cell parts-list__cell--part-price"><a class="link part-sku" data-part-sku="102565" data-part-desc="Handle kit" data-part-finish="Chrome" data-part-price="36.850000">102565</a></td>
+						<td class="parts-list__cell parts-list__cell--part-description">Handle kit</td>
+						<td class="parts-list__cell parts-list__cell--part-finish"></td>
+						<td class="parts-list__cell parts-list__cell--parts-price">$36.85</td>
+					</tr>
+					<tr class="parts-list__row">
+						<td class="parts-list__cell parts-list__cell--part-price"><a class="link part-sku" data-part-sku="102566" data-part-desc="Collar" data-part-finish="Chrome" data-part-price="7.850000">102566</a></td>
+						<td class="parts-list__cell parts-list__cell--part-description">Collar</td>
+						<td class="parts-list__cell parts-list__cell--part-finish">Chrome</td>
+						<td class="parts-list__cell parts-list__cell--parts-price">$7.85</td>
+					</tr>
+					<tr class="parts-list__row">
+						<td class="parts-list__cell parts-list__cell--part-price"><a class="link part-sku" data-part-sku="102567" data-part-desc="Ring shield" data-part-finish="Chrome" data-part-price="4.350000">102567</a></td>
+						<td class="parts-list__cell parts-list__cell--part-description">Ring shield</td>
+						<td class="parts-list__cell parts-list__cell--part-finish">Chrome</td>
+						<td class="parts-list__cell parts-list__cell--parts-price">$4.35</td>
+					</tr>
+					<tr class="parts-list__row">
+						<td class="parts-list__cell parts-list__cell--part-price"><a class="link part-sku" data-part-sku="102568" data-part-desc="Lever handle mechanism kit" data-part-finish="" data-part-price="15.800000">102568</a></td>
+						<td class="parts-list__cell parts-list__cell--part-description">Lever handle mech…</td>
+						<td class="parts-list__cell parts-list__cell--part-finish"></td>
+						<td class="parts-list__cell parts-list__cell--parts-price">$15.80</td>
+					</tr>
+					<tr class="parts-list__row">
+						<td class="parts-list__cell parts-list__cell--part-price"><a class="link part-sku" data-part-sku="102569" data-part-desc="Gasket" data-part-finish="" data-part-price="5.500000">102569</a></td>
+						<td class="parts-list__cell parts-list__cell--part-description">Gasket</td>
+						<td class="parts-list__cell parts-list__cell--part-finish"></td>
+						<td class="parts-list__cell parts-list__cell--parts-price">$5.50</td>
+					</tr>
+					<tr class="parts-list__row">
+						<td class="parts-list__cell parts-list__cell--part-price"><a class="link part-sku" data-part-sku="102570" data-part-desc="Lift rod kit" data-part-finish="Chrome" data-part-price="32.000000">102570</a></td>
+						<td class="parts-list__cell parts-list__cell--part-description">Lift rod kit with a bunch of extra descriptive text which should be truncated</td>
+						<td class="parts-list__cell parts-list__cell--part-finish">Chrome</td>
+						<td class="parts-list__cell parts-list__cell--parts-price">$32.00</td>
+					</tr>
+					<tr class="parts-list__row">
+						<td class="parts-list__cell parts-list__cell--part-price"><a class="link part-sku" data-part-sku="1200" data-part-desc="Cartridge" data-part-finish="" data-part-price="44.950000">1200</a></td>
+						<td class="parts-list__cell parts-list__cell--part-description">Cartridge</td>
+						<td class="parts-list__cell parts-list__cell--part-finish"></td>
+						<td class="parts-list__cell parts-list__cell--parts-price">$44.95</td>
+					</tr>
+					<tr class="parts-list__row">
+						<td class="parts-list__cell parts-list__cell--part-price"><a class="link part-sku" data-part-sku="96804" data-part-desc="Hardware kit" data-part-finish="" data-part-price="8.550000">96804</a></td>
+						<td class="parts-list__cell parts-list__cell--part-description">Hardware kit</td>
+						<td class="parts-list__cell parts-list__cell--part-finish"></td>
+						<td class="parts-list__cell parts-list__cell--parts-price">$8.55</td>
+					</tr>
+					<tr class="parts-list__row">
+						<td class="parts-list__cell parts-list__cell--part-price"><a class="link part-sku" data-part-sku="SK1711" data-part-desc="Retainer clip" data-part-finish="" data-part-price="3.400000">SK1711</a></td>
+						<td class="parts-list__cell parts-list__cell--part-description">Retainer clip</td>
+						<td class="parts-list__cell parts-list__cell--part-finish"></td>
+						<td class="parts-list__cell parts-list__cell--parts-price">$3.40</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="iframe_container">
+		<div id="pdf-iframe">
+			<iframe id="googleDoc" src="http://docs.google.com/gview?url=http://www.moen.com/shared/docs/exploded-parts-views/l4721pt.pdf&amp;embedded=true" style="width:100%; height:935px;" frameborder="0"></iframe>
+		</div>
+	</div>
+</div>
+
+Styleguide 4.26.2
+*/
+
+@include block(parts-list-modal-content) {
+
+  float: left;
+  clear: both;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  @include media($bp-md) {
+    flex-direction: row;
+  }
+
+  @include block(parts-list-modal) {
+    font-size: 1rem;
+    @include media($bp-md) {
+      font-size: .8em;
+      width: 40%
+    }
+
+    @include block(parts-list) {
+
+      @include element(title) {
+        background-color: $c_moen-bright-gray;
+        color: $c-text-base;
+        padding: em(3) em(8);
+        font-size: inherit;
+        font-family: $din-medium;
+      }
+
+      @include element(table) {
+        counter-reset: rowNumber;
+        width: 100%;
+        margin-bottom: 1em;
+      }
+
+      @include element(caption) {
+        font-weight: normal;
+        padding-left: em(10);
+        text-align: left;
+      }
+      @include element(header-row) {
+        @include hat();
+        &::before {
+          content: "";
+        }
+      }
+      @include element(row) {
+        counter-increment: rowNumber;
+        border-bottom: 1px solid $c_rule;
+        font-size: em(10);
+        @include media($bp-xs) {
+          font-size: 1em;
+        }
+        &::before {
+          content: counter(rowNumber) ".";
+          width: 1.65em;
+          display: block;
+          text-align: right;
+          padding: .5em 0;
+        }
+      }
+
+      @include element(cell) {
+        padding: .5em;
+        vertical-align: top;
+        @include modifier(parts-price) {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  @include block(iframe_container) {
+    @include media($bp-md) {
+      width: 60%
+    }
+  }
+}

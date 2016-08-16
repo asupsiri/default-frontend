@@ -1,0 +1,29 @@
+/*
+Tile element
+
+Used on the product gallery, tiles hold the information for a user to successfully browser the various products displayed.
+
+markup:
+<a class="tile" href="#">
+<p>Demo Header</p>
+<p>Demo Content Lorem Ipsum Dolor Sit Amet Consectetur Adipisic</p>
+</a>
+
+Styleguide 2.9
+*/
+
+@include block(tile) {
+  font-size: 1rem;
+  background-color: $c_white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 235px;
+  padding: 1em;
+  &:hover,
+  &:focus {
+    background-color: $c_concrete;
+    text-decoration: none;
+  }
+}

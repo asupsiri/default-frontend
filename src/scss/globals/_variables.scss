@@ -1,0 +1,19 @@
+// Font stacks:
+$din-light: "DINWebLight", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif !default;
+$din-regular: "DINWebRegular", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif !default;
+$din-medium: "DINWebMedium", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif !default;
+$din-bold: "DINWebBold", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif !default;
+
+$fs-gill: "Gill", "Gill Sans", "Gill Sans MT", "Gill Sans Std", "Tahoma", "Trebuchet MS", sans-serif !default;
+
+// Vertical spacing baseline values:
+$spacing-base-v: .5em !default;
+
+// Baseline form input padding values:
+$form-element-padding-base: em(6) !default;
+
+// Carousel height (+ max carousel image background height) values:
+$carousel-height-base: 440px !default;
+
+// Carousel max image background width value:
+$carousel-image-width-base: 1500px !default;

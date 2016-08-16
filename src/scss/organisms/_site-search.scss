@@ -1,0 +1,21 @@
+@include block(site-search) {
+  font-size: 1rem;
+  @include element(form) {
+    border-bottom: 1px dashed $c_dove-gray;
+  }
+
+  @include element(input) {
+    font-size: em(18);
+    color: $c_dove-gray;
+    border: none;
+    background-color: transparent;
+  }
+
+  @include element(button) {
+    font-size: em(15);
+    color: $c_moen-bright-blue;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}

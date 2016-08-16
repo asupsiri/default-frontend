@@ -1,0 +1,26 @@
+@import "colors";
+@import "variables";
+@import "gradients";
+@import "mixins";
+@import "z-indices";
+@import "shadows";
+
+
+$root-box-sizing: border-box;
+$root-font-family: $din-regular;
+$root-color: $c_text-base;
+
+body {
+  color: inherit;
+  background-color: $c_white;
+  line-height: 1.2;
+  font-family: inherit;
+  /*=============================================>>>>>
+  = Font Smoothing =
+  ===============================================>>>>>*/
+  /* These lines solves the difference that makes the fonts look bold */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*= End of Font Smoothing =*/
+  /*=============================================<<<<<*/
+}

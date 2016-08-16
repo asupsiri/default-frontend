@@ -28,12 +28,15 @@ var pump = require('pump');
 var require = require('requirejs');
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
+var styleguide = require('sc5-styleguide');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+
 
 /* GULPFILE GLOBALS ========================================================= */
 var isProd = gutil.env.type === 'prod';
 var reload = browserSync.reload;
+var outputPath = 'output';
 
 var src = {
     dir: 'src',
@@ -89,6 +92,7 @@ var options = {
             'node_modules/node-normalize-scss',
             'node_modules/bourbon/app/assets/stylesheets',
             'node_modules/bourbon-neat/app/assets/stylesheets',
+            'node_modules/bemify/sass',
             'node_modules/avalanche-css',
             'node_modules/remodal/dist'
         ],
@@ -109,7 +113,13 @@ var options = {
         server: {
             baseDir: dest.dir
         }
-    }
+    },
+    styleGuide: {
+        src: 'src/scss/**/*.scss',
+        dest: 'styleguide',
+        appdest: 'styleguide',
+        extensions: ['sass', 'scss', 'css']
+    },
 };
 
 
@@ -117,7 +127,7 @@ var options = {
 
 gulp.task('build', function(cb) {
     runSequence(
-        ['build-entry', 'build-clean'], ['copy:html', 'copy:standaloneScripts', 'scripts', 'modernizr', 'fonts', 'copy:standaloneStyles', 'styles', 'images'],
+        ['build-entry', 'build-clean'], ['copy:html', 'copy:standaloneScripts', 'scripts', 'modernizr', 'fonts', 'copy:standaloneStyles', 'styles', 'images', 'styleguide'],
         cb
     );
 });
@@ -228,9 +238,7 @@ gulp.task('copy:standaloneStyles', function(cb) {
             newer(dest.styles),
             gulp.dest(tomcat.css),
             gulp.dest(dest.styles),
-            // pipe generated files into gulp-buster
             bust(),
-            // output busters.json to project root
             gulp.dest(dest.dir)
         ],
         cb
@@ -241,7 +249,6 @@ gulp.task('copy:standaloneStyles', function(cb) {
 gulp.task('styles', function(cb) {
     pump([
             gulp.src(src.styles),
-            // aim the pipe's output at the CSS destination directory:
             newer(dest.styles),
             // initialize the sourceMaps processor
             sourcemaps.init(),
@@ -275,10 +282,53 @@ gulp.task('serve', ['default'], function() {
 
     gulp.watch(src.html, ['copy:html']);
     gulp.watch(src.css, ['copy:standaloneStyles']);
-    gulp.watch(src.styles, ['styles']);
+    gulp.watch(src.styles, ['styles, styleguide']);
     gulp.watch(src.scripts, ['copy:standaloneScripts', 'scripts', 'modernizr']);
     gulp.watch(src.images, ['images']);
 });
+
+gulp.task('styleguide:generate', function() {
+  return gulp.src(src.styles)
+    .pipe(styleguide.generate({
+        title: 'Style Guide / Pattern Library',
+        server: true,
+        rootPath: options.styleGuide.dest,
+        overviewPath: 'README.md',
+        disableEncapsulation: true
+    }))
+    .pipe(gulp.dest(options.styleGuide.dest));
+});
+
+gulp.task('styleguide:applystyles', function(cb) {
+    pump([
+            gulp.src(src.styles),
+            newer(dest.styles),
+            sourcemaps.init(),
+            sass(options.sass),
+            postcss(options.postcssProcessors),
+            sourcemaps.write("."),
+            livereload(),
+            gulp.dest(dest.styles),
+            bust(),
+            styleguide.applyStyles(),
+            gulp.dest(options.styleGuide.dest),
+            browserSync.stream()
+        ],
+        cb
+    );
+});
+
+gulp.task('watch:styleguide', ['styleguide'], function() {
+  // Start watching changes and update styleguide whenever changes are detected
+  // Styleguide automatically detects existing server instance
+  gulp.watch(src.styles, ['styleguide']);
+});
+
+var styleguideLog = function () {
+	gutil.log('Updating Style Guide');
+};
+
+gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles'], styleguideLog);
 
 /* Default gets called by Maven */
 gulp.task('default', function(cb) {

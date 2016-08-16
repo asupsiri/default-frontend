@@ -1,0 +1,43 @@
+/*
+Contact Box
+
+markup:
+<div class="contact-box row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+<dl>
+<dt>For more information contact:</dt>
+<dd>Email: <a href="mailto:media@moen.com">media@moen.com</a></dd>
+</dl>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+<dl>
+<dt>Jennifer Allanson or Kristi Stolarski</dt>
+<dd><em>Falls Communications</em></dd>
+<dd>Phone: (216) 696-0229</dd>
+<dd>Email: <a href="mailto:jallanson@fallscommunications.com">jallanson@fallscommunications.com</a> or <a href="mailto:kstolarski@fallscommunications.com">kstolarski@fallscommunications.com</a></dd>
+</dl>
+</div>
+</div>
+
+Styleguide 4.1
+*/
+
+.contact-box {
+  font-size: inherit;
+  background-color: $c_moen-bright-gray;
+  margin: inherit;
+  margin-top: 4em;
+  padding: 1em;
+  dd {
+    padding-top: .3em;
+  }
+  dt {
+    font-weight: bold;
+  }
+  [class^='col-']:last-child {
+    margin-top: 1rem;
+    @include media($bp-sm) {
+      margin-top: initial;
+    }
+  }
+}

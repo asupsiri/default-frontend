@@ -1,0 +1,83 @@
+/*
+PDP Multimedia Section
+
+Styleguide 4.10.3
+*/
+
+@include block (pdp-multimedia) {
+  @include outer-container(1350px);
+  font-size: 1rem;
+  overflow: hidden;
+
+  @include element(image) {
+    display: block;
+    height: 318px;
+    max-width: 450px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    border-left: 2px solid $c_white;
+    border-right: 2px solid $c_white;
+  }
+
+  @include element(video) {
+    display: block;
+    height: 318px;
+    max-width: 450px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    border-left: 2px solid $c_white;
+    border-right: 2px solid $c_white;
+  }
+
+  @include element(icon) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .5;
+    background-position: 50%;
+  }
+
+  .slick-next,
+  .slick-prev {
+    height: 90px;
+    width: 40px;
+  }
+
+  .slick-prev {
+    z-index: 1;
+    background-image: url("./images/icon-arrow_left_large-gray.svg");
+    left: 16px;
+    @include media($bp-md) {
+      left: 16px;
+    }
+  }
+
+  .slick-next {
+    background-image: url("./images/icon-arrow_right_large-gray.svg");
+    right: 16px;
+    @include media($bp-md) {
+      right: 16px;
+    }
+  }
+}
+
+@include block(modal) {
+  @include element(embed) {
+    clear: both;
+    @include modifier(video) {
+      @include fluid-aspect(16 9, iframe);
+    }
+    @include modifier(image) {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+

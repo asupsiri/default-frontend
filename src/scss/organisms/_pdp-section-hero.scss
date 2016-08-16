@@ -1,0 +1,436 @@
+/*
+Hero Section no variants
+
+Markup:
+<!-- container element is just needed for the styleguide -->
+<div class="container">
+  <div class="hero-section row">
+    <div class="hero-section__image">
+      <img src="http://placehold.it/400x400" alt="" aria-hidden="true">
+    </div>
+    <div class="hero-section__description">
+      <div class="hero-section__model">Model: TS1234-5678</div>
+      <h1 class="hero-section__text">90 Degree Spot Resist Stainless One-Handle High Arc Kitchen Faucet</h1>
+      <div class="hero-section__social-group">
+        <div class="hero-section__reviews">
+          <div class="rating">
+            <ul class="rating__stars">
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+            </ul>
+          </div>
+          <a class="link" href="#">2 reviews</a>
+        </div>
+        <div class="hero-section__share">
+          <span>Share</span>
+          <a href="#"><img src="./images/icon-facebook_gray.svg" alt="" aria-hidden="true"></a>
+          <a href="#"><img src="./images/icon-twitter_gray.svg" alt="" aria-hidden="true"></a>
+          <a href="#"><img src="./images/icon-pinterest_gray.svg" alt="" aria-hidden="true"></a>
+          <a href="#"><img src="./images/icon-instagram_gray.svg" alt="" aria-hidden="true"></a>
+        </div>
+        <div class="hero-section__favorite favorite">
+          <span>Add to Favorites</span>
+          <a href="#" class="favorite__icon">
+            <img src="./images/icon-favorite_o_gray.svg" alt="" aria-hidden="true">
+            <img src="./images/icon-favorite_gray.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+      <div class="hero-section__finish">
+        <div class="hero-section__left">
+          <span>Finish: Brushed Nickel</span>
+          <ul class="hero-section__finish-list">
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button is-selected">
+                <img src="http://www.moen.com/shared/swatches/brushed-nickel.png" alt="Brushed Nickel">
+              </a>
+            </li>
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button">
+                <img src="http://www.moen.com/shared/swatches/chrome.png" alt="Chrome">
+              </a>
+            </li>
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button">
+                <img src="http://www.moen.com/shared/swatches/chrome.png" alt="Chrome">
+              </a>
+            </li>
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button">
+                <img src="http://www.moen.com/shared/swatches/chrome.png" alt="Chrome">
+              </a>
+            </li>
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button">
+                <img src="http://www.moen.com/shared/swatches/chrome.png" alt="Chrome">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="hero-section__right">
+          <span>$88.50 msrp</span>
+        </div>
+      </div>
+      <div class="hero-section__buy">
+        <div class="hero-section__buy-price">
+          <span>$788.50 msrp</span>
+          <a href="javacript:void(0);" class="tooltip">
+            <div class="tooltip__icon tooltip__icon--question"><img src="images/icon-question_mark.svg" alt="Help"></div>
+            <div class="tooltip__modal">Manufacturer Suggested Retail Price is suggested only. Store pricing will vary.</div>
+          </a>
+        </div>
+        <a href="#" class="hero-section__buy-button button button--secondary-flat">Where to buy</a>
+      </div>
+      <div class="hero-section__share">
+        <a href="#"><img src="./images/icon-facebook_gray.svg" alt="" aria-hidden="true"></a>
+        <a href="#"><img src="./images/icon-twitter_gray.svg" alt="" aria-hidden="true"></a>
+        <a href="#"><img src="./images/icon-pinterest_gray.svg" alt="" aria-hidden="true"></a>
+        <a href="#"><img src="./images/icon-instagram_gray.svg" alt="" aria-hidden="true"></a>
+      </div>
+      <div class="row">
+        <a href="#" class="link">
+           Support for this product
+        </a>
+      </div>
+    </div>
+  </div>
+</div><!-- end container -->
+
+Styleguide 4.10.1
+*/
+
+/*
+Hero Section with variants
+
+Markup:
+<!-- container element is just needed for the styleguide -->
+<div class="container">
+  <div class="hero-section row">
+    <div class="hero-section__image">
+      <img src="http://placehold.it/400x400" alt="" aria-hidden="true">
+    </div>
+    <div class="hero-section__description">
+      <div class="hero-section__model">Model: TS1234-5678</div>
+      <h1 class="hero-section__text">90 Degree Spot Resist Stainless One-Handle High Arc Kitchen Faucet</h1>
+      <div class="hero-section__social-group">
+        <div class="hero-section__reviews">
+          <div class="rating">
+            <ul class="rating__stars">
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+            </ul>
+          </div>
+          <a class="link" href="#">write a review</a>
+        </div>
+        <div class="hero-section__share">
+          <span>Share</span>
+          <a href="#"><img src="./images/icon-facebook_gray.svg" alt="" aria-hidden="true"></a>
+          <a href="#"><img src="./images/icon-twitter_gray.svg" alt="" aria-hidden="true"></a>
+          <a href="#"><img src="./images/icon-pinterest_gray.svg" alt="" aria-hidden="true"></a>
+          <a href="#"><img src="./images/icon-instagram_gray.svg" alt="" aria-hidden="true"></a>
+        </div>
+        <div class="hero-section__favorite favorite">
+          <span>Add to Favorites</span>
+          <a href="#" class="favorite__icon">
+            <img src="./images/icon-favorite_o_gray.svg" alt="" aria-hidden="true">
+            <img src="./images/icon-favorite_gray.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+      </div>
+      <div class="hero-section__finish">
+        <div class="hero-section__left">
+          <span>Finish: Brushed Nickel</span>
+          <ul class="hero-section__finish-list">
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button is-selected">
+                <img src="http://www.moen.com/shared/swatches/brushed-nickel.png" alt="Brushed Nickel">
+              </a>
+            </li>
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button">
+                <img src="http://www.moen.com/shared/swatches/chrome.png" alt="Chrome">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="hero-section__right">
+          <span>$88.50 msrp</span>
+        </div>
+      </div>
+      <div class="hero-section__options">
+        <div class="hero-section__subtitle heading--4">Valve</div>
+        <div class="hero-section__left">
+          <select class="form-select">
+              <option data-sku="2510" data-price="112.900000">2510: Posi–Temp® 1/2" IPS connection includes pressure balancing - $112.90</option>
+              <option data-sku="2520" data-price="112.900000" selected="">2520: Posi–Temp® 1/2" CC connection includes pressure balancing - $112.90</option>
+              <option data-sku="2570" data-price="137.050000">2570: Posi–Temp® 1/2" CC connection includes pressure balancing - $137.05</option>
+              <option data-sku="2590" data-price="137.050000">2590: Posi–Temp® 1/2" IPS connection includes pressure balancing - $137.05</option>
+          </select>
+        </div>
+        <div class="hero-section__right">
+          <span>$112.90 msrp</span>
+        </div>
+      </div>
+      <div class="hero-section__required">
+        <div class="hero-section__subtitle heading--4">Required Parts</div>
+        <div class="hero-section__required-parts">
+          <div class="hero-section__left">
+            S3371: Moen ExactTemp® 3/4" IPS connection includes check stops thermostatic
+          </div>
+          <div class="hero-section__right">
+            <span>$112.90 msrp</span>
+          </div>
+        </div>
+        <div class="hero-section__required-parts">
+          <div class="hero-section__left">
+            S3371: Moen ExactTemp® 3/4" IPS connection includes check stops thermostatic
+          </div>
+          <div class="hero-section__right">
+            <span>$112.90 msrp</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-section__buy">
+        <div class="hero-section__buy-price">
+          <span>$788.50 msrp</span>
+          <a href="javacript:void(0);" class="tooltip">
+            <div class="tooltip__icon tooltip__icon--question"><img src="images/icon-question_mark.svg" alt="Help"></div>
+            <div class="tooltip__modal">Manufacturer Suggested Retail Price is suggested only. Store pricing will vary.</div>
+          </a>
+        </div>
+        <a href="#" class="hero-section__buy-button button button--secondary-flat">Where to buy</a>
+      </div>
+      <div class="hero-section__share">
+        <a href="#"><img src="./images/icon-facebook_gray.svg" alt="" aria-hidden="true"></a>
+        <a href="#"><img src="./images/icon-twitter_gray.svg" alt="" aria-hidden="true"></a>
+        <a href="#"><img src="./images/icon-pinterest_gray.svg" alt="" aria-hidden="true"></a>
+        <a href="#"><img src="./images/icon-instagram_gray.svg" alt="" aria-hidden="true"></a>
+      </div>
+      <div class="row">
+        <a class="link" href="#">Support for this product</a>
+      </div>
+    </div>
+  </div>
+</div><!-- end container -->
+
+Styleguide 4.10.2
+*/
+
+@include block(hero-section) {
+  padding: 0 1em;
+  @include media($bp-md) {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    padding: em(50) 0;
+  }
+
+  @include element(image) {
+    img {
+      height: auto;
+      width: 100%;
+    }
+
+    @include media($bp-md) {
+      margin-right: 40px;
+      width: 40%;
+    }
+  }
+
+  @include element(description) {
+    display: block;
+    line-height: 2.5em;
+    .hero-section__social-group {
+      .hero-section__share,
+      .hero-section__favorite {
+        display: none;
+      }
+    }
+    @include media($bp-md) {
+      width: 60%;
+      .hero-section__share {
+        display: none;
+      }
+      .hero-section__social-group {
+        .hero-section__share {
+          display: inline-flex;
+          justify-content: flex-end;
+          align-items: baseline;
+          margin: 0;
+        }
+      }
+    }
+
+    @include media($bp-lg) {
+      .hero-section__social-group {
+        .hero-section__favorite {
+          display: inline-flex;
+        }
+      }
+    }
+  }
+
+  @include element(buy) {
+    margin: .6rem 0 2rem 0;
+    @include media($bp-md) {
+      margin-top: 2em;
+      display: flex;
+      justify-content: space-between;
+
+      .hero-section__buy-price {
+        order: 2;
+        margin: 0;
+      }
+      .hero-section__buy-button {
+        order: 1;
+        margin-right: 2em;
+      }
+    }
+  }
+
+  @include element(buy-price) {
+    font-size: 1.3em;
+    margin-bottom: .5rem;
+    text-align: right;
+    & > * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  @include element(buy-button) {
+    display: block;
+    width: 95%;
+    margin: 0 auto;
+    @include media($bp-md) {
+      display: inline-block;
+      margin: auto 0;
+      width: auto;
+    }
+  }
+
+  @include element(text) {
+    font-size: 2rem;
+    font-family: $din-light;
+    font-weight: normal;
+    letter-spacing: -.05em;
+    margin-bottom: 0;
+  }
+
+  @include element(reviews) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    @include media($bp-sm) {
+      width: auto;
+    }
+  }
+
+  @include element(finish) {
+    margin-bottom: .5rem;
+  }
+
+  @include element(finish-button) {
+    display: block;
+    border: 2px solid $c_white;
+    border-radius: 50%;
+    line-height: 1rem;
+    &:hover {
+      border-color: $c_moen-logo-blue;
+    }
+    @include state(selected) {
+      border-color: $c_moen-logo-blue;
+    }
+  }
+
+  @include element(finish-list) {
+    li {
+      display: inline-block;
+      margin-right: 5px;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  @include element(share) {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0 auto 1em auto;
+    img {
+      height: 35px;
+    }
+  }
+
+  @include element(social-group) {
+    font-size: em(13);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0;
+    * > {
+      width: 33.3333%;
+    }
+    .hero-section__share {
+      img {
+        height: 16px;
+        margin: 0 7px;
+        width: auto;
+      }
+    }
+    @include media($bp-md) {
+      border-bottom: 1px solid $c_moen-bright-gray;
+      margin: .7em 0;
+      padding-bottom: .7em;
+    }
+  }
+
+  @include element(options) {
+    margin: 0.5em 0;
+  }
+
+  @include element(left) {
+    display: block;
+    width: 100%;
+    @include media($bp-md) {
+      display: inline-block;
+      vertical-align: bottom;
+      width: 70%;
+    }
+  }
+
+  @include element(right) {
+    display: block;
+    text-align: right;
+    width: 100%;
+    @include media($bp-md) {
+      display: inline-block;
+      vertical-align: bottom;
+      margin-left: -4px;
+      width: 30%;
+    }
+  }
+
+  @include element(required) {
+    line-height: 1.5em;
+  }
+
+  @include element(required-parts) {
+    margin-bottom: 1em;
+    > * {
+      vertical-align: top;
+    }
+  }
+
+  @include element(subtitle) {
+    margin: 1em 0;
+  }
+}

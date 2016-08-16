@@ -1,0 +1,36 @@
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Common_weight_name_mapping */
+
+@font-face {
+  font-family: 'DINWebLight';
+  src: url('./fonts/DINWeb-Light.eot');
+  src: url('./fonts/DINWeb-Light.woff') format('woff'),
+  url('./fonts/DINWeb-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'DINWebRegular';
+  src: url('./fonts/DINWeb.eot');
+  src: url('./fonts/DINWeb.woff') format('woff'),
+  url('./fonts/DINWeb.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'DINWebMedium';
+  src: url('./fonts/DINWeb-Medium.eot');
+  src: url('./fonts/DINWeb-Medium.woff') format('woff'),
+  url('./fonts/DINWeb-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'DINWebBold';
+  src: url('./fonts/DINWeb-Bold.eot');
+  src: url('./fonts/DINWeb-Bold.woff') format('woff'),
+  url('./fonts/DINWeb.ttf') format('truetype');
+  font-weight: 700;
+}
+
+// GENERATED ICON FONT PATH:
+// @import "../generated/icons";

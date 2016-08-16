@@ -1,0 +1,85 @@
+/*
+Modal
+
+[Description needed]
+
+markup:
+<div></div>
+
+Styleguide 3.11
+ */
+
+dialog {
+  display: block;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: z("modal-overlay");
+  background-color: $c_dark-gray;
+  opacity: .8;
+  cursor: pointer;
+  .invisible {
+    @include hat-core();
+  }
+}
+
+.modal-overlay[data-background-click="disabled"] {
+  cursor: auto;
+}
+
+.modal {
+  @include outer-container();
+  position: fixed;
+  background: $c_white;
+  z-index: z("modal");
+  max-height: 98vh;
+  overflow: auto;
+  left: 1%;
+  top: 1%;
+ // bottom: 1%;
+  right: 1%;
+  max-width: 98%;
+  width: 98%;
+  @include media($bp-md) {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    top: 6%;
+  }
+}
+
+.modal-close {
+  float: right;
+  color: $c_text-base;
+  padding: .25em;
+  text-decoration: none;
+  line-height: 1;
+  text-align: center;
+  margin: 1em;
+}
+
+.modal-close__text {
+  font-family: $helvetica;
+  &:after {
+    content: "\2715";
+    margin-left: .5em;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+  //position: fixed;
+}
+
+.modal-ada__title {
+  padding: .5em .5em .5em .25em;
+}

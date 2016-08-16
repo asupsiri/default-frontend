@@ -1,0 +1,29 @@
+/*
+Warranty
+
+markup:
+<div class="psp-warranty">
+  <div class="psp-warranty__container">
+    <h3 class="psp-warranty__title">Warranty</h3>
+    <div class="psp-warranty__body">
+      <p>Replacement Parts for this product may be covered by the <a class="link" href="#">Limited Lifetime Warranty</a></p>
+    </div>
+  </div>
+</div>
+
+Styleguide 4.22.4
+*/
+
+@include block(psp-warranty) {
+  background: $c_psp_bg_gray;
+  padding: 1em ;
+  @include element(container) {
+    @include outer-container();
+  }
+
+  @include element(title) {
+    font-family: $din-light;
+    font-size: em(30px);
+    padding-bottom: .5em;
+  }
+}

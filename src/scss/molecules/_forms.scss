@@ -1,0 +1,125 @@
+/*
+Form elements
+
+[introduction]
+
+markup:
+<div class="form">
+(form)
+</div>
+
+Styleguide 3.20
+*/
+
+@include block('form') {
+
+  @include modifier('is-successful') {
+
+    .form-section__entry {
+      display: none;
+    }
+
+    .form-section__confirmation {
+      display: block;
+    }
+  }
+}
+
+@include block('form-section') {
+
+  @include child('entry') {
+
+  }
+
+  @include child('confirmation') {
+    display: none;
+  }
+}
+
+@include block('form-group') {
+  margin-bottom: 2em;
+}
+
+/*
+Form Input with Add-on
+
+Combined the two fields using flexbox
+
+Markup:
+﻿<div class="input-add-on">
+  <input class="form-input form-input__text input-add-on__field">
+  <button class="button input-add-on__item">Submit</button>
+</div>
+
+Styleguide 3.20.1
+*/
+
+@include block(input-add-on) {
+  display: -ms-flexbox;
+  display: flex;
+
+  @include element(field) {
+    flex-grow: 1;
+    border-right: none;
+  }
+
+  @include element(item) {
+    flex-grow: 0;
+    background-color: $c_white;
+    @include modifier(no-border) {
+      border-top: none;
+      border-right: none;
+      border-bottom: none;
+    }
+  }
+}
+
+/*
+Form Input with Add-on (Reversed)
+
+Combined fields, but shown against a contrasting background. Note how the button add-on requires its own "no-border" class.
+
+Markup:
+<div style="background-color: #f3f3f3; padding: 3em;">
+  ﻿<div class="input-add-on input-add-on--reversed">
+    <input class="form-input form-input__text input-add-on__field">
+    <button class="button button--icon button--search button--no-border">
+      <span>find products</span>
+    </button>
+  </div>
+</div>
+
+Styleguide 3.20.1.1
+*/
+
+@include block(input-add-on) {
+  @include modifier(reversed) {
+    input {
+      border: none;
+    }
+  }
+}
+
+/*
+Input with icon button add-on
+
+Solutions use a button-icon molecule
+
+Markup:
+﻿<div class="input-add-on">
+  <input class="form-input form-input__text input-add-on__field">
+  <button class="button input-add-on__item button--icon button--arrow-right">
+    <span>Submit</span>
+  </button>
+  </div>
+  <br />
+  <div class="input-add-on">
+    <label for="search_terms" class="hat">Search</label>
+    <input itemprop="query-input" type="search" name="search_terms" id="search_terms" placeholder="Search" class="form-input form-input__search input-add-on__field site-search__input">
+    <button type="submit" class="button button--icon button--search site-search__button input-add-on__item">
+      <span>Submit Search</span>
+    </button>
+</div>
+
+Styleguide 3.20.2
+*/

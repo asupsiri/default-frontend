@@ -1,0 +1,240 @@
+/*
+Rich Text Component
+
+Component allows for textual authoring and can accept a full-viewport-width color or an image as content background.
+
+
+DEVELOPER NOTES:
+The presence of a background-color and a background-image (single or repeating) is NOT mutually exclusive as indicated in the Jira ticket. Both style properties can be assigned to a single container.
+
+Styleguide 4.25
+*/
+
+/*
+Typographic
+
+markup:
+<section class="rtf-component">
+  <div class="rtf-container">
+    <h1>h1 - Base Typographic system for RTF</h1>
+    <a href="">Click Me</a>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in <b>reprehenderit in voluptate velit esse cillum</b> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat
+      eleifend. Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra ut augue. Integer quam nunc, consequat nec egestas ac,
+      volutpat ac nisi. Sed consectetur dignissim dignissim. Donec pretium est sit amet ipsum fringilla feugiat. Aliquam erat volutpat. Maecenas scelerisque, orci sit amet cursus tincidunt, libero</p>
+    <h2>Heading 2</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in reprehenderit in voluptate velit esse</p>
+    <h3>Heading 3</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in</p>
+    <ul>
+      <li>Lorem ipsum dolor</li>
+      <li>Sit amet, consectetur</li>
+      <li>Adipisicing elit, sed</li>
+      <li>Do eiusmod tempor</li>
+      <li>Incididunt ut labore</li>
+      <li>Et dolore magna</li>
+      <li>Aliqua. Ut enim</li>
+      <li>Ad minim veniam,</li>
+      <li>Quis nostrud exercitation</li>
+      <li>Ullamco laboris nisi</li>
+    </ul>
+    <h4>Heading 4</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <hr />
+    <h5>Heading 5</h5>
+    <ol>
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Milk</li>
+    </ol>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien
+      consequat eleifend. </p>
+    <p>Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra ut augue. Integer quam nunc, consequat nec egestas ac, volutpat ac
+      nisi. </p>
+    <h6>Heading 6</h6>
+    <p>Sed consectetur dignissim dignissim. Donec pretium est sit amet ipsum fringilla feugiat. Aliquam erat volutpat. Maecenas scelerisque, orci sit amet cursus tincidunt, libero nisl eleifend tortor, vitae cursus risus mauris vitae nisi. Cras laoreet ultrices
+      ligula eget tempus. </p>
+    <p>Aenean metus purus, iaculis ut imperdiet eget, sodales et massa. Duis pellentesque nisl vel massa dapibus non lacinia velit volutpat. Maecenas accumsan interdum sodales. In hac habitasse platea dictumst. Pellentesque ornare blandit orci, eget tristique
+      risus convallis ut. Vivamus a sapien neque. </p>
+    <h6>Lorem 6 Dolor Sit</h6>
+    <p>Nam quis sem orci. Phasellus ligula tellus, lobortis nec accumsan eget, mattis at erat. </p>
+    <p>Pellentesque at odio quam, et egestas nunc. Sed quis leo et orci consectetur porttitor nec fringilla lorem. Duis sit amet adipiscing enim. </p>
+  </div>
+</section>
+
+Styleguide 4.25.1
+*/
+
+@include block(rtf-component) {
+  font-size: 1rem;
+  color: $c_text-base;
+  margin: 1em 0;
+
+  @mixin rtf-heading-core() {
+    color: currentColor;
+    padding: 0;
+    margin: 0 0 .5rem 0;
+    font-family: $din-medium;
+  }
+  // Headings
+  h1 {
+    font-size: em(36);
+    @include rtf-heading-core();
+    margin-bottom: 1rem;
+    letter-spacing: -.05em;
+  }
+
+  h2 {
+    font-size: em(28);
+    @include rtf-heading-core();
+    letter-spacing: -.04em;
+  }
+
+  h3 {
+    font-size: em(24);
+    @include rtf-heading-core();
+    letter-spacing: -.03em;
+  }
+
+  h4 {
+    font-size: em(20);
+    @include rtf-heading-core();
+    letter-spacing: -.02em;
+  }
+
+  h5 {
+    font-size: em(18);
+    @include rtf-heading-core();
+    letter-spacing: -.01em;
+  }
+
+  h6 {
+    font-size: em(16);
+    @include rtf-heading-core();
+  }
+
+  ul, ol {
+    margin-bottom: 1em;
+    margin-left: 1.2em;
+  }
+
+  hr {
+    border-top: 2px solid #cccccc;
+    margin: 0.5em 0 1em 0;
+  }
+
+  address {
+    padding: 0 0 1em;
+  }
+
+  a {
+  //  color: currentColor;
+  }
+  a.reversed {
+    color: currentColor;
+  }
+}
+
+@include block(rtf-container) {
+  @include outer-container();
+  padding: 1em 0;
+}
+
+/*
+Background Image example 1 - Single image, no repeat
+
+Uses a class modifier to express there is a single centered background image (non-repeating) assigned to the RTF component container.
+
+markup:
+<section class="rtf-component rtf-component--has-bg-image" style="background-color: #ededed; background-image: url(./images/styleguide/media-contact_background.png);">
+  <div class="rtf-container">
+    <h1>Media Contact Information</h1>
+    <p>We are committed to offering accurate information and responding in a timely manner.
+      <br> To help us serve you better, following is our list of key contacts.</p>
+    <p>If you are a customer* and have questions regarding products, installation and/or
+      <br>warranty information, please call our best-in-class-customer service department
+      <br>at <b class="type-medium">(800) BUY–MOEN (1-800-289-6636)</b>.</p>
+    <p>If you are a member of the media, please feel free to send your inquiries to:</p>
+    <address>
+					<b>Jennifer Allanson</b><br>
+					Falls Communications<br>
+					(216) 696-0229<br>
+					<a href="mailto:jallanson@fallscommunications.com">jallanson@fallscommunications.com</a>
+				</address>
+    <address>
+					<b>Kristi Stolarski</b><br>
+					Falls Communications<br>
+					(216) 696-0229<br>
+					<a href="mailto:kstolarski@fallscommunications.com">kstolarski@fallscommunications.com</a>
+				</address>
+    <address>
+					<b>Moen Media Team</b><br>
+					<a href="mailto:media@moen.com">media@moen.com</a>
+				</address>
+  </div>
+</section>
+
+Styleguide 4.25.2
+*/
+
+@include block(rtf-component) {
+  @include modifier(has-bg-image) {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+  }
+}
+
+/*
+Background Image example 2 - Single image, no repeat
+
+note: the reversed text is set here as inline styles in order to emulate the CK Editor.
+
+note: we need to have a 'reversed' class which can be assigned to hyperlinks in order to override the default link color
+
+markup:
+<section class="rtf-component rtf-component--has-bg-image" style="background-color: #009FE8; background-image: url(./images/styleguide/ate-bg2.png);">
+  <div class="rtf-container" style="color:#fff"> <!-- simulate CK Editor inline styles -->
+      <h1>Ask The Expert</h1>
+      <br />
+      <br />
+      <h2>Jack Suvak</h2>
+      <br />
+      <br />
+      <p>Jack’s our master of consumer and industry insights. <br>
+    Got a question for him? He’ll happily find your answer.</p>
+    <br />
+      <a class="reversed" href="/pressroom/ask-the-experts">Learn More</a>
+  </div>
+</section>
+
+Styleguide 4.25.2.1
+*/
+
+/*
+Background Image - Tiled image, repeating
+
+Uses a class modifier to express there is a repeating background image (pattern) assigned to the RTF component container.
+
+markup:
+<section class="rtf-component rtf-component--has-repeating-image" style="background-image: url(./images/styleguide/bright_squares.png);">
+  <div class="rtf-container">
+    <h1>Lorem Ipsum Dolor Sit Amet C</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend. </p>
+  </div>
+</section>
+
+Styleguide 4.25.3
+*/
+
+@include block(rtf-component) {
+  @include modifier(has-repeating-image) {
+    background-repeat: repeat;
+    background-position: 0 0;
+    //background-size: cover;
+  }
+}

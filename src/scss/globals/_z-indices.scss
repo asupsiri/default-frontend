@@ -1,0 +1,104 @@
+/*
+ *
+ *  http://www.sitepoint.com/better-solution-managing-z-index-sass/
+ *
+ *  http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
+ *  http://viget.com/extend/sass-maps-and-z-indexes
+ *  http://css-tricks.com/handling-z-index/
+ *
+ */
+
+// A map of z layers
+// All z-index values should be set here:
+
+$z-layers: (
+  'full-nav': 4,
+  'global-header': 5, // Global header MUST be set on an index higher than the full-nav container.
+  'full-nav-link': 3,
+  'full-nav-section': 2,
+  'banners': 0,
+  'facets': 1,
+  'modal': 6,
+  'modal-overlay': 5,
+
+  // Z-index Values Found in the BazaarVoice Overrides file:
+  'BVRRFilterAttributeContentIEControlsFrameID': 50,
+  'BVDI_AFFilterAttributeContent': 100,
+  'BVDI_MHPopupControlsFrameID': 400,
+  'BVModuleVideoPasteGuide': 503,
+  'BVMEPopinContent': 1000,
+  'BVDI_FBHideSelect': 1000,
+  'BVDI_PHPhotoPopup': 1000,
+  'BVRRPhotoPopup': 1000,
+  'BVDI_FBOverlayContainer': 1001,
+  'BVDI_FBContainerHighlight': 1200,
+  'BVDI_FBOverlayHighlight': 1300,
+  'BVDI_PSIEControlsFrame': 10000000,
+  'BVRRRatingsHistogramButtonPopin': 10000000
+);
+
+// A function helper to avoid having to type `map-get($z-layers, ...)`
+// ---
+// @param [string] $component: the layer to use
+// ---
+// @return [number] | [null]
+
+@function z($layer) {
+  @if not map-has-key($z-layers, $layer) {
+    @warn "No z-index found in $z-layers map for `#{$layer}`. Property omitted.";
+  }
+
+  @return map-get($z-layers, $layer);
+}
+
+// A function helper to allow the use of nested map objects, supporting contextual z-indices`
+// ---
+// @param [string] $map: the map to use
+// @param [string...] $keys: the keys to use
+// ---
+// @return [map]
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
+
+/*
+// Examples & demo
+// ---
+
+// Modal
+.modal {
+  z-index: z("modal");
+}
+
+// ... and its backdrop
+// Computed z-index based on the one from modal
+.modal-backdrop {
+  z-index: z("modal") + 1;
+}
+
+// Dropdown
+.dropdown {
+  z-index: z("dropdown");
+}
+
+// A pseudo-element that has to be on top
+// Computed z-index based on the default one
+.element:after {
+  z-index: z("default") - 2;
+}
+
+// A component that has to be veryyyy low
+.im-falling {
+  z-index: z("bottomless-pit");
+}
+
+// Calling an unknown layer
+// will omit the z-index property
+.error {
+  z-index: z("unknown-z-index");
+}
+*/

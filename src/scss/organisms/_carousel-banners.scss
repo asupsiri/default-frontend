@@ -1,0 +1,613 @@
+/* CORE: */
+
+.slick-slider {
+  position: relative;
+  display: block;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+
+  img {
+    margin: 0 auto;
+  }
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+  &.dragging {
+    cursor: pointer;
+    cursor: hand;
+  }
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+  -webkit-perspective: 1000px;
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  .slick-loading & {
+    visibility: hidden;
+  }
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  [dir="rtl"] & {
+    float: right;
+  }
+  img {
+    display: block;
+  }
+  &.slick-loading img {
+    display: none;
+  }
+
+  display: none;
+
+  &.dragging img {
+    pointer-events: none;
+  }
+
+  .slick-initialized & {
+    display: block;
+  }
+
+  .slick-loading & {
+    visibility: hidden;
+  }
+
+  .slick-vertical & {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+  }
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+// THEME:
+$slick-font-path: "./fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "./images/" !default;
+$slick-arrow-color: $c_moen-bright-blue !default;
+$slick-dot-color: $c_moen-bright-blue !default;
+$slick-dot-color-active: $c_moen-green !default;
+$slick-prev-character: "←" !default;
+$slick-next-character: "→" !default;
+$slick-dot-character: "•" !default;
+$slick-dot-size: 12px !default;
+$slick-opacity-default: 1 !default;
+$slick-opacity-on-hover: .75 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+@function slick-image-url($url) {
+  @if function-exists(image-url) {
+    @return image-url($url);
+  } @else {
+    @return url($slick-loader-path + $url);
+  }
+}
+
+@function slick-font-url($url) {
+  @if function-exists(font-url) {
+    @return font-url($url);
+  } @else {
+    @return url($slick-font-path + $url);
+  }
+}
+
+/* Slider */
+
+.slick-list {
+  .slick-loading & {
+    background: $c_white slick-image-url("ajax-loader.gif") center center no-repeat;
+  }
+}
+
+/* Icons */
+@if $slick-font-family == "slick" {
+  @font-face {
+    font-family: "slick";
+    src: slick-font-url("slick.eot");
+    src: slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"), slick-font-url("slick.svg#slick") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+/* Arrows */
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  color: transparent;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  &:hover,
+  &:focus {
+    color: transparent;
+    opacity: $slick-opacity-on-hover;
+  }
+  &.slick-disabled:before {
+    opacity: $slick-opacity-not-active;
+  }
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: $slick-font-family;
+  font-size: 20px;
+  line-height: 1;
+  color: $slick-arrow-color;
+  opacity: $slick-opacity-default;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+  left: -25px;
+  [dir="rtl"] & {
+    left: auto;
+    right: -25px;
+  }
+  background-image: url("./images/icon-arrow_left_thick.svg");
+}
+
+.slick-next {
+  right: -25px;
+  [dir="rtl"] & {
+    left: -25px;
+    right: auto;
+  }
+  background-image: url("./images/icon-arrow_right_thick.svg");
+}
+
+/* Dots */
+.slick-dots {
+  list-style: none;
+  display: block;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  text-align: center;
+  padding: 0;
+  width: 100%;
+  li {
+    position: relative;
+    display: inline-block;
+    // top: -3px;
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+    button {
+      border: 0;
+      background: transparent;
+      display: block;
+      height: 20px;
+      width: 20px;
+      line-height: 0px;
+      font-size: 0px;
+      color: transparent;
+      padding: 5px;
+      cursor: pointer;
+      &:hover,
+      &:focus {
+        opacity: $slick-opacity-on-hover;
+        &:before {
+          opacity: $slick-opacity-on-hover;
+        }
+      }
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: $slick-dot-character;
+        width: 20px;
+        height: 20px;
+        font-family: $slick-font-family;
+        font-size: $slick-dot-size;
+        line-height: 18px;
+        text-align: center;
+        color: $slick-dot-color;
+        opacity: $slick-opacity-not-active;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
+    &.slick-active button:before {
+      color: $slick-dot-color-active;
+      opacity: $slick-opacity-default;
+    }
+  }
+}
+
+// overridden banner styling aspect to match the current Moen.com carousel
+.carousel {
+  cursor: move;
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
+  span.button--default {
+    cursor: default;
+    &:hover,
+    &:focus {
+      background-color: $c_moen-bright-blue;
+      opacity: 1;
+    }
+    &:empty {
+      display: none;
+    }
+  }
+  @include block(carousel-paging) {
+    position: relative;
+    display: inline-block;
+  }
+  @include block(text-box) {
+    box-shadow: 0 0 5px $c_light-gray;
+    text-align: center;
+    @include element(subtitle) {
+      padding-bottom: 0;
+    }
+    @include element(inner) {
+      position: relative;
+    }
+    @include element(body) {
+      p {
+        padding-bottom: 1em;
+      }
+    }
+  }
+  @include block(button) {
+    @include modifier(primary) {
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+    }
+
+    @include modifier(secondary) {
+      margin-top: 0;
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+    }
+  }
+  @include block(banner) {
+    @include element(image-bg) {
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0 auto;
+      max-width: $carousel-image-width-base;
+      min-height: $carousel-height-base;
+      display: block;
+      overflow: hidden;
+      position: relative;
+      &:before {
+        content: "";
+        @include intrinsic-ratio(75 22);
+      }
+      @include modifier(logo) {
+        max-height: 100px;
+        padding: 0;
+        margin: 0 auto 1em;
+      }
+    }
+  }
+}
+
+// Banner Type 2 - Quotes
+@include block (carousel-quotes) {
+  @include outer-container();
+  color: $c_white;
+  text-align: center;
+  min-height: 293px;
+  font-size: 21px;
+  font-style: normal;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include element(item) {
+    padding: 2em 0 1em 0;
+    p {
+      font-family: $din-light;
+      font-size: inherit;
+      padding: 1em;
+      line-height: 1.2;
+      position: relative;
+      &:before,
+      &:after {
+        content: open-quote;
+        font-family: 'Bookman Old Style', 'Georgia', 'Times', 'Times New Roman', serif;
+        font-size: 2.5em;
+        font-weight: 400;
+        left: 0;
+        line-height: 0;
+        top: auto;
+        position: absolute;
+      }
+      &:after {
+        content: close-quote;
+        left: auto;
+        line-height: 0;
+        top: auto;
+        right: 0;
+      }
+    }
+  }
+
+  @include element(cite) {
+    font-family: $din-medium;
+    font-style: normal;
+    display: inline-block;
+  }
+
+  .slick-list {
+    margin: 0 1em;
+  }
+  .slick-dots {
+    margin: .5em 0 1em;
+  }
+  .slick-dots li {
+    margin: 0;
+  }
+  .slick-dots .slick-active {
+    opacity: .7;
+  }
+  .slick-dots li button:before {
+    color: $c_white;
+  }
+  .slick-prev,
+  .slick-next {
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+  }
+
+  &:hover {
+    .slick-prev,
+    .slick-next {
+      opacity: 1;
+    }
+  }
+  .slick-prev {
+    left: 0;
+    [dir="rtl"] & {
+      left: auto;
+      right: 0;
+    }
+    background-image: url("./images/icon-arrow_left_thick_white.svg");
+  }
+
+  .slick-next {
+    right: 0;
+    [dir="rtl"] & {
+      left: 0;
+      right: auto;
+    }
+    background-image: url("./images/icon-arrow_right_thick_white.svg");
+  }
+}
+
+
+// Design Article Carousel
+@include block (design-article-carousel) {
+  @include outer-container();
+  border-bottom: 1px dotted $c_moen_bright_gray;
+  margin: 1em 0;
+  padding-bottom: 1em;
+  @include element (image) {
+    img {
+      height: auto;
+      width:100%;
+    }
+  }
+  figcaption {
+    font-family: $din-light;
+    padding: .5em;
+    p {
+      padding: 0;
+    }
+    p, i {
+      font-family: $din-light;
+    }
+    b, strong {
+      font-family: $din-medium;
+      font-weight: normal;
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: 60px;
+  }
+  .slick-dots li {
+    margin: 0;
+  }
+  .slick-dots .slick-active {
+    opacity: .7;
+  }
+  .slick-dots li button:before {
+    color: $c_white;
+  }
+  .slick-prev,
+  .slick-next {
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+    z-index:1;
+  }
+
+  &:hover {
+    .slick-prev,
+    .slick-next {
+      opacity: 1;
+    }
+  }
+  .slick-prev {
+    left: 0;
+    [dir="rtl"] & {
+      left: auto;
+      right: 0;
+    }
+    background-image: url("./images/icon-arrow_left_thick_white.svg");
+  }
+
+  .slick-next {
+    right: 0;
+    [dir="rtl"] & {
+      left: 0;
+      right: auto;
+    }
+    background-image: url("./images/icon-arrow_right_thick_white.svg");
+  }
+}
+
+// Banner Type 3 - Social Media
+@include block (carousel-social) {
+  @include outer-container();
+  overflow: hidden;
+  text-align: left;
+  margin-bottom: 2em;
+  img {
+    display: inline;
+  }
+  pre {
+    text-align: center;
+    margin-bottom: 2em;
+    img {
+      width: 3em;
+      height: 3em;
+    }
+  }
+  a {
+    color: $c_moen-bright-blue;
+    b,
+    strong {
+      font-family: $din-bold;
+      font-weight: 600;
+    }
+  }
+  b,
+  strong {
+    a {
+      font-family: $din-bold;
+      font-weight: 600;
+    }
+  }
+  p {
+    &:empty {
+      display: none;
+    }
+    font-size: em(21);
+    line-height: 1.2;
+    padding: 0;
+    img {
+      display: inline;
+    }
+  }
+  @include element(body) {
+    @include clearfix();
+    margin: 2em 1em 0;
+    padding: 0 1em 0 2em;
+    @include media($bp-md) {
+      padding: 0 4em;
+    }
+    img[align=top] {
+      width: 3em;
+      height: 3em;
+      margin: 0 1em 0 0;
+      float: left;
+    }
+    p[style*="text-align: center"] {
+      img {
+        width: 2em;
+        height: 2em;
+      }
+      margin-bottom: 1em;
+    }
+  }
+
+  // SC5 Styleguide cannot handle @ loops in Sass:
+  //@include element(heading) {
+  //  @at-root p#{&} {
+  //    margin: 1em 1em 0;
+  //    padding: 0;
+  //    font-size: 2em;
+  //    font-family: $din-light;
+  //    text-align: center;
+  //  }
+  //}
+
+  // Instead, we have to hard-code it like this:
+  p.carousel-social__heading {
+    margin: 1em 1em 0;
+    padding: 0;
+    font-size: 2em;
+    font-family: $din-light;
+    text-align: center;
+  }
+
+  .slick-next,
+  .slick-prev {
+    height: 40px;
+    width: 40px;
+  }
+  .slick-prev {
+    z-index: 1;
+    @include media($bp-md) {
+      left: 0;
+    }
+    background-image: url("./images/icon-arrow_left-gray.svg");
+  }
+
+  .slick-next {
+    right: -5px;
+    @include media($bp-md) {
+      right: 0;
+    }
+    background-image: url("./images/icon-arrow_right-gray.svg");
+  }
+}

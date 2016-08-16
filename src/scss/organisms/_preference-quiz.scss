@@ -1,0 +1,36 @@
+/*
+Preference Quiz
+
+Styleguide 4.28
+*/
+
+@include block(preference-group) {
+  padding: 15px 0 30px 0;
+
+  @include modifier(is-disabled) {
+    .preference-group__title {
+      color: $c_disabled;
+    }
+
+    .card--choice {
+      cursor: default;
+
+      &:hover .card__overlay {
+        background: none;
+      }
+    }
+
+    .card__overlay {
+      background: none;
+    }
+
+    .card__image {
+      opacity: 0.2;
+    }
+  }
+
+  @include modifier(is-hidden) {
+    display: none;
+  }
+
+}

@@ -1,0 +1,140 @@
+/*
+Media
+
+Media Contaner is a basic structure for elements that has an Image on left/right and a text content.
+This media container is using FlexBox.
+
+Reference:
+http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+
+Styleguide 3.6
+*/
+
+/*
+Media horizontal
+
+Markup:
+<div class="media">
+  <div class="media__left">
+    <a href="#">
+      <img src=" http://placehold.it/60x60" alt="Image"> 
+    </a>
+  </div>
+  <div class="media__right">
+    <div class="media__head">This is the media Title</div>
+    <div class="media__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</div>
+    <div class="is-block">
+        <a href="#" class="link link--icon--left"><img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+    </div>
+  </div>
+</div>
+
+Styleguide 3.6.1
+*/
+
+/*
+Media vertical
+
+Markup:
+<div class="media--vertical">
+  <div class="media__top">
+    <a href="#">
+      <img src=" http://placehold.it/90x60" alt="Image"> 
+    </a>
+  </div>
+  <div class="media__bottom">
+    <div class="media__head">This is the media Title</div>
+    <div class="media__body">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <div class="is-block">
+        <a href="#" class="link link--icon--left"><img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+    </div>
+  </div>
+  </div>
+</div>
+
+Styleguide 3.6.2
+*/
+
+@mixin media-shared-styles() {
+  .link,
+  .button {
+    display: inline-block;
+    margin-top: 0.5em;
+  }
+  .media__top,
+  .media__right,
+  .media__bottom,
+  .media__left {
+    > a {
+      display: inline-block;
+    }
+  }
+}
+
+@include block(media) {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  @include media-shared-styles();
+  font-size: 1rem;
+
+  // Elements
+
+  @include element(left) {
+    padding: .5em;
+    .link {
+      font-size: em(14);
+    }
+  }
+
+  @include element(right) {
+    padding: .5em;
+    .link {
+      font-size: em(14);
+    }
+  }
+
+  @include element(top) {
+    padding: .5em 0 0 0;
+  }
+
+  @include element(bottom) {
+    padding: .5em;
+  }
+
+  @include element(head) {
+    font-size: 1.15rem;
+    font-family: $din-medium;
+    font-weight: normal;
+  }
+
+  // Modifiers
+
+  @include modifier(vertical) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include media-shared-styles();
+    text-align: center;
+    .media__bottom {
+      max-width: 490px;
+    }
+    .media__top {
+      padding: 0;
+      width: 100%;
+      a {
+        width: 100%;
+        height: 100%;
+        height: 300px;
+        display: block;
+        background-size: cover;
+      }
+    }
+  }
+}

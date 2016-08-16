@@ -1,0 +1,17 @@
+/*
+Time element
+
+The <time> element is leveraged to provide a human-readable and machine-readable date format. The pubdate boolean attribute is used to indicate the publication date of the document.
+
+markup:
+<span>Inline Lorem Ipsum Dolor <time class="time" datetime="2016-12-31" pubdate>2016-12-31</time> Sit Amet Consectetur<span>
+<br />
+<br />
+<time class="time is-block" datetime="2016-12-31" pubdate>2016-12-31</time>
+<span>Block Lorem Ipsum Dolor Sit Amet Consectetur<span>
+
+Styleguide 2.20.1
+*/
+
+@include block('time') {
+}

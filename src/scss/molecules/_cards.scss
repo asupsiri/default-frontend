@@ -1,0 +1,1175 @@
+/*
+Card Components
+
+Styleguide 3.15
+*/
+
+$c_card_bg_blue: rgba(0, 162, 224, 1) !default;
+
+@include block(card) {
+  // SETTINGS COMMON TO ALL CARDS:
+  font-size: 1rem;
+  font-weight: normal;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  width: 320px;
+  max-width: 320px;
+
+  overflow: hidden;
+
+  padding: .5rem;
+  margin: 0 0 1em;
+
+  background-color: $c_white;
+
+  sup {
+    font-size: 0.5em;
+    top: -0.7em;
+  }
+
+  @include element(title) {
+    font-weight: inherit;
+    letter-spacing: -.05em;
+  }
+
+  @include element(subtitle) {
+    font-weight: inherit;
+  }
+
+  @include element(content) {
+    font-weight: inherit;
+  }
+
+  @include element(image) {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  @include element(logo) {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  @include element(links) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .link--icon--right-white {
+    padding-right: 1.5em; // maybe this is a better value globally? it helps with very narrow widths when container is flexing.
+    //&:hover,
+    //&:focus {
+    //  text-decoration: underline;
+    //}
+  }
+  .link--icon--left-white {
+    padding-left: 0;
+  }
+
+  // THIS BREAKPOINT / WIDTH VALUE ALLOWS CARDS TO DISPLAY AS 3 OR 4 ON A FLEX ROW:
+  @include media($bp-xs) {
+    width: 230px;
+    margin: 0 7px 1em;
+  }
+
+  // SETTINGS FOR ALL CARD SHIMS:
+  &.shim {
+    padding: 0;
+    margin: 0;
+    height: 0;
+    min-height: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
+    @include media($bp-xs) {
+      margin: 0 7px;
+    }
+  }
+}
+
+/*
+whitespace card with top blue line
+
+A single-instance example of this card. See organisms section for the full card-list component layout.
+
+markup:
+<div class="card card--top-blue-border">
+  <div class="pointer-item is-selected"></div>
+  <h2 class="card__title">Transitional Styles</h2>
+  <img class="card__image" src="./images/styleguide/product_shot_transitional.jpg" alt="" />
+  <div class="card__links">
+    <a href="javascript:void(0);" class="link link--icon--left">
+      <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Kiran<sup>™</sup> Faucet
+    </a>
+    <a href="javascript:void(0);" class="link link--icon--left">
+      <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View All Transitional Styles
+    </a>
+  </div>
+</div>
+
+Styleguide 3.15.1
+*/
+
+@include block(card) {
+
+  @include modifier(top-blue-border) {
+    border-top: 4px solid $c_moen-logo-blue;
+
+    height: 340px;
+    min-height: 340px;
+
+    padding: 0;
+    margin-bottom: em(20);
+
+    @include transition(height 0.3s, box-shadow 0.3s);
+
+    .pointer-item {
+      visibility: hidden;
+      margin-bottom: em(20);
+      &.is-selected {
+        &:after {
+          border-top-color: $c_moen-logo-blue;
+        }
+      }
+    }
+
+    .card__title {
+      color: $c_moen-bright-blue;
+      font-size: em(26);
+      font-family: $din-light;
+      font-weight: normal;
+      margin: 0 0 em(10);
+      text-align: center;
+    }
+
+    .card__image {
+      margin: 0 0 em(10);
+    }
+
+    .card__links {
+      font-size: em(15);
+    }
+
+    .link {
+      margin-right: 1.2em; // offset against in-built icon-link padding - helps to make link appear horizontally centered.
+      visibility: hidden;
+      text-align: center;
+      display: block;
+      max-width: 100%; // ie10
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 8px 2px $c_nav_gray;
+      text-decoration: none;
+      height: 380px;
+      .link,
+      .pointer-item {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+/*
+simple white boxes
+
+[description]
+
+markup:
+<a class="card card--simple-white-box" href="javascript:void(0);">
+  <img class="card__image" src="./images/icon-instructions.svg" alt="" />
+  <h2 class="card__title">Parts &amp; Instruction Sheets</h2>
+  <p class="card__subtitle">Find instruction sheets, product specs, parts diagrams, and more.</p>
+</a>
+
+Styleguide 3.15.2
+*/
+
+@include block(card) {
+  @include modifier(simple-white-box) {
+    box-shadow: 2px 2px 4px -3px #333;
+    border: 3px solid transparent;
+    padding: 30px;
+    text-align: center;
+    min-height: 340px;
+    margin-bottom: em(25);
+    @include transition(border 0.5s);
+
+    .card__title {
+      color: #04a5d9; // new color?
+      font-family: $din-bold;
+      font-size: em(16);
+      line-height: 1.25;
+      margin: 10px auto;
+    }
+
+    .card__image {
+      width: 100%;
+      height: 100px;
+    }
+
+    .card__subtitle {
+      color: $c_dove-gray;
+      font-size: em(14);
+      line-height: 1.2;
+      max-width: 100%; // ie10, ie11 fix.
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $c_moen-bright-blue;
+    }
+  }
+}
+
+/*
+blue boxes
+
+[description]
+
+markup:
+<a class="card card--blue-box" href="javascript:void(0);" style="background-image: url(./images/styleguide/innovation-motionsense.jpg);">
+  <div class="card__front-content">
+    <h3 class="card__title">MotionSense<sup>®</sup></h3>
+    <p class="card__subtitle">Hands-free convenience</p>
+  </div>
+  <div class="card__back-content">
+    <p class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/xo5sjvcu2r/200px/motionsense_logo.png?u=4wu0a0);">MotionSense</p>
+    <p>MotionSense<sup>®</sup> responds the instant you need it, delivering exceptional, hands-free convenience in the kitchen.</p>
+    <span class="link--icon--right-white">Explore MotionSense <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true"></span>
+  </div>
+</a>
+
+
+Styleguide 3.15.3
+*/
+
+@include block(card) {
+  @include modifier(blue-box) {
+    display: block;
+    background: transparent 50% 0 no-repeat;
+    position: relative;
+
+    height: 323px;
+    min-height: 323px;
+
+    .card__front-content {
+      color: $c_white;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: $c_card_bg_blue;
+      padding: 15px;
+      min-height: 100px;
+    }
+
+    .card__back-content {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $c_card_bg_blue;
+      color: $c_white;
+      text-align: center;
+      padding: 0 .5em; // have to restate padding since this is pos:absolute
+      font-size: em(18);
+      line-height: 1.334;
+
+      @include transition(opacity 0.3s linear);
+
+      p {
+        font-size: inherit;
+      }
+    }
+
+    .card__title {
+      font-size: em(24);
+      line-height: 1.25;
+      margin: 0;
+      padding: 0
+    }
+
+    .card__subtitle {
+      margin: 0;
+      padding: 0;
+    }
+
+    .card__back-image {
+      width: auto;
+      height: 25%;
+      text-indent: -99999px;
+      overflow: hidden;
+      padding: 0;
+      margin: 1em auto;
+      background-position: 50%;
+      background-size: contain
+    }
+
+    &:hover,
+    &:focus {
+      .card__front-content {
+        display: none;
+      }
+      .card__back-content {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/*
+text left, 3 right
+
+[description]
+
+markup:
+<a class="card card--box" href="javascript:void(0);" style="background-image: url(./images/styleguide/card_microban.jpg);">
+      <div class="card__front-content">
+        <h3 class="card__title">MotionSense<sup>®</sup></h3>
+        <p class="card__subtitle">Hands-free convenience</p>
+      </div>
+      <div class="card__back-content">
+        <p class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/xo5sjvcu2r/200px/motionsense_logo.png?u=4wu0a0);">MotionSense</p>
+        <p>MotionSense<sup>®</sup> responds the instant you need it, delivering exceptional, hands-free convenience in the kitchen.</p>
+        <span class="link--icon--right-white">Explore MotionSense <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true"></span>
+      </div>
+    </a>
+
+Styleguide 3.15.4
+*/
+@include block(card) {
+  @include modifier(box) {
+    position: relative;
+    display: block;
+
+    background: transparent 50% 0 no-repeat;
+    background-size: cover;
+
+    //height: 276px;
+    min-height: 276px;
+
+    &.card {
+      width: 100%; // overridden
+      max-width: 100%; // overridden
+      @include media($bp-md) {
+        width: 230px;
+      }
+    }
+
+    .card__front-content {
+      position: absolute;
+      color: $c_white;
+      //width: 100%;
+      bottom: 0;
+      left: 0;
+      padding: 15px;
+    }
+
+    .card__back-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      padding: .5em;
+
+      position: absolute;
+      opacity: 0;
+
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      background-color: $c_card_bg_blue;
+      color: $c_white;
+
+      text-align: center;
+
+      font-size: em(18);
+      line-height: 1.334;
+
+      @include transition(opacity 0.3s linear);
+
+    }
+
+    .card__title {
+      font-size: em(24);
+      line-height: 1.25;
+      margin: 0;
+      padding: 0
+    }
+
+    .card__subtitle {
+      padding: 0;
+    }
+
+    .card__back-image {
+      width: 100%;
+      height: 50px;
+      text-indent: -99999px;
+      overflow: hidden;
+      padding: 0;
+      margin: 1em;
+      background-position: 50%;
+      background-size: contain;
+    }
+
+    &:hover,
+    &:focus {
+      .card__front-content {
+        display: none;
+      }
+      .card__back-content {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/*
+tall card
+
+[description]
+
+markup:
+<a class="card card--tall-box" href="javascript:void(0);" style="background-image: url(./images/styleguide/card_microban.jpg);">
+  <div class="card__front-content">
+    <h3 class="card__title">MotionSense<sup>®</sup></h3>
+    <p class="card__subtitle">Hands-free convenience</p>
+  </div>
+  <div class="card__back-content">
+    <p class="card__back-image" style="background-image: url(http://embed.widencdn.net/img/moen/xo5sjvcu2r/200px/motionsense_logo.png?u=4wu0a0);">MotionSense</p>
+    <div class="card__content-wrapper">
+      <p>MotionSense<sup>®</sup> responds the instant you need it, delivering exceptional, hands-free convenience in the kitchen.</p>
+      <span class="link--icon--right-white">Explore MotionSense <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true"></span>
+    </div>
+  </div>
+</a>
+
+Styleguide 3.15.5
+*/
+@include block(card) {
+  @include modifier(tall-box) {
+    position: relative;
+    display: block;
+
+    background: transparent 50% 0 no-repeat;
+    background-size: cover;
+
+    min-height: 406px;
+
+    &.card {
+      width: 100%; // overridden
+      max-width: 100%; // overridden
+      @include media($bp-md) {
+        width: 230px;
+      }
+    }
+
+    .card__front-content {
+      position: absolute;
+      color: $c_white;
+      bottom: 0;
+      left: 0;
+      padding: 15px;
+    }
+
+    .card__back-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      padding: .5em;
+
+      position: absolute;
+      opacity: 0;
+
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      background-color: $c_card_bg_blue;
+      color: $c_white;
+
+      text-align: center;
+
+      font-size: em(18);
+      line-height: 1.334;
+
+      @include transition(opacity 0.3s linear);
+
+    }
+
+    .card__title {
+      font-size: em(24);
+      line-height: 1.25;
+      margin: 0;
+      padding: 0
+    }
+
+    .card__subtitle {
+      padding: 0;
+    }
+
+    .card__back-image {
+      width: 100%;
+      height: 30%;
+      text-indent: -99999px;
+      overflow: hidden;
+      padding: 0;
+      margin: 1em auto;
+      background-position: 50%;
+      background-size: contain
+    }
+
+    &:hover,
+    &:focus {
+      .card__front-content {
+        display: none;
+      }
+      .card__back-content {
+        opacity: 1;
+      }
+    }
+
+  }
+}
+
+/*
+blue wide card with hover
+
+[description]
+
+markup:
+<a class="card card--blue-box-wide" href="javascript:void(0);" style="background-image: url(./images/styleguide/card_mpact.jpg);">
+  <div class="card__front-content">
+    <h3 class="card__title">M●PACT<sup>®</sup></h3>
+    <p class="card__subtitle">Change your fixtures with ease</p>
+  </div>
+  <div class="card__back-content">
+    <div class="card__logo" style="background-image: url(http://embed.widencdn.net/img/moen/dnf52tmesp/100px/mpact.png?u=4wu0a0);">M•PACT</div>
+    <div class="card__content-wrapper">
+      <p class="card__content">With M●PACT, you can change your faucet style without replacing any plumbing. It‘s as easy as changing a light bulb.</p>
+      <div class="card__links">
+        <span class="link link--icon--left-white">
+        <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">Explore M●PACT
+      </span>
+      </div>
+    </div>
+  </div>
+</a>
+
+Styleguide 3.15.6
+*/
+@include block(card) {
+  @include modifier(blue-box-wide) {
+    position: relative;
+    //display: block;
+
+    background: transparent right 0 no-repeat;
+    background-size: cover;
+
+    min-height: 196px;
+
+    &.card {
+      width: 100%; // overridden
+      max-width: 660px; // overridden
+    }
+
+    box-shadow: 0 0 0 0 #999;
+
+    margin: 0 auto 1em; // overridden
+
+    .card__front-content {
+      position: absolute;
+      color: $c_white;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    .card__back-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      padding: .5em;
+
+      position: absolute;
+      opacity: 0;
+
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      background-color: $c_card_bg_blue;
+      color: $c_white;
+
+      @include transition(opacity 0.3s linear);
+
+      @include media($bp-md) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+    }
+
+    .card__title {
+      font-size: em(30);
+      line-height: 1.25;
+      margin: 0;
+      padding: 0;
+    }
+
+    .card__subtitle {
+      padding: 0;
+    }
+
+    .card__content-wrapper {
+      position: relative;
+      padding: 0 1em;
+    }
+
+    .card__links {
+      margin-top: 1em;
+      margin: 0;
+      max-width: 100%;
+      .link--icon--left-white {
+        margin-top: 1em;
+        padding-right: 1em;
+      }
+    }
+
+    .card__content {
+      padding: 0;
+      text-align: center;
+      max-width: 100%; // ie10, ie11 fix
+      margin: 0;
+    }
+/*
+    .card__logo {
+      position: relative;
+      width: 50%;
+      height: 50%;
+      text-indent: -99999px;
+      overflow: hidden;
+      background-position: 50%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin: 0 auto .5em;
+      @include media($bp-md) {
+        margin: 0;
+      }
+    }*/
+
+    .card__back-image {
+      width: 100%;
+      height: 100%;
+      text-indent: -99999px;
+      overflow: hidden;
+      padding: 0;
+      margin: 1em;
+      background-position: 50%;
+      background-size: contain;
+    }
+
+    &:hover,
+    &:focus {
+      .card__front-content {
+        display: none;
+      }
+      .card__back-content {
+        opacity: 1;
+      }
+    }
+
+    // Overriding defaults keeps this layout as 1 wide card:
+    @include media($bp-xs) {
+      max-width: 660px;
+      margin: 0 7px 1em;
+    }
+  }
+}
+
+/*
+text right, image left
+
+[description]
+
+markup:
+<div class="card">
+</div>
+
+Styleguide 3.15.7
+*/
+
+/*
+no hover
+
+[description]
+
+markup:
+<div class="card card--no-hover">
+  <img src="./images/styleguide/visual-assets_sub_1.jpg" alt="" class="card__image">
+  <ul class="list card__links">
+    <li class="card__link-item"><a class="link" href="javascript:void(0);" title="Moen Logos">Logos</a></li>
+    <li class="card__link-item"><a class="link" href="javascript:void(0);" title="Moen Brand Standards" target="_blank">Moen Brand Standards</a></li>
+  </ul>
+</div>
+
+Styleguide 3.15.8
+*/
+
+@include block(card) {
+
+  @include modifier(no-hover) {
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 0 7px 1em;
+
+    .card__image {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: .5em;
+    }
+
+    .card__links {
+      align-self: flex-start;
+      display: block;
+      text-align: left;
+      font-size: em(14);
+      line-height: 1;
+    }
+
+    .card__link-item {
+      margin-bottom: .5em;
+    }
+  }
+}
+
+/*
+hover
+
+[description]
+
+markup:
+<div class="card card--hover" style="background-image: url(./images/styleguide/general.jpg);">
+  <div class="card__title">Faucets &amp; Parts</div>
+  <div class="card__front-content">
+  </div>
+  <div class="card__back-content">
+    <ul class="list card__links">
+      <li class="card__link-item">
+        <a href="#" class="link link--icon--left-white">
+          <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">Lifetime Limited Warranty
+        </a>
+      </li>
+      <li class="card__link-item">
+        <a href="#" class="link link--icon--left-white">
+          <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">10 year Multi-Family Limited Warranty
+        </a>
+      </li>
+      <li class="card__link-item">
+        <a href="#" class="link link--icon--left-white">
+          <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">5 Year Limited Warranty
+        </a>
+      </li>
+      <li class="card__link-item">
+        <a href="#" class="link link--icon--left-white">
+          <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">One Year Warranty - Parts
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+Styleguide 3.15.9
+*/
+
+@include block(card) {
+  @include modifier(hover) {
+    height: 320px;
+    position: relative;
+    box-shadow: 0 0 0 0 #999;
+
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .card__front-content {
+      color: $c_white;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: .5em; // restated here as this is absolutely positioned.
+    }
+
+    .card__back-content {
+      opacity: 0;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: baseline;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $c_card_bg_blue;
+      color: $c_white;
+      padding: 0 .5em; // restated here as this is absolutely positioned.
+      font-size: em(18);
+      line-height: 1.334;
+
+      p {
+        font-size: inherit;
+      }
+
+      @include transition(opacity 0.3s linear);
+
+      .link--icon--left-white {
+        font-weight: normal;
+        padding-right: .8em; // maybe this is a better value globally? it helps with very narrow widths when container is flexing.
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .card__title {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      color: $c_white;
+      font-size: em(30);
+      line-height: 1;
+      font-family: $din-regular;
+      opacity: 1;
+    }
+
+    .card__links {
+      font-size: em(14);
+      display: block;
+      padding: 0 0 em(30) 0;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .card__link-item {
+      margin-top: .5em;
+    }
+
+    .link {
+      color: $c_white;
+    }
+
+    .card__subtitle {
+      margin: 0;
+      padding: 0;
+    }
+
+    .card__back-image {
+      width: auto;
+      height: 50px;
+      overflow: hidden;
+      padding: 0;
+      margin: 70px auto 30px;
+      background-position: 50%;
+      background-size: contain
+    }
+
+    &:hover,
+    &:focus {
+      .card__front-content {
+        display: none;
+      }
+      .card__back-content {
+        opacity: 1;
+      }
+      .card__title {
+        top: 30px;
+        z-index: 1;
+      }
+    }
+
+    // Overriding defaults keeps this layout as max 3 cards per flex row:
+    @include media($bp-xs) {
+      width: 320px;
+      max-width: 320px;
+    }
+  }
+}
+
+/*
+Large Card
+
+(seen in Variant 9 video poster frame)
+
+markup:
+<a class="card card--blue-box-large" href="javascript:void(0);" style="background-image: url(./images/styleguide/thoughtful_design_magnetix.jpg);">
+  <div class="card__front-content">
+    <h3 class="card__title">Latest Innovation</h3>
+  </div>
+</a>
+
+Styleguide 3.15.10
+*/
+@include block(card) {
+  @include modifier(blue-box-large) {
+    display: block;
+    background: transparent 50% 0 no-repeat;
+    background-size: cover;
+    position: relative;
+
+    min-height: 395px;
+
+    &.card {
+      width: 100%; // overridden
+      max-width: 100%; // overridden
+      @include media($bp-md) {
+        width: 230px;
+      }
+    }
+
+    .card__front-content {
+      color: $c_white;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 160, 233, 0.8);
+      padding: 15px;
+    }
+
+    .card__title {
+      font-size: em(24);
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+    }
+
+    .card__subtitle {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+/*
+Question Card
+
+This card type is used for the question choices on content such as the "Identify my Product" page.
+
+markup:
+<li class="question-card" data-answer="kitchen">
+  <a href="javascript:void(0);" class="question-card__content Xroom-option-kitchen">
+    <image class="question-card__default-image" src="./images/styleguide/parts_finder/room_kitchen-default.jpg" />
+    <image class="question-card__active-image"  src="./images/styleguide/parts_finder/room_kitchen-active.jpg"  />
+    <label class="question-card__label Xselected">Kitchen</label>
+  </a>
+</li>
+
+Styleguide 3.15.11
+*/
+
+@include block(question-card) {
+  list-style-type: none; // should this be instead assigned to the parent list container?
+
+  @mixin question-card-image-base {
+    max-width: 100%;
+    opacity: 0;
+    //transition: opacity .3s ease-in-out;
+    display: block;
+    margin: 0 auto;
+  }
+
+  @include element(content) {
+    display: block;
+    text-decoration: none;
+    color: $c_text-base;
+    padding: 20px;
+    border: 1px solid transparent;
+    position: relative;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      border-color: $c_moen-gray;
+      background-image: none;
+      .question-card__default-image {
+        opacity: 0;
+        height: 0;
+      }
+      .question-card__active-image {
+        opacity: 1;
+        height: auto;
+      }
+    }
+  }
+
+  @include element(default-image) {
+    @include question-card-image-base();
+    opacity: 1;
+    height: auto;
+  }
+
+  @include element(active-image) {
+    @include question-card-image-base();
+    opacity: 0;
+    height: 0;
+  }
+
+  @include element(label) {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1em;
+    line-height: 1.2;
+    text-align: center;
+    margin: 10px auto 0;
+  }
+
+}
+
+/*
+Question Card (bath, example 2)
+
+markup:
+<li class="question-card" data-answer="bath">
+  <a href="javascript:void(0);" class="question-card__content Xroom-option-bath">
+    <image class="question-card__default-image" src="./images/styleguide/parts_finder/room_bath-default.jpg" />
+    <image class="question-card__active-image"  src="./images/styleguide/parts_finder/room_bath-active.jpg"  />
+    <label class="question-card__label Xselected">bath</label>
+  </a>
+</li>
+
+Styleguide 3.15.11.1
+*/
+
+/*
+Question Card (laundry & utility, example 3)
+
+markup:
+<li class="question-card" data-answer="bath">
+  <a href="javascript:void(0);" class="question-card__content Xlaundry-and-utility">
+    <image class="question-card__default-image" src="./images/styleguide/parts_finder/room_laundry_and_utility-default.jpg" />
+    <image class="question-card__active-image"  src="./images/styleguide/parts_finder/room_laundry_and_utility-active.jpg"  />
+    <label class="question-card__label Xselected">laundry &amp; utility</label>
+  </a>
+</li>
+
+Styleguide 3.15.11.2
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@include block(card) {
+  @include modifier(choice) {
+    cursor: pointer;
+    height: 245px;
+    max-width: 490px;
+    padding: 0;
+    position: relative;
+    width: 100%;
+
+    .card__overlay {
+      content: '';
+      position: absolute;
+      bottom:0;
+      height:100%;
+      left: 0;
+      width: 100%;
+
+      background: linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(126,126,126,.1) 60%,rgba(0, 0, 0, 0.63) 100%);
+
+      // -webkit-transition: background 0.5s cubic-bezier(0.15, 0.49, 0.16, 1.04);
+      // -moz-transition: background 0.5s cubic-bezier(0.15, 0.49, 0.16, 1.04);
+      // -ms-transition: background 0.5s cubic-bezier(0.15, 0.49, 0.16, 1.04);
+      // -o-transition: background 0.5s cubic-bezier(0.15, 0.49, 0.16, 1.04);
+      // transition: background 0.5s cubic-bezier(0.15, 0.49, 0.16, 1.04);
+
+      z-index: 10;
+    }
+
+    .card__title {
+      bottom: 5px;
+      color: $c_white;
+      font-family: $din-light;
+      font-size: 26px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    /// Temporary solution //
+    .card__image img {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+
+    &:hover .card__overlay {
+      background: rgba($c_moen-bright-blue, 0.84);
+    }
+  }
+
+  @include state(selected-choice) {
+    .card__overlay {
+      background: rgba($c_moen-bright-blue, 0.84);
+    }
+
+    &::after {
+      content: url('http://www-newdev.moen.com/assets/moencom/images/preference-quiz/check-mark.png');
+      position: absolute;
+      left: calc(50% - 50px);
+      bottom: calc(50% - 50px);
+      z-index: 30;
+    }
+
+
+  }
+}
+
+
+
+@include block(card) {
+  @include modifier(choice-3) {
+    max-width: 320px;
+    height: 313px;
+
+  }
+}

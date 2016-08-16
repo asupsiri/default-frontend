@@ -1,0 +1,9 @@
+@mixin pointer($size, $color:currentColor) {
+  @include triangle($size, $color, down); // Bourbon mixin
+  content: " ";
+  top: 100%;
+  left: 50%;
+  position: absolute;
+  pointer-events: none;
+  margin-left: -$size/2;
+}

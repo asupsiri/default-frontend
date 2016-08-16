@@ -1,0 +1,84 @@
+/*
+PDP Collection Section
+
+Markup:
+<div class="pdp-collection">
+  <div class="pdp-collection__inner row">
+    <div class="pdp-collection__image col-md-7">
+      <img src="http://placehold.it/705x340" alt="Image">
+    </div>
+    <div class="pdp-collection__details col-md-5">
+      <div class="pdp-collection__details-container">
+        <h3 class="pdp-collection__name">The 90 Degree™ Collection</h3>
+        <div class="pdp-collection__description">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+        </div>
+        <a href="#" class="button button--secondary-flat">Secondary Button Flat</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+Styleguide 4.10.6
+*/
+
+@include block(pdp-collection) {
+  @include outer-container();
+  background: $c_pdp_collection;
+  font-size: 1rem;
+  height: auto;
+
+  @include media($bp-md) {
+    height: 340px;
+  }
+
+  @include element(inner) {
+    height: 100%;
+  }
+
+  @include element(image) {
+    overflow: hidden;
+    img {
+      height: auto;
+      left: 50%;
+      position: relative;
+      transform: translateX(-50%);
+      width: 100%;
+      @include media($bp-md) {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+
+  @include element(details) {
+    position: relative;
+    height: 100%;
+  }
+
+  @include element(details-container) {
+    position: relative;
+    left: 0;
+    padding: 1em;
+    top: 0;
+    transform: translateY(0%);
+    @include media($bp-md) {
+      position: absolute;
+      top:50%;
+      left: 0;
+      padding: 0 1em 0 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  @include element(name) {
+    font-size: rem(30px);
+    font-family: $din-light;
+  }
+
+  @include element(description) {
+    border-top:1px solid $c_moen_gray;
+    margin: 1em 0;
+    padding-top: 1em;
+  }
+}

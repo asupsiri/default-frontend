@@ -1,0 +1,77 @@
+// global navigation container (full-width)
+@include block(global-header) {
+  @include element(container) {
+    font-family: $din-medium;
+    font-size: rem(12);
+    line-height: rem(28);
+    min-height: rem(28);
+    background-color: $c_moen-bright-blue;
+    color: $c_white;
+    color: #b3e9fe;
+    position: relative;
+    z-index: z("global-header");
+    *:focus {
+      outline: none;
+      border-color: inherit;
+      box-shadow: 0 0 8px $c_white;
+    }
+    .form-select {
+      font-size: rem(12);
+      padding: initial;
+      optgroup,
+      option {
+        color: $c_text-base;
+      }
+    }
+    h3:empty {
+      display: none;
+    }
+
+    p {
+      padding: 0;
+      margin: 0;
+      font-size: inherit;
+      a {
+        color: inherit;
+        margin-left: 1em;
+        text-transform: uppercase;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  @include element(flex-row) {
+    display: block;
+    padding: 0 $grid-outside-spacing;
+    @include media($bp-xs) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @include media($max-width + $grid-outside-spacing-bp-offset) {
+      padding: 0;
+    }
+  }
+
+  @include element(nav) {
+    @include element(link) {
+      color: inherit;
+      font-weight: 600;
+    }
+    li {
+      padding: 0 .2em 0 0;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:not(:first-child):not(:last-child) {
+        :after {
+          content: " | ";
+          font-weight: initial;
+        }
+      }
+    }
+  }
+}

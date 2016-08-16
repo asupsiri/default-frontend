@@ -1,0 +1,368 @@
+/*
+Facet Filtering
+
+Styleguide 4.15
+*/
+
+/*
+Facet Filtering with no filters
+
+markup:
+<div class="facets">
+  <div class="facets__form">
+    <form>
+      <div class="facets__main">
+        <div class="facets__select-sort form-select--blue">
+          <select name="sort" class="form-select">
+            <option disabled="disabled" selected="selected">Sort</option>
+            <option>Most Popular</option>
+            <option>Customer Review</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+          </select>
+        </div>
+        <div class="facets__main-buttons">
+          <button class="facets__button-filters button  button--default-border button--down-arrow">FILTER</button>
+          <button class="facets__button-apply-filter button button--default-border">Apply Filters</button>
+          <a class="facets__clear-all link">Clear All Filters</a>
+        </div>
+      </div>
+      <div class="facets__filters is-active">
+        <div class="facets__inner">
+          <div class="facets__container">
+            <button class="facets__button button button--default button--down-arrow is-active">Product Type (2)</button>
+            <div class="facets__list">
+              <div class="facets__ck form-checkbox--blue">
+                <input id="ckArmDiverter" name="ckArmDiverter" type="checkbox">
+                <label for="ckArmDiverter">Arm Diverter (36)</label>
+              </div>
+              <div class="facets__ck form-checkbox--blue">
+                <input id="ckBodySprays" name="ckBodySprays" type="checkbox">
+                <label for="ckBodySprays">Body Sprays (15)</label>
+              </div>
+              <div class="facets__ck form-checkbox--blue">
+                <input id="ckBracket" name="ckBracket" type="checkbox">
+                <label for="ckBracket">Bracket (10)</label>
+              </div>
+              <div class="facets__ck form-checkbox--blue">
+                <input id="ckDropEli" name="ckDropEli" type="checkbox">
+                <label for="ckDropEli">Drop Eli (13)</label>
+              </div>
+            </div>
+            <button class="facets__button button button--default button--down-arrow">Any Price (2)</button>
+            <button class="facets__button button button--default button--down-arrow">Any Style (2)</button>
+            <button class="facets__button button button--default button--down-arrow">Any Collection</button>
+            <div class="facets__select-more-filters form-select--blue form-select--blue-no-border">
+              <select name="moreFilters" class="form-select">
+                <option disabled="disabled" selected="selected">More Filters</option>
+                <option>Most Popular</option>
+                <option>Customer Review</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+              </select>
+            </div>
+            <a class="facets__clear-all link">Clear All Filters</a>
+            <button class="facets__button-apply-filter button button--default-border">Apply Filters</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+Styleguide 4.15.1
+*/
+@mixin filtersDesktopPos() {
+  top: 66px; // It change with JS
+  width: 100%;
+}
+@include block(facets) {
+  font-size: 1rem;
+  position: relative;
+  z-index: z("facets");
+
+  // Elements
+  @include element(container) {
+    @include outer-container();
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    position: relative;
+    z-index: 1;
+    & > * {
+      margin-bottom: .3em;
+      order: 0;
+    }
+    @include media ($bp-lg) {
+      flex-direction: row;
+    }
+  }
+  @include element(main) {
+    background: $c_moen-bright-blue;
+    text-align: center;
+    padding: 1em .5em;
+    @include media ($bp-sm) {
+      display: flex;
+      justify-content: flex-start;
+      align-items: strech;
+      & > * {
+        margin-right: .5em;
+      }
+      & > :last-child {
+        margin-right: 0;
+      }
+    }
+    @include media ($bp-lg) {
+      justify-content: center;
+    }
+  }
+  @include element(select-sort) {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1em;
+    width: 100%;
+    .form-select {
+      line-height: 1.3;
+      width: 100%;
+      option {
+        background-color: $c_moen-bright-gray;
+        color: $c_text-dark;
+      }
+    }
+    @-moz-document url-prefix() {
+      .form-select {
+        height: 32px;
+        padding: 5px;
+      }
+    }
+    @include media ($bp-sm) {
+      display: flex;
+      margin-bottom: 0;
+      flex-basis: 30%;
+    }
+    @include media ($bp-lg) {
+      flex-basis: 300px;
+    }
+  }
+  @include element(select-more-filters) {
+    border-color: $c_moen-bright-blue;
+    line-height: 1.3;
+    min-width: 120px;
+    padding-left: 10px;
+    @include media ($bp-sm) {
+      padding-left: 0;
+    }
+    select {
+      height: 32px;
+      padding: .4em 1em .5em;
+      @-moz-document url-prefix() {
+        padding: .3em 1em .6em;
+      }
+    }
+  }
+  @include element(main-buttons) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include media ($bp-sm) {
+      flex-basis: 70%;
+      & > * {
+        margin-right: .5em;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    @include media ($bp-lg) {
+      margin-right: 0;
+      flex-basis: auto;
+    }
+  }
+  @include element(button) {
+    background-color: $c_jordy_blue;
+    width: 100%;
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $c_moen-logo-blue;
+      opacity: 1;
+    }
+    @include media ($bp-sm) {
+      width: inherit;
+    }
+  }
+  @include element(button-apply-filter) {
+    display: none;
+    @include media ($bp-sm) {
+      display: flex;
+    }
+    @include media ($bp-lg) {
+      display: none;
+    }
+  }
+  @include element(button-filters) {
+    width: 100%;
+    @include media ($bp-sm) {
+      width: auto;
+    }
+  }
+  @include element(clear-all) {
+    color: $c_white;
+    display: none;
+    padding-left: 16px;
+    vertical-align: middle;
+    @include media ($bp-sm) {
+      display: flex;
+      padding-left: 0;
+    }
+    @include media ($bp-lg) {
+      display: none;
+    }
+  }
+  @include element(inner) {
+    background: $c_moen-bright-blue;
+    @include media ($bp-lg) {
+      background: rgba(0,169,224, 0.9);
+      width: 100%;
+    }
+  }
+  @include element(list) {
+    display: none;
+    flex-direction: column;
+    line-height: 1.5em;
+    padding: .5em 1em;
+    @include state(active) {
+      display: flex;
+      @include media ($bp-lg) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        .facets__ck {
+          width: 25%;
+        }
+      }
+    }
+  }
+  @include element(ck) {
+    border: 0;
+    color: $c_white;
+    display: inline-flex;
+    flex-direction: row;
+    height: 40px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  @include element(filters) {
+    display: none;
+    @include state(active) {
+      display: block;
+      position: absolute;
+      top: 115px;
+      right: 0;
+      width: 300px;
+    }
+    .facets__button {
+      text-align: left;
+    }
+    .facets__inner {
+      .facets__button-apply-filter,
+      .facets__clear-all {
+        display: inherit;
+      }
+      .facets__clear-all {
+        order: 1;
+      }
+    }
+
+    @include media ($bp-sm) {
+      &.is-active {
+        top: 66px;
+      }
+      .facets__inner {
+        .facets__button-apply-filter,
+        .facets__clear-all {
+          display: none;
+        }
+      }
+    }
+    @include media ($bp-lg) {
+       @include filtersDesktopPos();
+      padding: 0;
+      &.is-active {
+        @include filtersDesktopPos();
+        display: flex;
+        .facets__button {
+          margin-right: .5em;
+          &:last-child {
+            margin-right: auto;
+          }
+        }
+        .facets__button-apply-filter {
+          display: block;
+          position: absolute;
+          bottom: 10px;
+          right: 0;
+        }
+      }
+      .facets__button,
+      .facets__select-more-filters {
+        margin: 10px 0;
+        width: auto;
+      }
+      .facets__inner {
+        .facets__clear-all {
+          display: flex;
+          margin-left: auto;
+          margin-top: 16px;
+        }
+      }
+      .facets__list {
+        background-color: transparent;
+        left: 0;
+        position: absolute;
+        top: 54px;
+        width: 100%;
+      }
+      .facets__container {
+        display: flex;
+        height: 200px; // It changes with JS
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+  }
+  .button,
+  .button:after {
+    transition: transform .1s ease-in-out, background .1s ease-in-out;
+  }
+
+  .button--default-border {
+    background-color: $c_jordy_blue;
+    font-family: $helvetica;
+    vertical-align: middle;
+    position: relative;
+    &.is-active,
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $c_moen-bright-blue;
+      color: $c_white;
+      opacity: .9;
+      text-decoration: none !important;
+    }
+    p:hover {
+      color: $c_white;
+      text-decoration: none !important;
+    }
+  }
+
+  .button--down-arrow {
+    font-family: $helvetica;
+    &.is-active {
+      background-color: $c_moen-logo-blue;
+      &:after {
+        transform: rotate(180deg);
+        top: 45%;
+      }
+    }
+  }
+}

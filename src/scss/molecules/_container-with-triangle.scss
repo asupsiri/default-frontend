@@ -1,0 +1,20 @@
+/*
+Container with Pointer
+
+Used in the FAQ list to indicate the selected state of a menu item.
+
+markup:
+<div class="pointer-item is-selected">Item One</div>
+
+Styleguide 3.13
+*/
+
+@include block(pointer-item) {
+  background-color: $c_moen-bright-blue;
+  position: relative;
+  @include state(selected) {
+    &:after {
+      @include pointer(16px, $c_moen-bright-blue);
+    }
+  }
+}

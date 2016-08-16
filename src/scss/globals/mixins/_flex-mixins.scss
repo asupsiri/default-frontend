@@ -1,0 +1,26 @@
+/* Vertical Centering Mixin using CSS Flexbox Syntax
+ *
+ * @param $height _required_  the parent container height
+ *
+ */
+
+@mixin vertical-center($height) {
+  display: flex;
+  align-items: center;
+
+  height: $height;
+  // Check for argument validity
+  @if $height != "" {
+    @content;
+  } @else {
+    @error "$height value is not defined for mixin `vertical-center`.";
+  }
+}
+
+/* Vertical and Horizontal Centering Mixin using CSS Flexbox Syntax */
+
+@mixin centerer() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

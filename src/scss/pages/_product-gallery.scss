@@ -1,0 +1,276 @@
+/*
+Product Gallery
+
+markup:
+<div class="product-gallery">
+  <div class="facets">
+    <div class="facets__form">
+      <form>
+        <div class="facets__main">
+          <div class="facets__select-sort form-select--blue">
+            <select name="sort" class="form-select">
+              <option disabled="disabled" selected="selected">Sort</option>
+              <option>Most Popular</option>
+              <option>Customer Review</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+            </select>
+          </div>
+          <div class="facets__main-buttons">
+            <button class="facets__button button  button--default-border button--down-arrow">FILTER</button>
+            <button class="facets__button-filter button button--default-border">Apply Filters</button>
+            <a class="facets__clear-all link">Clear All Filters</a>
+          </div>
+        </div>
+        <div class="facets__filters is-active">
+          <div class="facets__inner">
+            <div class="facets__container">
+              <button class="facets__button button button--default button--down-arrow is-active">Product Type (2)</button>
+              <div class="facets__list">
+                <div class="facets__ck form-checkbox--blue">
+                  <input id="ckArmDiverter" name="ckArmDiverter" type="checkbox">
+                  <label for="ckArmDiverter">Arm Diverter (36)</label>
+                </div>
+                <div class="facets__ck form-checkbox--blue">
+                  <input id="ckBodySprays" name="ckBodySprays" type="checkbox">
+                  <label for="ckBodySprays">Body Sprays (15)</label>
+                </div>
+                <div class="facets__ck form-checkbox--blue">
+                  <input id="ckBracket" name="ckBracket" type="checkbox">
+                  <label for="ckBracket">Bracket (10)</label>
+                </div>
+                <div class="facets__ck form-checkbox--blue">
+                  <input id="ckDropEli" name="ckDropEli" type="checkbox">
+                  <label for="ckDropEli">Drop Eli (13)</label>
+                </div>
+              </div>
+              <button class="facets__button button button--default button--down-arrow">Any Price (2)</button>
+              <button class="facets__button button button--default button--down-arrow">Any Style (2)</button>
+              <button class="facets__button button button--default button--down-arrow">Any Collection</button>
+              <button class="facets__button button button--default button--down-arrow">More Filters</button>
+              <a class="facets__clear-all link">Clear All Filters</a>
+              <button class="facets__button-apply-filter button button--default-border">Apply Filters</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="product-gallery__results results container container--main">
+    <div class="row">
+      <div class="results__header">
+        <label class="results__header--range">Viewing 21—40</label>
+      </div>
+    </div>
+    <div class="tile-row">
+      <!-- product tile -->
+      <a class="tile product-tile" href="#">
+        <div class="product-tile__head">
+          <div class="product-tile__like"></div>
+          <img src="images/faucet-1-fpo.png" class="product-tile__image" />
+          <p class="product-tile__name">Voss one-handle high arc pullout kitchen faucet in oil rubbed bronze kitchen faucet in oil rubbed bronze</p>
+        </div>
+        <div class="product-tile__body">
+          <p class="product-tile__sku">Model: TS1234-5678</p>
+          <div class="rating product-tile__rating">
+            <ul class="rating__stars">
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+            </ul>
+            <label class="product-tile__rating--count">(24)</label>
+          </div>
+          <p class="product-tile__msrp">$397.40 msrp</p>
+        </div>
+      </a>
+      <!-- product tile -->
+      <a class="tile product-tile" href="#">
+        <div class="product-tile__head">
+          <div class="product-tile__like"></div>
+          <img src="images/faucet-2-fpo.png" class="product-tile__image" />
+          <p class="product-tile__name">Voss one-handle high arc pullout </p>
+        </div>
+        <div class="product-tile__body">
+          <p class="product-tile__sku">Model: TS1234-5678</p>
+          <div class="rating product-tile__rating">
+            <ul class="rating__stars">
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+            </ul>
+            <label class="product-tile__rating--count">(24)</label>
+          </div>
+          <p class="product-tile__msrp">$397.40 msrp</p>
+        </div>
+      </a>
+      <!-- product tile -->
+      <a class="tile product-tile" href="#">
+        <div class="product-tile__head">
+          <div class="product-tile__like"></div>
+          <img src="images/faucet-1-fpo.png" class="product-tile__image" />
+          <p class="product-tile__name">Voss one-handle high arc pullout kitchen faucet in oil rubbed bronze</p>
+        </div>
+        <div class="product-tile__body">
+          <p class="product-tile__sku">Model: TS1234-5678</p>
+          <div class="rating product-tile__rating">
+            <ul class="rating__stars">
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+            </ul>
+            <label class="product-tile__rating--count">(24)</label>
+          </div>
+          <p class="product-tile__msrp">$397.40 msrp</p>
+        </div>
+      </a>
+      <!-- product tile -->
+      <a class="tile product-tile" href="#">
+        <div class="product-tile__head">
+          <div class="product-tile__like"></div>
+          <img src="images/faucet-1-fpo.png" class="product-tile__image" />
+          <p class="product-tile__name">Voss one-handle high arc pullout kitchen faucet in oil rubbed bronze</p>
+        </div>
+        <div class="product-tile__body">
+          <p class="product-tile__sku">Model: TS1234-5678</p>
+          <div class="rating product-tile__rating">
+            <ul class="rating__stars">
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+            </ul>
+            <label class="product-tile__rating--count">(24)</label>
+          </div>
+          <p class="product-tile__msrp">$397.40 msrp</p>
+        </div>
+      </a>
+      <!-- product tile -->
+      <a class="tile product-tile" href="#">
+        <div class="product-tile__head">
+          <div class="product-tile__like"></div>
+          <img src="images/faucet-1-fpo.png" class="product-tile__image" />
+          <p class="product-tile__name">Voss one-handle high arc pullout kitchen faucet in oil rubbed bronze</p>
+        </div>
+        <div class="product-tile__body">
+          <p class="product-tile__sku">Model: TS1234-5678</p>
+          <div class="rating product-tile__rating">
+            <ul class="rating__stars">
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+            </ul>
+            <label class="product-tile__rating--count">(24)</label>
+          </div>
+          <p class="product-tile__msrp">$397.40 msrp</p>
+        </div>
+      </a>
+      <!-- product tile -->
+      <a class="tile product-tile" href="#">
+        <div class="product-tile__head">
+          <div class="product-tile__like"></div>
+          <img src="images/faucet-1-fpo.png" class="product-tile__image" />
+          <p class="product-tile__name">Voss one-handle high arc pullout kitchen faucet in oil rubbed bronze</p>
+        </div>
+        <div class="product-tile__body">
+          <p class="product-tile__sku">Model: TS1234-5678</p>
+          <div class="rating product-tile__rating">
+            <ul class="rating__stars">
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+            </ul>
+            <label class="product-tile__rating--count">(24)</label>
+          </div>
+          <p class="product-tile__msrp">$397.40 msrp</p>
+        </div>
+      </a>
+      <!-- product tile -->
+      <a class="tile product-tile" href="#">
+        <div class="product-tile__head">
+          <div class="product-tile__like"></div>
+          <img src="images/faucet-1-fpo.png" class="product-tile__image" />
+          <p class="product-tile__name">Voss one-handle high arc pullout kitchen faucet in oil rubbed bronze</p>
+        </div>
+        <div class="product-tile__body">
+          <p class="product-tile__sku">Model: TS1234-5678</p>
+          <div class="rating product-tile__rating">
+            <ul class="rating__stars">
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+            </ul>
+            <label class="product-tile__rating--count">(24)</label>
+          </div>
+          <p class="product-tile__msrp">$397.40 msrp</p>
+        </div>
+      </a>
+      <!-- product tile -->
+      <a class="tile product-tile" href="#">
+        <div class="product-tile__head">
+          <div class="product-tile__like"></div>
+          <img src="images/faucet-1-fpo.png" class="product-tile__image" />
+          <p class="product-tile__name">Voss one-handle high arc pullout kitchen faucet in oil rubbed bronze</p>
+        </div>
+        <div class="product-tile__body">
+          <p class="product-tile__sku">Model: TS1234-5678</p>
+          <div class="rating product-tile__rating">
+            <ul class="rating__stars">
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+            </ul>
+            <label class="product-tile__rating--count">(24)</label>
+          </div>
+          <p class="product-tile__msrp">$397.40 msrp</p>
+        </div>
+      </a>
+      <!-- product tile -->
+      <a class="tile product-tile" href="#">
+        <div class="product-tile__head">
+          <div class="product-tile__like"></div>
+          <img src="images/faucet-1-fpo.png" class="product-tile__image" />
+          <p class="product-tile__name">Voss one-handle high arc pullout kitchen faucet in oil rubbed bronze</p>
+        </div>
+        <div class="product-tile__body">
+          <p class="product-tile__sku">Model: TS1234-5678</p>
+          <div class="rating product-tile__rating">
+            <ul class="rating__stars">
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star is-active"></li>
+              <li class="rating__star"></li>
+              <li class="rating__star"></li>
+            </ul>
+            <label class="product-tile__rating--count">(24)</label>
+          </div>
+          <p class="product-tile__msrp">$397.40 msrp</p>
+        </div>
+      </a>
+      <span class="product-tile"></span>
+      <span class="product-tile"></span>
+      <span class="product-tile"></span>
+      <span class="product-tile"></span>
+    </div>
+    <!-- final row w/ load-more button -->
+    <div class="row tile-row-button">
+      <button class="button button--gray button--full-width button--load-more">Load more results</button>
+    </div>
+  </div>
+</div>
+Styleguide 5.5
+*/

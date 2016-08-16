@@ -1,0 +1,69 @@
+/*
+ *  http://thoughtbot.github.io/neat-docs/latest/
+ *  http://culttt.com/2013/12/09/adding-bourbon-and-bourbon-neat-with-bower/
+ *
+ *  Grid functionality is defined with mixins and functions in this file; defaults are stored in the settings/neat-grid
+ *
+ */
+
+/*
+Grid
+
+Grid is built using Bourbon Neat, using the familiar Bootstrap 4 class naming conventions.
+
+This is just an example to make sure the build works with Bourbon Neat.
+
+markup:
+<div class="container">
+<div class="row">
+  <div class="child col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">1</div>
+  <div class="child col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">2</div>
+</div>
+<div class="row">
+  <div class="child col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">3</div>
+  <div class="child col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">4</div>
+  <div class="child col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">5</div>
+  <div class="child col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">6</div>
+</div>
+</div>
+
+Styleguide 10.0.0
+*/
+
+// this is for styleguide demo:
+.child {
+  height: 200px;
+  background-color: $c_white;
+  border: 1px solid $c_moen-gray;
+  margin-bottom: $grid-gutter-width;
+  padding: 1rem;
+}
+
+// Rows, contained within an outer container
+.row {
+  @include row();
+}
+
+@mixin build-grid() {
+  @each $name, $width in $grid-breakpoints {
+    @media (min-width: $width) {
+      @for $i from 1 through $grid-num-cols {
+        // span-columns() is a neat.bourbon.io function to generate grid width
+        .col-#{$name}-#{$i} {
+          @include span-columns($i);
+          padding: 0;
+        }
+        // shift() is a neat.bourbon.io function to span grid columns
+        .col-#{$name}-push-#{$i} {
+          @include shift($i);
+        }
+        .col-#{$name}-pull-#{$i} {
+          @include shift(0-$i);
+        }
+      }
+    }
+  }
+}
+
+// build grid classes
+@include build-grid();

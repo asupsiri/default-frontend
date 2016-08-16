@@ -1,0 +1,48 @@
+/* Mixins for Hidden Accessible Text (HAT)
+ *
+ * usage: <a class="offscreen" href="test.html">this link is offscreen unless it has focus</a>
+ */
+
+// Hidden Accessible Text
+//
+// Technique to hide certain text elements from visual display, but remains exposed to text-to-speech devices.
+//
+// Markup:
+// Completely hidden link: <a class="hat" href="test.html">this link is always in a visually-hidden state</a>
+// <br />
+// Hidden, but keyboard focus will reveal: <a class="hat-can-focus" href="test.html">this link is visually-hidden, unless it gains focus via user</a>
+//
+// Styleguide 11.1
+
+@mixin hat-core() {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+@mixin hat() {
+  @include hat-core();
+}
+
+@mixin hat-can-focus() {
+  @include hat-core();
+  &:focus {
+    position: relative;
+    clip: auto;
+    width: auto;
+    height: auto;
+    overflow: auto;
+  }
+}
+
+.hat {
+  @include hat-core();
+}
+
+.hat-can-focus {
+  @include hat-can-focus();
+}

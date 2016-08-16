@@ -1,0 +1,720 @@
+/*
+Banners
+
+All banner styles. 
+Banners background is added on inline-style that will be added dynamically from the backend.
+
+Banner class is extended by adding these modifiers:
+- banner--cta
+- banner--quote
+- banner--split
+- banner--split-logo
+- banner--text-center
+- banner--text-left
+- banner--text-only
+- banner--text-right
+
+For the text-box properties use the text-box classes:
+[Molecules > Text Box](http://localhost:3000/section/3.4)
+
+Styleguide 4.6
+*/
+
+/*
+Variant 1 
+
+White box with a product bar, box left.
+
+Markup:
+<div class="banner banner--text-left banner--cta" style="background-color:#eee" style="background-color:#eee">
+    <div class="banner__image-bg">
+        <img src="http://www.moen.com/assets/moencom/images/catalog/bathroom/lighting/hero.jpg">
+    </div>
+    <div class="banner__inner row">
+        <div class="col col-lg-6 banner__inner-left">
+            <div class="text-box text-box--border">
+                <div class="text-box__inner">
+                    <div class="text-box__head">Bathroom Lighting</div>
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated <a href="#">fixtures</a> for your bathroom.</div>
+                    <a href="" class="button button--secondary">Featuring the <b>Wynford Faucet</b></a>
+                    <a href="#" class="link link--icon--left">
+                       <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col col-lg-6 banner__inner-right">
+            <a href="" class="button button--banner">Featuring the <b>Wynford Faucet</b></a>
+        </div>
+    </div>
+</div>
+
+Styleguide 4.6.1
+*/
+
+/*
+Variant 2 
+
+White box with a product bar, box right.
+
+Markup:
+<div class="banner banner--text-right banner--cta" style="background-color:#eee" style="background-color:#eee">
+    <div class="banner__image-bg">
+        <img src="http://www.moen.com/assets/moencom/images/catalog/bathroom/lighting/hero.jpg">
+    </div>
+    <div class="banner__inner row">
+        <div class="col col-lg-6 banner__inner-left">
+            <a href="" class="button button--banner">Featuring the <b>Wynford Faucet</b></a>
+        </div>
+        <div class="col col-lg-6 banner__inner-right">
+            <div class="text-box text-box--border">
+                <div class="text-box__inner">
+                    <div class="text-box__head">Bathroom Lighting</div>
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide 4.6.2
+*/
+
+/*
+Variant 3
+
+White box with CTA button and gray text.
+
+Markup:
+<div class="banner banner--text-left" style="background-color:#eee">
+    <div class="banner__image-bg">
+        <img src="http://www.moen.com/assets/moencom/images/catalog/bathroom/lighting/hero.jpg">
+    </div>
+    <div class="banner__inner row">
+        <div class="col col-lg-6 banner__inner-left">
+            <div class="text-box text-box--title-gray">
+                <div class="text-box__inner">
+                    <div class="text-box__head">Bathroom Lighting</div>
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.</div>
+                    <button class="button button--secondary">Secondary Button</button> 
+                </div>
+            </div>
+        </div>
+        <div class="col col-lg-6 banner__inner-right">
+        </div>
+    </div>
+</div>
+
+Styleguide 4.6.3
+*/
+
+/*
+Variant 4
+
+White box with CTA button and logo on the top.
+
+Markup:
+<div class="banner banner--text-left" style="background-color:#eee" style="background-color:#eee">
+    <div class="banner__image-bg">
+        <img src="http://www.moen.com/assets/moencom/images/catalog/bathroom/lighting/hero.jpg">
+    </div>
+    <div class="banner__inner row">
+        <div class="col col-lg-6 banner__inner-left">
+            <div class="text-box text-box--logo-top">
+                <div class="text-box__inner">
+                    <img src="http://placehold.it/350x50?text=Moen logo text">
+                    <div class="text-box__head">Bathroom Lighting</div>
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.</div>
+                    <button class="button button--secondary">Secondary Button</button> 
+                </div>
+            </div>
+        </div>
+        <div class="col col-lg-6 banner__inner-right">
+        </div>
+    </div>
+</div>
+
+Styleguide 4.6.4
+*/
+
+/*
+Variant 5
+
+Image Only
+
+Markup:
+<div class="banner">
+    <div class="banner__image-bg">
+        <img src="http://www.moen.com/assets/moencom/images/catalog/bathroom/lighting/hero.jpg">
+    </div>
+</div>
+
+Styleguide 4.6.5
+*/
+
+/*
+Variant 6
+
+No box, text left aligned.
+Use the text-box modifier to add shadow: text-box--text-shadow
+
+Markup:
+<div class="banner banner--text-left" style="background-color:#eee" style="background-color:#eee">
+    <div class="banner__image-bg">
+        <img src="http://www.moen.com/assets/moencom/images/catalog/bathroom/lighting/hero.jpg">
+    </div>
+    <div class="banner__inner row">
+        <div class="col col-lg-6 banner__inner-left">
+            <div class="text-box text-box--no-bg text-box--text-gray">
+                <div class="text-box__inner">
+                    <div class="text-box__head">Bathroom Lighting</div>
+                    <div class="text-box__subtitle">Subtitle</div>
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.</div>
+                    <button class="button button--secondary">Secondary Button</button>
+                </div>
+            </div>
+        </div>
+        <div class="col col-lg-6 banner__inner-right">
+        </div>
+    </div>
+</div>
+<br>
+<div class="banner banner--text-left" style="background-color:#eee" style="background-color:#eee">
+    <div class="banner__image-bg">
+        <img src="http://www.moen.com/assets/moencom/images/catalog/bathroom/lighting/hero.jpg">
+    </div>
+    <div class="banner__inner row">
+        <div class="col col-lg-6 banner__inner-left">
+            <div class="text-box text-box--no-bg text-box--text-white text-box--text-shadow">
+                <div class="text-box__inner">
+                    <div class="text-box__head">Bathroom Lighting</div>
+                    <div class="text-box__subtitle">Subtitle</div>
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.</div>
+                    <button class="button button--secondary">Secondary Button</button>
+                </div>
+            </div>
+        </div>
+        <div class="col col-lg-6 banner__inner-right">
+        </div>
+    </div>
+</div>
+
+Styleguide 4.6.6
+*/
+
+/*
+Variant 7
+
+No Box, text center aligned
+
+Markup:
+<div class="banner banner--text-center" style="background-color:#eee">
+    <div class="banner__image-bg">
+        <img src="http://www.moen.com/assets/moencom/images/catalog/bathroom/lighting/hero.jpg">
+    </div>
+    <div class="banner__inner row">
+        <div class="col col-lg-6 col-lg-push-3">
+            <div class="text-box text-box--no-bg text-box--text-white text-box--text-shadow">
+                <div class="text-box__inner">
+                    <div class="text-box__head">Bathroom Lighting</div>
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.</div>
+                    <button class="button button--secondary">Secondary Button</button> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide 4.6.7
+*/
+
+/*
+Variant 8
+
+No Box, text right
+
+Markup:
+<div class="banner banner--text-right" style="background-color:#eee">
+    <div class="banner__image-bg">
+        <img src="http://www.moen.com/assets/moencom/images/catalog/bathroom/lighting/hero.jpg">
+    </div>
+    <div class="banner__inner row">
+        <div class="banner__inner-left col col-lg-6"></div>
+        <div class="banner__inner-right col col-lg-6">
+            <div class="text-box text-box--no-bg text-box--text-gray">
+                <div class="text-box__inner">
+                    <div class="text-box__head">Bathroom Lighting</div>
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.</div>
+                    <button class="button button--secondary">Secondary Button</button> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide 4.6.8
+*/
+
+/*
+Variant 9
+
+No Box, text left
+
+Markup:
+<div class="banner banner--text-left" style="background-color:#eee">
+    <div class="banner__image-bg">
+        <img src="http://www.moen.com/assets/moencom/images/catalog/bathroom/lighting/hero.jpg">
+    </div>
+    <div class="banner__inner row">
+        <div class="banner__inner-left col col-lg-6">
+            <div class="text-box text-box--no-bg text-box--text-white text-box--logo-top">
+                <div class="text-box__inner">
+                    <img src="http://placehold.it/350x50?text=Moen logo text">
+                    <div class="text-box__head">Bathroom Lighting</div>
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.</div>
+                    <button class="button button--secondary">Secondary Button</button> 
+                </div>
+            </div>
+        </div>
+        <div class="banner__inner-right col col-lg-6">
+        </div>
+    </div>
+</div>
+
+Styleguide 4.6.9
+*/
+
+/*
+Variant 10
+
+50/50 split with subtitle
+
+Markup:
+<div class="banner banner--split" style="background-color:#eee">
+    <div class="banner__inner">
+        <div class="banner__inner-left">
+            <div class="banner__image-bg">
+                <div class="banner__subtitle">Commercial Products</div>
+                <img src="http://www.moen.com/assets/moencom/images/catalog/bathroom/lighting/hero.jpg">
+            </div>
+        </div>
+        <div class="banner__inner-right">
+            <div class="text-box text-box--no-bg text-box--title-gray">
+                <div class="text-box__inner">
+                    <div class="text-box__head">Bathroom Lighting</div>
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.<a href="#" class="link link--icon--left"><img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide 4.6.10
+*/
+
+/*
+Variant 11
+
+50/50 Logo no image, gray
+
+Markup:
+<div class="banner banner--split-logo" style="background-color:#eee">
+    <div class="banner__inner">
+        <div class="banner__inner-left">
+            <div class="banner__image-bg--logo">
+                <img src="http://placehold.it/350x50?text=Moen logo text">
+            </div>
+        </div>
+        <div class="banner__inner-right">
+            <div class="text-box text-box--no-bg">
+                <div class="text-box__inner">
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.<a href="#" class="link link--icon--left "><img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide 4.6.11
+*/
+
+/*
+Variant 12
+
+50/50 Logo no image, dark gray
+
+Markup:
+<div class="banner banner--split-logo" style="background-color:#999">
+    <div class="banner__inner">
+        <div class="banner__inner-left">
+            <div class="banner__image-bg--logo">
+                <img src="http://placehold.it/350x50?text=Moen logo text">
+            </div>
+        </div>
+        <div class="banner__inner-right">
+            <div class="text-box text-box--text-white text-box--no-bg text-box--white">
+                <div class="text-box__inner">
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.<a href="#" class="link link--icon--left-white"><img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">Read More</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide 4.6.12
+*/
+
+/*
+Variant 13
+
+Text and blue background
+
+Markup:
+<div class="banner banner--text-only" style="background-color:#00a9e0">
+    <div class="banner__inner row">
+        <div class="col col-md-12">
+            <div class="text-box text-box--text-white text-box--no-bg">
+                <div class="text-box__inner">
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom. Brighten any style with easy-to-install, beautifully coordinated fixturesfor your bathroom.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="banner banner--text-only" style="background-color:#00a9e0">
+    <div class="banner__inner row">
+        <div class="col col-md-12">
+            <div class="text-box text-box--text-white text-box--no-bg">
+                <div class="text-box__inner">
+                    <div class="text-box__head">Bathroom Lighting</div>
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide 4.6.13
+*/
+
+/*
+Variant 14
+
+Text and blue background
+
+Markup:
+<div class="banner banner--text-only" style="background-color:#999">
+    <div class="banner__inner row">
+        <div class="col col-md-12">
+            <div class="text-box text-box--text-white text-box--no-bg">
+                <div class="text-box__inner">
+                    <div class="text-box__subtitle">Bathroom Lighting</div>
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="banner banner--text-only" style="background-color:#999">
+    <div class="banner__inner row">
+        <div class="col col-md-12">
+            <div class="text-box text-box--text-white text-box--no-bg">
+                <div class="text-box__inner">
+                    <div class="text-box__head">Bathroom Lighting</div>
+                    <div class="text-box__body">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.</div>
+                    <button class="button button--secondary">Secondary Button</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide 4.6.14
+*/
+
+/*
+Variant 15
+
+Quote and background image
+
+Markup:
+<div class="banner banner--quote" style="background-color:#eee">
+    <div class="banner__image-bg">
+        <img src="http://www.moen.com/assets/moencom/images/catalog/bathroom/lighting/hero.jpg">
+    </div>
+    <div class="banner__inner row">
+        <div class="col col-md-8 col-md-push-2">
+            <div class="text-box text-box--no-bg text-box--text-blue">
+                <div class="text-box__inner">
+                    <blockquote class="text-box__quote">
+                        <p>Brighten any style with easy-to-install, beautifully coordinated <a href="#">fixtures</a> for your bathroom.</p>
+                    </blockquote>
+                    <div class="text-box__body text-box--gray">Brighten any style with easy-to-install, beautifully coordinated fixtures for your bathroom.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide 4.6.15
+*/
+
+@mixin text-left-right() {
+  .text-box__body {
+    margin-bottom: 0;
+  }
+  .text-box {
+    width: 100%;
+    @include media($bp-lg) {
+      width: 70%;
+    }
+  }
+}
+
+@include block(banner) {
+  font-size: 1rem;
+  overflow: hidden;
+  position: relative;
+  z-index: z("banners");
+  .col {
+    height: 100%;
+  }
+  .banner__inner {
+    .button {
+      width: 100%;
+      @include media($bp-md) {
+        width: auto;
+      }
+    }
+  }
+  @include element(inner) {
+    @include outer-container();
+    height: 100%;
+  }
+  @include element(image-bg) {
+    text-align: center;
+    position: relative;
+    & > img {
+      height: auto;
+      width: 100%;
+    }
+    @include modifier(logo) {
+      padding: 1rem 0;
+    }
+    @include media($bp-lg) {
+      z-index: 0;
+      & + .banner__inner {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        z-index: 1;
+      }
+      & > img {
+        height: auto;
+        width: auto;
+        max-width: 100%;
+      }
+    }
+  }
+
+  @include element(subtitle) {
+    color: $c_white;
+    font-size: 2rem;
+    left: 0;
+    padding: .5rem;
+    position: absolute;
+    top: 0rem;
+    text-align: left;
+    width: 100%;
+  }
+
+  @include modifier(text-left) {
+    .banner__inner-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      @include text-left-right();
+    }
+  }
+
+  @include modifier(text-right) {
+    .banner__inner-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      @include text-left-right();
+    }
+  }
+
+  @include modifier(text-center) {
+    .text-box {
+      margin-top: 0;
+    }
+    .text-box__inner {
+      text-align: center;
+    }
+
+    @include media($bp-lg) {
+      .text-box {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+
+  @include modifier(split) {
+    .banner__inner {
+      @include centerer();
+      flex-direction: column;
+      @include media($bp-md) {
+        flex-direction: row;
+      }
+    }
+    .banner__image-bg {
+      padding: 0;
+      img {
+        height: auto;
+        width: 100%;
+      }
+      @include media($bp-md) {
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+    .banner__inner-left, .banner__inner-right {
+      display: block;
+    }
+    .banner__inner-left {
+      width: 100%;
+    }
+    .text-box__inner {
+      padding: 1rem;
+    }
+    @include media($bp-md) {
+      .banner__inner-left, .banner__inner-right {
+        .text-box__inner {
+          > *:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .banner__inner-left {
+        width: 40%;
+      }
+      .banner__inner-right {
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  @include modifier(split-logo) {
+    .banner__inner {
+      @include centerer();
+      flex-direction: column;
+      @include media($bp-md) {
+        flex-direction: row;
+      }
+    }
+    .banner__image-bg--logo {
+      padding: 0;
+      text-align: center;
+      img {
+        height: auto;
+        width: 100%;
+      }
+      @include media($bp-md) {
+        text-align: right;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+    .text-box__inner {
+      padding: 1rem;
+    }
+    .link {
+      margin-bottom: 0;
+    }
+    .banner__inner-left, .banner__inner-right {
+      display: block;
+      width: 100%
+    }
+    .banner__inner-left {
+      width: 100%;
+    }
+    .banner__inner-right {
+      margin-top: 1rem;
+      @include media($bp-md) {
+        margin-top: 0;
+      }
+    }
+    @include media($bp-md) {
+      .banner__inner-left,
+      .banner__inner-right {
+        padding: 1rem;
+        .text-box__inner > *:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .banner__inner-left {
+        width: 40%;
+        img {
+          max-width: 100%;
+        }
+      }
+      .banner__inner-right {
+        width: 60%;
+      }
+    }
+  }
+
+  @include modifier(text-only) {
+    text-align: center;
+    .row,
+    .banner__inner-left,
+    .banner__inner-right {
+      @include centerer();
+    }
+    .text-box__body {
+      line-height: initial;
+      min-height: auto;
+      margin: 1rem 0 0 0;
+    }
+    .text-box__inner {
+      .link, .button {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include modifier(quote) {
+    .col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .text-box__inner {
+      text-align: center;
+    }
+    .text-box__quote {
+      margin-bottom: 1em;
+    }
+  }
+
+  @include modifier (cta) {
+    &.banner--text-left .banner__inner-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+    &.banner--text-right .banner__inner-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+    }
+  }
+}

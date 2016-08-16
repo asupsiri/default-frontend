@@ -1,0 +1,135 @@
+/*
+Article Page
+
+Markup:
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Start Article -->
+      <article class="article">
+        <div class="article__inner row">
+          <header class="article__header">
+            <h1 class="article__title heading--1">Article Title</h1>
+            <time class="article__time time is-block" datetime="2013-04">April, 2013</time>
+          </header>
+          <div class="article__content">
+            <p><img align="left" src="http://www.moen.com/assets/moencom/images/design-planning/support/articles/athome_may2012-twist.jpg" alt="woman in bathroom"></p>
+            <h2 class="heading--2">A "TWIST" ON AN INVIGORATING SHOWER EXPERIENCE</h2>
+            <p><strong>When it comes to showering</strong>, <i>consumers demand style</i>, quality, good water pressure and coverage. With this in mind, Moen has added a revitalizing "twist" to the daily showering routine with the new <a href="#">Twist™ handheld shower</a>.</p>
+            <p>Twist allows users to effortlessly switch between four spray patterns with a push of a Soft Grip™ thumb pad. Soft Grip is a non-slip, comfortable surface that is soft to the touch for a comfortable and sturdy feel. </p> 
+            <p>It's also available with a 30-inch vertical slide bar with shower arm diverter to allow for user height adjustments. </p>
+            <p>Each member of the house can easily create the ideal shower experience and can switch settings as needed -- whether to relax, revitalize or clean. All it takes is a single hand to choose between four high-performance sprays. </p>
+            <p>In addition to the functional benefits of Twist, the handheld shower is easy to install. Within minutes, homeowners can have a new showering experience. </p>
+            <p>Twist is available in several finishes, including Chrome, LifeShine® Brushed Nickel, Oil Rubbed Bronze and Spot Resist™ Brushed Nickel. Its easy-to-clean spray nozzles help keep it looking like new. </p>
+            <p><img align="right" src="http://www.moen.com/assets/moencom/images/design-planning/support/articles/athome_may2012-twist.jpg" alt="woman in bathroom"></p>
+            <p>Featuring a Lifetime Limited Warranty, Twist can be found at home improvement retailers and showrooms.</p>
+            <p><strong>When it comes to showering</strong>, <i>consumers demand style</i>, quality, good water pressure and coverage. With this in mind, Moen has added a revitalizing "twist" to the daily showering routine with the new <a href="#">Twist™ handheld shower</a>.</p>
+            <p>Twist allows users to effortlessly switch between four spray patterns with a push of a Soft Grip™ thumb pad. Soft Grip is a non-slip, comfortable surface that is soft to the touch for a comfortable and sturdy feel. </p>
+            <p>It's also available with a 30-inch vertical slide bar with shower arm diverter to allow for user height adjustments. </p>
+            <p>Each member of the house can easily create the ideal shower experience and can switch settings as needed -- whether to relax, revitalize or clean. All it takes is a single hand to choose between four high-performance sprays. </p>
+            <p style="justify"><img src="http://www.moen.com/assets/moencom/images/design-planning/support/articles/athome_may2012-twist.jpg" alt="woman in bathroom"></p>
+            <p>In addition to the functional benefits of Twist, the handheld shower is easy to install. Within minutes, homeowners can have a new showering experience. </p>
+            <p style="justify"><img align="middle" src="http://www.moen.com/assets/moencom/images/design-planning/support/articles/athome_may2012-twist.jpg" alt="woman in bathroom"></p>
+            <p>Twist is available in several finishes, including Chrome, LifeShine® Brushed Nickel, Oil Rubbed Bronze and Spot Resist™ Brushed Nickel. Its easy-to-clean spray nozzles help keep it looking like new. </p>
+            <p>Featuring a Lifetime Limited Warranty, Twist can be found at home improvement retailers and showrooms.</p>
+          </div>
+        </div>
+      </article>
+      <!-- End Article -->
+    </div>
+    <div class="col-lg-4">
+      <!-- Aside content -->
+      <!-- Start multi-cta -->
+        <div class="multi-cta">
+          <div class="multi-cta__item">
+            <div class="text-box">
+              <div class="text-box__inner text-box--text-black">
+                  <div class="text-box__head">Troubleshooting</div>
+                  <div class="text-box__body">
+                    Having trouble with your faucet? Use our Troubleshooting Guide to help you find a solution.
+                  </div>
+                  <div class="is-block">
+                    <a href="#" class="link link--icon--left">
+                      <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Troubleshooting Guide
+                    </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End multi-cta -->
+        <!-- Start multi-cta -->
+        <div class="multi-cta">
+          <div class="multi-cta__item">
+            <div class="text-box">
+              <div class="text-box__inner text-box--text-black">
+                <div class="text-box__head">Consumer Support</div>
+                <div class="text-box__list">
+                  <ul>
+                    <li><a class="link"href="#">Can I use my existing drain assembly when installing a new faucet?</a></li>
+                    <li><a class="link"href="#">What tools will I need to install or fix my faucet?</a></li>
+                  </ul>
+                </div>
+                <div class="is-block">
+                  <a href="#" class="link link--icon--left">
+                    <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Troubleshooting Guide
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="multi-cta__item">
+            <div class="media">
+              <div class="media__left">
+                <a href="#">
+                  <img src="http://placehold.it/60x60" alt="Image">
+                </a>
+              </div>
+              <div class="media__right">
+                <div class="media__head">Replacing your cartridge</div>
+                <div class="media__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.</div>
+                <div class="is-block">
+                    <a href="#" class="link link--icon--left"><img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="multi-cta__item">
+            <div class="text-box">
+              <div class="text-box__inner text-box--text-black">
+                <div class="is-block">
+                  <a href="#" class="link link--icon--left">
+                    <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true"> Customer support
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End multi-cta -->
+        <!-- Start multi-cta -->
+        <div class="multi-cta">
+          <div class="multi-cta__item">
+            <div class="text-box">
+              <div class="text-box__inner text-box--text-black">
+                  <div class="text-box__head">Troubleshooting</div>
+                  <div class="text-box__body">
+                    Having trouble with your faucet? Use our Troubleshooting Guide to help you find a solution.
+                  </div>
+                  <div class="is-block">
+                    <a href="#" class="link link--icon--left">
+                      <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Troubleshooting Guide
+                    </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End multi-cta -->
+    </div>
+  </div>
+</div>
+ 
+Styleguide 5.4
+*/

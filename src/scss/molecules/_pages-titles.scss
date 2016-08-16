@@ -1,0 +1,302 @@
+/*
+Pages Titles
+
+Titles variants. Options depends on the page-title--(modifier).
+
+Styleguide 3.12
+*/
+
+/*
+Variant - 1
+
+markup:
+<div class="container">
+  <div class="page-title page-title--inline-head">
+    <div class="page-title__head">
+      <div class="page-title__headings">
+        <h1 class="page-title__h1">Design & Planning Bathroom</h1>
+      </div>
+      <div class="page-title__button">
+        <a class="button button--secondary">Design Your Own Kitchen</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+Styleguide 3.12.1
+*/
+
+/*
+Variant - 2 : Title, subtitle, description
+
+markup:
+<div class="container">
+  <div class="page-title page-title--inline-head">
+    <div class="page-title__head">
+      <div class="page-title__headings">
+        <h1 class="page-title__h1">Design & Planning Bathroom</h1>
+        <h2 class="page-title__h2">Videos</h2>
+      </div>
+      <div class="page-title__button">
+        <a class="button button--secondary">Design Your Own Kitchen</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+Styleguide 3.12.2
+*/
+
+/*
+Variant - 3 : Center Aligned
+
+markup:
+<div class="container">
+  <div class="page-title page-title--center-aligned">
+    <div class="page-title__head">
+      <div class="page-title__headings">
+        <h1 class="page-title__h1">Design & Planning Bathroom</h1>
+        <h2 class="page-title__h2">Videos</h2>
+      </div>
+    </div>
+    <div class="page-title__button">
+      <a class="button button--secondary">Design Your Own Kitchen</a>
+    </div>
+  </div>
+</div>
+
+Styleguide 3.12.3
+*/
+
+/*
+Variant - 4 : Fifty Fifty
+
+markup:
+<div class="container">
+  <div class="page-title page-title--fifty-fifty">
+    <div class="page-title__head">
+      <div class="page-title__headings">
+        <h1 class="page-title__h1">Design & Planning Bathroom</h1>
+      </div>
+    </div>
+    <div class="page-title__description">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="page-title page-title--fifty-fifty">
+    <div class="page-title__head">
+      <div class="page-title__headings">
+        <h1 class="page-title__h1">Design & Planning Bathroom</h1>
+        <h2 class="page-title__h2">Videos</h2>
+      </div>
+      <div class="page-title__button">
+        <a class="button button--secondary">Design Your Own Kitchen</a>
+      </div>
+    </div>
+    <div class="page-title__description">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="page-title page-title--fifty-fifty">
+    <div class="page-title__head">
+      <div class="page-title__headings">
+        <h1 class="page-title__h1">Design & Planning Bathroom</h1>
+        <h2 class="page-title__h2">Videos</h2>
+      </div>
+    </div>
+    <div class="page-title__description">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <div class="page-title__button">
+        <a class="button button--secondary">Design Your Own Kitchen</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+Styleguide 3.12.4
+*/
+
+/*
+Variant used in the Product Support Page
+
+markup:
+<div class="container">
+  <div class="page-title page-title--bg-right" style="background-image:url(http://placehold.it/365x150?text=Diagram);">
+    <div class="page-title__head">
+      <div class="page-title__headings">
+        <h1 class="page-title__h1">Product Diagram</h1>
+        <p>Check out a product diagram and parts list, and order individual parts with confidence. Replacement parts for this product may be covered by the Lifetime Limited Sink Warranty</p>
+        <div class="is-block">
+          <a class="link" href="#">Find the part on the Product Diagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+Styleguide 3.12.5
+*/
+
+@include block(page-title) {
+  font-size: 1rem;
+
+  @include element(head) {
+    padding: 1em 0;
+  }
+
+  @include element(h1) {
+    font-weight: normal;
+    font-family: $din-light;
+    font-size: 2.2rem;
+    letter-spacing: -.05em;
+    line-height: 1.1em;
+    margin-bottom: 0;
+    p {
+      font-weight: normal;
+      font-family: $din-light;
+      font-size: 2.2rem;
+      letter-spacing: -.05em;
+      line-height: 1.1em;
+      display: inline-block;
+      padding: 0;
+    }
+  }
+
+  @include element(h2) {
+    font-weight: normal;
+    font-family: $din-medium;
+    font-size: 1.5rem;
+    margin: .5em 0 0;
+    padding-left: 2px;
+    p {
+      font-weight: normal;
+      font-family: $din-medium;
+      font-size: 1.5rem;
+      display: inline-block;
+      padding: 0;
+    }
+  }
+
+  @include modifier(inline-head) {
+    .page-title__head,
+    .page-title__headings {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .page-title__button {
+      margin: 1em 0;
+      .button {
+        width: 100%;
+      }
+    }
+    @include media($bp-md) {
+      .page-title__button {
+        margin: 0;
+        .button {
+          width: auto;
+        }
+      }
+      .page-title__head {
+        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .page-title__headings {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      .page-title__h1 {
+        margin: 0;
+      }
+    }
+  }
+
+  @include modifier(center-aligned) {
+    text-align: center;
+    .page-title__head,
+    .page-title__headings {
+      text-align: center;
+    }
+    .page-title__button {
+      margin: 0 0 1em;
+      .button {
+        width: 100%;
+        @include media($bp-md) {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  @include modifier(fifty-fifty) {
+    padding: 1em;
+    .page-title__button {
+      margin: 1em 0 0;
+      .button {
+        width: 100%;
+        @include media($bp-md) {
+          width: auto;
+        }
+      }
+    }
+    @include media($bp-md) {
+      .page-title__head,
+      .page-title__description {
+        display: inline-block;
+        vertical-align: middle;
+        width: 50%;
+      }
+      .page-title__head {
+        text-align: right;
+        padding: 0 1em 0 0;
+      }
+      .page-title__description {
+        margin-left: -4px;
+        padding-left: 1em;
+        p {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  @include modifier(bg-right) {
+    background-position: top right;
+    .page-title__head {
+      padding-right: 50%;
+      p {
+        padding-bottom: 2em;
+      }
+    }
+    .page-title__h1 {
+      margin-bottom: 1em;
+    }
+  }
+
+  .button {
+    margin: 0;
+  }
+}

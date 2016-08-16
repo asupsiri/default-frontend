@@ -1,0 +1,289 @@
+/*
+Multi CTA
+
+3 Variant examples of CTA Component. Color background for the CTA Horizontal (4.7.3) variant will be added as inline style.
+
+Styleguide 4.7
+*/
+
+/*
+Container with a 1 CTA component with a maximun of 3 elements
+
+Markup:
+<!-- Start wrapper -->
+<!-- this div with the inline style is not part of the module -->
+<div style="padding: 10px;">
+  <div class="multi-cta">
+    <div class="multi-cta__item">
+      <div class="text-box">
+        <div class="text-box__inner text-box--text-black">
+          <div class="text-box__head">Troubleshooting</div>
+          <div class="text-box__body">
+            Having trouble with your faucet? Use our Troubleshooting Guide to help you find a solution.
+          </div>
+          <div class="is-block">
+            <a href="#" class="link link--icon--left">
+              <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Troubleshooting Guide
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="multi-cta__item">
+      <div class="text-box">
+        <div class="text-box__inner text-box--text-black">
+          <div class="text-box__head">Troubleshooting</div>
+          <div class="text-box__body">
+            Having trouble with your faucet? Use our Troubleshooting Guide to help you find a solution.
+          </div>
+          <div class="is-block">
+            <a href="#" class="link link--icon--left">
+              <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Troubleshooting Guide
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="multi-cta__item">
+      <div class="text-box">
+        <div class="text-box__inner text-box--text-black">
+          <div class="text-box__head">Troubleshooting</div>
+          <div class="text-box__body">
+            Having trouble with your faucet? Use our Troubleshooting Guide to help you find a solution.
+          </div>
+          <div class="is-block">
+            <a href="#" class="link link--icon--left">
+              <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Troubleshooting Guide
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End wrapper -->
+
+Styleguide 4.7.1
+*/
+
+/*
+Container with a 3 CTA component with a maximun of 3 elements per each
+
+Markup:
+<!-- Start wrapper -->
+<!-- this div with the inline style is not part of the module -->
+<div style="padding: 10px;">
+  <!-- Start multi-cta -->
+  <div class="multi-cta">
+    <div class="multi-cta__item">
+      <div class="text-box">
+        <div class="text-box__inner text-box--text-black">
+            <div class="text-box__head">Troubleshooting</div>
+            <div class="text-box__body">
+              Having trouble with your faucet? Use our Troubleshooting Guide to help you find a solution.
+            </div>
+            <div class="is-block">
+              <a href="#" class="link link--icon--left">
+                <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Troubleshooting Guide
+              </a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End multi-cta -->
+  <!-- Start multi-cta -->
+  <div class="multi-cta">
+    <div class="multi-cta__item">
+      <div class="text-box">
+        <div class="text-box__inner text-box--text-black">
+          <div class="text-box__head">Consumer Support</div>
+          <div class="text-box__list">
+            <ul>
+              <li><a class="link"href="#">Can I use my existing drain assembly when installing a new faucet?</a></li>
+              <li><a class="link"href="#">What tools will I need to install or fix my faucet?</a></li>
+            </ul>
+          </div>
+          <div class="is-block">
+            <a href="#" class="link link--icon--left">
+              <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Troubleshooting Guide
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="multi-cta__item">
+      <div class="media">
+        <div class="media__left">
+          <a href="#">
+            <img src="http://placehold.it/60x60" alt="Image"> 
+          </a>
+        </div>
+        <div class="media__right">
+          <div class="media__head">Replacing your cartridge</div>
+          <div class="media__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</div>
+          <div class="is-block">
+              <a href="#" class="link link--icon--left"><img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="multi-cta__item">
+      <div class="text-box">
+        <div class="text-box__inner text-box--text-black">
+          <div class="is-block">
+            <a href="#" class="link link--icon--left">
+              <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true"> Customer support
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End multi-cta -->
+  <!-- Start multi-cta -->
+  <div class="multi-cta">
+    <div class="multi-cta__item">
+      <div class="text-box">
+        <div class="text-box__inner text-box--text-black">
+            <div class="text-box__head">Troubleshooting</div>
+            <div class="text-box__body">
+              Having trouble with your faucet? Use our Troubleshooting Guide to help you find a solution.
+            </div>
+            <div class="is-block">
+              <a href="#" class="link link--icon--left">
+                <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">View Troubleshooting Guide
+              </a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End multi-cta -->
+</div>
+<!-- End wrapper -->
+
+Styleguide 4.7.2
+*/
+
+/*
+CTA Horizontal
+
+Color background for the CTA Horizontal (4.7.3) variant will be added as inline style.
+
+Markup:
+<!-- Start wrapper -->
+<!-- this div with the inline style is not part of the module -->
+<div class="multi-cta--horizontal row" style="background: #dedede">
+  <h3 class="multi-cta__title">Commercial News</h3>
+  <div class="multi-cta__item col-md-6">
+    <div class="media--vertical">
+      <div class="media__top">
+        <a href="#">
+          <img src="http://placehold.it/490x250" alt="Image"> 
+        </a>
+      </div>
+      <div class="media__bottom">
+        <div class="media__head">This is the media Title</div>
+        <div class="media__body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <div class="is-block">
+            <a href="#" class="button button--secondary">Got to Link</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="multi-cta__item col-md-6">
+    <div class="media--vertical">
+      <div class="media__top">
+        <a href="#">
+          <img src="http://placehold.it/490x250" alt="Image"> 
+        </a>
+      </div>
+      <div class="media__bottom">
+        <div class="media__head">This is the media Title</div>
+        <div class="media__body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <div class="is-block">
+            <a href="#" class="button button--secondary">Got to Link</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End wrapper -->
+
+Styleguide 4.7.3
+*/
+
+@include block(multi-cta) {
+  font-size: 1rem;
+  box-shadow: $box-shadow;
+  margin-bottom: .8em;
+  .text-box__head {
+    font-size: 1.2em;
+    font-family: $din-medium;
+    font-weight: normal;
+    color: $c_text-dark;
+    margin-bottom: .5em;
+  }
+  .text-box__body {
+    line-height: 1.2em;
+  }
+
+  // Elements
+  @include element(item) {
+    &:after {
+      content: "";
+      display: block;
+      border-bottom: 1px dotted $c_moen-gray;
+      margin: 0 auto;
+      width: 90%;
+    }
+    &:last-child:after {
+      display: none;
+    }
+    .media {
+      padding: .5em;
+    }
+    .media__left {
+      img {
+        max-width: 80px;
+      }
+    }
+  }
+
+  @include element(title) {
+    font-size: 1.8em;
+    font-family: $din-light;
+    font-weight: normal;
+    letter-spacing: -.05em;
+    //margin-top: .2em;
+    text-align: center;
+  }
+
+  // Modifier
+  @include modifier(horizontal) {
+    padding: .5em;
+    .multi-cta__item {
+      padding: .2em;
+      &:after {
+        border: 0;
+      }
+    }
+    .media__head {
+      color: $c_moen-bright-blue;
+      font-size: 2.2em;
+      font-family: $din-light;
+      font-weight: normal;
+      line-height: .9em;
+      margin: .5em 0;
+    }
+    .link, .button {
+      margin-top: 1em;
+    }
+  }
+}

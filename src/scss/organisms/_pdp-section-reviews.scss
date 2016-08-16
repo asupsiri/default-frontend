@@ -1,0 +1,987 @@
+/*
+PDP Reviews Section
+
+Styled the generated markup from BV
+
+markup:
+<div class="container">
+<div class="col-xs-12 pdp-reviews">
+  <div id="BVReviewsContainer" class="BVBrowserWebkit">
+    <div id="BVRRWidgetID" class="BVRRRootElement BVRRWidget">
+      <div id="BVRRContentContainerID" class="BVRRContainer">
+        <div id="BVRRDisplayContentID" class="BVRRDisplayContent">
+          <div id="BVRRDisplayContentHeaderID" class="BVRRHeader BVRRDisplayContentHeader">
+            <div class="BVRRDisplayContentHeaderContent"> <span id="BVRRDisplayContentTitleID"
+                                                                class="BVRRTitle BVRRDisplayContentTitle">
+Product Reviews<span class="BVRRDisplayContentTitleReviewCount">(37)</span> </span>
+<span class="BVRRSortAndSearch"><span id="BVRRDisplayContentSortID" class="BVRRDisplayContentSort"><span
+  id="BVRRDisplayContentSortPrefixID" class="BVRRLabel BVRRDisplayContentSortPrefix"></span><span
+  class="BVRRSortSelectWidget"> <div class="selector icon-select-arrows" id="uniform-BVRRDisplayContentSelectBVFrameID"
+                                     style="width: 208px;"><span style="width: 183px; -webkit-user-select: none;">
+Rating - High to Low </span><select name="BV_TrackingTag_Review_Display_Sort"
+                                    onchange="if(window.BVAnalyticsTracker){BVAnalyticsTracker.fireActionEvent(this);};$BV.Internal.Requester.get(bvGetSelectListValue($bv('#BVRRDisplayContentSelectBVFrameID')[0]),'BVFrame',''); return false;"
+                                    id="BVRRDisplayContentSelectBVFrameID" class="BVRRSelect BVRRDisplayContentSelect">
+  <option value="http://reviews.moen.com/0544/S6700/reviews.htm?format=embedded&amp;sort=submissionTime"
+          id="submissionTime-desc">
+    Date - Newest First
+  </option>
+  <option value="http://reviews.moen.com/0544/S6700/reviews.htm?format=embedded&amp;sort=submissionTime&amp;dir=asc"
+          id="submissionTime-asc">
+    Date - Oldest First
+  </option>
+  <option value="http://reviews.moen.com/0544/S6700/reviews.htm?format=embedded&amp;sort=rating" selected="selected"
+          id="rating-desc">
+    Rating - High to Low
+  </option>
+  <option value="http://reviews.moen.com/0544/S6700/reviews.htm?format=embedded&amp;sort=rating&amp;dir=asc"
+          id="rating-asc">
+    Rating - Low to High
+  </option>
+  <option value="http://reviews.moen.com/0544/S6700/reviews.htm?format=embedded&amp;sort=helpfulness"
+          id="helpfulness-desc">
+    Helpfulness - High to Low
+  </option>
+  <option value="http://reviews.moen.com/0544/S6700/reviews.htm?format=embedded&amp;sort=helpfulness&amp;dir=asc"
+          id="helpfulness-asc">
+    Helpfulness - Low to High
+  </option>
+  <option value="http://reviews.moen.com/0544/S6700/reviews.htm?format=embedded&amp;sort=reviewTextLength"
+          id="reviewTextLength-desc">
+    Length - Long to Short
+  </option>
+  <option value="http://reviews.moen.com/0544/S6700/reviews.htm?format=embedded&amp;sort=reviewTextLength&amp;dir=asc"
+          id="reviewTextLength-asc">
+    Length - Short to Long
+  </option>
+</select></div>
+</span>
+<span id="BVRRDisplayContentSortSuffixID" class="BVRRLabel BVRRDisplayContentSortSuffix"></span></span></span><span
+                id="BVRRDisplayContentSubtitleID" class="BVRRSubtitle BVRRDisplayContentSubtitle"><span
+                id="BVRRDisplayContentLinkWriteID" class="BVRRContentLink BVRRDisplayContentLinkWrite"><a
+                name="BV_TrackingTag_Review_Display_WriteReview"
+                href="http://reviews.moen.com/0544/S6700/writereview.htm?format=embedded&amp;campaignid=BV_REVIEW_DISPLAY&amp;sessionparams=__BVSESSIONPARAMS__&amp;return=http%3A%2F%2Fwww.moen.com%2F90-degree%2Fchrome-one-handle-low-arc-bathroom-faucet%2F_%2FR-CONSUMER%253AS6700&amp;innerreturn=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Freviews.htm%3Fformat%3Dembedded%26sort%3Drating&amp;user=__USERID__&amp;authsourcetype=__AUTHTYPE__&amp;submissionparams=__BVSUBMISSIONPARAMETERS__&amp;submissionurl=http%3A%2F%2Fwww.moen.com%2Freview"
+                title="Review This Product" target="BVFrame">Review This Product</a></span></span></div>
+          </div>
+          <div class="overall">
+            <div class="stars">
+              <div class="ratings-meter">
+                <div class="cutouts"><span style="width:95.676%;"></span></div>
+              </div>
+              <div class="rating">4.8</div>
+            </div>
+            <div class="breakdown">
+              <div class="criteria"><strong>Style fits my taste:&nbsp;</strong>
+                <div class="ratings-meter">
+                  <table>
+                    <tbody>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <span style="width:100%;"></span></div>
+              </div>
+              <div class="criteria"><strong>Product features:&nbsp;</strong>
+                <div class="ratings-meter">
+                  <table>
+                    <tbody>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <span style="width:100%;"></span></div>
+              </div>
+              <div class="criteria"><strong>Durable:&nbsp;</strong>
+                <div class="ratings-meter">
+                  <table>
+                    <tbody>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <span style="width:100%;"></span></div>
+              </div>
+              <div class="criteria"><strong>Ease of installation:&nbsp;</strong>
+                <div class="ratings-meter">
+                  <table>
+                    <tbody>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <span style="width:100%;"></span></div>
+              </div>
+            </div>
+          </div>
+          <div id="BVRRDisplayContentBodyID" class="BVRRDisplayContentBody">
+            <div id="BVRRDisplayContentReviewID_95956849"
+                 class="BVRRContentReview BVRRDisplayContentReview BVDIContentNative BVRRContentReviewNative BVRRDisplayContentReviewOdd BVRRDisplayContentReviewFirst BVRROdd BVRRFirst"><span
+              itemprop="review" itemscope="" itemtype="http://schema.org/Review"><div
+              class="BVRRSeparator BVRRSeparatorContentBodyTop"></div>
+<div id="BVSubmissionPopupContainer" class="BVRRReviewDisplayStyle3">
+  <div class="BVRRReviewDisplayStyle3Spacer BVRRReviewDisplayStyle3SpacerTop"></div>
+  <div class="BVRRReviewDisplayStyle3Summary">
+    <div class="BVRRUserNicknameContainer"><span class="BVRRLabel BVRRUserNicknamePrefix"></span><span
+      class="BVRRValue BVRRUserNickname">By:&nbsp;<span itemprop="author"
+                                                        class="BVRRNickname">awesome </span></span><span
+      class="BVRRLabel BVRRUserNicknameSuffix"></span>
+      <div class="BVRRUserLocationContainer"><span class="BVRRLabel BVRRUserLocationPrefix">Location:</span><span
+        class="BVRRValue BVRRUserLocation">Anytown, USA</span><span class="BVRRLabel BVRRUserLocationSuffix"></span>
+      </div>
+    </div>
+    <div class="BVRRContextDataContainer"></div>
+    <div class="BVRRReviewRatingsContainer">
+      <div class="BVRROverallRatingContainer">
+        <div class="BVRRRatingContainerStar">
+          <div class="BVRRRatingEntry BVRROdd">
+            <div id="BVRRRatingOverall_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingOverall">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Overall Rating:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating"
+                   class="BVRRRatingNormalOutOf"><span itemprop="ratingValue"
+                                                       class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span itemprop="bestRating" class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="BVRRReviewDisplayStyle3Main">
+    <div class="BVRRReviewDisplayStyle3MainSpacer BVRRReviewDisplayStyle3MainSpacerTop"></div>
+    <div class="BVRRReviewRatingsContainer">
+      <div class="BVRROverallRatingContainer">
+        <div class="BVRRRatingContainerStar">
+          <div class="BVRRRatingEntry BVRROdd">
+            <div id="BVRRRatingOverall_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingOverall">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Overall Rating:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating"
+                   class="BVRRRatingNormalOutOf"><span itemprop="ratingValue"
+                                                       class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span itemprop="bestRating" class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="BVRRReviewTitleContainer"><span class="BVRRLabel BVRRReviewTitlePrefix"></span><span itemprop="name"
+                                                                                                     class="BVRRValue BVRRReviewTitle">Awesomesauce</span><span
+      class="BVRRLabel BVRRReviewTitleSuffix"></span></div>
+    <div class="BVRRReviewDateContainer"><span class="BVRRLabel BVRRReviewDatePrefix">Date:</span><span
+      class="BVRRValue BVRRReviewDate">[November 24, 2015]</span><span class="BVRRLabel BVRRReviewDateSuffix"></span>
+    </div>
+    <div class="BVRRReviewDisplayStyle3Content">
+      <div itemprop="description" class="BVRRReviewTextContainer">
+        <div class="BVRRReviewTextParagraph BVRRReviewTextFirstParagraph BVRRReviewTextLastParagraph"><span
+          class="BVRRReviewText">this is a really really really really really good product.</span>
+        </div>
+      </div>
+    </div>
+    <div class="RRBeforeFeedbackContainerSpacer"></div>
+    <div class="BVRRReviewFeedbackSummaryContainer"><span class="BVRRLabel BVRRReviewFeedbackSummaryPrefix"></span><span
+      class="BVRRLabel BVRRReviewFeedbackSummary"><span class="BVRRNumber">1</span> of <span class="BVRRNumber">1</span> found this review helpful.</span><span
+      class="BVRRLabel BVRRReviewFeedbackSummarySuffix"></span></div>
+    <div class="BVRRReviewFeedbackLinksContainer"><span class="BVRRLabel BVRRReviewFeedbackLinksPrefix">Was this review helpful to you?</span><span
+      class="BVRRReviewFeedbackLinks"><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkActive BVRRReviewFeedbackLinkYes"><a
+      name="BV_TrackingTag_Review_Display_AddPositiveFeedback_95956849"
+      href="http://reviews.moen.com/0544/S6700/review/95956849/positive.htm?format=embedded&amp;sessionparams=__BVSESSIONPARAMS__&amp;return=http%3A%2F%2Fwww.moen.com%2F90-degree%2Fchrome-one-handle-low-arc-bathroom-faucet%2F_%2FR-CONSUMER%253AS6700&amp;innerreturn=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Freviews.htm%3Fformat%3Dembedded%26sort%3Drating&amp;user=__USERID__&amp;authsourcetype=__AUTHTYPE__&amp;submissionparams=__BVSUBMISSIONPARAMETERS__&amp;submissionurl=http%3A%2F%2Fwww.moen.com%2Freview"
+      title="Yes" target="BVFrame">Yes</a></span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkInactive BVRRReviewFeedbackLinkInactiveYes BVRRHidden"><a
+      onclick="return false;" href="#">Yes</a></span><span
+      class="BVRRReviewFeedbackLinksSeparator BVRRReviewFeedbackLinksSeparatorBetweenYesNo">or</span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkActive BVRRReviewFeedbackLinkNo"><a
+      name="BV_TrackingTag_Review_Display_AddNegativeFeedback_95956849"
+      href="http://reviews.moen.com/0544/S6700/review/95956849/negative.htm?format=embedded&amp;sessionparams=__BVSESSIONPARAMS__&amp;return=http%3A%2F%2Fwww.moen.com%2F90-degree%2Fchrome-one-handle-low-arc-bathroom-faucet%2F_%2FR-CONSUMER%253AS6700&amp;innerreturn=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Freviews.htm%3Fformat%3Dembedded%26sort%3Drating&amp;user=__USERID__&amp;authsourcetype=__AUTHTYPE__&amp;submissionparams=__BVSUBMISSIONPARAMETERS__&amp;submissionurl=http%3A%2F%2Fwww.moen.com%2Freview"
+      title="No" target="BVFrame">No</a></span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkInactive BVRRReviewFeedbackLinkInactiveNo BVRRHidden"><a
+      onclick="return false;" href="#">No</a></span><span
+      class="BVRRReviewFeedbackLinksSeparator BVRRReviewFeedbackLinksSeparatorBetweenNoInappropriate">or</span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkActive BVRRReviewFeedbackLinkInappropriate"><a
+      name="BV_TrackingTag_Review_Display_Inappropriate_95956849"
+      href="http://reviews.moen.com/0544/S6700/review/95956849/inappropriate.htm?format=embedded&amp;sessionparams=__BVSESSIONPARAMS__&amp;return=http%3A%2F%2Fwww.moen.com%2F90-degree%2Fchrome-one-handle-low-arc-bathroom-faucet%2F_%2FR-CONSUMER%253AS6700&amp;innerreturn=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Freviews.htm%3Fformat%3Dembedded%26sort%3Drating&amp;user=__USERID__&amp;authsourcetype=__AUTHTYPE__&amp;submissionparams=__BVSUBMISSIONPARAMETERS__&amp;submissionurl=http%3A%2F%2Fwww.moen.com%2Freview"
+      title="Report as inappropriate" target="BVFrame">(Report as inappropriate)</a></span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkInactive BVRRReviewFeedbackLinkInactiveInappropriate BVRRHidden"><a
+      onclick="return false;" href="#">(Report as inappropriate)</a></span></span><span
+      class="BVRRLabel BVRRReviewFeedbackLinksSuffix"></span>
+      <div class="BVRRReviewFeedbackMessage BVRRHidden"></div>
+    </div>
+    <div class="RRBeforeClientResponseContainerSpacer"></div>
+    <div class="RRBeforeSocialLinksContainerSpacer"></div>
+    <div class="BVRRReviewSocialLinksContainer">
+      <div class="BVRRLabel BVRRReviewBookmarkingLabel">Share this review:</div>
+      <a onfocus="this.href=bvReplaceTokensInSocialURL(this.href);"
+         onclick="this.href=bvReplaceTokensInSocialURL(this.href);window.open(this.href,'','left=0,top=0,width=626,height=436,toolbar=1,location=0,resizable=1,scrollbars=1'); return false;"
+         rel="nofollow" name="BV_TrackingTag_Review_Display_SocialBookmarkFacebook_95956849"
+         href="http://reviews.moen.com/0544/share.htm?site=Facebook&amp;url=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Fmoen-90-degree-s6700-reviews%2Freviews.htm%3FreviewID%3D95956849&amp;title=__TITLE__&amp;robot=__ROBOT__&amp;image=http%3A%2F%2Fwww.moen.com%2Fshared%2Fimages%2Fko_websmall%2Fs6700.jpg"
+         onmouseover="this.href=bvReplaceTokensInSocialURL(this.href);"
+         class="BVRRSocialBookmarkingSharingLink BVRRSocialBookmarkingSharingLinkFacebook" target="_blank"><img
+        width="16" height="16" class="BVRRSocialBookmarkLinkImage"
+        src="http://reviews.moen.com/static/0544/link-facebook.gif" alt="Facebook" title="Add to Facebook"></a>
+      <a onfocus="this.href=bvReplaceTokensInSocialURL(this.href);"
+         onclick="this.href=bvReplaceTokensInSocialURL(this.href);window.open(this.href,'','left=0,top=0,width=795,height=700,toolbar=1,location=0,resizable=1,scrollbars=1'); return false;"
+         rel="nofollow" name="BV_TrackingTag_Review_Display_SocialBookmarkTwitter_95956849"
+         href="http://reviews.moen.com/0544/share.htm?site=Twitter&amp;url=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Fmoen-90-degree-s6700-reviews%2Freviews.htm%3FreviewID%3D95956849&amp;title=__TITLE__&amp;robot=__ROBOT__&amp;image=http%3A%2F%2Fwww.moen.com%2Fshared%2Fimages%2Fko_websmall%2Fs6700.jpg"
+         onmouseover="this.href=bvReplaceTokensInSocialURL(this.href);"
+         class="BVRRSocialBookmarkingSharingLink BVRRSocialBookmarkingSharingLinkTwitter" target="_blank"><img
+        width="16" height="16" class="BVRRSocialBookmarkLinkImage"
+        src="http://reviews.moen.com/static/0544/link-twitter.gif" alt="Twitter" title="Tweet this"></a>
+    </div>
+    <div class="BVRRReviewDisplayStyle3MainSpacer BVRRReviewDisplayStyle3MainSpacerBottom"></div>
+  </div>
+  <div class="BVRRReviewDisplayStyle3Spacer BVRRReviewDisplayStyle3SpacerBottom"></div>
+</div>
+<div class="BVRRSeparator BVRRSeparatorContentBodyBottom"></div></span></div>
+            <div id="BVRRDisplayContentReviewID_71764142"
+                 class="BVRRContentReview BVRRDisplayContentReview BVDIContentNative BVRRContentReviewNative BVRRDisplayContentReviewEven BVRREven"><span
+              itemprop="review" itemscope="" itemtype="http://schema.org/Review"><div
+              class="BVRRSeparator BVRRSeparatorContentBodyTop"></div>
+<div id="BVSubmissionPopupContainer" class="BVRRReviewDisplayStyle3">
+  <div class="BVRRReviewDisplayStyle3Spacer BVRRReviewDisplayStyle3SpacerTop"></div>
+  <div class="BVRRReviewDisplayStyle3Summary">
+    <div class="BVRRUserNicknameContainer"><span class="BVRRLabel BVRRUserNicknamePrefix"></span><span
+      class="BVRRValue BVRRUserNickname">By:&nbsp;<a
+      onclick="var popupWin = parent.window.open(this.href, null, 'resizable=1,status=1,scrollbars=1,width=960,height=700,top=0'); popupWin.focus(); event.preventDefault();"
+      name="BV_TrackingTag_Review_Display_ReadAllReviews_9f39246cfa75678b6742b5547394e05d66b38a2b"
+      data-bvtrack="eName:ProfileLink"
+      href="http://ugc.moen.com/profiles/0544/9f39246cfa75678b6742b5547394e05d66b38a2b/profile.htm"><span
+      itemprop="author" class="BVRRNickname">bimmerlil </span></a></span><span
+      class="BVRRLabel BVRRUserNicknameSuffix"></span>
+      <div class="BVRRUserLocationContainer"><span class="BVRRLabel BVRRUserLocationPrefix">Location:</span><span
+        class="BVRRValue BVRRUserLocation">Valley city, Ohio</span><span
+        class="BVRRLabel BVRRUserLocationSuffix"></span></div>
+      <div class="BVRRUserNicknameReadReviewsContainer"><a
+        onclick="var popupWin = parent.window.open(this.href, null, 'resizable=1,status=1,scrollbars=1,width=960,height=700,top=0'); popupWin.focus(); event.preventDefault();"
+        name="BV_TrackingTag_Review_Display_ReadAllReviews_9f39246cfa75678b6742b5547394e05d66b38a2b"
+        data-bvtrack="eName:ProfileLink"
+        href="http://ugc.moen.com/profiles/0544/9f39246cfa75678b6742b5547394e05d66b38a2b/profile.htm"
+        class="BVRRUserProfileImageLink"><img src="http://reviews.moen.com/static/0544/more_reviews_icon.gif"
+                                              alt="Read all my reviews"></a><a
+        onclick="var popupWin = parent.window.open(this.href, null, 'resizable=1,status=1,scrollbars=1,width=960,height=700,top=0'); popupWin.focus(); event.preventDefault();"
+        name="BV_TrackingTag_Review_Display_ReadAllReviews_9f39246cfa75678b6742b5547394e05d66b38a2b"
+        data-bvtrack="eName:ProfileLink"
+        href="http://ugc.moen.com/profiles/0544/9f39246cfa75678b6742b5547394e05d66b38a2b/profile.htm">Read all my
+        reviews</a></div>
+    </div>
+    <div class="BVRRContextDataContainer">
+      <div
+        class="BVRRContextDataValueContainer BVRRContextDataValueHomeImprovementContainer BVContextDataHomeImprovementNo">
+        <span class="BVRRLabel BVRRContextDataValuePrefix BVRRContextDataValueHomeImprovementPrefix">Are you a home improvement professional?</span><span
+        class="BVRRValue BVRRContextDataValue BVRRContextDataValueHomeImprovement">No</span><span
+        class="BVRRLabel BVRRContextDataValueSuffix BVRRContextDataValueHomeImprovementSuffix"></span></div>
+      <div class="BVRRContextDataValueContainer BVRRContextDataValueTypeContainer BVContextDataTypeSmallRemodel"><span
+        class="BVRRLabel BVRRContextDataValuePrefix BVRRContextDataValueTypePrefix">Type of Project:</span><span
+        class="BVRRValue BVRRContextDataValue BVRRContextDataValueType">Small Remodel (under $5,000)</span><span
+        class="BVRRLabel BVRRContextDataValueSuffix BVRRContextDataValueTypeSuffix"></span></div>
+      <div class="BVRRContextDataValueContainer BVRRContextDataValueInstallerContainer BVContextDataInstallerNo"><span
+        class="BVRRLabel BVRRContextDataValuePrefix BVRRContextDataValueInstallerPrefix">Are you the installer of this product?</span><span
+        class="BVRRValue BVRRContextDataValue BVRRContextDataValueInstaller">No</span><span
+        class="BVRRLabel BVRRContextDataValueSuffix BVRRContextDataValueInstallerSuffix"></span></div>
+    </div>
+    <div class="BVRRReviewRatingsContainer">
+      <div class="BVRROverallRatingContainer">
+        <div class="BVRRRatingContainerStar">
+          <div class="BVRRRatingEntry BVRROdd">
+            <div id="BVRRRatingOverall_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingOverall">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Overall Rating:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating"
+                   class="BVRRRatingNormalOutOf"><span itemprop="ratingValue"
+                                                       class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span itemprop="bestRating" class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="BVRRSecondaryRatingsContainer">
+        <div class="BVRRRatingContainerStar">
+          <div class="BVRRRatingEntry BVRROdd">
+            <div id="BVRRRatingStyle_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingStyle">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Style fits my taste:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div class="BVRRRatingNormalOutOf"><span class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+          <div class="BVRRRatingEntry BVRREven">
+            <div id="BVRRRatingFeatures_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingFeatures">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Product features:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div class="BVRRRatingNormalOutOf"><span class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+          <div class="BVRRRatingEntry BVRROdd">
+            <div id="BVRRRatingDurable_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingDurable">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Durable:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div class="BVRRRatingNormalOutOf"><span class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+          <div class="BVRRRatingEntry BVRREven">
+            <div id="BVRRRatingInstallation_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingInstallation">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Ease of installation:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div class="BVRRRatingNormalOutOf"><span class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="BVRRReviewDisplayStyle3Main">
+    <div class="BVRRReviewDisplayStyle3MainSpacer BVRRReviewDisplayStyle3MainSpacerTop"></div>
+    <div class="BVRRReviewRatingsContainer">
+      <div class="BVRROverallRatingContainer">
+        <div class="BVRRRatingContainerStar">
+          <div class="BVRRRatingEntry BVRROdd">
+            <div id="BVRRRatingOverall_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingOverall">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Overall Rating:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating"
+                   class="BVRRRatingNormalOutOf"><span itemprop="ratingValue"
+                                                       class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span itemprop="bestRating" class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="BVRRBadges BVRRReviewBadges">
+      <div
+        onclick="window.open('http://reviews.moen.com/0544/badgedefinition.htm?badgeName=myVoiceBadge&amp;contentType=review','MyVoiceBadge','left=50,top=50,width=500,height=400,toolbar=1,location=0,resizable=1,scrollbars=1')"
+        class="BVRRBadge BVRRReviewBadge BVRRReviewBadgeLink BVRRMyVoiceBadgeBadge" title="">
+        <a onclick="return false"
+           href="http://reviews.moen.com/0544/badgedefinition.htm?badgeName=myVoiceBadge&amp;contentType=review"
+           target="_blank">
+          <div class="BVRRBadgeGraphic BVRRReviewBadgeGraphic BVRRMyVoiceBadgeGraphic">
+            <div class="BVRRBadgeLabel BVRRReviewBadgeLabel BVRRMyVoiceBadgeLabel">
+            </div>
+          </div>
+        </a></div>
+      <div class="BVRRSpacer BVRRBadgeSpacer BVRRReviewBadgeSpacer"></div>
+    </div>
+    <div class="BVRRReviewTitleContainer"><span class="BVRRLabel BVRRReviewTitlePrefix"></span><span itemprop="name"
+                                                                                                     class="BVRRValue BVRRReviewTitle">Perfect fit for our powder room</span><span
+      class="BVRRLabel BVRRReviewTitleSuffix"></span></div>
+    <div class="BVRRReviewDateContainer"><span class="BVRRLabel BVRRReviewDatePrefix">Date:</span><span
+      class="BVRRValue BVRRReviewDate">[February 15, 2015]</span><span class="BVRRLabel BVRRReviewDateSuffix"></span>
+    </div>
+    <div class="BVRRReviewDisplayStyle3Content">
+      <div itemprop="description" class="BVRRReviewTextContainer">
+        <div class="BVRRReviewTextParagraph BVRRReviewTextFirstParagraph BVRRReviewTextLastParagraph"><span
+          class="BVRRReviewText">We recently did a mini makeover for our half bath and choose this design for its elegant look yet durable. This bath is used the most so we needed something to hold up well. It feels very well made. My hubby likes it quality construction.</span>
+        </div>
+      </div>
+    </div>
+    <div class="RRBeforeFeedbackContainerSpacer"></div>
+    <div class="BVRRReviewFeedbackSummaryContainer"><span class="BVRRLabel BVRRReviewFeedbackSummaryPrefix"></span><span
+      class="BVRRLabel BVRRReviewFeedbackSummary"><span class="BVRRNumber">6</span> of <span
+      class="BVRRNumber">12</span> found this review helpful.</span><span
+      class="BVRRLabel BVRRReviewFeedbackSummarySuffix"></span></div>
+    <div class="BVRRReviewFeedbackLinksContainer"><span class="BVRRLabel BVRRReviewFeedbackLinksPrefix">Was this review helpful to you?</span><span
+      class="BVRRReviewFeedbackLinks"><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkActive BVRRReviewFeedbackLinkYes"><a
+      name="BV_TrackingTag_Review_Display_AddPositiveFeedback_71764142"
+      href="http://reviews.moen.com/0544/S6700/review/71764142/positive.htm?format=embedded&amp;sessionparams=__BVSESSIONPARAMS__&amp;return=http%3A%2F%2Fwww.moen.com%2F90-degree%2Fchrome-one-handle-low-arc-bathroom-faucet%2F_%2FR-CONSUMER%253AS6700&amp;innerreturn=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Freviews.htm%3Fformat%3Dembedded%26sort%3Drating&amp;user=__USERID__&amp;authsourcetype=__AUTHTYPE__&amp;submissionparams=__BVSUBMISSIONPARAMETERS__&amp;submissionurl=http%3A%2F%2Fwww.moen.com%2Freview"
+      title="Yes" target="BVFrame">Yes</a></span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkInactive BVRRReviewFeedbackLinkInactiveYes BVRRHidden"><a
+      onclick="return false;" href="#">Yes</a></span><span
+      class="BVRRReviewFeedbackLinksSeparator BVRRReviewFeedbackLinksSeparatorBetweenYesNo">or</span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkActive BVRRReviewFeedbackLinkNo"><a
+      name="BV_TrackingTag_Review_Display_AddNegativeFeedback_71764142"
+      href="http://reviews.moen.com/0544/S6700/review/71764142/negative.htm?format=embedded&amp;sessionparams=__BVSESSIONPARAMS__&amp;return=http%3A%2F%2Fwww.moen.com%2F90-degree%2Fchrome-one-handle-low-arc-bathroom-faucet%2F_%2FR-CONSUMER%253AS6700&amp;innerreturn=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Freviews.htm%3Fformat%3Dembedded%26sort%3Drating&amp;user=__USERID__&amp;authsourcetype=__AUTHTYPE__&amp;submissionparams=__BVSUBMISSIONPARAMETERS__&amp;submissionurl=http%3A%2F%2Fwww.moen.com%2Freview"
+      title="No" target="BVFrame">No</a></span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkInactive BVRRReviewFeedbackLinkInactiveNo BVRRHidden"><a
+      onclick="return false;" href="#">No</a></span><span
+      class="BVRRReviewFeedbackLinksSeparator BVRRReviewFeedbackLinksSeparatorBetweenNoInappropriate">or</span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkActive BVRRReviewFeedbackLinkInappropriate"><a
+      name="BV_TrackingTag_Review_Display_Inappropriate_71764142"
+      href="http://reviews.moen.com/0544/S6700/review/71764142/inappropriate.htm?format=embedded&amp;sessionparams=__BVSESSIONPARAMS__&amp;return=http%3A%2F%2Fwww.moen.com%2F90-degree%2Fchrome-one-handle-low-arc-bathroom-faucet%2F_%2FR-CONSUMER%253AS6700&amp;innerreturn=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Freviews.htm%3Fformat%3Dembedded%26sort%3Drating&amp;user=__USERID__&amp;authsourcetype=__AUTHTYPE__&amp;submissionparams=__BVSUBMISSIONPARAMETERS__&amp;submissionurl=http%3A%2F%2Fwww.moen.com%2Freview"
+      title="Report as inappropriate" target="BVFrame">(Report as inappropriate)</a></span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkInactive BVRRReviewFeedbackLinkInactiveInappropriate BVRRHidden"><a
+      onclick="return false;" href="#">(Report as inappropriate)</a></span></span><span
+      class="BVRRLabel BVRRReviewFeedbackLinksSuffix"></span>
+      <div class="BVRRReviewFeedbackMessage BVRRHidden"></div>
+    </div>
+    <div class="RRBeforeClientResponseContainerSpacer"></div>
+    <div class="RRBeforeSocialLinksContainerSpacer"></div>
+    <div class="BVRRReviewSocialLinksContainer">
+      <div class="BVRRLabel BVRRReviewBookmarkingLabel">Share this review:</div>
+      <a onfocus="this.href=bvReplaceTokensInSocialURL(this.href);"
+         onclick="this.href=bvReplaceTokensInSocialURL(this.href);window.open(this.href,'','left=0,top=0,width=626,height=436,toolbar=1,location=0,resizable=1,scrollbars=1'); return false;"
+         rel="nofollow" name="BV_TrackingTag_Review_Display_SocialBookmarkFacebook_71764142"
+         href="http://reviews.moen.com/0544/share.htm?site=Facebook&amp;url=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Fmoen-90-degree-s6700-reviews%2Freviews.htm%3FreviewID%3D71764142&amp;title=__TITLE__&amp;robot=__ROBOT__&amp;image=http%3A%2F%2Fwww.moen.com%2Fshared%2Fimages%2Fko_websmall%2Fs6700.jpg"
+         onmouseover="this.href=bvReplaceTokensInSocialURL(this.href);"
+         class="BVRRSocialBookmarkingSharingLink BVRRSocialBookmarkingSharingLinkFacebook" target="_blank"><img
+        width="16" height="16" class="BVRRSocialBookmarkLinkImage"
+        src="http://reviews.moen.com/static/0544/link-facebook.gif" alt="Facebook" title="Add to Facebook"></a>
+      <a onfocus="this.href=bvReplaceTokensInSocialURL(this.href);"
+         onclick="this.href=bvReplaceTokensInSocialURL(this.href);window.open(this.href,'','left=0,top=0,width=795,height=700,toolbar=1,location=0,resizable=1,scrollbars=1'); return false;"
+         rel="nofollow" name="BV_TrackingTag_Review_Display_SocialBookmarkTwitter_71764142"
+         href="http://reviews.moen.com/0544/share.htm?site=Twitter&amp;url=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Fmoen-90-degree-s6700-reviews%2Freviews.htm%3FreviewID%3D71764142&amp;title=__TITLE__&amp;robot=__ROBOT__&amp;image=http%3A%2F%2Fwww.moen.com%2Fshared%2Fimages%2Fko_websmall%2Fs6700.jpg"
+         onmouseover="this.href=bvReplaceTokensInSocialURL(this.href);"
+         class="BVRRSocialBookmarkingSharingLink BVRRSocialBookmarkingSharingLinkTwitter" target="_blank"><img
+        width="16" height="16" class="BVRRSocialBookmarkLinkImage"
+        src="http://reviews.moen.com/static/0544/link-twitter.gif" alt="Twitter" title="Tweet this"></a>
+    </div>
+    <div class="BVRRReviewDisplayStyle3MainSpacer BVRRReviewDisplayStyle3MainSpacerBottom"></div>
+  </div>
+  <div class="BVRRReviewDisplayStyle3Spacer BVRRReviewDisplayStyle3SpacerBottom"></div>
+</div>
+<div class="BVRRSeparator BVRRSeparatorContentBodyBottom"></div></span></div>
+            <div id="BVRRDisplayContentReviewID_69765239"
+                 class="BVRRContentReview BVRRDisplayContentReview BVDIContentNative BVRRContentReviewNative BVRRDisplayContentReviewOdd BVRROdd"><span
+              itemprop="review" itemscope="" itemtype="http://schema.org/Review"><div
+              class="BVRRSeparator BVRRSeparatorContentBodyTop"></div>
+<div id="BVSubmissionPopupContainer" class="BVRRReviewDisplayStyle3">
+  <div class="BVRRReviewDisplayStyle3Spacer BVRRReviewDisplayStyle3SpacerTop"></div>
+  <div class="BVRRReviewDisplayStyle3Summary">
+    <div class="BVRRUserNicknameContainer"><span class="BVRRLabel BVRRUserNicknamePrefix"></span><span
+      class="BVRRValue BVRRUserNickname">By:&nbsp;<span itemprop="author"
+                                                        class="BVRRNickname">PCB Princess </span></span><span
+      class="BVRRLabel BVRRUserNicknameSuffix"></span>
+      <div class="BVRRUserLocationContainer"><span class="BVRRLabel BVRRUserLocationPrefix">Location:</span><span
+        class="BVRRValue BVRRUserLocation">Panama City Beach, Fl.</span><span
+        class="BVRRLabel BVRRUserLocationSuffix"></span></div>
+    </div>
+    <div class="BVRRContextDataContainer">
+      <div
+        class="BVRRContextDataValueContainer BVRRContextDataValueHomeImprovementContainer BVContextDataHomeImprovementNo">
+        <span class="BVRRLabel BVRRContextDataValuePrefix BVRRContextDataValueHomeImprovementPrefix">Are you a home improvement professional?</span><span
+        class="BVRRValue BVRRContextDataValue BVRRContextDataValueHomeImprovement">No</span><span
+        class="BVRRLabel BVRRContextDataValueSuffix BVRRContextDataValueHomeImprovementSuffix"></span></div>
+      <div class="BVRRContextDataValueContainer BVRRContextDataValueTypeContainer BVContextDataTypeLargeRemodel"><span
+        class="BVRRLabel BVRRContextDataValuePrefix BVRRContextDataValueTypePrefix">Type of Project:</span><span
+        class="BVRRValue BVRRContextDataValue BVRRContextDataValueType">Large Remodel (over $5,000)</span><span
+        class="BVRRLabel BVRRContextDataValueSuffix BVRRContextDataValueTypeSuffix"></span></div>
+      <div class="BVRRContextDataValueContainer BVRRContextDataValueInstallerContainer BVContextDataInstallerNo"><span
+        class="BVRRLabel BVRRContextDataValuePrefix BVRRContextDataValueInstallerPrefix">Are you the installer of this product?</span><span
+        class="BVRRValue BVRRContextDataValue BVRRContextDataValueInstaller">No</span><span
+        class="BVRRLabel BVRRContextDataValueSuffix BVRRContextDataValueInstallerSuffix"></span></div>
+    </div>
+    <div class="BVRRReviewRatingsContainer">
+      <div class="BVRROverallRatingContainer">
+        <div class="BVRRRatingContainerStar">
+          <div class="BVRRRatingEntry BVRROdd">
+            <div id="BVRRRatingOverall_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingOverall">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Overall Rating:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating"
+                   class="BVRRRatingNormalOutOf"><span itemprop="ratingValue"
+                                                       class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span itemprop="bestRating" class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="BVRRSecondaryRatingsContainer">
+        <div class="BVRRRatingContainerStar">
+          <div class="BVRRRatingEntry BVRROdd">
+            <div id="BVRRRatingStyle_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingStyle">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Style fits my taste:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div class="BVRRRatingNormalOutOf"><span class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+          <div class="BVRRRatingEntry BVRREven">
+            <div id="BVRRRatingFeatures_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingFeatures">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Product features:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div class="BVRRRatingNormalOutOf"><span class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+          <div class="BVRRRatingEntry BVRROdd">
+            <div id="BVRRRatingDurable_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingDurable">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Durable:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div class="BVRRRatingNormalOutOf"><span class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+          <div class="BVRRRatingEntry BVRREven">
+            <div id="BVRRRatingInstallation_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingInstallation">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Ease of installation:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div class="BVRRRatingNormalOutOf"><span class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="BVRRReviewDisplayStyle3Main">
+    <div class="BVRRReviewDisplayStyle3MainSpacer BVRRReviewDisplayStyle3MainSpacerTop"></div>
+    <div class="BVRRReviewRatingsContainer">
+      <div class="BVRROverallRatingContainer">
+        <div class="BVRRRatingContainerStar">
+          <div class="BVRRRatingEntry BVRROdd">
+            <div id="BVRRRatingOverall_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingOverall">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Overall Rating:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating"
+                   class="BVRRRatingNormalOutOf"><span itemprop="ratingValue"
+                                                       class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span itemprop="bestRating" class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="BVRRReviewTitleContainer"><span class="BVRRLabel BVRRReviewTitlePrefix"></span><span itemprop="name"
+                                                                                                     class="BVRRValue BVRRReviewTitle">Smooth Flow</span><span
+      class="BVRRLabel BVRRReviewTitleSuffix"></span></div>
+    <div class="BVRRReviewDateContainer"><span class="BVRRLabel BVRRReviewDatePrefix">Date:</span><span
+      class="BVRRValue BVRRReviewDate">[December 29, 2014]</span><span class="BVRRLabel BVRRReviewDateSuffix"></span>
+    </div>
+    <div class="BVRRReviewDisplayStyle3Content">
+      <div itemprop="description" class="BVRRReviewTextContainer">
+        <div class="BVRRReviewTextParagraph BVRRReviewTextFirstParagraph BVRRReviewTextLastParagraph"><span
+          class="BVRRReviewText">Had this faucet and matching shower and towel accessories installed 9 mo ago and love the function and look. The water flows out smoothly which means there's not a lot of splashing in the sink.</span>
+        </div>
+      </div>
+    </div>
+    <div class="RRBeforeFeedbackContainerSpacer"></div>
+    <div class="BVRRReviewFeedbackSummaryContainer"><span class="BVRRLabel BVRRReviewFeedbackSummaryPrefix"></span><span
+      class="BVRRLabel BVRRReviewFeedbackSummary"><span class="BVRRNumber">12</span> of <span
+      class="BVRRNumber">16</span> found this review helpful.</span><span
+      class="BVRRLabel BVRRReviewFeedbackSummarySuffix"></span></div>
+    <div class="BVRRReviewFeedbackLinksContainer"><span class="BVRRLabel BVRRReviewFeedbackLinksPrefix">Was this review helpful to you?</span><span
+      class="BVRRReviewFeedbackLinks"><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkActive BVRRReviewFeedbackLinkYes"><a
+      name="BV_TrackingTag_Review_Display_AddPositiveFeedback_69765239"
+      href="http://reviews.moen.com/0544/S6700/review/69765239/positive.htm?format=embedded&amp;sessionparams=__BVSESSIONPARAMS__&amp;return=http%3A%2F%2Fwww.moen.com%2F90-degree%2Fchrome-one-handle-low-arc-bathroom-faucet%2F_%2FR-CONSUMER%253AS6700&amp;innerreturn=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Freviews.htm%3Fformat%3Dembedded%26sort%3Drating&amp;user=__USERID__&amp;authsourcetype=__AUTHTYPE__&amp;submissionparams=__BVSUBMISSIONPARAMETERS__&amp;submissionurl=http%3A%2F%2Fwww.moen.com%2Freview"
+      title="Yes" target="BVFrame">Yes</a></span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkInactive BVRRReviewFeedbackLinkInactiveYes BVRRHidden"><a
+      onclick="return false;" href="#">Yes</a></span><span
+      class="BVRRReviewFeedbackLinksSeparator BVRRReviewFeedbackLinksSeparatorBetweenYesNo">or</span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkActive BVRRReviewFeedbackLinkNo"><a
+      name="BV_TrackingTag_Review_Display_AddNegativeFeedback_69765239"
+      href="http://reviews.moen.com/0544/S6700/review/69765239/negative.htm?format=embedded&amp;sessionparams=__BVSESSIONPARAMS__&amp;return=http%3A%2F%2Fwww.moen.com%2F90-degree%2Fchrome-one-handle-low-arc-bathroom-faucet%2F_%2FR-CONSUMER%253AS6700&amp;innerreturn=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Freviews.htm%3Fformat%3Dembedded%26sort%3Drating&amp;user=__USERID__&amp;authsourcetype=__AUTHTYPE__&amp;submissionparams=__BVSUBMISSIONPARAMETERS__&amp;submissionurl=http%3A%2F%2Fwww.moen.com%2Freview"
+      title="No" target="BVFrame">No</a></span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkInactive BVRRReviewFeedbackLinkInactiveNo BVRRHidden"><a
+      onclick="return false;" href="#">No</a></span><span
+      class="BVRRReviewFeedbackLinksSeparator BVRRReviewFeedbackLinksSeparatorBetweenNoInappropriate">or</span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkActive BVRRReviewFeedbackLinkInappropriate"><a
+      name="BV_TrackingTag_Review_Display_Inappropriate_69765239"
+      href="http://reviews.moen.com/0544/S6700/review/69765239/inappropriate.htm?format=embedded&amp;sessionparams=__BVSESSIONPARAMS__&amp;return=http%3A%2F%2Fwww.moen.com%2F90-degree%2Fchrome-one-handle-low-arc-bathroom-faucet%2F_%2FR-CONSUMER%253AS6700&amp;innerreturn=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Freviews.htm%3Fformat%3Dembedded%26sort%3Drating&amp;user=__USERID__&amp;authsourcetype=__AUTHTYPE__&amp;submissionparams=__BVSUBMISSIONPARAMETERS__&amp;submissionurl=http%3A%2F%2Fwww.moen.com%2Freview"
+      title="Report as inappropriate" target="BVFrame">(Report as inappropriate)</a></span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkInactive BVRRReviewFeedbackLinkInactiveInappropriate BVRRHidden"><a
+      onclick="return false;" href="#">(Report as inappropriate)</a></span></span><span
+      class="BVRRLabel BVRRReviewFeedbackLinksSuffix"></span>
+      <div class="BVRRReviewFeedbackMessage BVRRHidden"></div>
+    </div>
+    <div class="RRBeforeClientResponseContainerSpacer"></div>
+    <div class="RRBeforeSocialLinksContainerSpacer"></div>
+    <div class="BVRRReviewSocialLinksContainer">
+      <div class="BVRRLabel BVRRReviewBookmarkingLabel">Share this review:</div>
+      <a onfocus="this.href=bvReplaceTokensInSocialURL(this.href);"
+         onclick="this.href=bvReplaceTokensInSocialURL(this.href);window.open(this.href,'','left=0,top=0,width=626,height=436,toolbar=1,location=0,resizable=1,scrollbars=1'); return false;"
+         rel="nofollow" name="BV_TrackingTag_Review_Display_SocialBookmarkFacebook_69765239"
+         href="http://reviews.moen.com/0544/share.htm?site=Facebook&amp;url=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Fmoen-90-degree-s6700-reviews%2Freviews.htm%3FreviewID%3D69765239&amp;title=__TITLE__&amp;robot=__ROBOT__&amp;image=http%3A%2F%2Fwww.moen.com%2Fshared%2Fimages%2Fko_websmall%2Fs6700.jpg"
+         onmouseover="this.href=bvReplaceTokensInSocialURL(this.href);"
+         class="BVRRSocialBookmarkingSharingLink BVRRSocialBookmarkingSharingLinkFacebook" target="_blank"><img
+        width="16" height="16" class="BVRRSocialBookmarkLinkImage"
+        src="http://reviews.moen.com/static/0544/link-facebook.gif" alt="Facebook" title="Add to Facebook"></a>
+      <a onfocus="this.href=bvReplaceTokensInSocialURL(this.href);"
+         onclick="this.href=bvReplaceTokensInSocialURL(this.href);window.open(this.href,'','left=0,top=0,width=795,height=700,toolbar=1,location=0,resizable=1,scrollbars=1'); return false;"
+         rel="nofollow" name="BV_TrackingTag_Review_Display_SocialBookmarkTwitter_69765239"
+         href="http://reviews.moen.com/0544/share.htm?site=Twitter&amp;url=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Fmoen-90-degree-s6700-reviews%2Freviews.htm%3FreviewID%3D69765239&amp;title=__TITLE__&amp;robot=__ROBOT__&amp;image=http%3A%2F%2Fwww.moen.com%2Fshared%2Fimages%2Fko_websmall%2Fs6700.jpg"
+         onmouseover="this.href=bvReplaceTokensInSocialURL(this.href);"
+         class="BVRRSocialBookmarkingSharingLink BVRRSocialBookmarkingSharingLinkTwitter" target="_blank"><img
+        width="16" height="16" class="BVRRSocialBookmarkLinkImage"
+        src="http://reviews.moen.com/static/0544/link-twitter.gif" alt="Twitter" title="Tweet this"></a>
+    </div>
+    <div class="BVRRReviewDisplayStyle3MainSpacer BVRRReviewDisplayStyle3MainSpacerBottom"></div>
+  </div>
+  <div class="BVRRReviewDisplayStyle3Spacer BVRRReviewDisplayStyle3SpacerBottom"></div>
+</div>
+<div class="BVRRSeparator BVRRSeparatorContentBodyBottom"></div></span></div>
+            <div id="BVRRDisplayContentReviewID_64584318"
+                 class="BVRRContentReview BVRRDisplayContentReview BVDIContentNative BVRRContentReviewNative BVRRDisplayContentReviewEven BVRRDisplayContentReviewLast BVRREven BVRRLast"><span
+              itemprop="review" itemscope="" itemtype="http://schema.org/Review"><div
+              class="BVRRSeparator BVRRSeparatorContentBodyTop"></div>
+<div id="BVSubmissionPopupContainer" class="BVRRReviewDisplayStyle3">
+  <div class="BVRRReviewDisplayStyle3Spacer BVRRReviewDisplayStyle3SpacerTop"></div>
+  <div class="BVRRReviewDisplayStyle3Summary">
+    <div class="BVRRUserNicknameContainer"><span class="BVRRLabel BVRRUserNicknamePrefix"></span><span
+      class="BVRRValue BVRRUserNickname">By:&nbsp;<span itemprop="author"
+                                                        class="BVRRNickname">Midwest Owner </span></span><span
+      class="BVRRLabel BVRRUserNicknameSuffix"></span>
+      <div class="BVRRUserLocationContainer"><span class="BVRRLabel BVRRUserLocationPrefix">Location:</span><span
+        class="BVRRValue BVRRUserLocation">Kansas City, MO</span><span class="BVRRLabel BVRRUserLocationSuffix"></span>
+      </div>
+    </div>
+    <div class="BVRRContextDataContainer">
+      <div
+        class="BVRRContextDataValueContainer BVRRContextDataValueHomeImprovementContainer BVContextDataHomeImprovementNo">
+        <span class="BVRRLabel BVRRContextDataValuePrefix BVRRContextDataValueHomeImprovementPrefix">Are you a home improvement professional?</span><span
+        class="BVRRValue BVRRContextDataValue BVRRContextDataValueHomeImprovement">No</span><span
+        class="BVRRLabel BVRRContextDataValueSuffix BVRRContextDataValueHomeImprovementSuffix"></span></div>
+      <div class="BVRRContextDataValueContainer BVRRContextDataValueTypeContainer BVContextDataTypeSmallRemodel"><span
+        class="BVRRLabel BVRRContextDataValuePrefix BVRRContextDataValueTypePrefix">Type of Project:</span><span
+        class="BVRRValue BVRRContextDataValue BVRRContextDataValueType">Small Remodel (under $5,000)</span><span
+        class="BVRRLabel BVRRContextDataValueSuffix BVRRContextDataValueTypeSuffix"></span></div>
+      <div class="BVRRContextDataValueContainer BVRRContextDataValueInstallerContainer BVContextDataInstallerNo"><span
+        class="BVRRLabel BVRRContextDataValuePrefix BVRRContextDataValueInstallerPrefix">Are you the installer of this product?</span><span
+        class="BVRRValue BVRRContextDataValue BVRRContextDataValueInstaller">No</span><span
+        class="BVRRLabel BVRRContextDataValueSuffix BVRRContextDataValueInstallerSuffix"></span></div>
+    </div>
+    <div class="BVRRReviewRatingsContainer">
+      <div class="BVRROverallRatingContainer">
+        <div class="BVRRRatingContainerStar">
+          <div class="BVRRRatingEntry BVRROdd">
+            <div id="BVRRRatingOverall_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingOverall">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Overall Rating:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating"
+                   class="BVRRRatingNormalOutOf"><span itemprop="ratingValue"
+                                                       class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span itemprop="bestRating" class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="BVRRSecondaryRatingsContainer">
+        <div class="BVRRRatingContainerStar">
+          <div class="BVRRRatingEntry BVRROdd">
+            <div id="BVRRRatingStyle_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingStyle">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Style fits my taste:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div class="BVRRRatingNormalOutOf"><span class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+          <div class="BVRRRatingEntry BVRREven">
+            <div id="BVRRRatingFeatures_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingFeatures">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Product features:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div class="BVRRRatingNormalOutOf"><span class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+          <div class="BVRRRatingEntry BVRROdd">
+            <div id="BVRRRatingDurable_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingDurable">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Durable:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div class="BVRRRatingNormalOutOf"><span class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+          <div class="BVRRRatingEntry BVRREven">
+            <div id="BVRRRatingInstallation_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingInstallation">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Ease of installation:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div class="BVRRRatingNormalOutOf"><span class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="BVRRReviewDisplayStyle3Main">
+    <div class="BVRRReviewDisplayStyle3MainSpacer BVRRReviewDisplayStyle3MainSpacerTop"></div>
+    <div class="BVRRReviewRatingsContainer">
+      <div class="BVRROverallRatingContainer">
+        <div class="BVRRRatingContainerStar">
+          <div class="BVRRRatingEntry BVRROdd">
+            <div id="BVRRRatingOverall_Review_Display" class="BVRRRating BVRRRatingNormal BVRRRatingOverall">
+              <div class="BVRRLabel BVRRRatingNormalLabel">Overall Rating:&nbsp;</div>
+              <div class="BVRRRatingNormalImage">
+                <div class="ratings-meter">
+                  <div class="cutouts"><span style="width: 100%;"></span></div>
+                </div>
+              </div>
+              <div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating"
+                   class="BVRRRatingNormalOutOf"><span itemprop="ratingValue"
+                                                       class="BVRRNumber BVRRRatingNumber">5</span>
+                <span class="BVRRSeparatorText">out of</span>
+                <span itemprop="bestRating" class="BVRRNumber BVRRRatingRangeNumber">5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="BVRRReviewTitleContainer"><span class="BVRRLabel BVRRReviewTitlePrefix"></span><span itemprop="name"
+                                                                                                     class="BVRRValue BVRRReviewTitle">My 2 cents</span><span
+      class="BVRRLabel BVRRReviewTitleSuffix"></span></div>
+    <div class="BVRRReviewDateContainer"><span class="BVRRLabel BVRRReviewDatePrefix">Date:</span><span
+      class="BVRRValue BVRRReviewDate">[September 1, 2014]</span><span class="BVRRLabel BVRRReviewDateSuffix"></span>
+    </div>
+    <div class="BVRRReviewDisplayStyle3Content">
+      <div itemprop="description" class="BVRRReviewTextContainer">
+        <div class="BVRRReviewTextParagraph BVRRReviewTextFirstParagraph BVRRReviewTextLastParagraph"><span
+          class="BVRRReviewText">We bought two of these and have had them in our master bathroom for over 2 years. We have never had a problem - we LOVE these faucets. Highly recommend them. We are using them with a under mount sink with granite. Could not be more pleased.</span>
+        </div>
+      </div>
+    </div>
+    <div class="RRBeforeFeedbackContainerSpacer"></div>
+    <div class="BVRRReviewFeedbackSummaryContainer"><span class="BVRRLabel BVRRReviewFeedbackSummaryPrefix"></span><span
+      class="BVRRLabel BVRRReviewFeedbackSummary"><span class="BVRRNumber">12</span> of <span
+      class="BVRRNumber">15</span> found this review helpful.</span><span
+      class="BVRRLabel BVRRReviewFeedbackSummarySuffix"></span></div>
+    <div class="BVRRReviewFeedbackLinksContainer"><span class="BVRRLabel BVRRReviewFeedbackLinksPrefix">Was this review helpful to you?</span><span
+      class="BVRRReviewFeedbackLinks"><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkActive BVRRReviewFeedbackLinkYes"><a
+      name="BV_TrackingTag_Review_Display_AddPositiveFeedback_64584318"
+      href="http://reviews.moen.com/0544/S6700/review/64584318/positive.htm?format=embedded&amp;sessionparams=__BVSESSIONPARAMS__&amp;return=http%3A%2F%2Fwww.moen.com%2F90-degree%2Fchrome-one-handle-low-arc-bathroom-faucet%2F_%2FR-CONSUMER%253AS6700&amp;innerreturn=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Freviews.htm%3Fformat%3Dembedded%26sort%3Drating&amp;user=__USERID__&amp;authsourcetype=__AUTHTYPE__&amp;submissionparams=__BVSUBMISSIONPARAMETERS__&amp;submissionurl=http%3A%2F%2Fwww.moen.com%2Freview"
+      title="Yes" target="BVFrame">Yes</a></span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkInactive BVRRReviewFeedbackLinkInactiveYes BVRRHidden"><a
+      onclick="return false;" href="#">Yes</a></span><span
+      class="BVRRReviewFeedbackLinksSeparator BVRRReviewFeedbackLinksSeparatorBetweenYesNo">or</span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkActive BVRRReviewFeedbackLinkNo"><a
+      name="BV_TrackingTag_Review_Display_AddNegativeFeedback_64584318"
+      href="http://reviews.moen.com/0544/S6700/review/64584318/negative.htm?format=embedded&amp;sessionparams=__BVSESSIONPARAMS__&amp;return=http%3A%2F%2Fwww.moen.com%2F90-degree%2Fchrome-one-handle-low-arc-bathroom-faucet%2F_%2FR-CONSUMER%253AS6700&amp;innerreturn=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Freviews.htm%3Fformat%3Dembedded%26sort%3Drating&amp;user=__USERID__&amp;authsourcetype=__AUTHTYPE__&amp;submissionparams=__BVSUBMISSIONPARAMETERS__&amp;submissionurl=http%3A%2F%2Fwww.moen.com%2Freview"
+      title="No" target="BVFrame">No</a></span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkInactive BVRRReviewFeedbackLinkInactiveNo BVRRHidden"><a
+      onclick="return false;" href="#">No</a></span><span
+      class="BVRRReviewFeedbackLinksSeparator BVRRReviewFeedbackLinksSeparatorBetweenNoInappropriate">or</span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkActive BVRRReviewFeedbackLinkInappropriate"><a
+      name="BV_TrackingTag_Review_Display_Inappropriate_64584318"
+      href="http://reviews.moen.com/0544/S6700/review/64584318/inappropriate.htm?format=embedded&amp;sessionparams=__BVSESSIONPARAMS__&amp;return=http%3A%2F%2Fwww.moen.com%2F90-degree%2Fchrome-one-handle-low-arc-bathroom-faucet%2F_%2FR-CONSUMER%253AS6700&amp;innerreturn=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Freviews.htm%3Fformat%3Dembedded%26sort%3Drating&amp;user=__USERID__&amp;authsourcetype=__AUTHTYPE__&amp;submissionparams=__BVSUBMISSIONPARAMETERS__&amp;submissionurl=http%3A%2F%2Fwww.moen.com%2Freview"
+      title="Report as inappropriate" target="BVFrame">(Report as inappropriate)</a></span><span
+      class="BVRRReviewFeedbackLink BVRRReviewFeedbackLinkInactive BVRRReviewFeedbackLinkInactiveInappropriate BVRRHidden"><a
+      onclick="return false;" href="#">(Report as inappropriate)</a></span></span><span
+      class="BVRRLabel BVRRReviewFeedbackLinksSuffix"></span>
+      <div class="BVRRReviewFeedbackMessage BVRRHidden"></div>
+    </div>
+    <div class="RRBeforeClientResponseContainerSpacer"></div>
+    <div class="RRBeforeSocialLinksContainerSpacer"></div>
+    <div class="BVRRReviewSocialLinksContainer">
+      <div class="BVRRLabel BVRRReviewBookmarkingLabel">Share this review:</div>
+      <a onfocus="this.href=bvReplaceTokensInSocialURL(this.href);"
+         onclick="this.href=bvReplaceTokensInSocialURL(this.href);window.open(this.href,'','left=0,top=0,width=626,height=436,toolbar=1,location=0,resizable=1,scrollbars=1'); return false;"
+         rel="nofollow" name="BV_TrackingTag_Review_Display_SocialBookmarkFacebook_64584318"
+         href="http://reviews.moen.com/0544/share.htm?site=Facebook&amp;url=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Fmoen-90-degree-s6700-reviews%2Freviews.htm%3FreviewID%3D64584318&amp;title=__TITLE__&amp;robot=__ROBOT__&amp;image=http%3A%2F%2Fwww.moen.com%2Fshared%2Fimages%2Fko_websmall%2Fs6700.jpg"
+         onmouseover="this.href=bvReplaceTokensInSocialURL(this.href);"
+         class="BVRRSocialBookmarkingSharingLink BVRRSocialBookmarkingSharingLinkFacebook" target="_blank"><img
+        width="16" height="16" class="BVRRSocialBookmarkLinkImage"
+        src="http://reviews.moen.com/static/0544/link-facebook.gif" alt="Facebook" title="Add to Facebook"></a>
+      <a onfocus="this.href=bvReplaceTokensInSocialURL(this.href);"
+         onclick="this.href=bvReplaceTokensInSocialURL(this.href);window.open(this.href,'','left=0,top=0,width=795,height=700,toolbar=1,location=0,resizable=1,scrollbars=1'); return false;"
+         rel="nofollow" name="BV_TrackingTag_Review_Display_SocialBookmarkTwitter_64584318"
+         href="http://reviews.moen.com/0544/share.htm?site=Twitter&amp;url=http%3A%2F%2Freviews.moen.com%2F0544%2FS6700%2Fmoen-90-degree-s6700-reviews%2Freviews.htm%3FreviewID%3D64584318&amp;title=__TITLE__&amp;robot=__ROBOT__&amp;image=http%3A%2F%2Fwww.moen.com%2Fshared%2Fimages%2Fko_websmall%2Fs6700.jpg"
+         onmouseover="this.href=bvReplaceTokensInSocialURL(this.href);"
+         class="BVRRSocialBookmarkingSharingLink BVRRSocialBookmarkingSharingLinkTwitter" target="_blank"><img
+        width="16" height="16" class="BVRRSocialBookmarkLinkImage"
+        src="http://reviews.moen.com/static/0544/link-twitter.gif" alt="Twitter" title="Tweet this"></a>
+    </div>
+    <div class="BVRRReviewDisplayStyle3MainSpacer BVRRReviewDisplayStyle3MainSpacerBottom"></div>
+  </div>
+  <div class="BVRRReviewDisplayStyle3Spacer BVRRReviewDisplayStyle3SpacerBottom"></div>
+</div>
+<div class="BVRRSeparator BVRRSeparatorContentBodyBottom"></div></span></div>
+            <ul id="BVSEO_meta" style="display:none!important">
+              <li data-bvseo="bvDateModified">2016-04-20 T13:34:57.343-05:00</li>
+              <li data-bvseo="ps">bvseo_pps, prod_bvrr, vn_prr_5.6</li>
+              <li data-bvseo="cp">cp-1, bvpage1</li>
+              <li data-bvseo="co">co_hasreviews, tv_37, tr_37</li>
+              <li data-bvseo="cf">loc_en_US, sid_S6700, prod, sort_rating</li>
+            </ul>
+          </div>
+          <div id="BVRRDisplayContentFooterID" class="BVRRFooter BVRRDisplayContentFooter">
+            <div class="BVRRPager BVRRPageBasedPager">
+              <span class="BVRRPageLink BVRRPageNumber BVRRSelectedPageNumber">1</span><span
+              class="BVRRPageLink BVRRPageNumber"> <a name="BV_TrackingTag_Review_Display_PageNumber_2"
+                                                      href="http://reviews.moen.com/0544/S6700/reviews.htm?format=embedded&amp;page=2&amp;sort=rating&amp;scrollToTop=true"
+                                                      title="2" target="BVFrame">2</a>
+</span><span class="BVRRPageLink BVRRPageNumber"> <a name="BV_TrackingTag_Review_Display_PageNumber_3"
+                                                     href="http://reviews.moen.com/0544/S6700/reviews.htm?format=embedded&amp;page=3&amp;sort=rating&amp;scrollToTop=true"
+                                                     title="3" target="BVFrame">3</a>
+</span><span class="BVRRPageLink BVRRPageNumber"> <a name="BV_TrackingTag_Review_Display_PageNumber_4"
+                                                     href="http://reviews.moen.com/0544/S6700/reviews.htm?format=embedded&amp;page=4&amp;sort=rating&amp;scrollToTop=true"
+                                                     title="4" target="BVFrame">4</a>
+</span><span class="BVRRPageLink BVRRPageNumber"> <a name="BV_TrackingTag_Review_Display_PageNumber_5"
+                                                     href="http://reviews.moen.com/0544/S6700/reviews.htm?format=embedded&amp;page=5&amp;sort=rating&amp;scrollToTop=true"
+                                                     title="5" target="BVFrame">5</a>
+</span>...<span class="BVRRPageLink BVRRPageNumber"> <a name="BV_TrackingTag_Review_Display_PageNumber_10"
+                                                        href="http://reviews.moen.com/0544/S6700/reviews.htm?format=embedded&amp;page=10&amp;sort=rating&amp;scrollToTop=true"
+                                                        title="10" target="BVFrame">10</a>
+</span><span class="BVRRPageLink BVRRNextPage"><a name="BV_TrackingTag_Review_Display_NextPage"
+                                                  href="http://reviews.moen.com/0544/S6700/reviews.htm?format=embedded&amp;page=2&amp;sort=rating&amp;scrollToTop=true"
+                                                  title="next" target="BVFrame">next</a></span><span
+              class="BVRRPagerArrows">&gt;&gt;</span></div>
+          </div>
+          <div class="BVRRSpacer BVRRDisplayContentSpacer"></div>
+        </div>
+        <div id="BVRRFilteringBusyOverlayHighlightID" class="BVDI_FBOverlayHighlight BVDIOverlay BVDIHidden">
+          <div class="BVDI_FBImage"><img src="http://reviews.moen.com/static/0544/filteringBusy.gif"
+                                         alt="Filtering is in progress. Please wait until it completes."
+                                         title="Filtering is in progress. Please wait until it completes."></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+Styleguide 4.10.10
+*/
+
+@include block(pdp-reviews) {
+  .BVRRSortAndSearch,
+  .breakdown {
+    display: none;
+  }
+  .BVRRDisplayContentHeaderContent {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .BVRRDisplayContentTitle {
+    font-family: $din-light;
+    font-size: em(30px);
+    display: block;
+  }
+  .overall {
+    display: flex;
+  }
+  .ratings-meter {
+    display: inline-block;
+  }
+  .cutouts {
+  }
+}

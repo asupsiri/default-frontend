@@ -1,0 +1,19 @@
+/*
+Divider
+
+Example of this is found in primary navigation > parts&support section, dividing the space between the search form and the button:
+
+markup:
+<span class="divider divider--horizontal">or</span>
+
+Styleguide 2.20.2
+*/
+
+@include block(divider) {
+  margin: 1em 0;
+  text-transform: uppercase;
+  @include modifier(horizontal) {
+    text-align: center;
+    display: block;
+  }
+}

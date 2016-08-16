@@ -1,0 +1,470 @@
+/*
+Results Page Molecules
+
+These elements are found in the product gallery, search results, etc.
+
+Styleguide 3.14
+*/
+
+@include block(card-list){
+  @include modifier(press-room) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: $c_white;
+  }
+}
+
+/*
+Pagination Links (Horizontal)
+
+Pagination link list, horizontally displayed. The vertical separator is CSS generated content.
+
+markup:
+<ul class="list list--horizontal pagination">
+<li class="pagination__link"><a href="javascript:void(0);">1</a></li>
+<li class="pagination__link"><a href="javascript:void(0);">2</a></li>
+<li class="pagination__link is-inactive">3</li>
+<li class="pagination__link"><a href="javascript:void(0);">4</a></li>
+<li class="pagination__link"><a href="javascript:void(0);">5</a></li>
+<li class="pagination__link"><a href="javascript:void(0);">6</a></li>
+<li class="pagination__link"><a href="javascript:void(0);">7</a></li>
+<li class="pagination__link"><a href="javascript:void(0);">8</a></li>
+<li class="pagination__link"><a href="javascript:void(0);">9</a></li>
+<li class="pagination__link"><a href="javascript:void(0);">10</a></li>
+</ul>
+<br />
+<ul class="list list--horizontal pagination">
+<li class="pagination__link"><a href="javascript:void(0);">1</a></li>
+<li class="pagination__link"><a href="javascript:void(0);">2</a></li>
+<li class="pagination__link is-inactive">&hellip;</li>
+<li class="pagination__link"><a href="javascript:void(0);">4</a></li>
+</ul>
+
+Styleguide 3.14.1
+*/
+
+@include block(pagination) {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: baseline;
+  align-self: inherit;
+  margin: 1em 0 0 0;
+  @include media($bp-sm) {
+    align-self: flex-end;
+    margin-left: auto;
+    margin-top: 0;
+  }
+  @include element(link) {
+    padding: 0 .5em 0 0;
+    margin: 0;
+    color: $c_text-base;
+    text-decoration: none;
+    &::after {
+      content: "\007c"; // UTF-8 Pipe Char
+      padding: 0 0 0 .5em;
+    }
+    &:last-child {
+      padding: 0;
+      &::after {
+        content: "";
+        padding: inherit;
+      }
+    }
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+    a {
+      @include link-base();
+    }
+    @include state(inactive) {
+      color: $c_text-base;
+      text-decoration: none;
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+    }
+  }
+}
+
+/*
+Results Heading
+
+Used to display the current state of a search results pagination sequence
+
+markup:
+<div class="results__header">
+  <div class="results__header-info"><label class="results__header--range">Viewing 21—40</label></div>
+</div>
+
+Styleguide 3.14.2
+*/
+
+@include block(results) {
+  @include element(header) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid lighten($c_black, 70%);
+    padding: em(12) 0 em(24);
+    margin-bottom: 2em;
+    @include modifier(range) {
+      color: $c_mid-gray;
+      font-size: em(18);
+    }
+  }
+  @include element(header-info) {
+    // a flex-box wrapper to allow the whole thing to drop to two lines at narrow viewports. See organisms/search-results-header.
+  }
+}
+
+/*
+Results Heading Variant
+
+Same as base results heading, but with the view <all/some> hyperlink:
+
+markup:
+<div class="results__pagination-header">
+  <div class="results__header-info">
+    <label class="results__pagination-header--range">Viewing 1–10 of 153</label> <label class="results__pagination-header--conjunction">or</label> <a class="results__pagination-header--link" href="javascript:void(0);">View All</a>
+  </div>
+</div>
+<div class="results__pagination-header">
+  <div class="results__header-info">
+    <label class="results__pagination-header--range">Viewing 1–10 of 153</label> <label class="results__pagination-header--conjunction">or</label> <a class="results__pagination-header--link" href="javascript:void(0);">View Some</a>
+  </div>
+</div>
+
+Styleguide 3.14.3
+*/
+
+@include block(results) {
+
+  @include element(pagination-header) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1em;
+    @include media($bp-sm) {
+      flex-direction: row;
+      align-items: baseline;
+      margin-bottom: 2em;
+    }
+
+    border-bottom: 1px solid lighten($c_black, 70%);
+    padding: em(12) 0 em(24);
+    @include modifier(conjunction) {
+      color: $c_mid-gray;
+      font-size: em(14);
+      align-self: flex-start;
+      padding: 0 .5em;
+    }
+    @include modifier(link) {
+      @include link-base();
+      align-self: flex-start;
+      padding: 0;
+    }
+  }
+}
+
+/*
+Quotes & Tips
+
+markup:
+<div class="card-list--press-room">
+    <div class="icon-card">
+      <div class="icon-card__icon-holder">
+        <div class="icon-card__icon icon--circle icon--border" style="background-image: url('./images/icon-quote.svg')"></div>
+      </div>
+      <div class="icon-card__text">
+          <p>Now, cleaning up messes at the kitchen sink is simplified. Power Clean has the spray force consumers desire without the worry of unnecessary splashing. Peanut butter, tomato sauce and other tough-to-rinse foods are no match for this powerful spray.</p>
+            <p class="icon-card__author">
+              <span class="icon-card__author-name">-- Tom Tylicki --</span>
+              <span class="icon-card__author-info">Senior Product Manager</span>
+            </p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-card__icon-holder">
+        <div class="icon-card__icon icon--circle icon--border" style="background-image: url('./images/icon-quote.svg')"></div>
+      </div>
+      <div class="icon-card__text">
+          <p>I think we can all relate to having housework we'd rather not do. That emotion is the root of the invention for Reflex. At Moen we listen to consumers and take pride in developing thoughtfully designed products that make life a tiny bit easier.</p>
+            <p class="icon-card__author">
+              <span class="icon-card__author-name">-- — Timothy McDonough – --</span>
+              <span class="icon-card__author-info">Vice President, Global Brand Marketing</span>
+            </p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-card__icon-holder">
+        <div class="icon-card__icon icon--circle icon--border" style="background-image: url('./images/icon-quote.svg')"></div>
+      </div>
+      <div class="icon-card__text">
+          <p>Handheld showers continue to be an extremely popular choice when upgrading or creating a new bathroom. We took a tried and true showerhead style and found a way to make it even better. The integrated magnet in our Magnetix showerhead makes re-docking the hand shower easier and more intuitive.</p>
+            <p class="icon-card__author">
+              <span class="icon-card__author-name">-- Jack Suvak --</span>
+              <span class="icon-card__author-info">Senior Directory of Consumer and Market Insights</span>
+            </p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-card__icon-holder">
+        <div class="icon-card__icon icon--circle icon--border" style="background-image: url('./images/icon-quote.svg')"></div>
+      </div>
+      <div class="icon-card__text">
+          <p>At Moen, we’re committed to creating products that fulfill consumer needs, from functionality to affordability to style.</p>
+            <p class="icon-card__author">
+              <span class="icon-card__author-name">-- Bob Burns --</span>
+              <span class="icon-card__author-info">Wholesale Bath Product Manager</span>
+            </p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-card__icon-holder">
+        <div class="icon-card__icon icon--circle icon--border" style="background-image: url('./images/icon-quote.svg')"></div>
+      </div>
+      <div class="icon-card__text">
+          <p>When it comes to selecting the right faucets for your space, personal design preferences are a key piece of the puzzle. At Moen, we're dedicated to providing thoughtfully designed products that are both beautiful and functional.</p>
+            <p class="icon-card__author">
+              <span class="icon-card__author-name">-- Maribeth Kwasniewski --</span>
+              <span class="icon-card__author-info">Director Marketing, Retail</span>
+            </p>
+      </div>
+    </div>
+    <div class="icon-card"></div>
+    <div class="icon-card"></div>
+    <div class="icon-card"></div>
+    <div class="icon-card"></div>
+  </div>
+<div class="card-list--press-room">
+    <div class="icon-card">
+      <div class="icon-card__icon-holder">
+        <div class="icon-card__icon icon--circle icon--border" style="background-image: url('./images/icon-tip.svg')"></div>
+      </div>
+      <div class="icon-card__text">
+          Prevent scalding injuries by setting your hot water heater at 120 degrees or below.
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-card__icon-holder">
+        <div class="icon-card__icon icon--circle icon--border" style="background-image: url('./images/icon-tip.svg')"></div>
+      </div>
+      <div class="icon-card__text">
+          Get more relaxed in your bath by upgrading to a spa tub equipped with an air system to disperse bath additives.
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-card__icon-holder">
+        <div class="icon-card__icon icon--circle icon--border" style="background-image: url('./images/icon-tip.svg')"></div>
+      </div>
+      <div class="icon-card__text">
+          Create a calm environment in any room with neutral colors.
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-card__icon-holder">
+        <div class="icon-card__icon icon--circle icon--border" style="background-image: url('./images/icon-tip.svg')"></div>
+      </div>
+      <div class="icon-card__text">
+          Placing flooring tiles on an angle can make your room appear longer.
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-card__icon-holder">
+        <div class="icon-card__icon icon--circle icon--border" style="background-image: url('./images/icon-tip.svg')"></div>
+      </div>
+      <div class="icon-card__text">
+          Make your bath extraordinary by upgrading your tub to be extra deep or long, with jets or bubbles.
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-card__icon-holder">
+        <div class="icon-card__icon icon--circle icon--border" style="background-image: url('./images/icon-tip.svg')"></div>
+      </div>
+      <div class="icon-card__text">
+          Make your guests feel at home by leaving closets and dressers empty for them to unpack.
+      </div>
+    </div>
+    <div class="icon-card"></div>
+    <div class="icon-card"></div>
+    <div class="icon-card"></div>
+    <div class="icon-card"></div>
+  </div>
+
+Styleguide 3.14.4
+*/
+
+@include block(icon-card) {
+  font-size: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid $c_moen-bright-gray;
+  box-shadow: 1px 1px 1px 0 darken($c_moen-bright-gray, 20%);
+  position: relative;
+
+  padding: 0 2em 1.8em;
+  margin: 2em 0 1em;
+  background: $c_white;
+  max-width: 345px;
+  min-height: 150px;
+  transition: all 200ms ease-in-out;
+  &:hover,
+  &:focus {
+    background-color: $c_moen-bright-gray;
+    transform: scale(1.1);
+    box-shadow: none;
+  }
+
+  @include media($bp-xs) {
+    flex-basis: 200px;
+  }
+  @include media($bp-sm) {
+    flex-basis: 240px;
+  }
+
+  @include element(icon-holder) {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    position: relative;
+    height: 0;
+  }
+  @include element(icon) {
+    position: relative;
+    top: -1.6em;
+    background-color: $c_white;
+    width: em(50);
+    height: em(50);
+  }
+  @include element(text) {
+    width: 100%;
+    text-align: left;
+    font-size: em(14);
+    padding: 0;
+    margin: 2em 0 0;
+  }
+  @include element(author) {
+    font-size: em(14);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-end;
+    margin-top: 1em;
+    font-style: italic;
+  }
+  @include element(author-name) {
+    font-family: $din-medium;
+    display: inline-block;
+  }
+  //@include element(author-info) {}
+
+  // empty card "shim" to fill in the last row. Markup will have 4 (expected max items per 'row'):
+  &:empty {
+    height: 0;
+    min-height: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+  }
+}
+
+/*
+Search Result Row
+
+The search result row layout is used for various SRP pages to display research articles, design articles and press releases.
+
+markup:
+<div class="search-result is-even">
+  <h2 class="search-result__title"><a href="javascript:void(0);">Search Result Title Field</a></h2>
+  <time class="article__time time is-block" datetime="2013-04">April, 2013</time>
+  <p class="search-result__synopsis">Search result synopsis lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+  <a href="#" class="link link--icon--left">
+   <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+</div>
+<div class="search-result is-odd">
+  <h2 class="search-result__title"><a href="javascript:void(0);">Search Result Title Field</a></h2>
+  <time class="article__time time is-block" datetime="2013-04">April, 2013</time>
+  <p class="search-result__synopsis">Search result synopsis lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+  <a href="#" class="link link--icon--left">
+   <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+</div>
+<div class="search-result is-even">
+  <h2 class="search-result__title"><a href="javascript:void(0);">Search Result Title Field</a></h2>
+  <time class="article__time time is-block" datetime="2013-04">April, 2013</time>
+  <p class="search-result__synopsis">Search result synopsis lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+  <a href="#" class="link link--icon--left">
+   <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+</div>
+<div class="search-result is-odd">
+  <h2 class="search-result__title"><a href="javascript:void(0);">Search Result Title Field</a></h2>
+  <time class="article__time time is-block" datetime="2013-04">April, 2013</time>
+  <p class="search-result__synopsis">Search result synopsis lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+  <a href="#" class="link link--icon--left">
+   <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+</div>
+
+Styleguide 3.14.5
+*/
+
+@include block(search-result) {
+  margin-bottom: 1em;
+  padding: 2em;
+  @include element(title) {
+    text-transform: uppercase;
+    a {
+      @include link-base();
+    }
+  }
+  @include element(synopsis) {
+  }
+  @include element(section) {
+    margin-bottom: 3em;
+  }
+  @include element(section-container) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 1em;
+    @include media($bp-sm) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 0;
+    }
+    border-bottom: 3px solid $c_moen-bright-blue;
+  }
+  @include element(section-heading) {
+    align-self: center;
+    @include media($bp-sm) {
+      align-self: flex-start;
+    }
+    font-size: rem(26);
+    line-height: 1;
+    color: $c_text-base;
+    font-family: DINWebRegular;
+    font-weight: normal;
+  }
+  @include element(section-link) {
+    align-self: flex-end;
+  }
+  @include state(even) {
+    background-color: $c_white;
+    margin-bottom: 0; // optical adjustment
+  }
+  @include state(odd) {
+    background-color: $c_moen-bright-gray;
+  }
+  .time {
+    margin-bottom: 1em;
+  }
+}

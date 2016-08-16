@@ -1,0 +1,75 @@
+// Moen Brand
+//
+// This is the brand chapter.
+//
+// Styleguide 1.0
+
+// Moen.com Color Palettes
+//
+// Primary color palette
+//
+//  Moen’s primary palette consists of two colors:
+//	Moen Bright Blue and White.
+//
+//	Moen Bright Blue is the anchor color. It is
+//	used in the graphic band, website navigation,
+//	in headlines, sub headings, icons and as a
+//	highlight color when appropriate.
+//
+//	Although we know that technically white isn’t
+//	a true color, let’s call it a color here—and use
+//	it wherever we can, liberally. White space will
+//	make for a cleaner, less cluttered, and more
+//	easily read layout.
+//
+// markup:
+//	<div style="background: $c_moen-bright-blue" class="styleguide-color">Moen Bright Blue | $c_moen-bright-blue | c_moen-bright-blue</div>
+//	<div style="background: $c_white" class="styleguide-color">White | $c_white | c_white</div>
+//
+// Styleguide 1.1.0
+
+// Secondary color palette
+//
+//	Moen’s secondary palette consists of six
+//	accent colors. Their role is to support the
+//	primary palette on bullets, color-coding
+//	in graphs and charts and other secondary
+//	elements. They are not to be used for
+//	primary messaging or backgrounds.
+//
+// markup:
+//	<div style="background: $c_moen-bright-aqua" class="styleguide-color">Moen bright aqua | $c_moen-bright-aqua | SCSS: c_moen-bright-aqua</div>
+//	<div style="background: $c_moen-dark-blue" class="styleguide-color">Moen dark blue | $c_moen-dark-blue | c_moen-dark-blue</div>
+//	<div style="background: $c_moen-purple" class="styleguide-color">Moen purple | $c_moen-purple | c_moen-purple</div>
+//	<div style="background: $c_moen-maroon" class="styleguide-color">Moen maroon | $c_moen-maroon | c_moen-maroon</div>
+//	<div style="background: $c_moen-green" class="styleguide-color">Moen green | $c_moen-green | c_moen-green</div>
+//  <div style="background: $c_moen-gray" class="styleguide-color">Moen gray | $c_moen-gray | c_moen-gray</div>
+//
+// Styleguide 1.1.1
+
+// Logo color palette
+//
+//	The logo colors use Moen Logo Red and Moen
+//	Logo Blue in the waterdrops symbol, and Moen
+//	Black in the wordmark.
+//
+// markup:
+//  <div style="background: $c_moen-logo-red" class="styleguide-color">Moen logo red | $c_moen-logo-red | c_moen-logo-red</div>
+//	<div style="background: $c_moen-logo-blue" class="styleguide-color">Moen logo blue | $c_moen-logo-blue | c_moen-logo-blue</div>
+//	<div style="background: $c_moen-logo-black" class="styleguide-color">Moen Logo black | $c_moen-logo-black | c_moen-logo-black</div>
+//
+// Styleguide 1.1.2
+
+// Typography color palette
+//
+// markup:
+//	<div style="background: $c_text-base" class="styleguide-color">Text Base Color | $c_text-base | c_text-base</div>
+//
+// Styleguide 1.1.3
+
+// Gradients
+//
+// markup:
+//  <div class="styleguide-color fill__gradient--bright-gray">Gray to white gradient | .fill__gradient--bright-gray</div>
+//
+// Styleguide 1.1.4

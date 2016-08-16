@@ -1,0 +1,25 @@
+/*
+Horizontal Navigation
+
+markup:
+<div class="horizontal-nav">
+  <ul class="list list--horizontal is-centered">
+    <li><a class="link--gray" href="#">Item 1</a></li>
+    <li><a class="link--gray" href="#">Item 2</a></li>
+    <li><a class="link--gray" href="#">Item 3</a></li>
+  </ul>
+</div
+
+Styleguide 3.17
+*/
+
+@include block(horizontal-nav) {
+  .list {
+    li {
+      margin-right: 8rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+ }

@@ -1,0 +1,3 @@
+.fill__gradient--bright-gray {
+  @include background-image(linear-gradient(to bottom, $c_moen-bright-gray, $c_white));
+}

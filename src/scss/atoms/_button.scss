@@ -1,0 +1,312 @@
+/*
+Buttons
+
+Styleguide 2.6
+*/
+
+/*
+Base button classes
+
+Markup:
+<button>Default Button</button>
+ <br />
+<button class="button">button base</button>
+ <br />
+<button class="button button--full-width">Full Width Button</button>
+ <br />
+<button class="button button--no-border">Borderless Button</button>
+ <br />
+<button class="button button--default">Default Button</button>
+ <br />
+ <br />
+<div style="background-color:#999; padding:10px">
+<button class="button button--default-border">Default With White Border</button>
+</div>
+ <br />
+ <br />
+<button class="button button--secondary">Secondary Button</button>
+ <br />
+ <br />
+<button class="button button--secondary-flat">Secondary Button Flat</button>
+ <br />
+ <br />
+<button class="button button--banner">Featuring the <b>Wynford Faucet</b></button>
+ <br />
+ <br />
+<button class="button button--blue-hover">Featuring the <b>Wynford Faucet</b></button>
+ <br />
+ <br />
+<span>Modifier to add an arrow on the right: <strong>button--down-arrow </strong></span>
+<br />
+<button class="button button--default button--down-arrow">Down Arrow</button>
+<br />
+<br />
+<button class="button button--default button--down-pointer">Down Pointer</button>
+<br />
+<br />
+<button class="button button--default button--up-pointer">Up Pointer</button>
+<br />
+<br />
+<button class="button button--gray button--full-width">Load more results</button>
+
+Styleguide 2.6.1
+*/
+
+@include block(button) {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid $c_moen-gray;
+  background-color: $c_white;
+  p {
+    padding: 0;
+    font-family: $din-regular;
+    strong {
+      font-family: $din-bold;
+      font-weight: normal;
+    }
+  }
+
+  &:hover,
+  &:active {
+    opacity: .7;
+  }
+
+  @include modifier(full-width) {
+    width: 100%;
+  }
+
+  @include modifier(no-border) {
+    border-color: transparent;
+  }
+
+  @include modifier(default) {
+    padding: .5em 1em;
+    background-color: $c_moen-bright-blue;
+    color: $c_white;
+    border-color: $c_moen-bright-blue;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $c_moen-bright-aqua;
+      text-decoration: none !important;
+    }
+    p:hover {
+      text-decoration: none !important;
+    }
+  }
+
+  @include modifier(default-border) {
+    padding: .5em 1em;
+    background-color: $c_moen-bright-blue;
+    color: $c_white;
+    border-color: $c_pattens_blue;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $c_moen-bright-aqua;
+      text-decoration: none !important;
+    }
+    p:hover {
+      text-decoration: none !important;
+    }
+  }
+
+  @include modifier(down-arrow) {
+    vertical-align: middle;
+    padding-right: 2em !important;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: em(5px) solid transparent;
+      border-right: em(5px) solid transparent;
+      border-top: em(5px) solid $c_white;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      right: .5em;
+    }
+  }
+
+  @include modifier(down-pointer) {
+    vertical-align: middle;
+    padding-right: 2em !important;
+    position: relative;
+    &:after {
+      content: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20288%20290%22%3E%3Cstyle%20type%3D%22text/css%22%3E.st0%7Bfill%3A%23FFFFFF%3B%7D%3C/style%3E%3Ctitle%3E%20%20moen_icons_list1%3C/title%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M18%20162.6v-29.5l114%20114.6V0H154v247.8l114-114.6v29.5L143%20288%2018%20162.6z%22/%3E%3C/svg%3E');
+      display: block;
+      width: .8em;
+      height: .8em;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      right: .5em;
+    }
+  }
+
+  @include modifier(up-pointer) {
+    vertical-align: middle;
+    padding-right: 2em !important;
+    position: relative;
+    &:after {
+      content: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20288%20290%22%3E%3Cstyle%20type%3D%22text/css%22%3E.st0%7Bfill%3A%23FFFFFF%3B%7D%3C/style%3E%3Ctitle%3E%20%20moen_icons_list1%3C/title%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M143%200l125%20125.3v29.5L154%2040.2V288H132V40.3L18%20154.9v-29.5L143%200z%22/%3E%3C/svg%3E');
+      display: block;
+      width: .8em;
+      height: .8em;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      right: .5em;
+    }
+  }
+
+  @include modifier(secondary) {
+    color: $c_white !important;
+    box-shadow: 0 3px 0px 0 $c_moen-green;
+    background-color: $c_chateu_green;
+    border-color: $c_chateu_green;
+    border-radius: .4em;
+    margin-bottom: 1em;
+    padding: .5em 1em;
+    font-family: $din-medium;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $c_sea_green;
+      text-decoration: none !important;
+    }
+
+    p:hover {
+      text-decoration: none !important;
+    }
+  }
+
+  @include modifier(secondary-flat) {
+    color: $c_white !important;
+    background-color: $c_chateu_green;
+    border-color: $c_chateu_green;
+    margin-bottom: 1em;
+    padding: .5em 1em;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $c_sea_green;
+      text-decoration: none !important;
+    }
+
+    p:hover {
+      text-decoration: none !important;
+    }
+  }
+
+  @include modifier(banner) {
+    background-color: rgba($c_moen-bright-blue, .9);
+    border: 0;
+    color: $c_white;
+    padding: .5em 1em;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $c_moen-bright-aqua;
+    }
+  }
+
+  @include modifier(blue-hover) {
+    padding: .5em;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $c_moen-bright-blue;
+      border-color: $c_moen-bright-blue;
+      color: $c_white;
+    }
+  }
+
+  @include modifier(gray) {
+    background-color: $c_moen-gray;
+    color: $c_white;
+    padding: .5em;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: lighten($c_moen-gray, 5%);
+      border-color: lighten($c_moen-gray, 5%);
+    }
+  }
+
+  @include modifier(icon) {
+    min-width: 2em;
+    background-position: 50%;
+    background-color: transparent;
+    span {
+      @include hat();
+    }
+  }
+
+  @include modifier(arrow-right) {
+    background-image: url("./images/icon-arrow_right_thick.svg");
+    background-size: 50%;
+  }
+
+  @include modifier(arrow-left) {
+    background-image: url("./images/icon-arrow_left_thick.svg");
+    background-size: 50%;
+  }
+
+  @include modifier(search) {
+    background-image: url("./images/magnifying-glass.svg");
+    background-size: 60%;
+    fill: currentColor;
+  }
+
+  @include modifier(blue) {
+    background-color: $c_moen-bright-blue !important;
+    background-image: url("./images/magnifying-glass-white.svg");
+    background-size: 60%;
+    fill: currentColor;
+  }
+
+  @include modifier(no-border) {
+    border: none;
+  }
+
+  @include modifier(no-bg-color) {
+    background-color: transparent !important;
+  }
+}
+
+/*
+Buttons with icon
+
+ Markup:
+ <button class="button button--icon button--arrow-left">
+  <span>learn more</span>
+ </button>
+ <button class="button button--icon button--arrow-right">
+  <span>learn more</span>
+ </button>
+ <button class="button button--icon button--search">
+  <span>search</span>
+ </button>
+ <button class="button button--icon button--search button--blue">
+  <span>search</span>
+ </button>
+  <br />
+ <button class="button button--icon button--arrow-left button--no-border">
+  <span>learn more</span>
+ </button>
+ <button class="button button--icon button--arrow-right button--no-border">
+  <span>learn more</span>
+ </button> <button class="button button--icon button--search button--no-border">
+  <span>learn more</span>
+ </button>
+
+Styleguide 2.6.2
+*/

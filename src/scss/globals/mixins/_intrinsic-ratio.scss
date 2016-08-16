@@ -1,0 +1,27 @@
+/*
+ * https://gist.github.com/jonathantneal/a9b8901273475d261dd3
+ * http://alistapart.com/article/creating-intrinsic-ratios-for-video
+ *
+ */
+
+@mixin fluid-aspect($ratio: 1 1, $selector: "> :first-child") {
+  $selector: unquote($selector);
+
+  padding-bottom: percentage(nth($ratio, 2) / nth($ratio, 1));
+  position: relative;
+  overflow: hidden;
+
+  #{$selector} {
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@mixin intrinsic-ratio($ratio: 1 1) {
+  padding-bottom: percentage(nth($ratio, 2) / nth($ratio, 1));
+  width: 100%;
+  display: block;
+}

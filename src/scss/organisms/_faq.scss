@@ -1,0 +1,234 @@
+/*
+FAQ
+
+FAQ Variants
+
+Styleguide 4.9
+*/
+
+/*
+Standard Example
+
+Markup:
+<div class="faq">
+  <div class="faq__back">
+    <a href="#" class="link link--icon--left">
+     <img class="icon" src="./images/icon-arrow_point_left_blue.svg" alt="" aria-hidden="true">Back to All FAQs
+    </a>
+  </div>
+  <div class="faq__breadcrumbs breadcrumbs">
+    <a class="link">Bathroom</a>
+    <span class="breadcrumbs__separator">/</span>
+    <a class="link">Installation Considerations</a>
+  </div>
+  <div class="faq__container">
+    <div class="faq__item">
+      <h2 class="faq__question">Why is there a gap between the handle and the escutcheon of my one-handle shower faucet?</h2>
+      <div class="faq__answer">
+        <div class="faq__answer-helpful">144 of 262 found this answer helpful</div>
+        <div class="faq__answer-text">
+          <p>There is a gap in this location to ensure the screws on the escutcheon do not <a href="#">interfere</a> with the operation of the handle. Depending on the installation, it is acceptable for this gap to be between ½" to an inch.</p>
+        </div>
+        <div class="faq__feedback">
+          <span class="faq__feedback-text">Was this helpful?</span>
+          <button class="button button--blue-hover">Yes</button>
+          <button class="button button--blue-hover">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="faq__back">
+    <a href="#" class="link link--icon--left">
+     <img class="icon" src="./images/icon-arrow_point_left_blue.svg" alt="" aria-hidden="true">Back to All FAQs
+    </a>
+  </div>
+</div>
+
+Styleguide 4.9.1
+*/
+
+/*
+Example w/an image in the answer
+
+Markup:
+<div class="faq">
+  <div class="faq__container">
+    <div class="faq__item">
+      <div class="faq__answer">
+        <div class="faq__answer-helpful">144 of 262 found this answer helpful</div>
+        <div class="faq__answer-text">
+          <p>Verify your faucet by identifying the control box under your sink</p>
+          <p><img src=" http://placehold.it/230x173" alt="Image"></p>
+          <p>There is a gap in this location to ensure the screws on the escutcheon do not <a href="#">interfere</a> with the operation of the handle. Depending on the installation, it is acceptable for this gap to be between ½" to an inch.</p>
+          <p><img src=" http://placehold.it/230x173" alt="Image"></p>
+          <p>There is a gap in this location to ensure the screws on the escutcheon do not interfere with the operation of the handle. Depending on the installation, it is acceptable for this gap to be between ½" to an inch.</p>
+        </div>
+        <div class="faq__feedback">
+          <span class="faq__feedback-text">Was this helpful?</span>
+          <button class="button button--blue-hover">Yes</button>
+          <button class="button button--blue-hover">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+Styleguide 4.9.2
+*/
+
+/*
+Example with tables in the answer
+
+Markup:
+<div class="faq">
+  <div class="faq__container">
+    <div class="faq__item">
+      <div class="faq__answer">
+        <div class="faq__answer-helpful">144 of 262 found this answer helpful</div>
+        <div class="faq__answer-text">
+          <p>Verify your faucet by identifying the control box under your sink</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Service kit</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>96945</td>
+                <td>1º Chrome extensions</td>
+              </tr>
+              <tr>
+                <td>96945</td>
+                <td>1º Chrome extensions</td>
+              </tr>
+              <tr>
+                <td>96945</td>
+                <td>1º Chrome extensions</td>
+              </tr>
+              <tr>
+                <td>96945</td>
+                <td>1" Wrought Iron or Oil Rubbed Bronze extension</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Verify your faucet by identifying the control box under your sink</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Service kit</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>96945</td>
+                <td>1º Chrome extensions</td>
+              </tr>
+              <tr>
+                <td>96945</td>
+                <td>1º Chrome extensions</td>
+              </tr>
+              <tr>
+                <td>96945</td>
+                <td>1º Chrome extensions</td>
+              </tr>
+              <tr>
+                <td>96945</td>
+                <td>1" Wrought Iron or Oil Rubbed Bronze extension</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="faq__feedback">
+          <span class="faq__feedback-text">Was this helpful?</span>
+          <button class="button button--blue-hover">Yes</button>
+          <button class="button button--blue-hover">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+Styleguide 4.9.3
+*/
+
+@include block(faq) {
+  @include outer-container();
+
+  table {
+    margin-bottom: 1rem;
+    text-align: left;
+    thead {
+      background: $c_table-head;
+      color: $c_white;
+    }
+    td, th {
+      border: 1px solid $c_moen-bright-gray;
+      padding: .5rem;
+    }
+  }
+  
+  a {
+    color: $c_link_color;
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+  }
+
+  @include element(back) {
+    .link--icon--left {
+      font-weight: bold;
+      padding-left: 1.5em;
+    }
+  }
+
+  @include element(breadcrumbs) {
+    border-bottom: 1px solid $c_moen-bright-gray;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  @include element(container) {
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  @include element(answer) {
+    margin-left: 2rem;
+  }
+
+  @include element(answer-helpful) {
+    color: $c_text-dark;
+    font-weight: bold;
+    padding: 0 0 1em;
+  }
+
+  @include element(answer-text) {
+    line-height: 1.8em;
+    margin-bottom: .5em;
+  }
+
+  @include element(question) {
+    font-family: $din-light;
+    font-size: 2em;
+    font-weight: normal;
+    letter-spacing: -.05em;
+  }
+
+  @include element(feedback) {
+    * {
+      margin-right: 0.5em;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include element(feedback-text) {
+    color: $c_text-dark;
+  }
+}

@@ -1,0 +1,56 @@
+/*
+Breadcrumbs
+
+Markup:
+<div class="breadcrumbs">
+  <a class="link">Link 1</a>
+  <span class="breadcrumbs__separator">/</span>
+  <a class="link">Link 2</a>
+  <span class="breadcrumbs__separator">/</span>
+  <a class="link">Link 3</a>
+</div>
+<div class="breadcrumbs">
+  <a class="link">Link 1</a>
+  <img class="breadcrumbs__separator" src="images/icon-arrow_point_right.svg" alt="" aria-hidden="true">
+  <a class="link">Link 2</a>
+  <img class="breadcrumbs__separator" src="images/icon-arrow_point_right.svg" alt="" aria-hidden="true">
+  <a class="link">Link 3</a>
+</div>
+
+Styleguide 3.7
+*/
+
+@include block(breadcrumbs) {
+  font-size: 1rem;
+  padding: 1em 0;
+  @include element(separator) {
+    color: $c_moen-bright-gray;
+    height: 1em;
+    margin: 0 .4em;
+  }
+  .link {
+    display: block;
+    vertical-align: middle;
+    line-height: 1.5rem;
+  }
+  .breadcrumbs__separator {
+    display: none;
+    vertical-align: middle;
+  }
+  .breadcrumbs__separator + .link:before {
+    content: '>';
+    margin:0 .5rem;
+  }
+  @include media($bp-sm) {
+    .breadcrumbs__separator {
+      display: inline-block;
+    }
+    .breadcrumbs__separator + .link:before {
+      content: '';
+      margin: 0;
+    }
+    .link {
+      display: inline-block;
+    }
+  }
+}

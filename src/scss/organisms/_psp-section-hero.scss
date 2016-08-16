@@ -1,0 +1,54 @@
+/*
+Hero Section no variants
+
+Markup:
+<!-- container element is just needed for the styleguide -->
+<div class="container">
+  <div class="hero-section row">
+    <div class="hero-section__image">
+      <img src="http://placehold.it/400x400" alt="" aria-hidden="true">
+    </div>
+    <div class="hero-section__description">
+      <div class="hero-section__model">Model: TS1234-5678</div>
+      <h1 class="hero-section__text">90 Degree Spot Resist Stainless One-Handle High Arc Kitchen Faucet</h1>
+      <div class="hero-section__finish">
+        <div class="hero-section__left">
+          <span>Finish: Brushed Nickel</span>
+          <ul class="hero-section__finish-list">
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button is-selected">
+                <img src="http://www.moen.com/shared/swatches/brushed-nickel.png" alt="Brushed Nickel">
+              </a>
+            </li>
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button">
+                <img src="http://www.moen.com/shared/swatches/chrome.png" alt="Chrome">
+              </a>
+            </li>
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button">
+                <img src="http://www.moen.com/shared/swatches/chrome.png" alt="Chrome">
+              </a>
+            </li>
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button">
+                <img src="http://www.moen.com/shared/swatches/chrome.png" alt="Chrome">
+              </a>
+            </li>
+            <li>
+              <a href="#" role="button" class="hero-section__finish-button">
+                <img src="http://www.moen.com/shared/swatches/chrome.png" alt="Chrome">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero-section__buy">
+        <a href="#" class="hero-section__buy-button button button--secondary-flat">Where to buy</a>
+      </div>
+    </div>
+  </div>
+</div><!-- end container -->
+
+Styleguide 4.22.1
+*/

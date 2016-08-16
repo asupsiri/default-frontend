@@ -1,0 +1,95 @@
+/*
+SRP (Press Room content)
+
+markup:
+<!-- Pagination Header: -->
+<div class="results__pagination-header">
+  <div class="results__header-info">
+    <label class="results__pagination-header--range">Viewing 1–10 of 153</label> <label class="results__pagination-header--conjunction">or</label> <a class="results__pagination-header--link" href="javascript:void(0);">View All</a>
+  </div>
+  <ul class="list list--horizontal pagination">
+    <li class="pagination__link is-inactive"><a href="javascript:void(0);">1</a></li>
+    <li class="pagination__link"><a href="javascript:void(0);">2</a></li>
+    <li class="pagination__link"><a href="javascript:void(0);">3</a></li>
+    <li class="pagination__link"><a href="javascript:void(0);">4</a></li>
+    <li class="pagination__link is-inactive">&hellip;</li>
+    <li class="pagination__link"><a href="javascript:void(0);">16</a></li>
+  </ul>
+</div>
+<!-- Results: -->
+<section class="search-result__section" id="UniqueSectionID-ABC">
+<div class="search-result__section-container">
+  <h2 class="search-result__section-heading">Press Releases (124)</h2>
+  <a href="javascript:void(0);" class="link link--icon--right-blue">
+     <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">See all Press Releases
+  </a>
+</div>
+<div class="search-result is-even">
+  <h2 class="search-result__title"><a href="javascript:void(0);">Search Result Title Field</a></h2>
+  <time class="article__time time is-block" datetime="2013-04">April, 2013</time>
+  <p class="search-result__synopsis">Search result synopsis lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+  <a href="#" class="link link--icon--left">
+   <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+</div>
+<div class="search-result is-odd">
+  <h2 class="search-result__title"><a href="javascript:void(0);">Search Result Title Field</a></h2>
+  <time class="article__time time is-block" datetime="2013-04">April, 2013</time>
+  <p class="search-result__synopsis">Search result synopsis lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+  <a href="#" class="link link--icon--left">
+   <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+</div>
+<div class="search-result is-even">
+  <h2 class="search-result__title"><a href="javascript:void(0);">Search Result Title Field</a></h2>
+  <time class="article__time time is-block" datetime="2013-04">April, 2013</time>
+  <p class="search-result__synopsis">Search result synopsis lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+  <a href="#" class="link link--icon--left">
+   <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+</div>
+<div class="search-result is-odd">
+  <h2 class="search-result__title"><a href="javascript:void(0);">Search Result Title Field</a></h2>
+  <time class="article__time time is-block" datetime="2013-04">April, 2013</time>
+  <p class="search-result__synopsis">Search result synopsis lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+  <a href="#" class="link link--icon--left">
+   <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+</div>
+</section>
+<!-- Results (Tips): -->
+<section class="search-result__section" id="UniqueSectionID-DEF">
+<div class="search-result__section-container">
+  <h2 class="search-result__section-heading">Tips (18)</h2>
+  <a href="javascript:void(0);" class="link link--icon--right-blue">
+     <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">See all Tips
+  </a>
+</div>
+<div class="search-result is-even">
+  <h2 class="search-result__title"><a href="javascript:void(0);">Search Result Title Field</a></h2>
+  <time class="article__time time is-block" datetime="2013-04">April, 2013</time>
+  <p class="search-result__synopsis">Search result synopsis lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+  <a href="#" class="link link--icon--left">
+   <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+</div>
+<div class="search-result is-odd">
+  <h2 class="search-result__title"><a href="javascript:void(0);">Search Result Title Field</a></h2>
+  <time class="article__time time is-block" datetime="2013-04">April, 2013</time>
+  <p class="search-result__synopsis">Search result synopsis lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+  <a href="#" class="link link--icon--left">
+   <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+</div>
+<div class="search-result is-even">
+  <h2 class="search-result__title"><a href="javascript:void(0);">Search Result Title Field</a></h2>
+  <time class="article__time time is-block" datetime="2013-04">April, 2013</time>
+  <p class="search-result__synopsis">Search result synopsis lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+  <a href="#" class="link link--icon--left">
+   <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+</div>
+<div class="search-result is-odd">
+  <h2 class="search-result__title"><a href="javascript:void(0);">Search Result Title Field</a></h2>
+  <time class="article__time time is-block" datetime="2013-04">April, 2013</time>
+  <p class="search-result__synopsis">Search result synopsis lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+  <a href="#" class="link link--icon--left">
+   <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More</a>
+</div>
+</section>
+
+Styleguide 5.6
+*/

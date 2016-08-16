@@ -1,0 +1,327 @@
+/*
+PDP Features Section / Features Description & List
+
+markup:
+<section class="features-section container">
+  <div class="row row__description">
+    <div class="col-md-7">
+      <div class="features-section__description">
+        <h3 class="features-section__heading">Features</h3>
+        <p class="features-section__romance-copy">With ultra–modern styling, the 90 Degree collection is a study in
+          minimalism. Geometric forms, squared corners and straight lines create an urban focal point for today’s
+          contemporary baths.</p>
+        <div class="features-section__features-list">
+          <ul class="gray-bullets">
+            <li>Brushed nickel finish brings the warm look of stainless to your bath</li>
+            <li>One–handle lever handles make it easy to adjust the water</li>
+            <li>Single hole mount creates a cleaner look against custom counter tops</li>
+            <li>Complies with Americans with Disabilities Act (ADA) specifications</li>
+          </ul>
+          <ul class="gray-bullets">
+            <li>Meets epa WaterSense<sup>&reg;</sup> criteria to conserve water without sacrificing performance</li>
+            <li><a href="/" class="link">Limited lifetime warranty</a></li>
+            <li>Vessel extension kit available</li>
+            <li>Meets current legislation, including ab1953 (California) and s152 (Vermont)</li>
+            <li>I'm here to test for odd number of children</li>
+          </ul>
+        </div>
+      </div>
+      <div class="features-section__benefits-listing">
+        <hr/>
+        <label class="features-section__label">Product Benefits</label>
+        <div class="features-section__benefits-list">
+          <ul class="list">
+            <li><a class="link"><img class="icon" src="./images/product-feature-icons/icon-greenleaf.png"  alt="" aria-hidden="true">Eco-Performance</a></li>
+            <li><a class="link"><img class="icon" src="./images/product-feature-icons/icon-ada.png"        alt="" aria-hidden="true">ADA Compliant</a></li>
+            <li><a class="link"><img class="icon" src="./images/product-feature-icons/icon-watersense.png" alt="" aria-hidden="true">WaterSense</a></li>
+          </ul>
+          <ul class="list">
+            <li><a class="link"><img class="icon" src="./images/product-feature-icons/icon-greenleaf.png"  alt="" aria-hidden="true">Eco-Performance</a></li>
+            <li><a class="link"><img class="icon" src="./images/product-feature-icons/icon-ada.png"        alt="" aria-hidden="true">ADA Compliant</a></li>
+            <li><a class="link"><img class="icon" src="./images/product-feature-icons/icon-watersense.png" alt="" aria-hidden="true">WaterSense</a></li>
+          </ul>
+          <ul class="list">
+            <li><a class="link"><img class="icon" src="./images/product-feature-icons/icon-greenleaf.png"  alt="" aria-hidden="true">Eco-Performance</a></li>
+            <li><a class="link"><img class="icon" src="./images/product-feature-icons/icon-ada.png"        alt="" aria-hidden="true">ADA Compliant</a></li>
+            <li><a class="link"><img class="icon" src="./images/product-feature-icons/icon-watersense.png" alt="" aria-hidden="true">WaterSense</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="features-section__specifications">
+        <div class="mount-types">
+          <label class="features-section__label">Mount Types</label>
+          <div class="mount-type">
+            <img class="mount-type__image" src="./images/icon-bath_one_hole.svg" alt=""/>
+            <label class="mount-type__label">One Hole</label>
+          </div>
+          <div class="mount-type">
+            <img class="mount-type__image" src="./images/icon-bath_two_hole.svg" alt=""/>
+            <label class="mount-type__label">Two Holes</label>
+          </div>
+          <div class="mount-type">
+            <img class="mount-type__image" src="./images/icon-bath_one_hole.svg" alt=""/>
+            <label class="mount-type__label">Three Holes</label>
+          </div>
+          <div class="mount-type">
+            <img class="mount-type__image" src="./images/icon-bath_two_hole.svg" alt=""/>
+            <label class="mount-type__label">Four Holes</label>
+          </div>
+        </div>
+        <div class="basic-specs">
+          <label class="features-section__label">Basic Specs</label>
+          <dl>
+            <dt>Drain Assembly</dt>
+            <dd>Metal</dd>
+            <dt>Term</dt>
+            <dd>Drain Type</dd>
+            <dt>Lift Rod</dt>
+            <dd>Connection Size</dd>
+            <dt>3/8"</dt>
+            <dd>Definition</dd>
+            <dt>Term</dt>
+            <dd>Definition</dd>
+          </dl>
+          <dl>
+            <dt>Connection Type</dt>
+            <dd>Compression</dd>
+            <dt>Term</dt>
+            <dd>Spout Height</dd>
+            <dt>3.75"</dt>
+            <dd>Water Usage</dd>
+            <dt>1.5gpm</dt>
+            <dd>Definition</dd>
+            <dt>Term</dt>
+            <dd>Definition</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="row row__collection">
+    <div class="col-md-7">
+      <div class="features-section__collection-hero"
+           style="background-image:url('./images/styleguide/pdp_collection_room_example.jpg')"></div>
+    </div>
+    <div class="col-md-5">
+      <div class="features-section__collection-romance">
+        <h3 class="features-section__heading">The 90 Degree<small><sup>™</sup></small>
+          Collection
+        </h3>
+        <p>With its ultra-contemporary styling, 90 Degree brings a clean, minimalist aesthetic to the home.</p>
+        <a href="#" class="button button--secondary-flat">View Collection</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+Styleguide 4.10.5.1
+*/
+
+@include block(features-section) {
+  font-size: 1rem;
+
+  @include element(description) {
+    background-color: $c_white;
+    padding: 1em;
+    @include media($bp-sm) {
+      padding: 2em;
+    }
+  }
+  @include block (row) {
+    @include element(description) {
+      background-color: $c_pdp_installation_support;
+      position: relative;
+      & > .col-md-7 {
+        background-color: $c_white;
+      }
+      & > .col-md-5 {
+        background-color: $c_pdp_installation_support;
+      }
+      @include media($bp-md) {
+        display: flex;
+      }
+    }
+  }
+  @include element(heading) {
+    font-family: $din-light;
+    font-weight: normal;
+    font-size: em(30);
+    line-height: 1;
+  }
+  @include element(label) {
+    color: $c_dark-gray;
+    font-size: em(15);
+    font-family: $din-medium;
+    text-transform: uppercase;
+    text-align: left;
+    width: 100%;
+    margin: 0 0 1em 0;
+    display: block;
+    flex: 0 0 100%;
+  }
+  @include element(romance-copy) {
+    font-size: em(18);
+    & > p {
+      font-size: inherit;
+    }
+  }
+  @include element(features-list) {
+    font-size: em(14);
+    line-height: em(20);
+    display: flex;
+    flex-wrap: wrap;
+    align-itmes: baseline;
+    ul {
+      margin-right: 2em;
+      @include media($bp-sm) {
+        flex: 1;
+      }
+    }
+    li {
+      flex: 1 0 44%;
+      margin-top: em(20);
+      line-height: 1;
+      &:before {
+        font-size: 1rem;
+      }
+    }
+  }
+  @include element(benefits-listing) {
+    font-size: em(14);
+    padding: 0 1em 1em;
+    background-color: $c_white;
+    hr {
+      border-top: 1px solid $c_moen-bright-gray;
+      margin-bottom: 2em;
+    }
+    @include media($bp-sm) {
+      padding: 0 2em 2em;
+    }
+  }
+  @include element(benefits-list) {
+    font-size: em(14);
+    line-height: em(20);
+    display: flex;
+    flex-wrap: wrap;
+    ul {
+      margin-right: 2em;
+      @include media($bp-md) {
+        max-width: 33%;
+      }
+    }
+    li {
+      flex: 1 0 50%;
+      margin-top: em(20);
+      padding-right: 1em;
+      line-height: 1;
+      @include media($bp-md) {
+        line-height: 1.5;
+        flex: 1 0 30%;
+        padding-right: initial;
+      }
+    }
+    .icon {
+      height: 2em;
+      width: 2em;
+      margin-right: 1em;
+    }
+  }
+  @include element(specifications) {
+    background-color: $c_pdp_installation_support;
+    padding: 2em 1em 1em;
+    @include media($bp-sm) {
+      padding: 3em 1em;
+    }
+    display: flex;
+    flex-direction: column;
+    @include block(mount-types) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-bottom: 2em;
+      align-items: flex-start;
+      justify-content: flex-start;
+      .mount-type {
+        margin: 0 2em 1em 0;
+        @include element(image) {
+          min-width: 100px;
+        }
+        @include media($bp-sm) {
+          margin-right: 1.5em;
+        }
+      }
+    }
+    @include block(basic-specs) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      dl {
+        margin-right: 1em;
+        flex: 1;
+        @include media($bp-sm) {
+          margin-right: 3em;
+          max-width: none;
+        }
+      }
+      dt {
+        font-size: em(14);
+      }
+      dd {
+        font-size: em(18);
+        padding-bottom: 1em;
+      }
+    }
+  }
+  @include block (row) {
+    @include element(collection) {
+      background-color: $c_pdp_collection;
+      position: relative;
+    }
+  }
+  @include element(collection-hero) {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    //min-height: 200px;
+    &:before {
+      content: "";
+      @include intrinsic-ratio(2 1);
+    }
+    @include media($bp-md) {
+      &:before {
+        @include intrinsic-ratio(2 1.4);
+      }
+    }
+    @include media($bp-lg) {
+      &:before {
+        @include intrinsic-ratio(2 1);
+      }
+    }
+    @include state(not-found) {
+      background-size: contain;
+      @include media($bp-sm) {
+        background-size: inherit;
+      }
+    }
+  }
+
+  @include element(collection-romance) {
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0;
+    padding: 0 2em 0 $grid-gutter-width;
+    .button {
+      margin: 0 auto 0 0;
+
+    }
+  }
+}

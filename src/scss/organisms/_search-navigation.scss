@@ -1,0 +1,115 @@
+/*
+Search Navigation
+
+[needs description]
+
+Markup:
+<ul class="search-nav">
+  <li>
+    <a href="javasript:void(0);">All</span> <span class="count">6</span></a>
+  </li>
+  <li>
+    <a href="javasript:void(0);"><span class="doc-type">Press Releases</span> <span class="count">1</span></a>
+  </li>
+  <li>
+    <a href="javasript:void(0);"><span class="doc-type">Feature Articles</span> <span class="count">5</span></a>
+  </li>
+</ul>
+
+Styleguide 4.17
+*/
+@include block(search-nav) {
+  @include list-base();
+  margin-bottom: 1em;
+}
+
+
+/*
+Facet Search Navigation
+
+[needs description]
+
+Markup:
+<div class="search-nav__facets">
+  <div class="search-nav__facet">
+    <h3 class="search-nav__facet-name">Release Year</h3>
+      <div class="search-nav__facet-tags">
+          <label>
+            <input type="checkbox" value="2016">
+            2016
+          </label>
+      </div>
+      <div class="search-nav__facet-tags">
+          <label>
+            <input type="checkbox" value="2015">
+            2015
+          </label>
+      </div>
+      <div class="search-nav__facet-tags">
+          <label>
+            <input type="checkbox" value="2014">
+            2014
+          </label>
+      </div>
+  </div>
+  <div class="search-nav__facet">
+    <h3 class="search-nav__facet-name">Release Category</h3>
+      <div class="search-nav__facet-tag">
+          <label>
+            <input type="checkbox" value="kitchen">
+            kitchen
+          </label>
+      </div>
+       <div class="search-nav__facet-tag">
+          <label>
+            <input type="checkbox" value="bath">
+            bath
+          </label>
+      </div>
+      <div class="search-nav__facet-tag">
+          <label>
+            <input type="checkbox" value="bar">
+            bar
+          </label>
+      </div>
+  </div>
+  <div class="search-nav__facet">
+    <h3 class="search-nav__facet-name">Release Month</h3>
+      <div class="search-nav__facet-tag">
+          <label>
+            <input type="checkbox" value="1">
+            February
+          </label>
+      </div>
+  </div>
+  <button id="applyFilters" class="button button--default search-nav__submit">Apply</button>
+</div>
+
+Styleguide 4.17.1
+*/
+
+@include block(search-nav) {
+
+
+  @include element(facets) {
+  }
+
+  @include element(facet) {
+    margin-bottom: .5em;
+  }
+
+  @include element(facet-tag) {
+    line-height: 1.4;
+  }
+
+  @include element(facet-name) {
+    font-weight: normal;
+    font-family: $din-medium;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+
+  @include element(submit) {
+    margin-top: .5em;
+  }
+}

@@ -1,0 +1,230 @@
+$c_touch-menu-text: white;
+$c_touch-menu-text-hover: white;
+$c_touch-menu-bg: $c_white !default;
+$c_touch-menu-bg-hover: $c_moen-bright-blue !default;
+
+.touch-nav-target {
+  @include media($bp-nav-full) {
+    display: none;
+    margin: 0;
+  }
+}
+
+.slicknav_menu {
+  font-size: 1rem; // reset to global font size
+  background: $c_white;
+  .slicknav_menutxt {
+    color: $c_moen-bright-blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1.2;
+    padding-right: em(3)
+  }
+  .slicknav_icon-bar {
+    background-color: $c_moen-bright-aqua;
+  }
+}
+
+.slicknav_btn {
+  text-decoration: none;
+  background-color: $c_white;
+}
+
+.slicknav_brand {
+  margin-left: em(8);
+}
+
+.touch-nav__logo {
+  height: 24px;
+  width: auto;
+  padding: 0;
+  margin-top: em(6);
+}
+
+.slicknav_nav {
+  color: $c_text-base;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+
+  .site-search__form {
+    margin: 1em .5em;
+  }
+
+  .cta {
+    color: $c_text-base;
+    padding: .5em;
+    p {
+      padding: 0;
+    }
+    a {
+      padding: 0;
+      margin: .25em 0;
+      color: $c_moen-bright-blue;
+    }
+  }
+
+  ul {
+    list-style: none;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .slicknav_row {
+    background-color: $c_nav_suplementary;
+    color: lighten($c_moen-bright-blue, 10%);
+    border-bottom: 2px solid $c_white;
+    &:hover {
+      background-color: $c_nav_gray;
+      color: $c_moen-bright-blue;
+    }
+    &:nth-child(2) {
+      font-family: $din-medium;
+      text-transform: uppercase;
+    }
+    // indent the sub-items to imply a parent-child hierarchy
+    &:nth-child(n+3) {
+      a {
+        padding-left: 1.5em;
+      }
+    }
+  }
+  .slicknav_item.slicknav_row {
+    background: $c_moen-bright-blue; //$c_touch-menu-bg-hover;
+    color: $c_touch-menu-text;
+    border-bottom: 2px solid lighten($c_moen-bright-blue, 10%);
+    &:hover {
+      color: $c_touch-menu-text;
+      background: lighten($c_moen-bright-blue, 5%); //$c_touch-menu-bg-hover;
+    }
+  }
+
+  a {
+    padding: em(12) em(10);
+    text-decoration: none;
+    color: inherit; //$c_touch-menu-text;
+    &:hover {
+      color: inherit; //$c_touch-menu-bg-hover;
+      background: inherit; //$c_touch-menu-text-hover;
+    }
+  }
+
+  .slicknav_txtnode {
+    color: $c_text-base;
+  }
+
+  .slicknav_item a {
+    padding: 0;
+    margin: 0;
+  }
+
+  .static-include {
+    padding: 1em .5em 0;
+    color: $c_text-base;
+    .button--secondary {
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $c_sea_green;
+      }
+    }
+  }
+  .a-link {
+    font-family: $din-medium;
+    text-transform: uppercase;
+  }
+
+  .slicknav_parent {
+    &:hover {
+      color: $c_white;
+    }
+  }
+
+  @include block(touch-image-link) {
+
+    @include element(container) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      flex-flow: column wrap;
+      height: 400px;
+      a {
+        color: $c_moen-gray;
+        padding: 0 !important; // thanks slicknav :(
+        min-width: 160px;
+        &:hover {
+          color: $c_moen-bright-blue;
+        }
+      }
+    }
+    .link-image-menu {
+      flex-grow: 1;
+      flex-basis: 160px;
+      width: 160px;
+      color: $c_moen-gray;
+      text-decoration: inherit;
+    }
+
+  }
+
+  .slicknav_parent .slicknav_item {
+    font-size: 1.1em;
+    font-family: $din-medium;
+    text-transform: uppercase;
+  }
+
+  .full-nav__find-support {
+    padding-right: 0;
+  }
+
+}
+
+.slicknav_icon {
+  .hamburger {
+    padding-top: em(3);
+  }
+}
+
+/*=============================================>>>>>
+= Parts and Support =
+===============================================>>>>>*/
+.slicknav_nav {
+  > ul:last-child {
+    .slicknav_parent.slicknav_open,
+    .slicknav_parent {
+      > ul {
+        display: flex;
+        flex-direction: column;
+        li {
+          &:first-child {
+            background-color: $c_nav_gray;
+            padding-bottom: 1em;
+            margin-bottom: 1em;
+          }
+        }
+      }
+    }
+    .cta {
+      p {
+        display: none;
+      }
+    }
+    .tools-list {
+      order: 1;
+      padding-top: 1em;
+      a {
+        padding: .75em .625em;
+      }
+      .tools-list__item {
+        min-height: auto;
+      }
+    }
+  }
+}
+
+
+/*= End of Parts and Support =*/
+/*=============================================<<<<<*/

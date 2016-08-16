@@ -1,0 +1,92 @@
+/*
+PSP Troubleshooting and FAQ
+
+Markup:
+<section class="troubleshooting-faq container">
+  <div class="row">
+    <div class="troubleshooting-faq__left col-md-7">
+      <div class="troubleshooting-faq__icon-label icon-label">
+        <img src="./images/icon-alert_blue.svg" alt="telephone icon" class="icon-label__icon" />
+        <h3 class="troubleshooting-faq__title icon-label__label">Troubleshooting</h3>
+      </div>
+      <ul class="list">
+        <li><a href="#" class="link">Low water flow from spout - BOTH hot and cold water on sink faucets</a></li>
+        <li><a href="#" class="link">Spout is difficult to operate</a></li>
+        <li><a href="#" class="link">Fixture Leaks from end of the spout</a></li>
+      </ul>
+      <div class="is-block">
+        <a class="troubleshooting-faq__view-more link" href="#">View More Troubleshooting</a>
+      </div>
+    </div>
+    <div class="troubleshooting-faq__right col-md-5">
+      <div class="troubleshooting-faq__icon-label icon-label">
+        <img src="./images/icon-faqs.svg" alt="telephone icon" class="icon-label__icon" />
+        <h3 class="troubleshooting-faq__title icon-label__label">FAQs</h3>
+      </div>
+      <ul class="list">
+        <li><a href="#" class="link">Can I purchase non-spray faucet and convert to sprayer with my existing side spray?</a></li>
+        <li><a href="#" class="link">What does it mean to "sweat a pipe"?</a></li>
+        <li><a href="#" class="link">When do I need to use thread seal tape, pipe dope or plumber's putty</a></li>
+      </ul>
+      <div class="is-block">
+        <a class="troubleshooting-faq__view-more link" href="#">View More FAQS</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+Styleguide 4.22.6
+*/
+
+
+@include block(troubleshooting-faq) {
+  padding: 2em 1em;
+
+  @include element(left) {
+    border: 0;
+    margin-bottom: 2em;
+    @include media($bp-md) {
+      border-right: 1px dotted $c_moen-gray;
+      margin-bottom: 0;
+      padding: 2em 0;
+    }
+  }
+
+  @include element(right) {
+    @include media($bp-md) {
+      padding-left: 1em !important;
+    }
+  }
+
+  @include element(title) {
+    font-weight: normal;
+    font-family: $din-light;
+    font-size: em(33px);
+    letter-spacing: -.05em;
+    line-height: 1.1em;
+    margin: 0;
+  }
+
+  @include element(icon-label) {
+    .icon-label__icon {
+      height: 2.5em;
+      margin-right: .8em;
+      width: 2.5em;
+    }
+  }
+
+  @include element(view-more) {
+    font-family: $din-bold;
+  }
+
+  .list {
+    line-height: 1em;
+    margin: 1em 0;
+    li {
+      margin-bottom: 1em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

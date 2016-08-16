@@ -1,0 +1,90 @@
+/*
+Accordion Heading
+
+A hyperlink styled as accordion header. State is reflected both in the icon and in background color. Link is preferable to a button in support of a11y.
+
+Markup:
+<a href="#" class="accordion__link"><span>A long label Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna</span><span class="sprite"></span></a>
+<a href="#" class="accordion__link"><span>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing</span><span class="sprite"></span></a>
+<a href="#" class="accordion__link is-selected"><span> Ipsum  Sit  Consectetur </span><span class="sprite"></span></a>
+<a href="#" class="accordion__link"><span>A long label Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna</span><span class="sprite"></span></a>
+<button class="accordion__link"><span>Button Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing</span><span class="sprite"></span></button>
+<button class="accordion__link is-selected"><span>Button Ipsum  Sit  Consectetur </span><span class="sprite"></span></button>
+
+Styleguide 3.18
+*/
+
+@include block(accordion) {
+  @include element(link) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    &:nth-of-type(even) {
+      background-color: $c_bg-gray-even;
+    }
+    &:nth-of-type(odd) {
+      background-color: $c_bg-gray-odd;
+    }
+    color: $c_text-base;
+    text-decoration: none;
+    line-height: 1;
+    padding: 1em 1em 1em 1em;
+    font-family: $din-medium;
+    &:hover,
+    &:focus {
+      color: $c_white;
+      background-color: $c_moen-bright-blue;
+      .sprite {
+        background-position-y: -200px;
+      }
+    }
+    border-bottom: 2px solid $c_white;
+    &:last-child {
+      border-bottom: 0;
+    }
+    /*
+    HACK WARNING: The following is to fix an ie10 issue with flexbox. Basically, we have to wrap the flex items in a div to allow the text to wrap.
+    For inspiration, see this:
+      http://stackoverflow.com/questions/16808815/ie10-flexbox-p-element-non-wrapping#answer-33795089
+    */
+    span {
+      display: block;
+      &:first-child {
+        flex-shrink: 1;
+      }
+      &:last-child {
+        flex-shrink: 0;
+      }
+      // DON'T SCALE THE SPRITE CONTAINER
+    }
+    .sprite {
+      margin-left: 1em;
+      width: 20px;
+      height: 20px;
+      background-image: url("./images/icon-plus_minus_sprite.png");
+    }
+    @include state(selected) {
+      background-color: $c_moen-bright-blue;
+      color: $c_white;
+      cursor: pointer;
+      .sprite {
+        background-position-y: -590px;
+      }
+      &:hover,
+      &:focus {
+        color: $c_text-base;
+        &:nth-of-type(even) {
+          background-color: $c_bg-gray-even;
+        }
+        &:nth-of-type(odd) {
+          background-color: $c_bg-gray-odd;
+        }
+        .sprite {
+          background-position-y: -590px;
+        }
+      }
+    }
+  }
+}

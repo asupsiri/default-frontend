@@ -1,0 +1,6 @@
+// media query mixin
+@mixin mq($search) {
+  @media (min-width: map-get($grid-breakpoints, $search)) {
+    @content
+  }
+}

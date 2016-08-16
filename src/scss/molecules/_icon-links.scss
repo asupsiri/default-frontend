@@ -1,0 +1,190 @@
+/*
+Icon Links
+
+Icon links are hyperlink compounds which feature a combination of a text label and an icon.
+
+Styleguide 3.1
+*/
+
+/*
+Icon link (no label)
+
+No text label is visible, but the content of the text link is exposed for SEO and a11y purposes.
+
+markup:
+<p><a class="link__icon link__icon--pdf" href="#"><span class="hat">visually hidden label for PDF file icon</span></a></p>
+<p><a class="link__icon link__icon--word" href="#"><span class="hat">visually hidden label for WORD file icon</span></a></p>
+<p><a class="link__icon link__icon--download" href="#" title="download this file"><span class="hat">visually hidden label for download file icon</span></a></p>
+
+Styleguide 3.1.1
+*/
+
+/*
+Icon link (label on right)
+
+In this configuration, the icon is presented to the left of its associated label.
+
+markup:
+<a class="link__icon link__icon--right link__icon--pdf" href="#">PDF icon with label to the right</a>
+<br>
+<a class="link__icon link__icon--right link__icon--word" href="#">WORD icon with label to the right</a>
+<br>
+<a class="link__icon link__icon--right link__icon--download" href="#" title="download this file">Download icon with label to the right</a>
+
+Styleguide 3.1.2
+*/
+
+/*
+Icon link (label below)
+
+In this configuration, the icon is presented above its label, vertically centered.
+
+markup:
+<a class="link__icon link__icon--below link__icon--pdf" href="#">Link with PDF icon below</a>
+<br>
+<a class="link__icon link__icon--below link__icon--word" href="#">Link with WORD icon below</a>
+<br>
+<a class="link__icon link__icon--below link__icon--download" href="#">Link with download icon below</a>
+
+Styleguide 3.1.3
+*/
+
+/*
+Link Icon Left
+
+A text hyperlink decorated with an icon. The 'left' modifier simply indicates to which side of the link the icon renders.
+
+markup:
+<div style="margin-bottom: 1em; padding: 1em">
+  <a href="#" class="link link--icon--left">
+     <img class="icon" src="./images/icon-arrow_right_thick.svg" alt="" aria-hidden="true">Read More
+  </a>
+</div>
+<div style="background: #dedede; padding: 1em;">
+  <a href="#" class="link link--icon--left-white">
+     <img class="icon" src="./images/icon-arrow_right_thick_white.svg" alt="" aria-hidden="true">Read More
+  </a>
+</div>
+
+Styleguide 3.1.4
+*/
+
+.link--icon--left, .link--icon--left-white {
+  font-size: 1em;
+  padding-left: 1.2em;
+  position: relative;
+  &:hover {
+    text-decoration: underline;
+  }
+  p {
+    padding: 0;
+  }
+  .icon {
+    height: .6em;
+    width: auto;
+    margin-right: .5em;
+    position: relative;
+    top: -1px;
+  }
+}
+
+.link--icon--left-white {
+  color: $c_white;
+}
+
+/*
+Link Icon Right
+
+A text hyperlink decorated with an icon. The 'left' modifier simply indicates to which side of the link the icon renders.
+
+markup:
+<div style="margin-bottom: 1em; padding: 1em">
+  <a href="#" class="link link--icon--right">
+     Read More <img class="icon" src="./images/icon-arrow_point_right.svg" alt="" aria-hidden="true">
+  </a>
+</div>
+<div style="padding: 1em;">
+  <a href="#" class="link link--icon--right-blue">
+     Read More <img class="icon" src="./images/icon-arrow_point_right_blue.svg" alt="" aria-hidden="true">
+  </a>
+</div>
+<div style="padding: 1em; background-color: #dedede;">
+  <a href="#" class="link link--icon--right-white">
+     Read More <img class="icon" src="./images/icon-arrow_point_right_white.svg" alt="" aria-hidden="true">
+  </a>
+</div>
+<div style="padding: 1em;">
+  <a href="#" class="link link--icon--right-blue">
+     Read More <img class="icon" src="./images/icon-file_pdf_blue.svg" alt="" aria-hidden="true">
+  </a>
+</div>
+
+Styleguide 3.1.5
+*/
+
+.link--icon--right,
+.link--icon--right-blue,
+.link--icon--right-white {
+  color: $c_black;
+  font-size: 1em;
+  padding-right: 1.8em;
+  position: relative;
+  &:hover {
+    text-decoration: underline;
+  }
+  p {
+    padding: 0;
+  }
+  .icon {
+    height: 1em;
+    width: auto;
+    right: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.link--icon--right-blue {
+  color: $c_moen-bright-blue;
+}
+
+.link--icon--right-white {
+  color: $c_white;
+}
+
+/*
+Link icon with arrow
+
+This class was developed specifically for the site map. The icon is not changeable from the CMS.
+
+markup:
+<a class="arrowlink">Arrow Link</a>
+<br />
+<a class="arrowlink">Arrow Link with a very very very long link to go to multiple lines</a>
+<br />
+<a class="arrowlink">Arrow Link</a>
+
+Styleguide 3.1.6
+*/
+
+.arrowlink {
+  //display: inline-block;
+  //vertical-align: baseline;
+  position: relative;
+  padding-left: 1em;
+  line-height: 1em;
+  &:before {
+    content: '';
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjYgMjYyIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDojMDBhOWUwfTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5pY29uLWFycm93X3JpZ2h0X3RoaWNrPC90aXRsZT48cGF0aCBjbGFzcz0iYSIgZD0iTTk0LjggMEwyMjYgMTMxLjIgOTUuMiAyNjJIMGwxMzEuMS0xMzAuOEwwIDBoOTQuOHoiLz48L3N2Zz4=");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 0 100%;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

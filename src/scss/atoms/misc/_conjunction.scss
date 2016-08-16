@@ -1,0 +1,53 @@
+/*
+Conjunction Badge (formerly choose-your-adventure__or)
+
+A positioned visual device used to divide a two-option call-to-action e.g. Choose This OR Choose This; Sign-up AND Get Started
+
+markup:
+<div style="position: relative; min-height: 300px; min-width: 500px; background-color: #00A2DA; background: linear-gradient(to right, #00A2DA 0%, #00A2DA 50%, #ffffff 50%, #ffffff 50%, #8B8C8E 50%, #8B8C8E 100%);">
+  <label class="conjunction-badge">AND</label>
+</div>
+
+Styleguide 2.20.3
+*/
+
+.conjunction-badge {
+  $this_size: 2.5em;
+  border-radius: 50%;
+  background: $c_white;
+  color: $c_text-base;
+  font-family: $din-medium;
+  font-size: 1em;
+  left: 50%;
+  height: $this_size;
+  width: $this_size;
+  line-height: $this_size;
+  margin: -($this_size/2);
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+/*  @include media($bp-md) {
+    transform: translate(-50%, -50%);
+    margin: 0;
+    top: 50%;
+  }*/
+}
+
+
+/*
+Conjunction Badge
+
+This is the same thing, only set up so it can be used in other places within the styleguide.
+
+markup:
+<label class="conjunction-badge">or</label>
+
+
+Styleguide 2.20.3.1
+*/

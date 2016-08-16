@@ -1,0 +1,470 @@
+/*
+List Components
+
+Styleguide 4.21
+*/
+
+/*
+Simple knockout image & centered label
+
+Combined knockout image and text label. The base image width is 335px.
+
+Markup:
+<div class="content-list">
+  <h2 class="content-list__heading">Browse by Category (5 items)</h2>
+  <div class="content-list__flex-container">
+    <a href="#" class="list-image-link list-image-link--centered">
+      <img class="list-image-link__image" src="./images/one-bowl.jpg" alt="" />
+      <div class="content-list__title-link">One Bowl</div>
+    </a>
+    <a href="#" class="list-image-link list-image-link--centered">
+      <img class="list-image-link__image" src="./images/two-bowl.jpg" alt="" />
+      <div class="content-list__title-link">Two Bowls</div>
+    </a>
+    <a href="#" class="list-image-link list-image-link--centered">
+      <img class="list-image-link__image" src="./images/two-bowl.jpg" alt="" />
+      <div class="content-list__title-link">Two Bowls</div>
+    </a>
+    <a href="#" class="list-image-link list-image-link--centered">
+      <img class="list-image-link__image" src="./images/two-bowl.jpg" alt="" />
+      <div class="content-list__title-link">Two Bowls</div>
+    </a>
+    <a href="#" class="list-image-link list-image-link--centered">
+      <img class="list-image-link__image" src="./images/two-bowl.jpg" alt="" />
+      <div class="content-list__title-link">Two Bowls</div>
+    </a>
+    <!-- flex-item shims: -->
+    <div class="list-image-link list-image-link__shim"></div>
+    <div class="list-image-link list-image-link__shim"></div>
+    <div class="list-image-link list-image-link__shim"></div>
+    <div class="list-image-link list-image-link__shim"></div>
+  </div>
+</div>
+
+
+Styleguide 4.21.1
+*/
+
+/*
+Canonical Example:
+
+markup:
+<div class="content-list">
+  <h2 class="content-list__heading">Browse by Bowl</h2>
+  <div class="content-list__flex-container">
+    <a href="#" class="list-image-link list-image-link--centered">
+      <img class="list-image-link__image" src="./images/one-bowl.jpg" alt="" />
+      <div class="content-list__title-link">One Bowl</div>
+    </a>
+    <a href="#" class="list-image-link list-image-link--centered">
+      <img class="list-image-link__image" src="./images/two-bowl.jpg" alt="" />
+      <div class="content-list__title-link">Two Bowls</div>
+    </a>
+    <!-- flex-item shims: -->
+    <div class="list-image-link list-image-link__shim"></div>
+    <div class="list-image-link list-image-link__shim"></div>
+    <div class="list-image-link list-image-link__shim"></div>
+    <div class="list-image-link list-image-link__shim"></div>
+  </div>
+</div>
+
+Styleguide 4.21.1.1
+*/
+
+
+/*
+Full-frame image with menu
+
+Composition features image, pronounced label, and links menu. The base image width is 335px.
+
+Markup:
+<div style="background-color: #f3f3f3">
+  <div class="content-list">
+    <h2 class="content-list__heading">Browse by Category (5 items)</h2>
+    <div class="content-list__flex-container">
+      <div class="list-image-link">
+        <a href="">
+          <img class="list-image-link__image" src="./images/styleguide/category-sink.jpg" alt="" />
+          <div class="list-image-link__label">Drop-in Sinks</div>
+        </a>
+        <ul class="list">
+          <li><a class="link" href="#">Item 1</a></li>
+          <li><a class="link" href="#">Item 2</a></li>
+          <li><a class="link" href="#">Item 3</a></li>
+          <li><a class="link" href="#">Item 4</a></li>
+        </ul>
+      </div>
+      <div class="list-image-link">
+        <a href="">
+          <img class="list-image-link__image" src="./images/styleguide/category-undermount-sinks.jpg" alt="" />
+          <div class="list-image-link__label">Undermount Sinks</div>
+        </a>
+        <ul class="list">
+          <li><a class="link" href="#">Item 1</a></li>
+          <li><a class="link" href="#">Item 2</a></li>
+          <li><a class="link" href="#">Item 3</a></li>
+          <li><a class="link" href="#">Item 4</a></li>
+        </ul>
+      </div>
+      <div class="list-image-link">
+        <a href="">
+          <img class="list-image-link__image" src="./images/styleguide/category-apron-front-sinks.jpg" alt="" />
+          <div class="list-image-link__label">Apron Front Sinks</div>
+        </a>
+        <ul class="list">
+          <li><a class="link" href="#">Item 1</a></li>
+          <li><a class="link" href="#">Item 2</a></li>
+          <li><a class="link" href="#">Item 3</a></li>
+          <li><a class="link" href="#">Item 4</a></li>
+        </ul>
+      </div>
+      <div class="list-image-link">
+        <a href="">
+          <img class="list-image-link__image" src="./images/styleguide/category-sink-accessories.jpg" alt="" />
+          <div class="list-image-link__label">Sink Accessories</div>
+        </a>
+        <ul class="list">
+          <li><a class="link" href="#">Item 1</a></li>
+          <li><a class="link" href="#">Item 2</a></li>
+          <li><a class="link" href="#">Item 3</a></li>
+          <li><a class="link" href="#">Item 4</a></li>
+        </ul>
+      </div>
+      <!-- extra item to test for max-5 items per row -->
+      <div class="list-image-link">
+        <a href="">
+          <img class="list-image-link__image" src="./images/styleguide/category-sink.jpg" alt="" />
+          <div class="list-image-link__label">Extra Item </div>
+        </a>
+        <ul class="list">
+          <li><a class="link" href="#">Item 1</a></li>
+          <li><a class="link" href="#">Item 2</a></li>
+          <li><a class="link" href="#">Item 3</a></li>
+          <li><a class="link" href="#">Item 4</a></li>
+        </ul>
+      </div>
+      <!-- flex-item shims: -->
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+    </div>
+  </div>
+</div>
+
+Styleguide 4.21.2
+*/
+
+/*
+Canonical Example:
+
+markup:
+<div style="background-color: #f3f3f3">
+  <div class="content-list">
+    <h2 class="content-list__heading">Browse by Category</h2>
+    <div class="content-list__flex-container">
+      <div class="list-image-link">
+        <a href="">
+          <img class="list-image-link__image" src="./images/styleguide/category-sink.jpg" alt="" />
+          <div class="list-image-link__label">Sink</div>
+        </a>
+        <ul class="list">
+          <li><a class="link" href="#">4" Centerset</a></li>
+          <li><a class="link" href="#">8" Widespread</a></li>
+          <li><a class="link" href="#">Single Hole</a></li>
+          <li><a class="link" href="#">Wallmount</a></li>
+        </ul>
+      </div>
+      <div class="list-image-link">
+        <a href="">
+          <img class="list-image-link__image" src="./images/styleguide/category-tub-and-shower.jpg" alt="" />
+          <div class="list-image-link__label">Undermount Sinks</div>
+        </a>
+        <ul class="list">
+          <li><a class="link" href="#">Shower only</a></li>
+          <li><a class="link" href="#">Tub/Shower</a></li>
+          <li><a class="link" href="#">Roman Tub</a></li>
+          <li><a class="link" href="#">Tub Fillers</a></li>
+          <li><a class="link" href="#">ioDIGITAL® Spa Control</a></li>
+        </ul>
+      </div>
+      <div class="list-image-link">
+        <a href="">
+          <img class="list-image-link__image" src="./images/styleguide/category-bidet.jpg" alt="" />
+          <div class="list-image-link__label">bidet</div>
+        </a>
+        <ul class="list">
+          <li><a class="link" href="#">View All Bidet Faucets</a></li>
+        </ul>
+      </div>
+      <!-- flex-item shims: -->
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+    </div>
+  </div>
+</div>
+
+Styleguide 4.21.2.1
+*/
+
+/*
+Linked Image with Left-aligned Label
+
+Composition of a feature image and an associated category label. The entire block is hyperlinked.
+
+Markup:
+<div class="container">
+  <div class="content-list">
+    <h2 class="content-list__heading">Browse by Product Feature</h2>
+    <div class="content-list__flex-container">
+      <a href="#" class="list-image-link">
+        <img class="list-image-link__image" src="./images/styleguide/two-bowl.jpg" alt="" />
+        <div class="list-image-link__label">One Bowl</div>
+      </a>
+      <a href="#" class="list-image-link">
+        <img class="list-image-link__image" src="./images/styleguide/two-bowl.jpg" alt="" />
+        <div class="list-image-link__label">Two Bowls</div>
+      </a>
+      <a href="#" class="list-image-link">
+        <img class="list-image-link__image" src="./images/styleguide/two-bowl.jpg" alt="" />
+        <div class="list-image-link__label">Two Bowls</div>
+      </a>
+      <a href="#" class="list-image-link">
+        <img class="list-image-link__image" src="./images/styleguide/two-bowl.jpg" alt="" />
+        <div class="list-image-link__label">Two Bowls</div>
+      </a>
+      <a href="#" class="list-image-link">
+        <img class="list-image-link__image" src="./images/styleguide/two-bowl.jpg" alt="" />
+        <div class="list-image-link__label">Two Bowls</div>
+      </a>
+      <!-- flex-item shims: -->
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+    </div>
+  </div>
+</div>
+
+Styleguide 4.21.3
+*/
+
+/*
+Canonical Example:
+
+Markup:
+<div class="container">
+  <div class="content-list">
+    <h2 class="content-list__heading">Browse by Bowl</h2>
+    <div class="content-list__flex-container">
+      <a href="#" class="list-image-link">
+        <img class="list-image-link__image" src="./images/styleguide/two-bowl.jpg" alt="" />
+        <div class="list-image-link__label">One Bowl</div>
+      </a>
+      <a href="#" class="list-image-link">
+        <img class="list-image-link__image" src="./images/styleguide/two-bowl.jpg" alt="" />
+        <div class="list-image-link__label">Two Bowls</div>
+      </a>
+      <!-- flex-item shims: -->
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+    </div>
+  </div>
+</div>
+
+Styleguide 4.21.3.1
+*/
+
+/*
+Browse by Category - left-aligned menu list
+
+In this composition, the image/label structure is linked, and also features a sub-menu of additional links
+
+Canonical example:
+
+Markup:
+<div class="container">
+  <div class="content-list">
+    <h2 class="content-list__heading">Browse by Category</h2>
+    <div class="content-list__flex-container">
+      <div class="list-image-link">
+        <a>
+          <img class="list-image-link__image" src="./images/styleguide/browse-faucets.jpg" alt="" />
+          <div class="list-image-link__label">Faucets</div>
+        </a>
+        <ul class="list">
+          <li><a href="#">Kitchen</a></li>
+          <li><a href="#">Bar &amp; Prep</a></li>
+          <li><a href="#">Beverage</a></li>
+          <li><a href="#">Laundry &amp; Utility</a></li>
+        </ul>
+      </div>
+      <div class="list-image-link">
+        <a>
+          <img class="list-image-link__image" src="./images/styleguide/browse-sinks.jpg" alt="" />
+          <div class="list-image-link__label">Sinks</div>
+        </a>
+        <ul class="list">
+          <li><a href="#">Drop-in Sinks</a></li>
+          <li><a href="#">Undermount Sinks</a></li>
+          <li><a href="#">Apron Front Sinks</a></li>
+          <li><a href="#">Sink Accessories</a></li>
+        </ul>
+      </div>
+      <div class="list-image-link">
+        <a>
+          <img class="list-image-link__image" src="./images/styleguide/browse-garbage-disposals.jpg" alt="" />
+          <div class="list-image-link__label">Garbage Disposals</div>
+        </a>
+        <ul class="list">
+          <li><a href="#">View All</a></li>
+        </ul>
+      </div>
+      <div class="list-image-link">
+        <a>
+          <img class="list-image-link__image" src="./images/styleguide/browse-accessories.jpg" alt="" />
+          <div class="list-image-link__label">Accessories</div>
+        </a>
+        <ul class="list">
+          <li><a href="#">Hardware</a></li>
+          <li><a href="#">Air Gaps</a></li>
+          <li><a href="#">Dispensers</a></li>
+        </ul>
+      </div>
+      <div class="list-image-link">
+        <a>
+          <img class="list-image-link__image" src="./images/styleguide/browse-filtration.jpg" alt="" />
+          <div class="list-image-link__label">Filtration</div>
+        </a>
+        <ul class="list">
+          <li><a href="#">View Filtration</a></li>
+        </ul>
+      </div>
+      <!-- flex-item shims: -->
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+      <div class="list-image-link list-image-link__shim"></div>
+    </div>
+  </div>
+</div>
+
+Styleguide 4.21.4
+*/
+
+
+
+/*
+Swatch lists
+
+The round images used to display swatches have a smaller minimum image width of 100px.
+
+markup:
+<div class="content-list">
+  <h2 class="content-list__heading">Browse by Popular Finishes</h2>
+  <div class="content-list__flex-container">
+    <a href="#" class="list-image-link list-image-link--centered is-swatch">
+      <img class="list-image-link__image" src="./images/styleguide/chrome.png" alt="" />
+      <div class="content-list__title-link">Chrome</div>
+    </a>
+    <a href="#" class="list-image-link list-image-link--centered is-swatch">
+      <img class="list-image-link__image" src="./images/styleguide/brushed-nickel.png" alt="" />
+      <div class="content-list__title-link">Brushed Nickel</div>
+    </a>
+    <a href="#" class="list-image-link list-image-link--centered is-swatch">
+      <img class="list-image-link__image" src="./images/styleguide/polished-nickel.png" alt="" />
+      <div class="content-list__title-link">Polished Nickel</div>
+    </a>
+    <a href="#" class="list-image-link list-image-link--centered is-swatch">
+      <img class="list-image-link__image" src="./images/styleguide/oil-rubbed-bronze.png" alt="" />
+      <div class="content-list__title-link">Oil Rubbed Bronze</div>
+    </a>
+    <!-- added for 5-count test -->
+    <a href="#" class="list-image-link list-image-link--centered is-swatch">
+      <img class="list-image-link__image" src="./images/styleguide/chrome.png" alt="" />
+      <div class="content-list__title-link">A Test Finish</div>
+    </a>
+    <!-- flex-item shims: -->
+    <div class="list-image-link list-image-link__shim is-swatch"></div>
+    <div class="list-image-link list-image-link__shim is-swatch"></div>
+    <div class="list-image-link list-image-link__shim is-swatch"></div>
+    <div class="list-image-link list-image-link__shim is-swatch"></div>
+  </div>
+</div>
+
+
+Styleguide 4.21.5
+*/
+
+/*
+Canonical example:
+
+markup:
+<div class="content-list">
+  <h2 class="content-list__heading">Browse by Gauge</h2>
+  <div class="content-list__flex-container">
+    <a href="#" class="list-image-link list-image-link--centered is-swatch">
+      <img class="list-image-link__image" src="./images/styleguide/gauge-16.png" alt="" />
+      <div class="content-list__title-link">16 Gauge</div>
+    </a>
+    <a href="#" class="list-image-link list-image-link--centered is-swatch">
+     <img class="list-image-link__image" src="./images/styleguide/gauge-18.png" alt="" />
+      <div class="content-list__title-link">18 Gauge</div>
+    </a>
+    <a href="#" class="list-image-link list-image-link--centered is-swatch">
+      <img class="list-image-link__image" src="./images/styleguide/gauge-20.png" alt="" />
+      <div class="content-list__title-link">20 Gauge</div>
+    </a>
+    <a href="#" class="list-image-link list-image-link--centered is-swatch">
+      <img class="list-image-link__image" src="./images/styleguide/gauge-22.png" alt="" />
+      <div class="content-list__title-link">22 Gauge</div>
+    </a>
+    <!-- flex-item shims: -->
+    <div class="is-swatch list-image-link__shim"></div>
+    <div class="is-swatch list-image-link__shim"></div>
+    <div class="is-swatch list-image-link__shim"></div>
+    <div class="is-swatch list-image-link__shim"></div>
+  </div>
+</div>
+
+Styleguide 4.21.5.1
+*/
+
+@include block(content-list) {
+  @include outer-container();
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 1em 0;
+
+  @include element(heading) {
+    font-family: $din-regular;
+    font-size: em(32);
+    font-weight: normal;
+  }
+
+  @include element(flex-container) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 100%; // ie11, ie10 fix
+    .list-image-link {
+      position: relative;
+      max-width: none;
+    }
+    @include media($bp-md) {
+      flex-wrap: nowrap;
+      .list-image-link__shim {
+        display: none;
+      }
+    }
+  }
+}

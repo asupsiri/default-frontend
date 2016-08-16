@@ -1,0 +1,134 @@
+/*
+Phone Status Indicator
+
+Uses mutually exclusive state classes assigned to parent container: ".is-open" or ".is-closed"
+Can be displayed on both light and dark backgrounds — simply assign the modifier class ".phone-status--content-reversed" to the parent container.
+
+markup:
+<section style="padding: 1em;">
+  <sg-insert>3.3.3.1</sg-insert>
+  <br />
+  <sg-insert>3.3.3.2</sg-insert>
+</section>
+<br />
+<div style="background-color: #ccc; padding: 1em;">
+  <sg-insert>3.3.3.3</sg-insert>
+  <br />
+  <sg-insert>3.3.3.4</sg-insert>
+</section>
+
+Styleguide 3.3.3
+*/
+
+@include block(phone-status) {
+  color: $c_text-base;
+  font-family: $din-regular;
+  display: inline-flex;
+  align-items: center;
+  &::before {
+    font-size: 1rem;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    content: '';
+    height: 1em;
+    width: 1em;
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: .5em;
+  }
+  @include modifier(content-reversed) {
+    color: $c_white;
+    font-family: $din-medium;
+  }
+
+  @include state(closed) {
+    &::before {
+      background: $c_moen-logo-red;
+    }
+  }
+
+  @include state(open) {
+    &::before {
+      background: $c_chateu_green;
+    }
+  }
+
+  @include element(label) {
+    margin-left: .5em;
+    margin-bottom: 1em;
+    color: inherit;
+    font-family: inherit;
+
+    @include modifier(open) {
+      display: none; // initial state
+    }
+    @include modifier(closed) {
+      display: none; // initial state
+    }
+
+  }
+
+  &.is-closed {
+    .phone-status__label--closed {
+      display: inline-block;
+    }
+  }
+
+  &.is-open {
+    .phone-status__label--open {
+      display: inline-block;
+    }
+  }
+  .phone-number {
+    margin-left: 1em;
+  }
+}
+
+/*
+Phone status - open state
+
+markup:
+<div class="phone-status is-open">
+  <label class="phone-status__label--open">Open now</label>
+  <label class="phone-status__label--closed">Closed</label>
+</div>
+
+Styleguide 3.3.3.1
+*/
+
+/*
+Phone status - closed state
+
+markup:
+<div class="phone-status is-closed">
+  <label class="phone-status__label--open">Open now</label>
+  <label class="phone-status__label--closed">Closed</label>
+</div>
+
+Styleguide 3.3.3.2
+*/
+
+/*
+Phone status - open state (reversed)
+
+markup:
+<div class="phone-status phone-status--content-reversed is-open">
+  <label class="phone-status__label--open">Open now <span class="phone-number">1-800-289-6636</span></label>
+  <label class="phone-status__label--closed">Closed <span class="phone-number">1-800-289-6636</span></label>
+</div>
+
+Styleguide 3.3.3.3
+*/
+
+/*
+Phone status - closed state (reversed)
+
+markup:
+<div class="phone-status phone-status--content-reversed is-closed">
+  <label class="phone-status__label--open">Open now <span class="phone-number">1-800-289-6636</span></label>
+  <label class="phone-status__label--closed">Closed <span class="phone-number">1-800-289-6636</span></label>
+</div>
+
+Styleguide 3.3.3.4
+*/

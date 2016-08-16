@@ -1,0 +1,115 @@
+/*
+Tooltip
+
+markup:
+<br>
+<br>
+<a href="javacript:void(0);" class="tooltip">
+  <div class="tooltip__icon">
+    <img src="images/icon-question_mark.svg" alt="Help">
+  </div>
+  <div class="tooltip__modal">Manufacturer Suggested Retail Price is suggested only. Store pricing will vary.</div>
+</a>
+<br>
+<br>
+
+Styleguide 3.16
+*/
+
+@include block(tooltip) {
+  $tooltipWidth: 20px;
+  cursor: help;
+  display: inline-block;
+  font-size: 1rem;
+  position: relative;
+
+  @include element(icon) {
+    height: $tooltipWidth;
+    position: relative;
+    text-align: center;
+    width: $tooltipWidth;
+    img {
+      display: inherit;
+      height: auto;
+      width: 100%;
+    }
+  }
+  &:hover {
+    .tooltip__modal {
+      opacity: 1;
+      visibility: visible;
+      &[x-placement="right"] {
+        margin-left: $tooltipWidth;
+      }
+      &[x-placement="left"] {
+        margin-right: $tooltipWidth;
+      }
+      &[x-placement="bottom"] {
+        margin-top: $tooltipWidth;
+      }
+      &[x-placement="top"] {
+        margin-bottom: $tooltipWidth;
+      }
+    }
+  }
+
+  @include element(modal) {
+    background: $c_white;
+    border: 2px solid $c_tooltip_gray;
+    color: $c_text-dark;
+    font-size: em(14px);
+    height: auto;
+    left: $tooltipWidth;
+    line-height: 1.2;
+    margin-left: $tooltipWidth;
+    opacity: 0;
+    padding: .5em;
+    position: absolute;
+    text-align: left;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: margin .25s ease-in-out,
+                visibility 0s ease-in-out .25s,
+                opacity .25s ease-in-out .25s;
+    visibility: hidden;
+    width:250px;
+    &:before {
+      top: 50%;
+      transform: translateY(-50%);
+      border-top: $tooltipWidth solid transparent;
+      border-bottom: $tooltipWidth solid transparent;
+      border-right: $tooltipWidth solid $c_tooltip_gray;
+      content: '';
+      display: block;
+      height: 0;
+      left: -$tooltipWidth;
+      position: absolute;
+      width: 0;
+    }
+    /*=============================================>>>>>
+    = Popper JS Styling =
+    ===============================================>>>>>*/
+    &[x-placement="right"] {
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: $tooltipWidth * 1.2;
+    }
+    &[x-placement="left"] {
+      margin-left: 0;
+      margin-right: $tooltipWidth * 1.2;
+      &:before {
+        left: auto;
+        right: -$tooltipWidth;
+        top: 50%;
+        transform: rotateY(180deg) translateY(-50%);
+      }
+    }
+    &[x-placement="bottom"] {
+      margin-top: $tooltipWidth * 1.2;
+    }
+    &[x-placement="top"] {
+      margin-bottom: $tooltipWidth * 1.2;
+    }
+  }
+
+}

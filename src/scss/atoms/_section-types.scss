@@ -1,0 +1,9 @@
+@include block(document) {
+
+  @include element(abstract) {
+    margin: 1em 0;
+  }
+  @include element(body) {
+    margin: 1em 0;
+  }
+}

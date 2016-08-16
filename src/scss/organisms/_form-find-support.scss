@@ -1,0 +1,65 @@
+/*
+Find Support Form
+
+markup:
+<div class="find-support-module">
+  <form class="find-support-form">
+    <label for="search_products" class="hat">Enter name or model number</label>
+    <div class="input-add-on input-add-on--reversed">
+      <input type="search" name="search_products" id="search_products" placeholder="Enter name or model number" class="form-input form-input__search input-add-on__field">
+      <button type="submit" class="button button--icon button--search button--no-border input-add-on__item">
+        <span>search products</span>
+      </button>
+    </div>
+  </form>
+  <div class="find-support-cta">
+    <button class="button button--secondary-flat" type="submit">Find Now</button>
+    <a class="link--reversed" tabindex="0">Where do I find my model number?</a>
+  </div>
+</div>
+
+Styleguide 4.24
+*/
+
+@include block(find-support-module) {
+  width: 100%;
+  .button--secondary-flat {
+    margin-top: 1em;
+    margin-bottom: 0;
+    width: 100%;
+    @include media($bp-sm) {
+      margin-right: auto;
+      width: auto;
+    }
+  }
+}
+
+@include block(find-support-form) {
+
+}
+
+@include block(find-support-cta) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  @include media($bp-sm) {
+    flex-direction: row;
+    align-items: center;
+  }
+  .button {
+    @include media($bp-sm) {
+      margin: 1em 1em 0 0;
+    }
+    flex: 0 0 auto;
+  }
+
+  .link--reversed {
+    line-height: 1;
+    flex: 0 1 auto;
+    margin-top: 1em;
+    @include media($bp-sm) {
+      display: inline-flex;
+    }
+  }
+}

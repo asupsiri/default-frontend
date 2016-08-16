@@ -1,0 +1,125 @@
+/*
+Product Search / Contact Bar
+
+Styleguide entry for the Product Support Search and the Product Support Contact variants
+
+Styleguide 4.23
+*/
+
+/*
+Base Product Search Bar
+
+Combined atoms and molecules to create the base Product Search Bar component
+
+markup:
+<section id="ID-example-1234" class="split-container">
+  <div class="split-container__inner">
+    <div class="split-container__item split-container__item--first">Start</div>
+    <sg-insert>2.20.3.1</sg-insert>
+    <div class="split-container__item split-container__item--last">End</div>
+  </div>
+</section>
+
+Styleguide 4.23.1
+*/
+
+/*
+Product Support Contact Us
+
+Combined atoms and molecules to create the Product Support Contact Us variant
+
+markup:
+<section id="ID-example-1234" class="split-container">
+  <div class="split-container__inner">
+    <div class="split-container__item split-container__item--first contact-module">
+      <div class="split-container__item--row">
+        <sg-insert>3.3.1</sg-insert>
+        <sg-insert>3.3.3.3</sg-insert>
+      </div>
+      <h1 class="display-phone-number heading--reversed">1-800-BUY-MOEN</h1>
+      <dl class="list list--horizontal other-sites-list">
+        <dt>Non US</dt>
+        <dd><a class="link--reversed" href="/site/ca-en/contact">Moen Canada</a></dd>
+        <dd><a class="link--reversed" href="http://www.moen.com/region-lang-selector">Other International Sites</a></dd>
+      </dl>
+    </div>
+    <sg-insert>2.20.3.1</sg-insert>
+    <div class="split-container__item split-container__item--last contact-module">
+      <sg-insert>3.3.2</sg-insert>
+      <p>Moen will respond to your email within 24-48 hours</p>
+      <a href="#" class="btn button--secondary-flat js_open-email-form">Send an Email</a>
+    </div>
+  </div>
+</section>
+
+Styleguide 4.23.2
+*/
+
+.contact-module {
+  .icon-label,
+  .phone-status {
+    margin-bottom: 1em;
+  }
+  .button--secondary-flat {
+    margin-bottom: 0;
+    @include media($bp-sm){
+      margin-right: auto;
+    }
+  }
+  .display-phone-number {
+    font-size: em(30);
+    font-family: $din-regular;
+    font-weight: normal;
+  }
+  .other-sites-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    color: $c_white;
+    font-family: $din-medium;
+    font-size: em(14);
+    dt {
+      flex: 0 1 100%;
+      white-space: nowrap;
+      margin-right: 1em;
+      @include media($bp-xs) {
+        flex-basis: auto;
+      }
+    }
+    dd {
+      border-left: 1px solid $c_white;
+      margin-left: .5em;
+      padding-left: .5em;
+      &:first-of-type {
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+/*
+Product Finder
+
+Combined atoms and molecules to create the Product Finder variant
+
+markup:
+<section id="ID-example-1234" class="split-container">
+  <div class="split-container__inner">
+    <div class="split-container__item split-container__item--first find-support-module">
+      <sg-insert>4.24</sg-insert>
+    </div>
+    <label class="conjunction-badge">or</label>
+    <div class="split-container__item split-container__item--last find-support-module">
+      <h1 class="heading--2 heading--reversed">Don’t know your model number?</h1>
+      <a class="button button--secondary-flat" type="submit" tabindex="0">Identify my product</a>
+    </div>
+  </div>
+</section>
+
+Styleguide 4.23.3
+*/

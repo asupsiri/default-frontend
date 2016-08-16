@@ -1,0 +1,28 @@
+/*
+Email newsletter sign-up form
+
+Markup:
+<div class="site-footer--follow">
+  <form novalidate="" action="">
+    <label class="form-label--is-block" for="email-signup">Sign Up for Email Updates</label>
+    <div class="input-add-on">
+      <input type="email" name="email-signup" id="email-signup" placeholder="Your Email Address" class="form-input form-input__email input-add-on__field">
+      <button class="button input-add-on__item">Submit</button>
+    </div>
+  </form>
+</div>
+
+Styleguide 4.3
+*/
+
+@include block(email-signup) {
+
+  @include element(input) {
+  }
+;
+
+  @include element(submit) {
+  }
+;
+
+}

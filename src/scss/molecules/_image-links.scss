@@ -1,0 +1,194 @@
+/*
+Image-Link Molecules
+
+The base image-link combination is a text label centered above its corresponding image.
+
+Markup:
+<a href="#" class="link-image">
+  <span class="link-image__label">Label</span>
+  <img class="link-image__image" src="https://placeimg.com/100/100/nature" alt="" />
+</a>
+
+Styleguide 3.2
+*/
+
+@include block(link-image) {
+  @include link-base();
+  @include element(label) {
+    display: block;
+    line-height: 1;
+    margin: 0 auto 1em;
+  }
+  @include element(image) {
+    display: block;
+  }
+  display: inline-block;
+  text-align: center;
+}
+
+/*
+Image-Link Molecule Used in Full Navigation
+
+The full-nav image-link combination has modified link color and spacing.
+
+Markup:
+<a href="#" class="link-image-menu">
+  <span class="link-image-menu__label">Label</span>
+  <img class="link-image-menu__image" src="https://placeimg.com/100/100/nature" alt="" />
+</a>
+
+Styleguide 3.2.1
+*/
+@include block(link-image-menu) {
+  @include link-base();
+  font-family: $din-medium;
+  &:link,
+  &:visited {
+    color: inherit;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: $c_link_color;
+  }
+  @include element(label) {
+    color: $c_nav_dark_gray;
+    display: block;
+    text-transform: uppercase;
+    font-size: inherit;
+    line-height: 1;
+  }
+  @include element(image) {
+    display: block;
+    margin: em(20) auto 0;
+  }
+  // display: inline-block;
+  text-align: center;
+}
+
+/*
+List Image Molecule - Label Below
+
+Image link molecules, typically use in list components. These are set with a default image width of 235px.
+
+Styleguide 3.2.2
+*/
+
+/*
+List Image Molecule - Label Below, centered
+
+Markup:
+<div style="margin:20px auto"> <!-- for styleguide formatting only -->
+  <a href="#" class="list-image-link list-image-link--centered">
+    <img class="list-image-link__image" src="./images/styleguide/one-bowl.jpg" alt="" />
+    <div>One Bowl</div>
+  </a>
+</div>
+
+Styleguide 3.2.2.1
+*/
+
+/*
+List Image Molecule - Label Below, left-aligned
+
+Markup:
+<div style="margin:20px auto"> <!-- for styleguide formatting only -->
+  <a href="#" class="list-image-link">
+    <img class="list-image-link__image" src="./images/styleguide/two-bowl.jpg" alt="" />
+    <div>Two Bowls</div>
+  </a>
+</div>
+
+Styleguide 3.2.2.2
+*/
+
+/*
+List Image Molecule - Label below, centered
+
+Note the special use of pre-composed gauge thickness images rather than the complexity of positioned text in this solution.
+
+Markup:
+<div style="margin:20px auto"> <!-- for styleguide formatting only -->
+  <a href="#" class="list-image-link list-image-link--centered">
+    <img class="list-image-link__image" src="./images/styleguide/gauge-16.png" alt="" />
+    <div>16 Gauge</div>
+  </a>
+</div>
+
+Styleguide 3.2.2.3
+*/
+
+@include block(list-image-link) {
+  font-family: $din-regular;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  margin: 0 0 2em;
+  flex: 0 1 225px;
+  max-width: 235px;
+  position: relative;
+
+  & > a {
+    display: block; // ie10, ie11 fix
+    max-width: 100%; // ie10, ie11 fix
+
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 150px;
+    justify-content: flex-end;
+  }
+  & > a:hover {
+    text-decoration-color: $c_text-base;
+  }
+  @include media($bp-sm) {
+    margin: 0 .25%;
+    margin: 0 5px;
+  }
+  @include element(label) {
+    font-family: $din-medium;
+    color: $c_text-base;
+    text-decoration: none;
+    display: block;
+    padding-top: 1em;
+    text-transform: uppercase;
+  }
+
+  @include element(image) {
+    width: 100%;
+    height: auto;
+  }
+
+  @include modifier(centered) {
+    align-items: center;
+    text-align: center;
+  }
+
+  @include state(swatch) {
+    flex-basis: 100px;
+    margin-left: 1.25em;
+    margin-right: 1.25em;
+    & > img {
+      margin-bottom: em(20);
+    }
+  }
+
+  @include element(shim) {
+    height: 0;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @include state(swatch) {
+      min-width: 100px;
+      margin-left: 1.25em;
+      margin-right: 1.25em;
+    }
+  }
+
+  .list {
+    margin-top: 1em;
+    line-height: 1.5em;
+  }
+}

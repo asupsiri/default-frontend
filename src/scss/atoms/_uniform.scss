@@ -1,0 +1,107 @@
+/******************************************************************
+
+	MOEN THEME FOR UNIFORM.JS
+
+*******************************************************************/
+
+// This is a base-64 encoded SVG image:
+.icon-select-arrows:before {
+  content: "";
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0ic2VsZWN0X2Fycm93cyIgZGF0YS1uYW1lPSJzZWxlY3QgYXJyb3dzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMCAxNCI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogIzhiOGQ4ZTsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHRpdGxlPnNlbGVjdC1hcnJvd3M8L3RpdGxlPgogIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxMCA0Ljk4IDQuOTcgMCAwIDUuMDQgMTAgNC45OCIvPgogIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIwIDkuMDIgNS4wMyAxNCAxMCA4Ljk2IDAgOS4wMiIvPgo8L3N2Zz4K);
+  background-repeat: no-repeat;
+}
+
+/* General settings */
+div.selector, div.selector span, div.checker span, div.radio span, div.uploader, div.uploader span.action, div.button, div.button span {
+  background-repeat: no-repeat;
+}
+
+div.selector, div.checker, div.button, div.radio, div.uploader {
+  display: inline-block;
+  vertical-align: middle;
+  /* Keeping this as :focus to remove browser styles */
+}
+
+div.selector:focus, div.checker:focus, div.button:focus, div.radio:focus, div.uploader:focus {
+  outline: 0;
+}
+
+div.selector, div.selector *, div.radio, div.radio *, div.checker, div.checker *, div.uploader, div.uploader *, div.button, div.button * {
+  margin: 0;
+  padding: 0;
+}
+
+div.selector {
+  background: transparent;
+  padding: 5px 10px;
+  font-family: $din-regular;
+  font-size: 14px;
+  color: #666;
+  border: 2px solid #d9dce0;
+  border-radius: 5px;
+  line-height: 26px;
+  position: relative;
+  overflow: hidden;
+}
+
+.BVRRSortSelectWidget div.selector {
+  // margin-top: 25px;
+}
+
+div.selector:before {
+  position: absolute;
+  right: 6px;
+  bottom: 9px;
+  width: 10px;
+  height: 14px;
+}
+
+div.selector span {
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 26px;
+  line-height: 26px;
+  cursor: pointer;
+  width: 100%;
+  padding-right: 25px;
+  text-align: left;
+}
+
+div.selector.fixedWidth {
+  width: 190px;
+}
+
+div.selector.fixedWidth span {
+  width: 155px;
+}
+
+div.selector select {
+  opacity: 0;
+  border: none;
+  background: none;
+  position: absolute;
+  height: 36px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 0;
+}
+
+/* Checker */
+div.checker {
+  border: solid 1px #b1b1b1;
+}
+
+div.checker input {
+  opacity: 0;
+  border: none;
+  background: none;
+  position: absolute;
+  height: 36px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 0;
+}

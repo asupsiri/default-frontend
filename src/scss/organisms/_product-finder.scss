@@ -1,0 +1,271 @@
+/*
+Product Finder
+
+"Identify my Product", etc.
+
+markup:
+<div class="container">
+	<ol class="list questions-navigation">
+		<li class="questions-navigation__step">
+			<a href="/customer-support#replacement-parts" class="questions-navigation__label">Room</a>
+		</li>
+		<li class="questions-navigation__step" data-step="0" data-question="q_kitchen_type">
+			<span class="questions-navigation__label">Type</span>
+		</li>
+		<li class="questions-navigation__step" data-step="1" data-question="q_kitchen_handle">
+			<span class="questions-navigation__label">Handle</span>
+		</li>
+		<li class="questions-navigation__step" data-step="2" data-question="q_kitchen_spout">
+			<span class="questions-navigation__label">Spout</span>
+			<a href="#" class="view-results">View <span class="total-results">114</span> results<img class="icon" src="./images/icon-arrow_point_right_blue.svg" alt="" aria-hidden="true" /></a>
+		</li>
+		<li class="questions-navigation__step" data-step="3" data-question="q_kitchen_finish">
+			<span class="questions-navigation__label">Finish</span>
+		</li>
+	</ol>
+</div>
+
+Styleguide 4.27
+*/
+
+@include block(questions-navigation) {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-left: 3px;
+
+  @include media($bp-sm) {
+    flex-direction: row;
+    margin-left: 0;
+  }
+
+  @include element(step) {
+    flex: 1 1 auto;
+    min-height: 1px;
+    position: relative;
+
+    text-align: left;
+
+    &::before,
+    &::after {
+      content: ' ';
+      position: absolute;
+      z-index: 1;
+      background-color: $c_moen-gray;
+      width: 3px;
+      height: 50%;
+      top: 20px;
+      left: 8px;
+    }
+
+    @include media($bp-sm) {
+      text-align: center;
+
+      &::before,
+      &::after {
+        content: '';
+        width: 50%;
+        position: absolute;
+        z-index: 1;
+        height: 3px;
+        top: 19px;
+      }
+
+      &::before {
+        left: 0;
+        right: 50%;
+      }
+
+      &::after {
+        left: 50%;
+        right: 100%;
+      }
+
+    }
+
+    @include modifier(current) {
+      &::before {
+        height: 6px;
+        top: 17px;
+        background-color: $c_moen-bright-blue;
+        @include media($bp-sm) {
+          height: 6px;
+          top: 17px;
+        }
+      }
+    }
+
+    @include modifier(taken) {
+      &::before,
+      &::after {
+        width: 6px;
+        top: 17px;
+        left: 7px;
+        background-color: $c_moen-bright-blue;
+        @include media($bp-sm) {
+          height: 6px;
+          top: 17px;
+        }
+      }
+    }
+
+    &:first-child {
+      &::before {
+        content: none;
+      }
+    }
+
+    &:last-child {
+      &::after {
+        content: none;
+      }
+    }
+
+    @media(max-width: ($bp-sm - 1)) {
+      &:last-child {
+        &::before {
+          content: none;
+        }
+      }
+    }
+  }
+
+  @include element(label) {
+    color: $c_moen-gray;
+    text-transform: uppercase;
+    font-family: $din-bold;
+    font-weight: normal;
+    font-size: inherit;
+    text-align: center;
+    display: inline-block;
+    padding-top: 0;
+    padding-bottom: 15px;
+    padding-left: 25px;
+
+    &::before {
+      content: ' ';
+      border-radius: 20px;
+      display: block;
+      background-color: $c_white;
+      border: 3px solid $c_moen-gray;
+      position: absolute;
+      z-index: 2;
+      height: 20px;
+      width: 20px;
+      left: 0;
+    }
+
+    @include media($bp-sm) {
+      padding-top: 35px;
+      padding-left: 0;
+      padding-bottom: 0;
+      &::before {
+        margin: 10px auto 20px;
+        top: 0;
+        left: 50%;
+        margin-left: -10px;
+      }
+    }
+
+    @include modifier(current) {
+      &::before {
+        border: 4px solid $c_moen-gray;
+        height: 24px;
+        width: 24px;
+        top: -3px;
+        left: -2px;
+      }
+      @include media($bp-sm) {
+        &::before {
+          height: 30px;
+          width: 30px;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          margin-left: -15px;
+          top: 0;
+        }
+      }
+    }
+
+    @include modifier(taken) {
+      &::before {
+        background: #00a9e0;
+        border: none;
+      }
+    }
+  }
+
+  @include block(view-results) {
+    display: inline;
+    font-size: .8em;
+    margin-left: 1em;
+    //padding-left: 1.5em; // offset for the arrow icon
+
+    @include media($bp-sm) {
+      display: block;
+    }
+
+    .icon {
+      height: 1em;
+      width: 1em;
+      margin-left: .5em;
+    }
+
+  }
+}
+
+/*
+Product Finder
+
+Showing the progress indicator (...--taken class modifiers)
+
+markup:
+<div class="container">
+	<ol class="list questions-navigation">
+		<li class="questions-navigation__step questions-navigation__step--taken">
+			<a href="/customer-support#replacement-parts" class="questions-navigation__label questions-navigation__label--taken">Room</a>
+		</li>
+		<li class="questions-navigation__step questions-navigation__step--taken" data-step="0" data-question="q_kitchen_type">
+			<span class="questions-navigation__label questions-navigation__label--taken">Type</span>
+		</li>
+		<li class="questions-navigation__step questions-navigation__step--taken" data-step="1" data-question="q_kitchen_handle">
+			<span class="questions-navigation__label questions-navigation__label--taken">Handle</span>
+		</li>
+		<li class="questions-navigation__step questions-navigation__step--current" data-step="2" data-question="q_kitchen_spout">
+			<span class="questions-navigation__label questions-navigation__label--current">Spout</span>
+			<a href="#" class="view-results">View <span class="total-results">114</span> results<img class="icon" src="./images/icon-arrow_point_right_blue.svg" alt="" aria-hidden="true" />
+			</a>
+		</li>
+		<li class="questions-navigation__step" data-step="3" data-question="q_kitchen_finish">
+			<span class="questions-navigation__label">Finish</span>
+		</li>
+	</ol>
+</div>
+
+Styleguide 4.27.1
+*/
+
+/*
+Product Finder
+
+Showing the progress indicator with a small number of items
+
+markup:
+<div class="container">
+	<ol class="list questions-navigation">
+		<li class="questions-navigation__step questions-navigation__step--taken">
+			<a href="/customer-support#replacement-parts" class="questions-navigation__label questions-navigation__label--taken">Room</a>
+		</li>
+		<li class="questions-navigation__step questions-navigation__step--current" data-step="2" data-question="q_kitchen_spout">
+			<span class="questions-navigation__label questions-navigation__label--current">Spout</span>
+			<a href="#" class="view-results">View <span class="total-results">114</span> results<img class="icon" src="./images/icon-arrow_point_right_blue.svg" alt="" aria-hidden="true" />
+			</a>
+		</li>
+		<li class="questions-navigation__step" data-step="3" data-question="q_kitchen_finish">
+			<span class="questions-navigation__label">Finish</span>
+		</li>
+	</ol>
+</div>
+
+Styleguide 4.27.2
+*/

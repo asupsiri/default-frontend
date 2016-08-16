@@ -1,0 +1,68 @@
+// Brand Typography Overview
+//
+//	DIN creates a distinctive visual impression
+//	in our messaging to complement the other
+//	design elements in our toolkit.
+//
+//	DIN Light is used for all principal text
+//	applications, including messaging, body copy,
+//	titles and headlines.
+//
+//	DIN Regular is used for all supporting text
+//	applications, including captions, text blocks
+//	and callouts. It may be used as needed for
+//	body copy in PowerPoint® presentations to
+//	ensure text legibility on screen.
+//
+//	DIN Bold is used when emphasis is required.
+//
+// Styleguide 1.2.0
+
+// DIN Webfont Samples
+//
+// <ul>
+// <li>FF DIN light - [describe typical usage rules here]...</li>
+// <li>FF DIN Regular - [describe typical usage rules here]...</li>
+// <li>FF DIN Medium - [describe typical usage rules here]...</li>
+// <li>FF DIN Regular - [describe typical usage rules here]...</li>
+// </ul>
+//
+// markup:
+//	<p class="din-light">FF Din Light, <b>Bold,</b> <i>Oblique</i></p>
+//	<p class="din-regular">FF Din Regular, <b>Bold,</b> <i>Oblique</i></p>
+//	<p class="din-medium">FF Din Medium, <b>Bold,</b> <i>Oblique</i></p>
+//	<p class="din-bold">FF Din Bold, <b>Bold,</b> <i>Oblique</i></p>
+//
+// Styleguide 1.2.1
+
+.din-light {
+  font-family: DINWebLight;
+  & b,
+  & strong {
+    font-family: DINWebRegular;
+  }
+}
+
+.din-regular {
+  font-family: DINWebRegular;
+  & b,
+  & strong {
+    font-family: DINWebBold;
+  }
+}
+
+.din-medium {
+  font-family: DINWebMedium;
+  & b,
+  & strong {
+    font-family: DINWebBold;
+  }
+}
+
+.din-bold {
+  font-family: DINWebBold;
+  & b,
+  & strong {
+    font-family: DINWebBold;
+  }
+}

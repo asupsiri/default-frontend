@@ -1,0 +1,44 @@
+/*
+Diagram
+
+markup:
+<div class="psp-diagram">
+  <div class="psp-diagram__container">
+    <div class="page-title page-title--bg-right" style="background-image:url('./images/styleguide/psp-diagram.png');">
+      <div class="psp-diagram__description page-title__head">
+        <div class="page-title__headings">
+          <h3 class="psp-diagram__title">Product Diagram</h3>
+          <p>Check out a product diagram and parts list, and order individual parts with confidence. Replacement parts for this product may be covered by the Lifetime Limited Sink Warranty</p>
+          <div class="is-block">
+            <a href="#" class="link link--icon--right-blue">
+               Find the part on the Product Diagram
+               <img class="icon" src="./images/icon-file_pdf_blue.svg" alt="" aria-hidden="true">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+Styleguide 4.22.3
+*/
+
+@include block(psp-diagram) {
+  background: $c_psp_bg_gray;
+  padding: 0 1em;
+
+  @include element(container) {
+    @include outer-container();
+  }
+
+  @include element(description) {
+    padding: 4em 0;
+  }
+
+  @include element(title) {
+    font-family: $din-light;
+    font-size: em(30px);
+    padding-bottom: .5em;
+  }
+}

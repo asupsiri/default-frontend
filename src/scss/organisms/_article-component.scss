@@ -1,0 +1,93 @@
+/*
+Article Component
+
+Markup:
+<article class="article">
+  <div class="article__inner row">
+    <header class="article__header">
+      <h1 class="article__title heading--1">Article Title</h1>
+      <time class="article__time time is-block" datetime="2013-04">April, 2013</time>
+    </header>
+    <div class="article__content">
+      <p><img align="left" src="http://www.moen.com/assets/moencom/images/design-planning/support/articles/athome_may2012-twist.jpg" alt="woman in bathroom"></p>
+      <h2 class="heading--2">A "TWIST" ON AN INVIGORATING SHOWER EXPERIENCE</h2>
+      <p><strong>When it comes to showering</strong>, <i>consumers demand style</i>, quality, good water pressure and coverage. With this in mind, Moen has added a revitalizing "twist" to the daily showering routine with the new <a href="#">Twist™ handheld shower</a>.</p>
+      <p>Twist allows users to effortlessly switch between four spray patterns with a push of a Soft Grip™ thumb pad. Soft Grip is a non-slip, comfortable surface that is soft to the touch for a comfortable and sturdy feel. </p> 
+      <p>It's also available with a 30-inch vertical slide bar with shower arm diverter to allow for user height adjustments. </p>
+      <p>Each member of the house can easily create the ideal shower experience and can switch settings as needed -- whether to relax, revitalize or clean. All it takes is a single hand to choose between four high-performance sprays. </p>
+      <p>In addition to the functional benefits of Twist, the handheld shower is easy to install. Within minutes, homeowners can have a new showering experience. </p>
+      <p>Twist is available in several finishes, including Chrome, LifeShine® Brushed Nickel, Oil Rubbed Bronze and Spot Resist™ Brushed Nickel. Its easy-to-clean spray nozzles help keep it looking like new. </p>
+      <p><img align="right" src="http://www.moen.com/assets/moencom/images/design-planning/support/articles/athome_may2012-twist.jpg" alt="woman in bathroom"></p>
+      <p>Featuring a Lifetime Limited Warranty, Twist can be found at home improvement retailers and showrooms.</p>
+      <p><strong>When it comes to showering</strong>, <i>consumers demand style</i>, quality, good water pressure and coverage. With this in mind, Moen has added a revitalizing "twist" to the daily showering routine with the new <a href="#">Twist™ handheld shower</a>.</p>
+      <p>Twist allows users to effortlessly switch between four spray patterns with a push of a Soft Grip™ thumb pad. Soft Grip is a non-slip, comfortable surface that is soft to the touch for a comfortable and sturdy feel. </p>
+      <p>It's also available with a 30-inch vertical slide bar with shower arm diverter to allow for user height adjustments. </p>
+      <p>Each member of the house can easily create the ideal shower experience and can switch settings as needed -- whether to relax, revitalize or clean. All it takes is a single hand to choose between four high-performance sprays. </p>
+      <p style="justify"><img src="http://www.moen.com/assets/moencom/images/design-planning/support/articles/athome_may2012-twist.jpg" alt="woman in bathroom"></p>
+      <p>In addition to the functional benefits of Twist, the handheld shower is easy to install. Within minutes, homeowners can have a new showering experience. </p>
+      <p style="justify"><img align="middle" src="http://www.moen.com/assets/moencom/images/design-planning/support/articles/athome_may2012-twist.jpg" alt="woman in bathroom"></p>
+      <p>Twist is available in several finishes, including Chrome, LifeShine® Brushed Nickel, Oil Rubbed Bronze and Spot Resist™ Brushed Nickel. Its easy-to-clean spray nozzles help keep it looking like new. </p>
+      <p>Featuring a Lifetime Limited Warranty, Twist can be found at home improvement retailers and showrooms.</p>
+    </div>
+  </div>
+</article>
+ 
+Styleguide 4.8
+*/
+
+@include block(article) {
+  // Elements
+
+  @include element(content) {
+    padding: .5em 0;
+  }
+
+  @include element(time) {
+    font-style: italic;
+  }
+
+  @include element(title) {
+    color: $c_text-dark;
+    margin-bottom: 0;
+  }
+
+  // CKeditor selectors to align images.
+  p {
+    > img {
+      margin: 1em 0;
+      max-width: none;
+      width: 100%;
+    }
+    @include media($bp-md) {
+      > img {
+        max-width: 100%;
+        width: auto;
+      }
+      & > img[align*="left"],
+      & > img[align*="right"] {
+        display: inline-block;
+        max-width: 100%;
+        width: auto;
+      }
+      & > img[align*="left"] {
+        margin-right: 1em;
+      }
+      & > img[align*="right"] {
+        margin-left: 1em;
+      }
+      &[style*="justify"] {
+        > img {
+          max-width: none;
+          width: 100%;
+        }
+        & > img[align*="middle"] {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 100%;
+          width: auto;
+        }
+      }
+    }
+  }
+}

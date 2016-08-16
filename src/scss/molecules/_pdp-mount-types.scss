@@ -1,0 +1,32 @@
+/*
+Sink Mounting Styles
+
+ markup:
+  <div class="mount-type">
+     <img class="mount-type__image" src="./images/icon-bath_four_hole.svg" alt="" />
+     <label class="mount-type__label">Four Holes</label>
+   </div>
+  <div class="mount-type">
+     <img class="mount-type__image" src="./images/icon-kitchen_four_hole.svg" alt="" />
+     <label class="mount-type__label">Four Holes</label>
+   </div>
+
+ Styleguide 3.10.1
+ */
+
+@include block(mount-type) {
+  text-align: center;
+  @include element(image) {
+    display: inline-block;
+    max-width: 108px;
+    height: auto;
+    margin: 0 0 em(5);
+  }
+  @include element(label) {
+    display: block;
+    color: $c_dark-gray;
+    font-size: em(18);
+    text-transform: none;
+  }
+}
+

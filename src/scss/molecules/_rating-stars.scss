@@ -1,0 +1,72 @@
+/*
+Rating Stars
+
+Markup:
+<div class="rating">
+  <ul class="rating__stars">
+    <li class="rating__star is-active"></li>
+    <li class="rating__star is-active"></li>
+    <li class="rating__star is-active"></li>
+    <li class="rating__star"></li>
+    <li class="rating__star"></li>
+  </ul>
+</div>
+
+Styleguide 3.8
+*/
+
+@include block(rating) {
+  @include element(stars) {
+    display: block;
+    height: 14px;
+    margin: 0;
+    padding: 0;
+  }
+  @include element(star) {
+    background-image: url(images/icon-star_bright_gray.svg);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 14px;
+    vertical-align: top;
+    width: 14px;
+    @include state(active) {
+      background-image: url(images/icon-star_gray.svg);
+    }
+  }
+}
+
+/*
+Bazaarvoice’s Rating Stars Markup
+
+Markup:
+<div class="stars">
+  <div class="ratings-meter">
+    <div class="cutouts"><span style="width:95.676%;"></span></div>
+  </div>
+  <div class="rating">4.8</div>
+</div>
+
+Styleguide 3.8.1
+*/
+
+//@include block(rating) {
+//  @include block(stars) {
+//    display: block;
+//    height: 14px;
+//    margin: 0;
+//    padding: 0;
+//  }
+//  @include block(cutouts) {
+//    background-image: url(images/icon-star_bright_gray.svg);
+//    background-position: 0 0;
+//    background-repeat: no-repeat;
+//    display: inline-block;
+//    height: 14px;
+//    vertical-align: top;
+//    width: 14px;
+//    @include state(active) {
+//      background-image: url(images/icon-star_gray.svg);
+//    }
+//  }
+//}

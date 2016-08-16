@@ -1,0 +1,211 @@
+/*
+Lists
+
+Styleguide 2.4
+*/
+
+/*
+Base Unordered List
+
+markup:
+<ul>
+ <li>Item 1</li>
+ <li>Item 2</li>
+ <li>Item 3</li>
+ <li>Item 4</li>
+</ul>
+
+Styleguide 2.4.1
+*/
+
+ul {
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: DINWebRegular, Arial, sans-serif;
+  font-size: inherit;
+}
+
+/*
+Unordered List - No Bullets
+
+markup:
+<ul class="list">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+<li>Item 4</li>
+</ul>
+
+Styleguide 2.4.2
+*/
+
+/*
+Unordered List with Gray Bullets
+
+This style is used on the Product Detail Page
+
+markup:
+<ul class="gray-bullets">
+ <li>Item 1</li>
+ <li>Item 2</li>
+ <li>Item 3</li>
+ <li>Item 4</li>
+</ul>
+
+Styleguide 2.4.2.1
+*/
+
+/*
+Nested Unordered List
+
+markup:
+<ul>
+<li>Item 1</li>
+<li>Item 2
+  <ul>
+    <li>Item 2-a</li>
+    <li>Item 2-b</li>
+    <li>Item 2-c</li>
+    <li>Item 2-d</li>
+  </ul>
+</li>
+<li>Item 3</li>
+<li>Item 4</li>
+</ul>
+
+Styleguide 2.4.3
+*/
+
+/*
+Unordered List with vertical rule
+
+This format is used in the site footer.
+
+Markup:
+<ul class="list list--ruled">
+<li><a href="#" class="link">Item 1</a></li>
+<li><a href="#" class="link">Item 2</a></li>
+<li><a href="#" class="link">Item 3</a></li>
+<li><a href="#" class="link">Item 4</a></li>
+</ul>
+<br />
+<ul class="list list--ruled">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+<li>Item 4</li>
+</ul>
+
+Styleguide 2.4.4
+*/
+
+/*
+Horizontal lists
+
+This format is used in the social media icon menu.
+
+Markup:
+<ul class="list list--horizontal">
+<li><a href="#" class="link">Item 1</a></li>
+<li><a href="#" class="link">Item 2</a></li>
+<li><a href="#" class="link">Item 3</a></li>
+<li><a href="#" class="link">Item 4</a></li>
+</ul>
+<br />
+<ul class="list list--horizontal is-justified">
+<li>Justified</li>
+<li>Item 2</li>
+<li>Item 3</li>
+<li>Item 4</li>
+</ul>
+<br />
+<ul class="list list--horizontal is-spaced">
+<li>Spaced Around</li>
+<li>Item 2</li>
+<li>Item 3</li>
+<li>Item 4</li>
+</ul>
+<br />
+<ul class="list list--horizontal is-centered">
+<li>is-centered</li>
+<li>Item 2</li>
+<li>Item 3</li>
+<li>Item 4</li>
+</ul>
+
+Styleguide 2.4.5
+*/
+
+/*
+Definition List
+
+markup:
+<dl>
+  <dt>Term</dt>
+  <dd>Definition</dd>
+  <dt>Term</dt>
+  <dd>Definition</dd>
+  <dt>Term</dt>
+  <dd>Definition</dd>
+  <dt>Term</dt>
+  <dd>Definition</dd>
+  <dt>Term</dt>
+  <dd>Definition</dd>
+</dl>
+
+Styleguide 2.4.6
+*/
+
+@mixin list-base() {
+  margin: 0;
+  list-style-type: none;
+}
+
+@include block(list) {
+  @include list-base();
+
+  @include modifier(ruled) {
+    padding: 0 0 0 1em;
+    margin: 0;
+    border-left: 1px solid $c_moen-gray;
+
+    li {
+      a {
+        display: inline-block;
+        padding: .5em 0;
+        @include mq(md) {
+          padding: em(2px);
+        }
+      }
+    }
+  }
+
+  @include modifier(horizontal) {
+    display: flex;
+    @include state(justified) {
+      justify-content: space-between;
+    }
+    @include state(spaced) {
+      justify-content: space-around;
+    }
+    @include state(centered) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+@include block(gray-bullets) {
+  @include list-base();
+  li {
+    text-indent: -1em;
+    padding-left: 1em;
+  }
+
+  li:before {
+    content: "•";
+    color: $c_light-gray;
+    margin-right: .5em;
+  }
+}

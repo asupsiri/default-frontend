@@ -1,0 +1,345 @@
+/*
+PDP Installation Support Section
+
+Markup:
+<section class="installation-support-section">
+  <h3 class="installation-support-section__title">Installation and Support</h3>
+  <div class="installation-support-section__inner container">
+    <div class="installation-support-section__left">
+      <div class="installation-support-section__video">
+        <h4 class="installation-support-section__subtitle">Installation video</h4>
+        <a href="#" class="installation-support-section__video-play">
+          <img src="http://placehold.it/640x360">
+        </a>
+      </div>
+      <div class="installation-support-section__lists">
+        <div class="installation-support-section__guides">
+          <h4 class="installation-support-section__subtitle">Download Guides</h4>
+          <ul class="installation-support-section__list list">
+            <li>
+              <a href="#" class="link">Instruction Sheets/Owners Manual [2.3 MB]</a>
+            </li>
+            <li>
+              <a href="#" class="link">Exploded Parts View [943.1 KB]</a>
+            </li>
+            <li>
+              <a href="#" class="link">Product Specifications [517 KB]</a>
+            </li>
+          </ul>
+        </div>
+        <div class="installation-support-section__cad">
+          <h4 class="installation-support-section__subtitle">Cad Files</h4>
+          <ul class="installation-support-section__list list">
+            <li>
+              <a href="#" class="link">.DXF [70.7 KB]</a>
+            </li>
+            <li>
+              <a href="#" class="link">.IGES [1.5 MB]</a>
+            </li>
+            <li>
+              <a href="#" class="link">.OBJ [811.8 KB]</a>
+            </li>
+          </ul>
+        </div>
+        <div class="installation-support-section__btn-all-topics">
+          <a class="button button--secondary-flat">View all support topics</a>
+        </div>
+      </div>
+    </div>
+    <div class="installation-support-section__right">
+      <div class="installation-support-section__support">
+        <h4 class="installation-support-section__subtitle">Support</h4>
+        <div class="installation-support-section__support-list">
+          <div class="media">
+            <div class="media__left">
+              <img src="./images/icon-video.svg" alt="" aria-hidden="true">
+            </div>
+            <div class="media__right">
+              <div class="media__head"><a href="#" class="link">Get Additional Support</a></div>
+              <div class="media__body">Access videos, manuals, replacement parts, and more.</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media__left">
+              <img src="./images/icon-replacement-parts.svg" alt="" aria-hidden="true">
+            </div>
+            <div class="media__right">
+              <div class="media__head"><a href="#" class="link">Replacement Parts Tool</a></div>
+              <div class="media__body">Access videos, manuals, replacement parts, and more.</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media__left">
+              <img src="./images/icon-register.svg" alt="" aria-hidden="true">
+            </div>
+            <div class="media__right">
+              <div class="media__head"><a href="#" class="link">Register Your Product</a></div>
+              <div class="media__body">Access videos, manuals, replacement parts, and more.</div>
+            </div>
+          </div>
+          <div class="installation-support-section__btn-additional-support">
+            <a class="button button--secondary-flat">Find Additional Support For This Product</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+Styleguide 4.10.8
+*/
+
+@include block(installation-support-section) {
+  background: $c_pdp_installation_support;
+  font-size: 1rem;
+  padding: 0 .5em 2em .5em;
+
+  .list {
+    li {
+      background-size: 20px;
+      background-position: 0 20%;
+      margin-bottom: .5em;
+      padding-left: 1.5em;
+    }
+    a {
+      display: block;
+      line-height: 1.5em;
+    }
+  }
+
+  @include element(title) {
+    font-family: $din-light;
+    font-size: em(30px);
+    padding: 1em 0;
+    text-align: center;
+  }
+
+  @include element(subtitle) {
+    color: $c_text-dark;
+    text-transform: uppercase;
+    padding-bottom: 0.5em;
+  }
+
+  @include element(inner) {
+    background:$c_white;
+    padding: 1em;
+  }
+
+  @include element(list) {
+    line-height: 1.5em;
+  }
+
+  @include element(video) {
+    margin-bottom: 1.5em;
+  }
+
+  @include element(video-thumbnails) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1.5em;
+    .installation-support-section__video-play {
+      flex-basis: 49%;
+      margin-bottom: .5em;
+      @include media($bp-sm) {
+        flex-basis: 32.3333%;
+      }
+      &:before {
+        height: 40px;
+        width: 40px;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include element(video-play) {
+    position: relative;
+    img {
+      height: auto;
+      width: 100%;
+    }
+    &:before {
+      background: url(./images/icon-play_outline_white.svg) no-repeat;
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 100px;
+      width: 100px;
+      transform: translate(-50%, -50%);
+    }
+    &:hover:before {
+      opacity: 0.8;
+    }
+  }
+
+  @include element(support-list) {
+    display: block;
+  }
+
+  @include element(guides) {
+    .list li {
+      background-image: url(./images/icon-file_pdf_gray.svg);
+    }
+  }
+
+  @include element(cad) {
+    .list li {
+      background-image: url(./images/icon-file_3d_gray.svg);
+    }
+  }
+
+  // Mediaqueries
+
+  @include element(left) {
+    width: 100%;
+    .installation-support-section__cad {
+      display: none;
+    }
+
+    @include media($bp-md) {
+      .installation-support-section__btn-all-topics {
+        display: none;
+      }
+      .installation-support-section__guides {
+        display: block;
+      }
+      .installation-support-section__guides {
+        margin-bottom: 1.5em;
+      }
+      .installation-support-section__video-thumb,
+      .installation-support-section__lists {
+        display: inline-block;
+        vertical-align: top;
+
+      }
+      .installation-support-section__video-thumb {
+        width: 50%;
+      }
+      .installation-support-section__lists {
+        margin-left: -4px;
+        padding-left: 2em;
+        width: 50%;
+      }
+    }
+
+    @include media($bp-lg) {
+      display: inline-block;
+      vertical-align: top;
+      width: 60%;
+      .installation-support-section__lists {
+        margin: 0;
+        padding-left: 0;
+        width: 100%;
+      }
+      .installation-support-section__video-thumb {
+        width: 100%;
+      }
+      .installation-support-section__cad,
+      .installation-support-section__guides {
+        display: inline-block;
+      }
+      .installation-support-section__guides {
+        width: 70%;
+      }
+      .installation-support-section__cad {
+        margin-left: -4px;
+        width: 30%;
+      }
+    }
+  }
+
+  @include element(right) {
+    display: none;
+    width: 100%;
+
+    .installation-support-section__guides,
+    .installation-support-section__cad {
+      margin-bottom: 2em;
+    }
+
+    @include media($bp-md) {
+      display: block;
+      .installation-support-section__support {
+        padding-left: 0;
+        margin-top: 1em;
+      }
+      .installation-support-section__support-list {
+        & > * {
+          display: inline-block;
+          margin-left: -2px;
+          width: 50%;
+          vertical-align:top;
+        }
+        .media__left, .media__right {
+          display: inline-block;
+          vertical-align: top;
+        }
+        .media__left {
+          width: 12%;
+        }
+        .media__right {
+          width: 84%;
+        }
+      }
+    }
+    @include media($bp-lg) {
+      display: inline-block;
+      margin-left: -4px;
+      padding-left: 1.5em;
+      vertical-align: top;
+      width: 40%;
+      .installation-support-section__support {
+        margin-top: 0;
+      }
+      .installation-support-section__support-list {
+        & > * {
+          display: block;
+          width: 100%;
+        }
+
+        .media__left, .media__right {
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+
+
+  // Media
+  .media {
+    margin-bottom: 1em;
+  }
+
+  .media__left, .media__right {
+    padding: 0;
+  }
+  .media__right {
+    a {
+      margin: 0;
+    }
+  }
+  .media__left {
+    padding: .5em 1em 0 0;
+    img {
+      height: 25px;
+      width: auto;
+      padding: 0;
+    }
+  }
+  .media__head {
+    font-size: em(20px);
+  }
+
+  .button--secondary-flat {
+    line-height: 1.5em;
+    margin-top: 1.5em;
+    white-space: normal;
+    width: 100%;
+  }
+
+}

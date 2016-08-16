@@ -1,0 +1,258 @@
+/*
+Form Elements
+
+Each form element is considered an atom, with combined elements (e.g. a label and its input element) as molecules.
+
+Styleguide 2.5
+*/
+
+/*
+Text Input
+
+Markup:
+<input type="text" name="text" class="form-input form-input__text">
+<input type="text" name="text" class="form-input form-input__text" value="Some Text Content aqkMLZ">
+<input type="text" name="text" class="form-input form-input__text" placeholder="a placeholder">
+<input type="text" name="text" class="form-input form-input__text is-disabled" placeholder="disabled" disabled>
+<input type="text" name="text" class="form-input form-input__text is-error">
+
+Styleguide 2.5.1
+*/
+
+@include block(form-input) {
+  border: 1px solid $c_moen-gray;
+  background-color: $c_white;
+  padding: $form-element-padding-base;
+  margin: 0;
+  @include element(text) {
+  }
+  @include state(disabled) {
+    border-color: lighten($c_moen-gray, 25);
+    background-color: lighten($c_moen-gray, 40);
+    cursor: not-allowed;
+  }
+  @include state(error) {
+    border-color: $c_error;
+  }
+}
+
+/*
+Email Input
+
+Markup:
+<input type="email" name="email" class="form-input form-input__email">
+<input type="email" name="email" class="form-input form-input__email" value="Some Text Content aqkMLZ">
+<input type="email" name="email" class="form-input form-input__email" placeholder="a placeholder">
+<input type="email" name="email" class="form-input form-input__email is-disabled" placeholder="disabled" disabled >
+<input type="email" name="email" class="form-input form-input__email is-error">
+
+Styleguide 2.5.2
+*/
+
+@include block(form-input) {
+  @include element(email) {
+  }
+}
+
+/*
+Search Input
+
+Markup:
+<input type="search" name="search" class="form-input form-input__search" results="3">
+<input type="search" name="search" class="form-input form-input__search" value="Some Text Content aqkMLZ" results="3">
+<input type="search" name="search" class="form-input form-input__search" placeholder="a placeholder" results="3">
+<input type="search" name="search" class="form-input form-input__search is-disabled" placeholder="disabled" disabled results="3">
+<input type="search" name="search" class="form-input form-input__search is-error" results="3">
+
+Styleguide 2.5.3
+*/
+
+@include block(form-input) {
+  @include element(search) {
+  }
+}
+
+/*
+Select Input
+
+Markup:
+<select name="catordog" class="form-select">
+<option disabled="disabled" selected="selected">Select a Pet...</option>
+ <optgroup label="Cats">
+   <option>Tiger</option>
+   <option>Leopard</option>
+   <option>Lynx</option>
+ </optgroup>
+ <optgroup label="Dogs">
+   <option>Grey Wolf</option>
+   <option>Red Fox</option>
+   <option>Fennec</option>
+ </optgroup>
+</select>
+<br>
+<br>
+<div class="form-select--blue">
+  <select name="catordog" class="form-select">
+  <option disabled="disabled" selected="selected">Select a Pet...</option>
+   <optgroup label="Cats">
+     <option>Tiger</option>
+     <option>Leopard</option>
+     <option>Lynx</option>
+   </optgroup>
+   <optgroup label="Dogs">
+     <option>Grey Wolf</option>
+     <option>Red Fox</option>
+     <option>Fennec</option>
+   </optgroup>
+  </select>
+</div>
+<br>
+<br>
+<div class="form-select--blue  form-select--blue-border">
+  <select name="catordog" class="form-select">
+  <option disabled="disabled" selected="selected">Select a Pet...</option>
+   <optgroup label="Cats">
+     <option>Tiger</option>
+     <option>Leopard</option>
+     <option>Lynx</option>
+   </optgroup>
+   <optgroup label="Dogs">
+     <option>Grey Wolf</option>
+     <option>Red Fox</option>
+     <option>Fennec</option>
+   </optgroup>
+  </select>
+</div>
+
+Styleguide 2.5.4
+*/
+
+@mixin sel-blue() {
+  background-color: $c_jordy_blue;
+  border: 1px solid $c_pattens_blue;
+  position: relative;
+  .form-select {
+    appearance: none;
+    background-color: transparent;
+    border:0;
+    border-radius: 0;
+    color: $c_white;
+    font-family: $helvetica;
+    padding: 0 .375em;
+    &::-ms-expand {
+      display: none;
+    }
+  }
+  &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: em(5px) solid transparent;
+    border-right: em(5px) solid transparent;
+    border-top: em(5px) solid $c_white;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: .5em;
+  }
+}
+
+@include block(form-select) {
+  border-width: 1px;
+  border-style: solid;
+  border-color: inherit;
+  padding: $form-element-padding-base;
+  // undo the hard reset in sanitize
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+  width: 100%;
+  &::-ms-expand {
+    display: block; // Edge 12+, Internet Explorer 11-
+  }
+  @include element(language) {
+    position: relative;
+    overflow: hidden;
+  }
+  @include modifier(blue) {
+    @include sel-blue();
+  }
+  @include modifier(blue-border) {
+    @include sel-blue();
+    border: 1px solid $c_pattens_blue;
+  }
+}
+
+@include block(form-label) {
+  @include modifier(is-block) {
+    padding-bottom: $spacing-base-v;
+    display: block;
+  }
+  @include modifier(bold) {
+    color: $c_nav_dark_gray;
+    font-family: $din-bold;
+  }
+}
+
+/*
+Checkobox
+
+markup:
+<div class="form-checkbox">
+  <input id="ckName" name="ckName" type="checkbox">
+  <label for="ckName">Arm Diverter (36)</label>
+</div>
+<br />
+<div class="form-checkbox form-checkbox--blue">
+  <input id="ckName2" name="ckName2" type="checkbox">
+  <label for="ckName2">Arm Diverter (36)</label>
+</div>
+
+Styleguide 2.5.5
+*/
+
+@include block(form-checkbox) {
+  label {
+    margin-left: .5em;
+  }
+  @include modifier(blue) {
+    font-family: $helvetica;
+    label {
+      display: inline-block;
+      position: relative;
+      line-height: 14px;
+      margin-left: 0;
+      padding-left: 1.5em;
+    }
+    [type="checkbox"] {
+      &:not(:checked),
+      &:checked {
+        display:none;
+      }
+      &:not(:checked),
+      &:checked {
+        & + label:before {
+          background-color: $c_moen-logo-blue;
+          content: '';
+          height: 14px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 14px;
+        }
+      }
+      &:checked {
+        & + label:after {
+          content: '';
+          height: 14px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 14px;
+          background: url(./images/icon-checkmark_white.svg) no-repeat;
+        }
+      }
+    }
+  }
+}

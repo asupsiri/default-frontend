@@ -1,0 +1,20 @@
+/*
+Atoms
+
+This is the atoms chapter. Atoms are the only partials which should contain actual class and style definitions. The higher level abstractions are mere composites of the existing atoms.
+
+Styleguide 2.0
+*/
+
+@import "./links";              // section 2.1
+@import "./typography";         // section 2.2 & 2.3
+@import "./lists";              // section 2.4
+@import "./form-elements";      // section 2.5
+@import "./button";             // section 2.6
+@import "./section-types";
+@import "./horizontal-rules";   // section 2.8
+@import "./tiles";              // section 2.9
+@import "./images";             // section 2.10
+@import "./misc-atoms";         // section 2.20
+//
+@import "./uniform";            // jQuery Uniform plugin select styling

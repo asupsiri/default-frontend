@@ -1,0 +1,160 @@
+/*
+Site Footer
+
+markup:
+<footer class="site-footer">
+<div class="site-footer__row">
+<div class="col-lg-4">
+<div>
+<div>
+<div class="has-edit-button">
+<p class="site-footer--heading">© 2016 Moen Incorporated</p>
+<p>As the #1 faucet brand in North America, Moen offers a diverse selection of thoughtfully designed kitchen and bath faucets, showerheads, accessories, bath safety products and kitchen sinks for residential and commercial applications each delivering the best possible combination of meaningful innovation, useful features, and lasting value.</p></div>
+</div>
+</div>
+</div>
+<div class="col-lg-2">
+<nav>
+<ul class="list--ruled">
+<li><a href="/site/press-room" class="link">Mobile Site</a></li>
+<li><a href="/site/" class="link">Privacy Policy</a></li>
+<li><a href="/site/" class="link">Legal Notice</a></li>
+<li><a href="/site/" class="link">CA Supply Chain Act</a></li>
+<li><a href="/site/" class="link">Sitemap</a></li>
+</ul>
+</nav>
+</div>
+<div class="col-lg-2">
+<nav>
+<ul class="list--ruled">
+<li class="active"><a href="/site/" class="link">Contact Us</a></li>
+<li><a href="/site/" class="link">About Moen</a></li>
+<li><a href="/site/" class="link">Press Room</a></li>
+<li><a href="/site/" class="link">Career Opportunities</a></li>
+<li><a href="/site/" class="link">Online Retailers</a></li>
+</ul>
+</nav>
+</div>
+<div class="col-lg-4">
+<div class="site-footer--follow">
+<nav id="footer-menu-social-follow" class="social-follow-menu" aria-labelledby="menu-social-follow-label">
+<label id="menu-social-follow-label"><b>Stay Connected</b></label>
+<ul class="list--unstyled list--horizontal is-justified">
+<li>
+<a href="https://www.facebook.com/moen" data-social-network="facebook">
+<span class="hat">facebook</span><img src="../images/facebook.svg" alt="facebook icon">
+</a>
+</li>
+<li>
+<a href="https://twitter.com/moen" data-social-network="twitter">
+<span class="hat">twitter</span><img src="../images/twitter.svg" alt="twitter icon">
+</a>
+</li>
+<li>
+<a href="https://www.pinterest.com/moen/" data-social-network="pinterest">
+<span class="hat">pinterest</span><img src="../images/pinterest.svg" alt="pinterest icon">
+</a>
+</li>
+<li>
+<a href="http://www.houzz.com/pro/moen" data-social-network="houzz">
+<span class="hat">houzz</span><img src="../images/houzz.svg" alt="houzz icon">
+</a>
+</li>
+<li>
+<a href="https://www.instagram.com/moeninc/" data-social-network="instagram">
+<span class="hat">instagram</span><img src="../images/instagram.png" alt="instagram icon">
+</a>
+</li>
+<li>
+<a href="https://www.youtube.com/user/moenfaucets" data-social-network="youtube">
+<span class="hat">youtube</span><img src="../images/youtube.svg" alt="youtube icon">
+</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer--follow">
+<form novalidate="">
+  <label class="form-label--is-block" for="email-signup">Sign Up for Email Updates</label>
+  <div class="input-add-on">
+    <input type="email" name="email-signup" id="email-signup" placeholder="Your Email Address" class="form-input form-input__email input-add-on__field">
+    <button class="button input-add-on__item button--no-bg-color input-add-on__item--no-border button--icon
+    button--arrow-right"><span>submit
+      email</span></button>
+  </div>
+</form>
+</div>
+</div>
+</div>
+<div class="row">
+<hr class="shadowed-rule">
+<div class="col-lg-3 site-footer__lang-switch">
+<form novalidate="">
+<select class="form-select form-select__language">
+<option disabled="disabled" selected="selected" value="">Select Language</option>
+<optgroup label="United&nbsp;States">
+<option value="es_US">Español</option>
+<option value="en_US">English</option>
+</optgroup>
+<optgroup label="Canada">
+<option value="fr_CA">Français</option>
+<option value="en_CA">English</option>
+</optgroup>
+<optgroup label="Mexico">
+<option value="es_MX">Español</option>
+<option value="en_MX">English</option>
+</optgroup>
+</select>
+</form>
+</div>
+</div>
+</footer>
+
+Styleguide 4.4
+*/
+
+@include block(site-footer) {
+  @include outer-container();
+  border-color: $c_rule;
+  box-shadow: 0 0 6px $c_shadow;
+  padding: 1em $grid-outside-spacing;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  @include media($max-width + $grid-outside-spacing-bp-offset) {
+    padding: 1em;
+  }
+
+  @include element(row) {
+    @include row();
+
+    @include media($bp-lg) {
+      [class*="col-"] {
+        padding-top: 1em;
+      }
+      [class*="col-"]:last-child {
+        padding-top: 0;
+      }
+    }
+  }
+
+  @include element(lang-switch) {
+    padding: 0 1rem;
+  }
+
+  @include modifier(follow) {
+    background-color: $c_moen-bright-gray;
+    padding: rem(16);
+    &:first-child {
+      margin-top: 1em;
+      @include media($bp-lg) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include modifier(heading) {
+    font-weight: 600;
+    padding-bottom: .5em;
+  }
+
+}

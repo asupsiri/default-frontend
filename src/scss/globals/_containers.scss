@@ -1,0 +1,31 @@
+// Outer container default with no padding or margin - used for most components:
+.container {
+  @include outer-container();
+  @include modifier(main) {
+    margin: 1em $grid-outside-spacing 0;
+    @include media($max-width) {
+      margin: 1em auto 0;
+    }
+  }
+}
+
+// article container - has in-built padding on top.
+@include block(article) {
+  font-size: 1rem;
+  @include element(container) {
+    @include outer-container();
+    @include state(block) {
+      margin-bottom: 1em;
+    }
+    padding-top: 1em;
+  }
+
+  @include element(heading) {
+    font-size: 2.8em;
+    font-family: $din-light;
+    font-weight: normal;
+    letter-spacing: -.05em;
+    margin: 1em 0;
+  }
+
+}

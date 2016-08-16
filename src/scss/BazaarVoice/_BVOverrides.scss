@@ -1,0 +1,3895 @@
+/*
+  BazaarVoice overrides taken from the production Moen.com site
+  ____________________________________________________________________
+  @todo: make these CSS rules somewhat manageable with SCSS nesting
+  @todo: ensure the global z-indices are integrated in these CSS rules (DONE)
+  @todo: color variables
+  @todo: remap all image references to the Hippo implementation paths (when possible, if not, wait for Moen's rewrite rules to help resolve pathing)
+ */
+
+.BV {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+.BV p,
+.BV ul {
+  margin-top: em(5);
+  margin-bottom: em(5);
+}
+
+.BV a {
+  text-decoration: none;
+}
+
+.BV img {
+  border: 0;
+}
+
+.BVPageHeader {
+  margin-top: em(10);
+  margin-bottom: em(20);
+}
+
+.BVBody {
+  clear: both;
+}
+
+.BVFooter {
+  clear: both;
+}
+
+.BVStateHidden {
+  display: none;
+}
+
+.BVMEPageTitle {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  display: block;
+}
+
+.BVSection, .BVErrors {
+  //margin-bottom: 30px;
+  position: relative;
+  //clear: both;
+}
+
+.BVMESectionHeader {
+  font-size: em(20);
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.BVMEModuleHeader {
+  font-size: em(16);
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.BVErrors {
+  background-color: $c_bv_error-bg;
+  padding: em(10);
+}
+
+.BVFieldError .BVFieldLabel, .BVFieldError .BVFieldText, .BVFieldError .BVFieldTextArea, .BVErrors .BVHeader {
+  color: $c_bv_error !important;
+}
+
+.BVFieldError .BVFieldText, .BVFieldError .BVFieldTextArea {
+  background-color: $c_bv_error-bg !important;
+}
+
+.BVError, .BVMEError {
+  color: $c_bv_error;
+  padding-bottom: em(5);
+}
+
+.BVMEError {
+  display: block;
+}
+
+.BVMEHeader {
+  font-weight: bold;
+}
+
+.BVContentBody {
+  background-color: #EEE;
+  clear: both;
+  overflow: hidden;
+  padding: em(10);
+  //zoom: 1;
+}
+
+.BVMEContentHeaderSentence {
+  display: block;
+}
+
+.BVMEContentHeaderSentencePrimary {
+  font-size: em(16);
+  font-weight: bold;
+  margin-bottom: em(10);
+}
+
+.BVMEDocumentationHeader {
+  font-color: #333;
+  font-size: em(16);
+  font-weight: bold;
+  display: block;
+}
+
+.BVMEDisplayPrompt {
+  font-size: em(14);
+  font-weight: bold;
+  color: $c_dove-gray;
+  display: block;
+  padding-bottom: em(5);
+  margin-bottom: em(14);
+}
+
+.BVSectionSubjectInformation {
+  padding: em(20) em(10) em(10);
+}
+
+.BVSectionSubjectInformation .BVSubjectImage {
+  display: block;
+  //float: left;
+  margin-bottom: 1em;
+  margin-right: 5em;
+}
+
+.BVSectionSubjectInformation .BVSubjectName, .BVSectionSubjectInformation .BVSubjectBrand, .BVSectionSubjectInformation .BVSubjectDescription {
+  display: block;
+}
+
+.BVSectionSubjectInformation .BVSubjectName {
+  font-size: em(14);
+  font-weight: bold;
+  margin-bottom: em(15);
+}
+
+.BVField {
+  margin-bottom: em(10);
+  //zoom: 1;
+  clear: left;
+  overflow: hidden;
+}
+
+.BVFieldLabel {
+  font-size: em(14);
+  font-weight: bold;
+  color: $c_dove-gray;
+  display: block;
+  padding-bottom: em(5);
+}
+
+.BVFieldLabelSuffix {
+  display: none;
+}
+
+.BVRequiredFieldIndicator, .BVRequiredFieldIndicatorLegend {
+  color: $c_bv_error;
+}
+
+.BVOptionalFieldIndicator {
+  color: $c_dove-gray;
+  vertical-align: top;
+  padding-left: em(5);
+}
+
+.BVSelected {
+  font-weight: bold;
+}
+
+.BVFieldLegend {
+  font-weight: bold;
+  display: block;
+}
+
+.BVMEFieldHelper {
+  font-size: em(11);
+  font-style: italic;
+  color: #B8B8B8;
+  display: block;
+  line-height: 1.2em;
+  padding-top: em(5);
+}
+
+.BVFieldTextHelper {
+  font-style: italic;
+  color: #B8B8B8;
+}
+
+.BVTextCounter {
+  font-size: em(11);
+  font-style: italic;
+  color: #B8B8B8;
+  line-height: 1.2em;
+  clear: left;
+  width: 300px;
+  padding: em(10) 0;
+}
+
+.BVModuleButtons {
+  margin-right: em(10) 0;
+}
+
+.BVImageButton button {
+  border: none;
+  background: none;
+}
+
+.BVModuleFooterLinks a {
+  margin-right: em(10);
+}
+
+.BVMEPopinContent {
+  position: relative;
+  margin-top: em(8);
+  //z-index: 1000;
+  z-index: z('BVMEPopinContent');
+}
+
+.BVMEPopinTip {
+  clear: both;
+  position: absolute;
+  left: 430px;
+  margin-top: em(6);
+  width: 240px;
+}
+
+.BVMEPopinTip .BVMEPopinLink {
+  padding: em(8);
+  font-size: em(12);
+  background-color: #aaa;
+}
+
+.BVMEPopinTip .BVMEPopinContent {
+  padding: em(16);
+  font-size: em(11);
+  color: #888;
+  background-color: $c_concrete;
+}
+
+.BVMEPopinTip .BVMETipBoxClose {
+  font-style: italic;
+  display: block;
+  text-align: right;
+  padding-bottom: em(5);
+}
+
+.BVMEStaticTip {
+  clear: both;
+  position: absolute;
+  left: 430px;
+  margin-top: em(6);
+  width: 240px;
+  padding: em(16);
+  font-size: em(11);
+  color: #888;
+  background-color: $c_concrete;
+}
+
+ul.BVMETipBoxTips, ul.BVMETipBoxTipsSub {
+  padding-left: em(10);
+}
+
+ul.BVMETipBoxTips li {
+  margin-bottom: em(10);
+}
+
+.BVMETipBoxHeader {
+  display: block;
+  font-size: em(12);
+  font-weight: bold;
+  padding-bottom: em(12);
+}
+
+.BVLink img {
+  border: 0;
+}
+
+.BVField .BVLinkGuidelinesPopup {
+  display: block;
+  width: 409px;
+  text-align: right;
+}
+
+.BVMESubmissionDisclaimer {
+  display: block;
+  margin: em(5) 0;
+}
+
+ul.BVListSectionLinks {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.BVListSectionLinks li {
+  //float: left;
+  //width: 150px;
+}
+
+.BVSpacer {
+  clear: both;
+}
+
+.BVHidden {
+  display: none;
+}
+
+.BVMetadata {
+  display: none;
+}
+
+.BVFieldText, .BVFieldTextArea {
+  line-height: em(20);
+  width: 400px;
+  padding: em(6) em(3);
+  border: 1px solid #333;
+}
+
+.BVFieldText:focus, .BVFieldTextArea:focus {
+  background-color: #f7f7f7;
+  border-color: $c_dove-gray !important;
+}
+
+.BVCheckboxField .BVFieldLabel {
+  display: inline;
+  font-size: em(12);
+}
+
+.BVCheckboxField .BVRequiredFieldIndicator {
+  display: none;
+}
+
+.BVStarsField .BVFieldLabel {
+  font-size: em(12);
+  display: inline-block;
+  width: 140px;
+}
+
+.BVRatingStars {
+  color: #999;
+  font-style: italic;
+  display: inline-block;
+  overflow: auto;
+  //zoom: 1;
+  *display: inline;
+}
+
+.BVRatingStarsDisplayValue, .BVRatingStarsLegendValue {
+  display: inline-block;
+  padding-left: em(10);
+}
+
+.BVRatingStarsDisplayValue {
+  display: none;
+}
+
+.BVForm div.rating {
+  cursor: pointer;
+  margin: 2em;
+  clear: both;
+  display: block;
+}
+
+.BVForm div.rating:after {
+  content: '.';
+  display: block;
+  height: 0;
+  width: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.BVForm div.cancel, .BVForm div.star {
+  //float: left;
+  width: 17px;
+  height: 15px;
+  text-indent: -999em;
+  cursor: pointer;
+  display: block;
+  background: transparent;
+  overflow: hidden;
+}
+
+.BVForm div.cancel, .BVForm div.cancel a {
+  background: url(ratingStars_cancel.gif) no-repeat 0 -16px;
+  display: none;
+}
+
+.BVForm div.star, .BVForm div.star a {
+  background: url(ratingStars_star.gif) no-repeat 0 0;
+}
+
+.BVForm div.cancel a, .BVForm div.star a {
+  display: block;
+  width: 16px;
+  height: 100%;
+  background-position: 0 0;
+  outline: none;
+}
+
+.BVForm div.star_on a {
+  background-position: 0 -16px !important;
+}
+
+.BVForm div.star_hover a, .BVForm div.star_live a:hover {
+  background-position: 0 -32px;
+}
+
+.BVForm div.star_readonly a, .BVForm div.star_readonly a:hover {
+  cursor: default !important;
+}
+
+.BVForm div.star {
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+.BVFieldRatingsGroup .BVFieldRadioContainer {
+  text-align: center;
+  display: block;
+  //float: left;
+  width: 70px;
+  margin: 0;
+}
+
+.BVFieldRatingsGroup .BVFieldRadioContainer label {
+  display: block;
+  margin: em(2);
+}
+
+.BVFieldRatingsGroup .BVFieldRadioContainer input {
+  margin: em(2);
+}
+
+.BVFieldRatingsGroup .BVFieldLowValue {
+  display: block;
+  //float: left;
+  padding-right: em(10);
+}
+
+.BVFieldRatingsGroup .BVFieldHighValue {
+  display: block;
+  //float: left;
+  padding-left: em(10);
+}
+
+.BVSlider .ui-slider {
+  //float: left;
+  margin: 0 1em;
+}
+
+.BVSliderPrefix {
+  //float: left;
+}
+
+.BVSliderSuffix {
+  //float: left;
+}
+
+.BVSliderLegend {
+  padding-left: 2em;
+}
+
+.BVSliderLegend .BVFieldLegend {
+  display: inline;
+}
+
+.BVForm .ui-slider {
+  width: 200px;
+  height: 23px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.BVForm .ui-slider-handle {
+  position: absolute;
+  z-index: 1;
+  height: 23px;
+  width: 12px;
+  top: 0;
+  left: 0;
+  background-image: url(slider_handle.gif);
+}
+
+.BVForm .ui-slider-disabled .ui-slider-handle {
+  opacity: .5;
+  //filter: alpha(opacity=50);
+}
+
+.BVForm .ui-slider-range {
+  position: absolute;
+  //background: #50a029;
+  background-color: $c_moen-green;
+  opacity: .3;
+  //filter: alpha(opacity=30);
+  width: 100%;
+  height: 100%;
+}
+
+.BVForm .ui-slider {
+  background-image: url(slider_background.gif);
+}
+
+.BVMERequiredFieldIndicatorSectionHeader {
+  display: inline;
+}
+
+.BVModuleVideoUpload .BVMEStaticTip {
+  display: none;
+}
+
+.BVModuleVideoPasteGuide {
+  background-color: $c_white;
+  border: 1px solid $c_black;
+  left: 155px;
+  position: absolute;
+  //z-index: 503;
+  z-index: z('BVModuleVideoPasteGuide');
+}
+
+.BVVideoPasteGuideImage {
+  height: 62px;
+  width: 432px;
+}
+
+.BVGoogleVideoGuide .BVVideoPasteGuideImage {
+  background-image: url(vid_paste_googlevideo.gif);
+}
+
+.BVYouTubeGuide .BVVideoPasteGuideImage {
+  background-image: url(vid_paste_youtube.gif);
+}
+
+.BVVideoPasteGuideLabel {
+  font-size: em(11);
+  padding: em(2) em(5);
+  white-space: nowrap;
+}
+
+.BVSectionEditProfile {
+  border: 1px solid #BBB;
+  padding: em(10);
+}
+
+.BVImportantStarsField, .BVImportantStarsField .BVFieldLabel {
+  font-size: em(16);
+}
+
+.BVImportantField input, .BVImportantField input:focus {
+  font-size: em(16);
+  font-weight: bold;
+  border-width: 3px;
+}
+
+#BVFieldContainerPostTo_facebookID label {
+  padding: em(2) 0 0 em(20);
+  height: 16px;
+  background: url(link-facebook.gif) no-repeat center left;
+}
+
+#BVThankYouPostTo_facebookID a {
+  padding: em(2) 0 0 em(20);
+  height: 16px;
+  background: url(link-facebook.gif) no-repeat top left;
+}
+
+.BVSocialConnectPostConfirmation {
+  margin: 1em 0;
+}
+
+.BVThankYouPostTo {
+  clear: both;
+  display: block;
+  //float: left;
+  margin: 15px 30px 25px 0;
+  overflow: hidden;
+  //zoom: 1;
+}
+
+.BVLinkReturnToContent {
+  display: block;
+}
+
+.BVMELastSubmitted {
+  font-size: .8em;
+  font-style: italic;
+}
+
+.BVModuleTermsAndConditions {
+  background-color: $c_white;
+  border: 2px solid $c_moen-bright-gray;
+  padding: 20px;
+}
+
+.BVFieldAgreedtotermsandconditions .BVRequiredFieldIndicator {
+  display: inline;
+}
+
+.BVFieldRecommend {
+  color: $c_dove-gray;
+}
+
+.BVFieldReviewtext textarea {
+  border-width: 3px;
+}
+
+.BVFieldNetpromoterscore {
+  //width: 400px;
+}
+
+.BVFieldNetpromoterscore .BVFieldRadioContainer {
+  text-align: center;
+  //display: block;
+  //float: left;
+  //width: 9%;
+  //margin: 0;
+}
+
+.BVFieldNetpromoterscore .BVFieldRadioContainer label {
+  //display: block;
+  //margin: em(2);
+}
+
+.BVFieldNetpromoterscore .BVFieldRadioContainer input {
+  //margin: em(2);
+}
+
+.BVFieldNetpromoterscore .BVFieldLowValue {
+  //font-size: em(11);
+  //display: block;
+  //float: left;
+  //padding-top: em(5);
+}
+
+.BVFieldNetpromoterscore .BVFieldHighValue {
+  //font-size: em(11);
+  //display: block;
+  //float: right;
+  //padding-top: em(5);
+}
+
+#BVFieldNetpromoterscoreContainerID {
+  //display: block;
+}
+
+.BVMEPreviewNotification {
+  //font-size: em(14);
+  //display: block;
+  //padding: em(10) 0;
+}
+
+.BVMEPreviewNotification div {
+  //display: inline;
+}
+
+.BVPageQuestion .BVMEStaticTip {
+  left: 500px;
+}
+
+.BVPagePreview .BVFieldUseremailalerts, .BVPagePreview .BVFieldSendemailoncomment, .BVPagePreview .BVFieldSendemailonanswer {
+  display: none;
+}
+
+.BVPageSubmitted .BVMEPageTitle {
+  display: none;
+}
+
+.BVMESuccessfullySubmitted {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.BVMEShareThisProductText {
+  display: block;
+  margin-bottom: em(10);
+}
+
+.BVPageSubmitted .BVMEProductBookmarkingLabel {
+  display: none;
+}
+
+.BVPageDuplicate .BVMEPageTitle {
+  display: none;
+}
+
+.BVMEDuplicate {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.BVSectionParentContent .BVModuleSubjectInformation {
+  //font-size: 1.2em;
+  //text-align: center;
+  //float: left;
+  //width: 180px;
+}
+
+.BVSectionParentContent .BVModuleSubjectInformation .BVSubjectName {
+  display: block;
+}
+
+.BVPageComment .BVParentContentSummary {
+  color: #999;
+  font-style: italic;
+  line-height: 1 em(8);
+  //margin-left: 190px;
+}
+
+.BVPageComment .BVParentContentSummary .BVRating .BVRatingNormalLabel {
+  display: inline;
+}
+
+.BVPageComment .BVParentContentSummary .BVRating .BVRatingNormalImage {
+  display: inline;
+}
+
+.BVPageComment .BVParentContentSummary .BVRating .BVRatingNormalOutOf {
+  display: inline;
+}
+
+.BVPageComment .BVParentContentSummary .BVRating .BVRatingNormalOutOf .BVSeparatorText {
+  margin: 0 em(5);
+}
+
+.BVParentContentSummary .BVUserSignature .BVUserNicknameContainer {
+  display: inline;
+}
+
+.BVParentContentSummary .BVUserSignature .BVUserLocationContainer {
+  display: inline;
+}
+
+.BVPageQuestion .BVMEStaticTip, .BVPageAnswer .BVMEStaticTip {
+  //left: 500px;
+  //width: 450px;
+}
+
+.BVPageAnswer .BVMEStaticTip {
+  //*line-height: 1.1;
+}
+
+.BVFieldPhoto {
+  //width: 400px;
+}
+
+.BVPhotoUploadContainer {
+  margin-bottom: em(10);
+}
+
+.BVPhotoUploadContainerUploadedImage {
+  position: relative;
+  margin: 10px 20px 0 0;
+  overflow: hidden;
+}
+
+.BVPhotoUploadContainerMessage {
+  color: #999;
+  font-size: em(11);
+  padding-top: em(10);
+}
+
+.BVPhotoUploadContainerMessagePleaseWait {
+  color: #999;
+  padding: em(15) 0 em(5) 0;
+  position: relative;
+}
+
+.BVPhotoUploadContainerMessagePleaseWaitImagePrefix {
+  padding-left: em(50);
+}
+
+.BVPhotoUploadContainerMessagePleaseWait div {
+  display: inline;
+}
+
+.BVPhotoUploadContainerMessagePleaseWait .BVPhotoUploadThumbnail {
+  left: 5px;
+  position: absolute;
+  top: 5px;
+  width: 30px;
+}
+
+.BVPhotoUploadWidget .BVField {
+  margin-bottom: 0;
+}
+
+.BVFormPhotoUploadErrorList {
+  color: $c_bv_error;
+  font-weight: bold;
+  width: 400px;
+  padding-top: em(10);
+  clear: both;
+}
+
+.BVPhotoUploadMaximumImagesMessage {
+  color: $c_bv_error;
+  font-weight: bold;
+  display: block;
+  padding-bottom: em(5);
+}
+
+.BVFieldInputPhotoUploadCaption {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  color: #333;
+  width: 59%;
+}
+
+.BVUploadedImageThumbnail {
+  display: block;
+  float: left;
+  border: 1px solid #ccc;
+  margin-right: em(10);
+  padding: em(4) em(4) em(1) em(4);
+  width: 120px;
+}
+
+.BVUploadedImageThumbnail img {
+  width: 100%;
+}
+
+.BVPhotoUploadContainerUploadedImage .BVPhotoButtonRemove {
+  position: absolute;
+  left: 85px;
+  top: 7px;
+}
+
+.BVTagsField {
+  background-color: #eee;
+  margin-top: em(12);
+  margin-bottom: em(5);
+  padding: em(3);
+  width: 400px;
+}
+
+.BVTagSectionHeaderContainer {
+  background: url("arrowRight.gif") no-repeat scroll 10px 50% transparent;
+  cursor: pointer;
+  padding: em(10) em(10) em(50);
+}
+
+.BVTagsExpandedElement .BVTagSectionHeaderContainer {
+  background-image: url("arrowDown.gif");
+}
+
+.BVTagsBlock {
+  background-color: $c_white;
+  padding: em(8);
+  display: none;
+}
+
+.BVTagRow {
+  padding: em(3);
+}
+
+.BVTagRow input {
+  vertical-align: middle;
+}
+
+.BVTagRow input[type="checkbox"] {
+  margin-right: em(2);
+}
+
+.BVTagRow input[type="text"] {
+  width: 180px;
+}
+
+.BVSelectedTag {
+  font-weight: bold;
+}
+
+.BVClientTagColumn {
+  float: left;
+  width: 100%;
+}
+
+.BVAfterTagColumnsSpacer {
+  clear: both;
+}
+
+.BVTagSectionHelper {
+  display: block;
+}
+
+.BVTagInputHelper {
+  background-color: $c_white;
+  padding: 0 em(15) em(10);
+  display: none;
+}
+
+.BVError .BVTagSectionHeaderContainer input {
+  background-color: #fee;
+  border: 1px solid $c_bv_error;
+}
+
+.BVFieldError .BVNoError .BVFieldText {
+  background-color: $c_white !important;
+  color: #000 !important;
+}
+
+.BVModuleTags .BVFieldError {
+  border: 1px solid $c_bv_error;
+}
+
+.BVMETagsHelper {
+  color: $c_dove-gray;
+  font-size: em(14);
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.BVTagsExpandedElement .BVTagsBlock {
+  display: block;
+}
+
+.BVTagsExpandedElement .BVTagInputHelper {
+  display: block;
+}
+
+.BVPL {
+  margin: 1em 0;
+  border: 1px solid #eee;
+  //zoom: 1;
+}
+
+.BVPLInside {
+  padding: em(5);
+}
+
+.BVPLHeader {
+  margin-bottom: em(5);
+}
+
+.BVPLProduct {
+  text-align: center;
+  border: 1px solid #ccc;
+  float: left;
+  margin: 0 em(5) em(10) 0;
+  width: 130px;
+}
+
+.BVPLSpacerProduct {
+  display: none;
+}
+
+.BVPLSpacerProduct2, .BVPLSpacerProduct5, .BVPLSpacerProduct8 {
+  display: block;
+  clear: left;
+}
+
+.BVPLInsideProduct {
+  padding: em(5);
+}
+
+.BVPLProductAction {
+  background-color: #eee;
+  padding: em(5);
+}
+
+.BVPLProductImage {
+  text-align: center;
+}
+
+.BVPLProductImage img {
+  -ms-interpolation-mode: bicubic;
+  width: 100px;
+}
+
+.BVPLProductName {
+  text-align: center;
+  padding: em(5);
+}
+
+.BVPLProductFilled .BVSULinkMove {
+  width: 10px;
+  height: 10px;
+  text-decoration: none;
+  outline: none;
+}
+
+.BVPLProductFilled .BVSULinkMoveLeft {
+  float: left;
+  background: url(arrowMoveLeft.gif) no-repeat;
+}
+
+.BVPLProductFilled .BVSULinkMoveRight {
+  float: right;
+  background: url(arrowMoveRight.gif) no-repeat;
+}
+
+.BVPLProductFilledLast .BVSULinkMoveRight {
+  display: none;
+}
+
+.BVPLProductEmpty {
+  height: 130px;
+  overflow: hidden;
+}
+
+.BVPLProductEmpty .BVPLInsideProductEmpty .BVPLProductImage a {
+  display: block;
+  width: 100%;
+  height: 100px;
+  text-decoration: none;
+  outline: none;
+}
+
+.BVPLProductEmpty .BVPLInsideProductEmpty .BVPLProductImage a:active {
+  text-decoration: none;
+  outline: none;
+}
+
+.BVPLProductEmptyFirst .BVPLProductImage a {
+  background: url(openSearch.gif) no-repeat center;
+}
+
+.BVPLProductEmptyRest a {
+  visibility: hidden;
+}
+
+.BVPLProductEmpty.BVPLProductEmptyLoading .BVPLProductImage a {
+  background: url(bv_sub_loading_60.gif) no-repeat center;
+  visibility: inherit;
+}
+
+.BVPLProductFilled .BVPLInsideProductEmpty, .BVPLProductEmpty .BVPLInsideProductFilled {
+  display: none;
+}
+
+.BVPLProductError .BVPLProductImage img {
+  border: 1px solid $c_bv_error;
+}
+
+.BVPLProductError .BVPLProductName {
+  color: $c_bv_error;
+}
+
+.BVPLSpacerInsideBody {
+  clear: left;
+}
+
+.BVAvatars {
+  width: 580px;
+  clear: both;
+  margin-top: em(20);
+}
+
+.BVAvatarContainer {
+  width: 130px;
+  margin: em(5);
+  float: left;
+}
+
+.BVHiddenAvatar {
+  display: none;
+}
+
+.BVFieldRadioAvatar {
+  display: none;
+}
+
+.BVPageContentSubscriptionAnswerSubscribe .BVCheckboxField label {
+  width: 215px;
+}
+
+.BVDIHidden {
+  display: none;
+}
+
+.BVSUHidden {
+  display: none;
+}
+
+.BVDISeparator, .BVDISpacer {
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.BVDIOverlay {
+  position: absolute;
+}
+
+.BVDI_PL {
+  background-color: #eee;
+  padding: em(5);
+  margin-bottom: 1em;
+}
+
+.BVDI_PLHeader {
+  font-weight: bold;
+  margin-bottom: em(5);
+}
+
+.BVDI_PLProduct {
+  background-color: $c_white;
+  border: 1px solid #ccc;
+  float: left;
+  margin: 0 em(5) em(10) 0;
+  text-align: center;
+  width: 130px;
+}
+
+.BVDI_PLSpacerProduct {
+  display: none;
+}
+
+.BVDI_PLSpacerProduct2, .BVDI_PLSpacerProduct5, .BVDI_PLSpacerProduct8 {
+  display: block;
+  clear: left;
+}
+
+.BVDI_PLInside {
+  padding: em(5);
+}
+
+.BVDI_PLProductImage img {
+  -ms-interpolation-mode: bicubic;
+  width: 100px;
+}
+
+.BVDI_PLSpacerBody {
+  clear: left;
+}
+
+.BVDI_QT {
+  height: auto;
+  padding: em(5);
+  z-index: 0;
+}
+
+.BVDI_QTBody {
+  height: 60px;
+}
+
+.BVDI_AFAttributeFilteringSectionCell {
+  vertical-align: top;
+  width: 100%;
+}
+
+.BVDI_AF {
+  border-top: 1px #f3f3ee solid;
+  height: auto;
+  padding: em(5);
+  z-index: 0;
+}
+
+.BVDI_AFHeader {
+  font-weight: bold;
+}
+
+.BVDI_AFFilterAttribute {
+  width: auto;
+  border: 1px #E7E4D8 solid;
+  background: $c_white url(downarrow.gif) no-repeat bottom right;
+  float: left;
+  margin-left: em(3);
+  margin-top: em(5);
+  margin-bottom: em(5);
+  cursor: pointer;
+  z-index: 0;
+}
+
+.BVDI_AFFilterAttributeSelected {
+  border: 2px #333 solid;
+}
+
+.BVDI_AFFilterAttributeExpanded {
+  background-image: url(downarrowOn.gif);
+  border-color: #333;
+}
+
+.BVDI_AFFilterAttributeFirst {
+  margin-left: em(20);
+}
+
+.BVDI_AFFilterAttributeDisabled {
+  color: #ccc;
+}
+
+.BVDI_AFAttributeFilteringBeforeSpacer {
+  margin-top: em(5);
+}
+
+.BVDI_AFFilterAttributeHeader {
+  font-weight: bold;
+  margin-left: em(6);
+}
+
+.BVDI_AFFilterAttributeHeader a {
+  text-decoration: none;
+  outline: none;
+}
+
+.BVDI_AFFilterAttributeContent, #BVRRFilterAttributeContentIEControlsFrameID {
+  position: absolute;
+  background-color: $c_white;
+  margin-top: 1px;
+  margin-left: -7px;
+}
+
+.BVDI_AFFilterAttributeContent {
+  cursor: auto;
+  //z-index: 100;
+  z-index: z('BVDI_AFFilterAttributeContent');
+  width: 160px;
+  border: 1px #333 solid;
+}
+
+#BVRRFilterAttributeContentIEControlsFrameID {
+  //z-index: 50;
+  z-index: z('BVRRFilterAttributeContentIEControlsFrameID');
+  overflow: hidden;
+  border: none;
+}
+
+.BVDI_AFFilterAttributeContentTitle {
+  margin-left: em(5);
+  margin-right: em(5);
+}
+
+.BVDI_AFFilterAttributeContent ul, .BVDI_AFFilterAttributeContent li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.BVDI_AFFilterAttributeContent li {
+  margin: em(5);
+}
+
+.BVDI_AFFilterAttributeContent .BVDI_AFFilterAttributeLabel {
+  display: inline;
+  padding: 0;
+  margin-left: em(5);
+}
+
+.BVDI_AFFilterAttributeLabelDisabled {
+  color: #ccc;
+}
+
+.BVDI_AFAttributeCount {
+  color: #806446;
+}
+
+.BVDI_AFAttributeFilterItemOn a {
+  text-decoration: none;
+  padding-left: 12px;
+  background: transparent url(filterOn.gif) no-repeat scroll left center;
+}
+
+.BVDI_AFAttributeFilterItemOn a:hover {
+  background: transparent url(filterOnHover.gif) no-repeat scroll left center;
+}
+
+.BVDI_AFFilterAttributeClose {
+  color: #333;
+  cursor: pointer;
+  vertical-align: bottom;
+  text-align: right;
+  padding: 2px;
+}
+
+.BVDI_AFFilterAttributeClose img {
+  vertical-align: bottom;
+}
+
+.BVDI_AFAttributeFilteringShowMore {
+  text-align: right;
+  padding-right: 5px;
+  padding-bottom: em(5);
+}
+
+.BVDI_QTFilterSentence {
+  position: relative;
+}
+
+.BVDI_MH {
+  border: 1px solid #ccc;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  background: url(background_border.gif) repeat-y 50% 50%;
+}
+
+.BVDI_MHPair {
+  clear: both;
+  //zoom: 1;
+}
+
+.BVDI_MHPositive {
+  float: left;
+  width: 49.99%;
+  //zoom: 1;
+}
+
+.BVDI_MHInsidePositive {
+  padding: 5px 30px 5px 10px;
+  //zoom: 1;
+}
+
+.BVDI_MHCritical {
+  float: left;
+  width: 49.99%;
+  //zoom: 1;
+}
+
+.BVDI_MHInsideCritical {
+  padding: 5px 10px 5px 30px;
+  //zoom: 1;
+}
+
+.BVDI_MHSpacerPair {
+  clear: both;
+}
+
+.BVDI_MHTitleContainer {
+  font-size: 1 em(8);
+  font-weight: bold;
+}
+
+.BVDI_MHPairHeaderContentDetails .BVDI_MHReadMore {
+  float: right;
+}
+
+.BVDI_MHInsideBody {
+  background: url(mostHelpful.gif) no-repeat 50% 50%;
+}
+
+.BVDI_MHPairReviewTitleContainer {
+  font-size: 1 em(8);
+  background-color: #eee;
+  margin: 1em 0;
+}
+
+.BVDI_MHPairRatingContainer {
+  display: none;
+}
+
+.BVDI_MHReviewContentContainer .BVRRReviewProsConsContainer {
+  margin: 0;
+}
+
+.BVDI_MHPairUserDataContainer .BVRRUserDataContainer {
+  border-top: 1px solid #eee;
+  padding-top: 1em;
+}
+
+.BVDI_MHPairUserDataContainer .BVRRSignatureContainer .BVRRUserNicknameContainer {
+  display: inline;
+}
+
+.BVDI_MHPairUserDataContainer .BVRRSignatureContainer .BVRRUserLocationContainer {
+  display: inline;
+}
+
+.BVDI_MHPairUserDataContainer .BVRRSignatureContainer .BVRRReviewDateContainer {
+  //display: inline;
+}
+
+.BVDI_MHPairActionContainer {
+  background-color: #eee;
+  margin: 1em 0;
+}
+
+.BVDI_MHPairFilterSentence {
+  text-align: right;
+}
+
+.BVDI_MHFooterLinks {
+  position: relative;
+  width: 100%;
+}
+
+.BVDI_MHPopup, #BVDI_MHPopupControlsFrameID {
+  position: absolute;
+  //z-index: 400;
+  z-index: z('BVDI_MHPopupControlsFrameID');
+  width: 80%;
+  margin: 100px auto auto 10%;
+  //zoom: 1;
+}
+
+.BVDI_MHPopup {
+  background-color: $c_white;
+  border: 1px solid #ccc;
+}
+
+.BVDI_MHHeaderPopup {
+  background-color: #eee;
+  padding: em(5);
+  //zoom: 1;
+  overflow: hidden;
+}
+
+.BVDI_MHHeaderPopup .BVDI_MHClose {
+  float: right;
+}
+
+.BVDI_MHTitlePopup {
+  font-size: 1 em(8);
+  font-weight: bold;
+}
+
+.BVDI_MHBodyPopup {
+  padding: em(5);
+}
+
+.BVDI_MHFooterPopup {
+  background-color: #eee;
+  padding: em(5);
+}
+
+.BVDI_FBHideSelect {
+  //z-index: 1000;
+  z-index: z('BVDI_FBHideSelect');
+  background-color: $c_white;
+  border: none;
+  //filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+.BVDI_FBOverlayContainer {
+  //z-index: 1100;
+  z-index: z('BVDI_FBOverlayContainer');
+  background-color: #000;
+  //filter: alpha(opacity=50);
+  //-moz-opacity: .50;
+  opacity: .50;
+}
+
+.BVDI_FBContainerHighlight {
+  //z-index: 1200 !important;
+  z-index: z('BVDI_FBContainerHighlight');
+  background-color: $c_white;
+}
+
+.BVDI_FBOverlayHighlight {
+  //z-index: 1300;
+  z-index: z('BVDI_FBOverlayHighlight');
+  background-color: $c_white;
+  //filter: alpha(opacity=75);
+  //-moz-opacity: .75;
+  opacity: .75;
+}
+
+.BVDI_FBImage {
+  text-align: center;
+  top: 50%;
+  position: relative;
+  margin-top: -em(8);
+}
+
+.BVDI_PSSpacer {
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.BVDI_PSPopin, #BVDI_PSIEControlsFrame {
+  position: absolute;
+  //z-index: 10000000;
+  z-index: z('BVDI_PSIEControlsFrame');
+  margin: em(8);
+  overflow: hidden;
+  //zoom: 1;
+}
+
+.BVDI_PS {
+  width: 450px;
+  border: 1px solid #ccc;
+  background-color: $c_white;
+}
+
+.BVDI_PSInside {
+  padding: em(5);
+  background-color: $c_concrete;
+}
+
+.BVDI_PSHeader .BVDILinkClose {
+  float: right;
+}
+
+.BVDI_PSContainer {
+  margin-bottom: em(5);
+}
+
+.BVDI_PSBodyContainer {
+  margin-bottom: em(5);
+  overflow: hidden;
+  //zoom: 1;
+}
+
+.BVDI_PSHeaderSection {
+  font-weight: bold;
+}
+
+.BVDI_PSContainerBasic {
+  overflow: hidden;
+  //zoom: 1;
+  padding-left: em(5);
+}
+
+.BVDI_PSAvatar {
+  float: left;
+  margin-right: em(5);
+}
+
+.BVDI_PSUserLocationContainer .BVDI_PSLabel, .BVDI_PSContextDataContainer .BVDI_PSLabel {
+  font-weight: bold;
+}
+
+.BVDI_PSSectionNickname a {
+  font-size: 1 em(8);
+  cursor: default;
+  text-decoration: none;
+  color: $c_black;
+  font-weight: bold;
+}
+
+.BVDI_PSBodyBasic .BVDI_BABadges {
+  margin-bottom: em(5);
+}
+
+.BVDI_PSBodyHistory .BVDI_PSLabelValuePair0 {
+  float: left;
+  margin-right: em(10);
+}
+
+.BVDI_PSContainerCrossProduct {
+  clear: both;
+}
+
+.BVDI_PSBodyContributions .BVDI_PSLabelValuePair {
+  display: inline;
+}
+
+.BVDI_PSNumberContributions {
+  display: inline;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.BVDI_PSBodyProductSpecific {
+  background-color: $c_white;
+  border: 1px solid #ddd;
+  padding: em(5);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.BVDI_PSBodyProductSpecificPRR {
+  margin-right: em(10);
+  float: left;
+  width: 40%;
+}
+
+.BVDI_PSSectionAverageRating {
+  overflow: hidden;
+  //zoom: 1;
+  margin-bottom: em(10);
+  padding: 2px 0;
+}
+
+.BVDI_PSSectionAverageRating .BVDI_PSRatingLabel {
+  float: none;
+  margin-bottom: em(10);
+  overflow: hidden;
+  //zoom: 1;
+  font-weight: bold;
+}
+
+.BVDI_PSRatingImage {
+  float: left;
+  width: 100px;
+}
+
+.BVDI_PSRatingOutOf {
+  display: inline;
+}
+
+.BVDI_PSRatingOutOf .BVDINumber {
+  font-weight: bold;
+}
+
+.BVDI_PSHistogramTitle {
+  display: none;
+}
+
+.BVDI_PSHistogramBarRow {
+  overflow: hidden;
+  //zoom: 1;
+  clear: left;
+  margin-bottom: 2px;
+}
+
+.BVDI_PSHistogramBarRow5 .BVDI_PSHistStarLabel {
+  background-image: url(histogramStars_5.gif);
+}
+
+.BVDI_PSHistogramBarRow4 .BVDI_PSHistStarLabel {
+  background-image: url(histogramStars_4.gif);
+}
+
+.BVDI_PSHistogramBarRow3 .BVDI_PSHistStarLabel {
+  background-image: url(histogramStars_3.gif);
+}
+
+.BVDI_PSHistogramBarRow2 .BVDI_PSHistStarLabel {
+  background-image: url(histogramStars_2.gif);
+}
+
+.BVDI_PSHistogramBarRow1 .BVDI_PSHistStarLabel {
+  background-image: url(histogramStars_1.gif);
+}
+
+.BVDI_PSHistStarLabel {
+  float: left;
+  display: block;
+  width: 55px;
+  height: 10px;
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+}
+
+.BVDI_PSHistStarLabel .BVDI_PSHistStarLabelText {
+  display: none;
+}
+
+.BVDI_PSHistogramBar {
+  border: 1px solid #aaa;
+  float: left;
+  margin: 0 5px;
+  width: 100px;
+  height: 8px;
+  font-size: 6px;
+}
+
+.BVDI_PSHistogramFullBar {
+  background-color: #ccc;
+  float: left;
+  height: 8px;
+}
+
+.BVDI_PSHistAbsLabel {
+  float: left;
+  display: none;
+}
+
+.BVDI_PSHistPercLabel {
+  float: left;
+}
+
+.BVDI_PSBodyCrossLinking {
+  background-color: $c_white;
+  border: 1px solid #ddd;
+  margin-bottom: em(5);
+  padding: em(5);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.BVDI_PSSectionCrossLinking .BVDI_PSLabelValuePair {
+  clear: left;
+  margin-bottom: em(10);
+}
+
+.BVDI_PSSectionCrossLinkingPRR .BVDI_PSRatingLabel {
+  float: left;
+  margin-right: 15px;
+  font-weight: normal;
+  padding-right: 5px;
+}
+
+.BVDI_PSSectionCrossLinkingPRR .BVDI_PSRatingImage {
+  float: left;
+  width: 100px;
+}
+
+.BVDI_PSSectionCrossLinkingPRR .BVDI_PSRatingOutOf {
+  display: inline;
+}
+
+.BVDI_PSBodyCrossLinkingQA {
+  clear: left;
+}
+
+.BVDI_PSSectionCrossLinkingQA .BVDI_PSLabelValuePair {
+  clear: right;
+}
+
+.BVDI_PSQuestionAnswersCount {
+  float: right;
+}
+
+.BVDI_PSQuestionPrefix {
+  font-weight: bold;
+}
+
+.BVDI_PSContainerCredibility {
+  clear: both;
+  margin-bottom: 0;
+}
+
+.BVDI_PSSectionFeedback {
+  overflow: hidden;
+  //zoom: 1;
+  vertical-align: baseline;
+  line-height: em(20);
+  width: 50%;
+  float: left;
+  overflow: hidden;
+  //zoom: 1;
+}
+
+.BVDI_PSHeaderFeedback {
+  font-weight: normal;
+  display: block;
+  float: left;
+  margin-right: em(10);
+  margin-top: em(5);
+}
+
+.BVDI_PSBodyFeedback .BVDI_PSLabelValuePair {
+  float: left;
+  margin-right: em(10);
+}
+
+.BVDI_PSBodyFeedback .BVDI_PSLabel {
+  display: inline;
+  margin-left: em(5);
+}
+
+.BVDI_PSBodyFeedback .BVDI_PSValue {
+  display: inline;
+  font-weight: bold;
+}
+
+.BVDI_PSLabelValuePairYes {
+  background-color: #ddd;
+  border: 1px solid #aaa;
+  padding: em(5);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.BVDI_PSLabelValuePairYes .BVDI_PSValue {
+  font-size: 1 em(8);
+}
+
+.BVDI_PSLabelValuePairNo {
+  color: #999;
+  position: relative;
+  top: 5px;
+}
+
+.BVDI_PSSectionBestAnswer {
+  overflow: hidden;
+  //zoom: 1;
+  vertical-align: baseline;
+  line-height: em(20);
+}
+
+.BVDI_PSHeaderBestAnswer {
+  font-weight: normal;
+  display: block;
+  float: left;
+  margin-right: em(10);
+  margin-top: em(5);
+}
+
+.BVDI_PSBodyBestAnswer .BVDI_PSLabelValuePair {
+  float: left;
+  margin-right: em(10);
+}
+
+.BVDI_PSBodyBestAnswer .BVDI_PSLabel {
+  display: inline;
+}
+
+.BVDI_PSBodyBestAnswer .BVDI_PSValue {
+  display: inline;
+  font-size: em(20);
+  font-weight: bold;
+}
+
+.BVDI_PSSectionFeatured {
+  overflow: hidden;
+  //zoom: 1;
+  vertical-align: baseline;
+  line-height: em(20);
+}
+
+.BVDI_PSHeaderFeatured {
+  font-weight: normal;
+  display: block;
+  float: left;
+  margin-right: em(10);
+  margin-top: em(5);
+}
+
+.BVDI_PSBodyFeatured .BVDI_PSLabelValuePair {
+  float: left;
+  margin-right: em(10);
+}
+
+.BVDI_PSBodyFeatured .BVDI_PSLabel {
+  display: inline;
+}
+
+.BVDI_PSBodyFeatured .BVDI_PSValue {
+  display: inline;
+  font-size: em(20);
+  font-weight: bold;
+}
+
+.BVDI_PSBodyCredibilityBadges {
+  margin-bottom: 0;
+}
+
+.BVDI_PSBodyCredibilityBadges .BVDI_PSSectionBadges {
+  clear: both;
+}
+
+.BVDI_PSFooter {
+  background-color: #ddd;
+  padding: em(5);
+  text-align: right;
+  clear: left;
+}
+
+.BVDI_PS.BVDI_PSNotLoaded {
+  width: 200px;
+}
+
+.BVDI_PSSnapshotLoading {
+  text-align: center;
+}
+
+.BVDI_BABadges {
+  overflow: hidden;
+  //zoom: 1;
+  margin-bottom: em(10);
+}
+
+.BVDI_BABadge {
+  float: left;
+  margin-right: em(5);
+  border: 1px solid #ccc;
+}
+
+.BVDI_BABadge a {
+  text-decoration: none;
+  color: $c_black;
+}
+
+.BVDI_BABadge a:hover {
+  text-decoration: none;
+}
+
+.BVDI_BAExpertBadge, .BVDI_BAStaffBadge {
+  background-color: $c_dove-gray;
+}
+
+.BVDI_BATop1ContributorBadge, .BVDI_BATop10ContributorBadge, .BVDI_BATop25ContributorBadge, .BVDI_BATop50ContributorBadge, .BVDI_BATop100ContributorBadge, .BVDI_BATop250ContributorBadge, .BVDI_BATop500ContributorBadge, .BVDI_BATop1000ContributorBadge {
+  background: $c_white url(button_background_white_to_gray_1x14.gif) repeat-x 0 100%;
+}
+
+.BVDI_BABadgeGraphic {
+  background-repeat: no-repeat;
+}
+
+.BVDI_BAExpertGraphic, .BVDI_BAStaffGraphic {
+  background-position: 0 50%;
+}
+
+.BVDI_BAExpertGraphic {
+  background-image: url(expert-reviewer-icon.gif);
+}
+
+.BVDI_BAStaffGraphic {
+  background-image: url(staff-reviewer-icon.gif);
+}
+
+.BVDI_BATop1ContributorGraphic, .BVDI_BATop10ContributorGraphic, .BVDI_BATop25ContributorGraphic, .BVDI_BATop50ContributorGraphic, .BVDI_BATop100ContributorGraphic, .BVDI_BATop250ContributorGraphic, .BVDI_BATop500ContributorGraphic, .BVDI_BATop1000ContributorGraphic {
+  background-position: 3px 50%;
+}
+
+.BVDI_BATop1ContributorGraphic {
+  background-image: url(top_1_contributor_icon.gif);
+}
+
+.BVDI_BATop10ContributorGraphic {
+  background-image: url(top_10_contributor_icon.gif);
+}
+
+.BVDI_BATop25ContributorGraphic {
+  background-image: url(top_25_contributor_icon.gif);
+}
+
+.BVDI_BATop50ContributorGraphic {
+  background-image: url(top_50_contributor_icon.gif);
+}
+
+.BVDI_BATop100ContributorGraphic {
+  background-image: url(top_100_contributor_icon.gif);
+}
+
+.BVDI_BATop250ContributorGraphic {
+  background-image: url(top_250_contributor_icon.gif);
+}
+
+.BVDI_BATop500ContributorGraphic {
+  background-image: url(top_500_contributor_icon.gif);
+}
+
+.BVDI_BATop1000ContributorGraphic {
+  background-image: url(top_1000_contributor_icon.gif);
+}
+
+.BVDI_BABadgeLabel {
+  font-weight: bold;
+}
+
+.BVDI_BAExpertLabel, .BVDI_BAStaffLabel {
+  background: $c_white url(button_background_white_to_gray_1x14.gif) repeat-x 0 100%;
+  margin-left: em(31);
+  padding: em(2) em(5);
+}
+
+.BVDI_BATop1ContributorLabel, .BVDI_BATop10ContributorLabel, .BVDI_BATop25ContributorLabel, .BVDI_BATop50ContributorLabel, .BVDI_BATop100ContributorLabel, .BVDI_BATop250ContributorLabel, .BVDI_BATop500ContributorLabel, .BVDI_BATop1000ContributorLabel {
+  padding: em(2) em(5) em(2) em(21);
+}
+
+.BVDI_PH {
+  width: 400px;
+  border: 1px solid #ccc;
+}
+
+.BVDI_PHPhotoHeroContainer {
+  background-color: $c_black;
+  text-align: center;
+}
+
+.BVDI_PHPhotoHeroCaption {
+  padding: em(5);
+  background-color: #eee;
+}
+
+.BVDI_PHPhotoLine {
+  background-color: #eee;
+  padding: em(5);
+  overflow: hidden;
+  //zoom: 1;
+}
+
+.BVDI_PHPhoto {
+  float: left;
+  margin-right: em(5);
+  height: 60px;
+  width: 60px;
+  background-color: $c_white;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.BVDI_PHPhotoPopup {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: em(5);
+  position: absolute;
+  //z-index: 1000;
+  z-index: z('BVDI_PHPhotoPopup');
+}
+
+.BVDI_PHPhotoPopupHint {
+  font-size: em(9);
+  font-weight: bold;
+  margin-bottom: em(3);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.BVDI_PHPhotoPopupImage {
+  text-align: center;
+}
+
+.BVDI_PHPhotoPopupCaption {
+  font-size: em(11);
+  text-align: left;
+  margin-top: em(3);
+  width: 400px;
+}
+
+.BVDI_ATTitleAdditionalFieldValueContainer {
+  font-weight: bold;
+}
+
+.BVDI_ATParagraph {
+  margin-top: 0;
+}
+
+.BVDI_RARatingContainerStar, .BVDI_RARatingContainerSlider, .BVDI_RARatingContainerRadio {
+  margin-bottom: em(10);
+}
+
+.BVDI_RARatingEntry {
+  overflow: hidden;
+  //zoom: 1;
+}
+
+.BVDI_RARatingHeader {
+  font-weight: bold;
+}
+
+.BVDI_RALabel {
+  float: left;
+  width: 80px;
+  margin-right: em(5);
+}
+
+.BVDI_RARatingNormalImage {
+  float: left;
+  margin-right: em(5);
+}
+
+.BVDI_RARatingNormalOutOf {
+  float: left;
+}
+
+.BVDI_RARatingSliderLabel1, .BVDI_RARatingRadioLabel1 {
+  float: left;
+  margin-right: em(5);
+  width: 80px;
+}
+
+.BVDI_RARatingSliderLabel2, .BVDI_RARatingRadioLabel2 {
+  float: left;
+}
+
+.BVDI_RARatingSliderImage, .BVDI_RARatingRadioImage {
+  float: left;
+  margin-right: em(5);
+}
+
+.BVDI_RASeparatorText {
+  padding: 0 1ex;
+}
+
+.BVDI_CDUserLocationContainer, .BVDI_CDContextDataValueContainer {
+  overflow: hidden;
+  //zoom: 1;
+}
+
+.BVDI_CDLabel {
+  display: block;
+  float: left;
+  width: 80px;
+  margin-right: em(5);
+}
+
+.BVDI_CDValue {
+  display: block;
+  float: left;
+}
+
+.BVRRRootElement, .BVRRRootElement input, .BVRRRootElement select, .BVRRRootElement textarea, .BVRRPhotoPopup {
+  color: #595959;
+  font-family: Arial, sans-serif;
+  font-size: em(14);
+  margin-top: em(25);
+}
+
+.BVRRRootElement a, #BVRRRootElement a:visited {
+  text-decoration: none;
+}
+
+.BVRRRootElement a:hover {
+  text-decoration: underline;
+}
+
+#BVRRWidgetID {
+  position: relative;
+}
+
+.BVRRWidget img {
+  border: 0;
+}
+
+.BVRRRatingSummary img {
+  border: 0;
+}
+
+.BVRRSecondaryRatingSummary img {
+  border: 0;
+}
+
+.BVRRHidden {
+  display: none;
+}
+
+.BVRRTitle {
+  font-weight: bold;
+}
+
+.BVRRSeparator {
+  clear: both;
+}
+
+.BVRRBadge {
+  //zoom: 1;
+}
+
+.BVRRDisplayContentNoReviews {
+  padding: em(5);
+}
+
+.BVRRRatingSummaryNoReviewsWriteImageLink {
+  margin-bottom: em(5);
+}
+
+#BVCustomerRatings .BVRRRatingSummaryNoReviewsWriteImageLink a {
+  background: none;
+  padding: 0;
+}
+
+.BVRRRatingNormal {
+  //clear: both;
+  //width: 500px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.BVRRRatingNormalLabel {
+  //float: left;
+  //width: 70px;
+  margin-right: em(8);
+}
+
+.BVRRSecondaryRatingsContainer .BVRRRatingNormalLabel {
+  //width: auto;
+  //padding-top: em(5);
+}
+
+.BVRRRatingNormalImage {
+  //float: left;
+  //margin-right: 6px;
+}
+
+.BVRRSecondaryRatingsContainer .BVRRRatingNormalImage {
+  clear: left;
+}
+
+.BVRRRatingNormalOutOf {
+  //display: inline;
+  //float: left;
+  font-family: $din-bold;
+  font-weight: normal;
+  margin-left: em(8);
+}
+
+.BVRRRatingNormalOutOf .BVRRNumber {
+  font-weight: bold;
+}
+
+.BVRRRatingNoResults {
+  float: left;
+  margin: auto;
+  width: 107px;
+}
+
+.BVRRRatingRadio {
+  clear: both;
+}
+
+.BVRRRatingRadioHeader {
+  text-align: left;
+  clear: both;
+  margin-top: em(5);
+  font-weight: bold;
+}
+
+.BVRRRatingRadioLabel1 {
+  clear: both;
+  font-weight: normal;
+  float: left;
+  width: 80px;
+  text-align: right;
+}
+
+.BVRRRatingRadioImage {
+  float: left;
+  width: 107px;
+  text-align: center;
+}
+
+.BVRRRatingRadioImage img {
+  padding-top: em(4);
+}
+
+.BVRRRatingRadioLabel2 {
+  float: left;
+  font-weight: normal;
+  padding-right: 0;
+  padding-left: em(5);
+  width: 80px;
+}
+
+.BVRRRatingSlider {
+  clear: both;
+}
+
+.BVRRRatingSliderHeader {
+  text-align: left;
+  clear: both;
+  margin-top: em(5);
+  font-weight: bold;
+}
+
+.BVRRRatingSliderLabel1 {
+  clear: both;
+  font-weight: normal;
+  float: left;
+  width: 80px;
+  text-align: right;
+}
+
+.BVRRRatingSliderImage {
+  float: left;
+  width: 107px;
+  text-align: center;
+}
+
+.BVRRRatingSliderImage img {
+  padding-top: em(4);
+}
+
+.BVRRRatingSliderLabel2 {
+  float: left;
+  font-weight: normal;
+  padding-right: 0;
+  padding-left: em(5);
+  width: 80px;
+}
+
+#BVReviewsContainer {
+}
+
+.BVRRDisplayContentHeader {
+  //margin-bottom: em(10);
+  /*height: 42px;*/
+}
+
+.BVRRDisplayContentHeaderContent {
+  //padding: 11px 10px;
+  //text-align: right;
+  //height: 21px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @include media($bp-xs) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.BVRRDisplayContentSort {
+  @include media($bp-sm) {
+    margin-bottom: auto;
+  }
+}
+
+#BVRRDisplayContentTitleID {
+  display: inline;
+  margin-right: 65%;
+}
+
+#BVReviewsContainer .BVRRDisplayContentTitle {
+  margin: 0 0 1em;
+  padding: 0;
+  font-family: DINWebLight;
+  font-weight: normal;
+  line-height: 1.2;
+  font-size: em(34);
+  flex: 0 0 100%;
+  //-webkit-font-smoothing: antialiased;
+  //-moz-osx-font-smoothing: grayscale;
+  //float: left;
+  //font-size: 1.8em;
+  //@include media($bp-sm) {
+  //  font-size: em(34);
+  //}
+}
+
+.BVRRDisplayContentTitleReviewCount {
+  padding-left: em(5);
+}
+
+.BVRRDisplayContentSubtitle {
+  text-align: center;
+  padding: 0;
+  margin-top: 1em;
+  display: block;
+  width: 100%;
+  @include media($bp-xs) {
+    align-self: baseline;
+    margin-top: 0;
+    display: inline-block;
+    width: auto;
+  }
+}
+
+/* replicate btn-primary */
+.BVRRDisplayContentSubtitle a {
+  display: inline-block;
+  text-decoration: none;
+  text-align: inherit;
+  padding: 9px 20px;
+  border: none;
+  background-clip: padding-box;
+  font-family: DINWebMedium;
+  font-weight: normal;
+  font-size: em(16);
+  line-height: em(26);
+  color: $c_white !important;
+  background-color: $c_chateu_green;
+  width: 100%;
+  /* Rounded + shadowed button styling: */
+  //box-shadow: 0 3px 0px 0 #23683B;
+  //border-radius: 5px;
+}
+
+.BVRRDisplayContentSubtitle a:hover {
+  background-color: $c_sea_green;
+  text-decoration: none;
+}
+
+.BVRRDisplayContentSortPrefix {
+  display: none;
+  padding: 0 em(5) 0 em(10);
+}
+
+.BVRRDisplayContentBody {
+  //margin: 0 11px;
+}
+
+.BVRRDisplayContentReview {
+  /*background: url(bg_dotted.gif) top left repeat-x;*/
+  //zoom: 1;
+  margin-bottom: em(40);
+  display: flex;
+}
+
+.BVRRDisplayContentReviewFirst {
+  border-top: 0;
+  background: none;
+}
+
+.BVRRUserNickname {
+  font-weight: bold;
+  display: block;
+}
+
+.BVRRNickname {
+  font-weight: bold;
+  font-size: em(16);
+}
+
+.BVRRUserNicknamePrefix {
+  display: none;
+}
+
+.BVRRUserNicknameReadReviewsContainer {
+  //white-space: nowrap;
+  //margin-top: em(10);
+  //display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: em(8);
+}
+
+.BVRRUserNicknameReadReviewsContainer .BVRRUserProfileImageLink {
+  text-decoration: underline;
+  margin-right: 1px;
+}
+
+.BVRRUserLocationContainer {
+  //clear: both;
+  margin: em(8) 0;
+  display: block;
+}
+
+.BVRRUserNicknameReadReviewsContainer a {
+  text-decoration: underline;
+}
+
+.BVRRUserNicknameReadReviewsContainer a:hover {
+  text-decoration: none;
+}
+
+.BVRRRecommendedContainer {
+  margin-top: em(5);
+}
+
+.BVRRRecommendedContainer .BVRRLabel {
+  font-weight: normal;
+}
+
+.BVRRRecommendedContainer .BVRRValue {
+  font-weight: bold;
+}
+
+.BVRRContextDataContainer {
+  //clear: both;
+  //margin: 15px 0 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.BVRRReviewBadgesDELME {
+  float: left;
+  width: 268px;
+  padding-top: em(2);
+}
+
+.BVRRReviewBadge {
+  float: right;
+  cursor: default;
+  padding: 0 0 0 em(10);
+}
+
+.BVRRReviewBadgeLink a {
+  text-decoration: none;
+  color: $c_black;
+  cursor: pointer;
+}
+
+.BVRRReviewBadgeLink a:hover {
+  text-decoration: none;
+}
+
+.BVRRReviewBadgeGraphic {
+  background-repeat: no-repeat;
+}
+
+.BVRRExpertGraphic {
+  background: url(btn_expertReview.gif) top left no-repeat;
+  width: 102px;
+  height: 20px;
+}
+
+.BVRRFeaturedGraphic {
+  background: url(btn_featuredReview.gif) top left no-repeat;
+  width: 117px;
+  height: 20px;
+}
+
+.BVRRStaffGraphic {
+  background: url(btn_staffReview.gif) top left no-repeat;
+  width: 89px;
+  height: 20px;
+}
+
+.BVRRTop1ContributorGraphic {
+  background: url(btn_top1Contributor.gif) top left no-repeat;
+  width: 150px;
+  height: 20px;
+}
+
+.BVRRTop10ContributorGraphic {
+  background: url(btn_top10Contributor.gif) top left no-repeat;
+  width: 130px;
+  height: 20px;
+}
+
+.BVRRTop25ContributorGraphic {
+  background: url(btn_top25Contributor.gif) top left no-repeat;
+  width: 130px;
+  height: 20px;
+}
+
+.BVRRTop50ContributorGraphic {
+  background: url(btn_top50Contributor.gif) top left no-repeat;
+  width: 130px;
+  height: 20px;
+}
+
+.BVRRTop100ContributorGraphic {
+  background: url(btn_top100Contributor.gif) top left no-repeat;
+  width: 137px;
+  height: 20px;
+}
+
+.BVRRTop250ContributorGraphic {
+  background: url(btn_top250Contributor.gif) top left no-repeat;
+  width: 137px;
+  height: 20px;
+}
+
+.BVRRTop500ContributorGraphic {
+  background: url(btn_top500Contributor.gif) top left no-repeat;
+  width: 137px;
+  height: 20px;
+}
+
+.BVRRTop1000ContributorGraphic {
+  background: url(btn_top1000Contributor.gif) top left no-repeat;
+  width: 143px;
+  height: 20px;
+}
+
+.BVRRReviewBadgeLabel {
+  font-size: em(11);
+  font-weight: bold;
+}
+
+.BVRRExpertLabel, .BVRRFeaturedLabel, .BVRRStaffLabel {
+  display: none;
+}
+
+.BVRRTop1ContributorLabel, .BVRRTop10ContributorLabel, .BVRRTop25ContributorLabel, .BVRRTop50ContributorLabel, .BVRRTop100ContributorLabel, .BVRRTop250ContributorLabel, .BVRRTop500ContributorLabel, .BVRRTop1000ContributorLabel {
+  padding: em(2) em(5) em(2) em(21);
+  display: none;
+}
+
+.BVRRReviewTitleContainer {
+  //clear: left;
+  //float: left;
+  //margin-bottom: 4px;
+  margin-bottom: 1em;
+}
+
+.BVRRReviewTitle {
+  font-size: em(30);
+  line-height: 1;
+  color: $c_dark-gray;
+  font-family: DinWebRegular;
+  display: block;
+}
+
+.BVRRReviewProsConsContainer {
+  margin-right: em(10);
+}
+
+.BVRRReviewTextContainer {
+  line-height: 1;
+}
+
+//.BVRRReviewText {
+//  zoom: 1;
+//}
+
+.BVRRReviewTextParagraph {
+  //font-size: em(16);
+  line-height: 1.2;
+  margin-bottom: 1em;
+}
+
+.BVRRPhotoSection {
+  /*background: url(bg_dotted.gif) top left repeat-y;*/
+  float: right;
+  margin: em(10) 0 em(10) em(20);
+  padding-left: em(20);
+  width: 89px;
+}
+
+.BVRRPhotoSectionHeader {
+  margin-bottom: em(5);
+}
+
+.BVRRPhotoSectionLabel {
+  font-weight: bold;
+  color: $c_moen-bright-blue;
+}
+
+.BVRRPhotoSectionHint {
+  font-size: em(10);
+}
+
+.BVRRPhoto {
+  float: left;
+  display: inline;
+  margin: 0 em(5) em(5) 0;
+}
+
+.BVRRPhotoPopup {
+  background: url(bg_popupRight.gif) center right no-repeat;
+  cursor: pointer;
+  position: absolute;
+  //z-index: 1000;
+  z-index: z('BVRRPhotoPopup');
+  font-weight: bold;
+}
+
+.BVRRPhotoPopupHint {
+  background: $c_white url(bg_popupClose.gif) right 10px no-repeat;
+  text-indent: -9999em;
+  white-space: nowrap;
+  font-size: em(9);
+  border: solid #EFEFEF;
+  border-width: 3px 3px 0 3px;
+  padding: em(10);
+}
+
+.BVRRPhotoPopupImage {
+  background-color: $c_white;
+  text-align: center;
+  border: solid #EFEFEF;
+  border-width: 0 3px;
+}
+
+.BVRRPhotoPopupCaption {
+  background-color: $c_white;
+  text-align: center;
+  min-width: 210px;
+  width: auto;
+  border: solid #EFEFEF;
+  border-width: 0 3px 3px 3px;
+  padding: em(10);
+}
+
+* html .BVRRPhotoPopupCaption {
+  width: 210px;
+}
+
+.BVRRPhotoSectionThumbnail {
+  display: inline;
+  cursor: pointer;
+}
+
+.BVRRPhoto .BVRRPhotoSectionThumbnail img {
+  border: 2px solid #EFEFEF;
+  padding: em(10);
+}
+
+.BVRRPhoto .BVRRPhotoSectionThumbnail img:hover {
+  border: 2px solid #264F86;
+}
+
+.BVRRVideoSection {
+  margin-right: em(10) 0;
+  padding: em(10) 0 em(5) 0;
+  /*background: transparent url(bg_dotted.gif) repeat-x top left;*/
+  float: left;
+  width: 100%;
+  //zoom: 1;
+}
+
+.BVRRVideoSection .BVRRSeparatorReviewVideosTop {
+  clear: none;
+}
+
+.BVRRVideoSectionHeader {
+  margin-bottom: em(5);
+}
+
+.BVRRVideoSectionLabel {
+  font-weight: bold;
+  color: #2F4579;
+}
+
+.BVRRSyndicatedContentAttribution {
+  //padding: 1px;
+  //text-align: right;
+}
+
+.BVRRSyndicatedContentSource {
+  display: none;
+}
+
+.BVRRSyndicatedContentSourceLogo img {
+  width: 40px;
+  height: 21px;
+}
+
+.BVRRReviewDisplayStyle3Content {
+  //float: left;
+  //width: 100%;
+  ///*background: url(bg_dotted.gif) bottom left repeat-x;*/
+  //padding-bottom: 2px;
+}
+
+.BVRRReviewFeedbackSummaryContainer {
+  //margin-top: 7px;
+  //float: left;
+  //width: 100%;
+  margin-bottom: 1em;
+}
+
+.BVRRReviewFeedbackSummaryContainer .BVRRLabel {
+  font-weight: normal;
+}
+
+.BVRRReviewFeedbackSummaryContainer .BVRRNumber {
+  font-weight: bold;
+}
+
+.BVRRReviewFeedbackLinksContainer {
+  //margin: 10px 0 0 1px;
+  //float: left;
+  //display: inline;
+  //width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: em(8);
+  .BVRRLabel {
+    font-weight: normal;
+  }
+}
+
+.BVRRReviewFeedbackLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.BVRRReviewFeedbackMessage {
+  margin-top: em(10);
+  font-weight: bold;
+}
+
+.BVRRReviewFeedbackLinksPrefix {
+  margin-bottom: em(8);
+}
+
+.BVRRReviewFeedbackLink, .BVRRReviewFeedbackLinkInactive {
+  margin-bottom: em(8);
+}
+
+.BVRRReviewDisplayStyle3Main .BVRRReviewFeedbackLinkInactive a, .BVRRReviewFeedbackLinkInactive a:hover, .BVRRReviewFeedbackLinkInactive a:visited {
+  //color: #aeaeae;
+  text-decoration: none;
+  cursor: default;
+}
+
+.BVRRReviewFeedbackLinkInappropriate a {
+  //color: #595959;
+}
+
+.BVRRReviewFeedbackLinksSeparatorBetweenNoInappropriate {
+  display: none;
+}
+
+.BVRRReviewFeedbackLinkInappropriate, .BVRRReviewFeedbackLinkInactiveInappropriate {
+  font-size: em(10);
+}
+
+.BVRRReviewClientResponsesContainer {
+  //clear: both;
+  //float: left;
+  //display: inline;
+  //width: 100%;
+}
+
+.BVRRReviewClientResponseContainer {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: em(8);
+  margin: em(10) 0;
+}
+
+.BVRRReviewClientResponseHeader {
+  margin-bottom: em(8);
+}
+
+.BVRRReviewClientResponseTitle {
+  display: block;
+  margin-bottom: em(5);
+}
+
+.BVRRReviewClientResponseSubtitlePrefix {
+  font-weight: bold;
+}
+
+.BVRRReviewClientResponseSubtitleName {
+  font-weight: bold;
+}
+
+.BVRRReviewClientResponseSubtitleDept {
+  font-weight: bold;
+}
+
+.BVRRReviewSocialLinksContainer {
+  //margin-top: em(10);
+  //float: left;
+  //width: 100%;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.BVRRReviewSocialLinksContainer .BVRRReviewBookmarkingLabel {
+  //display: inline;
+  margin-right: em(8);
+}
+
+.BVRRSocialBookmarkLinkImage {
+  vertical-align: middle;
+}
+
+.BVRRDisplayContentFooter {
+  //padding: em(15);
+  //height: 13px;
+}
+
+.BVRRDisplayContentSpacer {
+  clear: both;
+}
+
+.BVRRSimplePager {
+  position: relative;
+  //zoom: 1;
+}
+
+.BVRRSimplePager .BVRRPreviousPage {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
+.BVRRSimplePager .BVRRNextPage {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.BVRRPageBasedPager {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  @include media($bp-xs) {
+    justify-content: flex-end;
+  }
+}
+
+.BVRRPageLink {
+  font-family: $din-bold;
+  font-weight: normal;
+  padding: 0 em(8);
+}
+
+.BVRRPageNumber {
+  border-right: 1px solid $c_rule;
+}
+
+.BVRRPageBasedPager .BVRRPreviousPage {
+  padding-left: 0;
+}
+
+.BVRRPageBasedPager .BVRRNextPage {
+  padding-right: 0;
+}
+
+.BVRRPagerArrows {
+  display: none;
+}
+
+.BVRRRatingSummaryStyle2 {
+  //zoom: 1;
+}
+
+.BVRRRatingSummary .BVRRBuyAgainContainer {
+  //padding-top: 15px;
+  //*padding-top: em(5);
+  //clear: both;
+}
+
+.BVRRRatingSummary .BVRRBuyAgainPercentage {
+  display: none;
+}
+
+.BVRRRatingSummary .BVRRLabel {
+  font-weight: normal;
+}
+
+.BVRRRatingSummary .BVRRProductBookmarkingLabel {
+  display: inline;
+}
+
+.BVRRBuyAgainRecommend, .BVRRBuyAgainTotal {
+  font-weight: bold;
+  //margin-right: 3px;
+}
+
+.BVRRRatingOverall {
+  justify-content: flex-start;
+}
+
+.BVRRRatingOverall .BVRRLabel {
+  font-family: $din-bold;
+  font-weight: normal;
+}
+
+.BVRRRatingOverall .BVRRRatingNormalLabel {
+  //float: left;
+  //padding-right: 5px;
+}
+
+.BVRRVerticalRatingsHistogram {
+  //width: 120px;
+  //float: left;
+}
+
+.BVRRVerticalRatingsHistogram td {
+  //padding: 0;
+}
+
+.BVRRVerticalRatingsHistogramCaptionCell {
+  //font-size: em(12);
+}
+
+.BVRRVerticalRatingsHistogramValueLabels {
+  //height: 50px;
+}
+
+.BVRRVerticalRatingsHistogramValueLabelsCell {
+  //text-align: right;
+}
+
+.BVRRVerticalRatingsHistogramGraphics {
+  //border-collapse: collapse;
+  table-layout: fixed;
+  //width: 110px;
+  //height: 50px;
+  border-bottom: 1px solid $c_black;
+}
+
+.BVRRVerticalRatingsHistogramGraphics5 {
+  //height: 50px;
+}
+
+.BVRRVerticalRatingsHistogramBarCell {
+  //height: 49px;
+}
+
+.BVRRVerticalRatingsHistogramBarPusher {
+  color: red;
+  font-size: 0;
+  line-height: 0;
+}
+
+.BVRRVerticalRatingsHistogramBar {
+  font-size: 0;
+  line-height: 0;
+  background-color: $c_moen-gray;
+}
+
+.BVRRVerticalRatingsHistogramSeriesLabels {
+  //width: 110px;
+}
+
+.BVRRVerticalRatingsHistogramSeriesLabels5 {
+  //width: 110px;
+}
+
+.BVRRVerticalRatingsHistogramSeriesLabelsCell {
+  //font-size: 9px;
+  font-weight: bold;
+  text-align: center;
+  //width: 33%;
+}
+
+.BVRRVerticalRatingsHistogramSeriesLabelsCellCenter {
+  text-align: center;
+}
+
+.BVRRVerticalRatingsHistogramSeriesLabelsCellRight {
+  text-align: right;
+}
+
+.BVRRRatingSummaryLinks {
+  clear: both;
+}
+
+.BVRRRatingSummaryLinks .BVRRRatingSummaryLink {
+  //float: left;
+  display: inline;
+  width: 100%;
+  //margin-bottom: 2px;
+  //margin-right: -5px;
+  //margin-left: 15px;
+}
+
+.BVRRRatingSummaryLinkWriteSuffix {
+  display: block;
+}
+
+.BVRRRatingSummaryLinkWriteFirstSuffix {
+  //padding-left: em(3);
+}
+
+.BVRRRatingEntry {
+  //clear: both;
+  line-height: normal;
+  //padding: 2px 0;
+  //float: left;
+}
+
+.BVRRRatingSummaryLinkSeparator {
+  display: none;
+}
+
+.BVRROverallRatingContainer .BVRRLabel {
+  //padding-right: 5px;
+  //float: left;
+  display: none;
+}
+
+.BVRRSecondaryRatingsContainer .BVRRRatingNormalOutOf {
+  display: none;
+}
+
+.BVRRSecondaryRatingsContainer .BVRRRatingNormalImage img {
+  //padding-top: em(2);
+}
+
+.BVRRRatingSummaryStyle3 {
+  //padding: 5px 0;
+}
+
+.BVRRRatingSummaryStyle3 .BVRRBuyAgainContainer {
+  //clear: left;
+  //padding: em(5);
+}
+
+.BVRRSecondaryRatingSummary .BVRRRatingSummaryLinks {
+  display: block;
+  clear: both;
+}
+
+.BVRRRatingsHistogramButton {
+  //clear: right;
+  //float: left;
+  //padding: 25px 0 0 6px;
+  //zoom: 1;
+}
+
+.BVRRRatingsHistogramButtonImage {
+  cursor: pointer;
+}
+
+.BVRRRatingsHistogramButtonImage img {
+  border: none;
+}
+
+.BVRRRatingsHistogramButtonPopin, #BVRRRatingsHistogramButtonIEControlsFrame {
+  //margin-top: 7px;
+  //margin-left: -80px;
+  //*margin-top: em(20);
+}
+
+#BVRRRatingsHistogramButtonIEControlsFrame {
+  display: none;
+  position: absolute;
+}
+
+.BVRRRatingsHistogramButtonPopin {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  //z-index: 10000000;
+  z-index: z('BVRRRatingsHistogramButtonPopin');
+  border: 1px solid $c_moen-gray;
+}
+
+.BVRRHistogram {
+  padding: 0 0 5px 0;
+  text-align: left;
+  width: 261px;
+  height: auto;
+  background: $c_white url(/assets/moencom/images/catalog/product-details/reviews/ratings_snapshot.png) 0 0 no-repeat;
+  position: absolute;
+}
+
+div.BVRRHistogramTitle {
+  padding: em(12) em(10) 0 em(10);
+  width: 243px;
+  height: 23px;
+}
+
+.BVRRHistogramTitleText {
+  display: none;
+}
+
+.BVRRHistogramTitle .BVRRNumber {
+  font-size: em(10);
+}
+
+.BVRRHistogramContent {
+  /* background: url(BVRRHistogramContentBackground.gif) top left repeat-y; */
+  padding: em(10) em(15) em(5) em(15);
+  color: $c_dove-gray;
+}
+
+.BVRRHistogramTitle .BVRRCount {
+  //float: right;
+  color: $c_white;
+  font-weight: normal;
+  font-size: em(10);
+  width: 62px;
+  text-align: center;
+}
+
+.BVRRHistogramBarRow {
+  overflow: hidden;
+  padding: em(3) 0 0 0;
+  width: 252px;
+  height: 25px;
+}
+
+.BVRRHistogramBarRow span {
+  font-weight: bold;
+  //padding: em(3) 0 0 0;
+}
+
+.BVRRHistStarLabel {
+  //float: left;
+  //width: 40px;
+}
+
+.BVRRHistAbsLabel {
+  //float: left;
+}
+
+.BVRRHistPercLabel {
+  //float: left;
+}
+
+.BVRRHistogramBar {
+  border: 1px solid $c_moen-gray;
+  //float: left;
+  margin: 0 em(7);
+  width: 161px;
+  height: 21px;
+}
+
+.BVRRHistogramFullBar {
+  background: $c_moen-bright-blue;
+  //float: left;
+  height: 21px;
+}
+
+.BVRRRatingSnapshotPage {
+  margin: 0;
+}
+
+.BVRRReviewDisplayStyle3 {
+  //float: left;
+  //display: inline;
+  /*background: url(bg_BVRRReviewDisplayStyle3Summary.jpg) 198px 100% no-repeat;*/
+  //margin: 35px 0;
+  //font-family: DinWebRegular;
+  //font-size: em(16);
+  padding-bottom: 1em;
+}
+
+.BVCPUnitContainer .BVRRReviewDisplayStyle3 {
+  margin-bottom: 0;
+}
+
+.BVRRReviewDisplayStyle3Spacer {
+  clear: both;
+}
+
+.BVRRReviewDisplayStyle3Summary {
+  @include media($bp-md) {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+}
+
+body.premium .BVRRReviewDisplayStyle3Summary {
+
+}
+
+.BVRRReviewDisplayStyle3Summary .BVRRRatingEntry {
+
+}
+
+.BVRRReviewDisplayStyle3Summary .BVRRLabel {
+}
+
+.BVRRUserNicknameSuffix {
+  display: none;
+}
+
+.BVRRReviewDisplayStyle3Summary .BVRRReviewRatingsContainer {
+  margin-top: em(10);
+}
+
+.BVRRReviewDisplayStyle3Summary .BVRROverallRatingContainer {
+  display: none;
+}
+
+.BVRRReviewDisplayStyle3Main {
+  overflow: hidden;
+  margin-top: 1em;
+  @include media($bp-md) {
+    max-width: 42em;
+  }
+}
+
+body.premium .BVRRReviewDisplayStyle3Main {
+}
+
+.BVRRReviewDisplayStyle3Main a {
+  text-decoration: underline;
+}
+
+.BVRRReviewDisplayStyle3Main a:hover {
+  text-decoration: none;
+}
+
+.BVRRReviewDisplayStyle3MainSpacerTop {
+  display: none;;
+  height: 20px;
+  width: 140px;
+  margin-bottom: em(20);
+}
+
+.BVRRReviewDisplayStyle3 .BVRRReviewDateContainer {
+}
+
+.BVRRReviewDatePrefix {
+  display: none;
+}
+
+.BVRRReviewDisplayStyle3 .BVRRUserLocationPrefix {
+  display: none;
+}
+
+.BVRRReviewDisplayStyle3 .BVRRReviewBookmarkingLabel {
+}
+
+.BVRRReviewDisplayStyle3Main .BVRRReviewRatingsContainer {
+  margin-bottom: em(20);
+}
+
+.BVRRReviewDisplayStyle2 {
+  .BVRROverallRatingContainer {
+    clear: left;
+    margin-bottom: em(10);
+    width: 290px;
+  }
+}
+
+.BVRRReviewDisplayStyle2 .BVRRReviewDateContainer {
+}
+
+.BVRRReviewDisplayStyle2 .BVRRReviewTitleContainer {
+}
+
+.BVRRReviewDisplayStyle2 .BVRRReviewDisplayStyle2UserContainer {
+  clear: left;
+  margin-top: em(10);
+}
+
+.BVRRReviewDisplayStyle2 .BVRRUserNicknameContainer {
+  display: inline;
+}
+
+.BVRRReviewDisplayStyle2 .BVRRUserLocationContainer {
+  display: inline;
+}
+
+.BVRRReviewDisplayStyle2 .BVRRSecondaryRatingsContainer {
+  margin-top: em(5);
+  width: 290px;
+}
+
+.BVRRReviewDisplayStyle2 .BVRRReviewTextContainer {
+  margin-top: em(10);
+}
+
+.BVRRRatingsOnlySummary {
+  /*background: url(bg_dotted.gif) top left repeat-x;*/
+  padding-top: 1px;
+}
+
+.BVRRRatingsOnlySummaryHeader {
+  text-align: right;
+  padding: em(10);
+  background: #EDEBEC url(bg_BVRRRatingsOnlySummaryTitle.gif) 20px 12px no-repeat;
+}
+
+.BVRRRatingsOnlySummaryTitle {
+  display: none;
+}
+
+.BVRRRatingsOnlySummaryMain {
+  padding: em(10);
+  /*background: url(bg_dotted.gif) top left repeat-x;*/
+}
+
+.BVRRRatingsOnlySummary .BVRRBuyAgainContainer {
+  //float: right;
+  padding-left: em(3);
+}
+
+.BVRRRatingsOnlySummary .BVRROverallRatingContainer {
+  //float: left;
+  margin-bottom: em(10);
+}
+
+.BVRRRatingsOnlySummary .BVRRSecondaryRatingsContainer {
+  //clear: both;
+  //float: left;
+}
+
+.BVRRReviewSyndicationSummarySection {
+  margin-top: em(15);
+}
+
+.BVRRSyndicationSummaryBody {
+  margin-bottom: em(15);
+  text-align: left;
+  border: 1px solid $c_moen-gray;
+  background: url(syndicatedsummarygradient.gif) left top repeat-x;
+}
+
+.BVRRSyndicationSummaryIcon {
+  padding: em(5) 0 em(5) em(5);
+}
+
+.BVRRSyndicationSummaryText {
+  padding: em(5);
+  font-size: em(10);
+}
+
+.BVRRSyndicationSummaryHeader {
+  font-weight: bold;
+  padding-bottom: em(5);
+}
+
+.BVRRSyndicationSummaryLink {
+  display: block;
+  clear: both;
+  padding-top: em(2);
+}
+
+.BVRRSyndicationSummaryLink a {
+  text-decoration: none;
+  color: $c_black;
+  cursor: pointer;
+}
+
+.BVRRSyndicatedReviewsBody {
+  font-size: em(10);
+}
+
+.BVRRSyndicatedReviewsListingHeader {
+  background-color: #ddd;
+  padding: em(10);
+}
+
+.BVRRSyndicatedReviewsListingHeaderText {
+  font-size: em(18);
+  font-weight: bold;
+  padding-left: em(10);
+}
+
+.BVRRSyndicatedReviewsSummary {
+  padding: em(10);
+}
+
+.BVRRSyndicatedReviewsListingProductName {
+  font-weight: bold;
+  font-size: em(12);
+  padding: em(5) 0 em(5) 0;
+}
+
+.BVRRRatingSummarySyndicationRatingLabel {
+  //float: left;
+}
+
+.BVRRRatingSummarySyndication .BVRRBuyAgainContainer {
+  clear: both;
+  padding-top: em(5);
+}
+
+.BVRRRatingSummarySyndication .BVRRRatingNormalImage {
+  width: auto;
+}
+
+.BVRRRatingSummarySyndication .BVRRBuyAgainSuffix {
+  font-weight: normal;
+  padding-left: em(3);
+}
+
+.BVRRSyndicatedStandaloneRatingWrapperBuyAgain {
+  font-size: em(10);
+}
+
+.BVRRSyndicatedStandaloneRatingWrapperBuyAgainTotal {
+  font-weight: bold;
+}
+
+.BVRRSyndicatedStandaloneRatingWrapperBuyAgainValue {
+  font-weight: bold;
+}
+
+.BVRRSyndicatedStandaloneRatingWrapperSummaryTableRatingSet {
+  font-weight: bold;
+}
+
+.BVRRFeedback {
+  display: inline;
+}
+
+.BVRRFeedbackNumber {
+  display: inline;
+  padding: em(2);
+}
+
+.BVRRActiveFeedback {
+  display: inline;
+  margin: 0;
+}
+
+.BVRRInactiveFeedback {
+  display: inline;
+  margin: 0;
+}
+
+.BVRRPositiveFeedback a {
+  background-image: url(buttonPositiveFeedback.gif);
+  background-repeat: no-repeat;
+  padding: em(5) em(8) em(2) em(9);
+  text-decoration: none;
+}
+
+.BVRRPositiveFeedback a:hover {
+  background-position: -21px 0;
+}
+
+.BVRRNegativeFeedback a {
+  background-image: url(buttonNegativeFeedback.gif);
+  background-repeat: no-repeat;
+  padding: em(5) em(8) em(2) em(9);
+  text-decoration: none;
+}
+
+.BVRRNegativeFeedback a:hover {
+  background-position: -21px 0;
+}
+
+.BVRRInappropriateFeedback {
+  padding-left: em(10);
+}
+
+.BVRRInappropriateFeedback a {
+  background-image: url(buttonInappropriateFeedback.gif);
+  background-repeat: no-repeat;
+  padding: em(5) em(8) em(2) em(9);
+  text-decoration: none;
+}
+
+.BVRRInappropriateFeedback a:hover {
+  background-position: -21px 0;
+}
+
+.BVRRInactiveFeedback a {
+  cursor: default;
+}
+
+.BVRRInactiveFeedback a:hover {
+  background-position: 0 0;
+}
+
+.BVRRFeedbackMessage {
+  margin-top: em(3);
+}
+
+.BVRRShowMessage {
+  padding: em(10);
+}
+
+.BVRRShowMessageText {
+  margin-bottom: em(15);
+}
+
+.BVRRDocumentationHeader {
+  font-weight: bold;
+}
+
+.BVRRCloseWindowLinkDiv {
+  text-align: center;
+}
+
+.BVRRGuidelinesDocumentationHeader {
+  color: #264F86;
+  //font-family: Gill, "Gill Sans", "Gill Sans MT", "Gill Sans Std", "Tahoma", "Trebuchet MS";
+  font-family: $fs-gill;
+  line-height: 125%;
+  font-size: em(20);
+}
+
+.BVRRTermsAndConditionsDocumentationHeader {
+  color: #264F86;
+  //font-family: Gill, "Gill Sans", "Gill Sans MT", "Gill Sans Std", "Tahoma", "Trebuchet MS";
+  font-family: $fs-gill;
+  line-height: 125%;
+  font-size: em(20);
+}
+
+.BVRRBadgeDefinitionBody .BVRRReviewBadge {
+  //float: left;
+  padding: 0;
+}
+
+.BVRRBadgeDescriptionText {
+  margin: em(5) 0;
+  clear: both;
+}
+
+.BVRRQuickTakeSection {
+  clear: both;
+}
+
+.BVRRQuickTakeHeader {
+  position: relative;
+  overflow: hidden;
+}
+
+.BVRRQuickTakeTitle {
+  font-weight: bold;
+  //float: left;
+}
+
+.BVRRQuickTakeContent {
+  width: 100%;
+}
+
+.BVRRQuickTakeSummaryNoClouds {
+  width: 100%;
+}
+
+.BVRRQuickTakeSummaryOnly {
+  width: 100%;
+  padding: em(15);
+}
+
+.BVRRQuickTakeSummary {
+  padding: 0 0 em(10) 0;
+}
+
+.BVRRQuickTakeSummary .BVRRRatingSummary {
+  width: 300px;
+  position: relative;
+  z-index: 1;
+}
+
+.BVRRQuickTakeFilteredOutResults {
+  width: 300px;
+  padding: 0 em(10) em(10) 0;
+}
+
+.BVRRFilteredOutSummaryResultCell {
+  vertical-align: top;
+}
+
+.BVRRQuickTakeContainer {
+  //float: left;
+  position: relative;
+}
+
+.BVRRQuickTakeSpacer {
+  clear: both;
+}
+
+.BVRRQuickTakeList, .BVRRQuickTakeListMore {
+  margin: 1em 0;
+  list-style-type: none;
+  padding: 0;
+}
+
+.BVRRQuickTakeListMore {
+  display: none;
+}
+
+.BVRRTag {
+  display: inline;
+}
+
+.BVRRTag a {
+  text-decoration: none;
+  padding-left: em(12);
+}
+
+.BVRRTag a:hover {
+  background: transparent url(filterOffHover.gif) no-repeat scroll left center;
+}
+
+.BVRRTagFilterOn a {
+  text-decoration: none;
+  padding-left: em(12);
+  background: transparent url(filterOn.gif) no-repeat scroll left center;
+}
+
+.BVRRTagFilterOn a:hover {
+  background: transparent url(filterOnHover.gif) no-repeat scroll left center;
+}
+
+.BVRRTagFilterSentence {
+  position: relative;
+}
+
+.BVRREmptyResult {
+  margin-top: em(10);
+}
+
+.BVRRQuickTakeHeaderHelpText {
+  //float: right;
+}
+
+.BVRRNote {
+  color: #777;
+  font-size: .8em;
+}
+
+.BVRRTag15 {
+  font-size: 1.7em;
+}
+
+.BVRRTag14 {
+  font-size: 1.6em;
+}
+
+.BVRRTag13 {
+  font-size: 1.5em;
+}
+
+.BVRRTag12 {
+  font-size: 1.4em;
+}
+
+.BVRRTag11 {
+  color: #111;
+  font-size: 1.3em;
+}
+
+.BVRRTag10 {
+  color: #222;
+  font-size: 1.3em;
+}
+
+.BVRRTag9 {
+  color: #333;
+  font-size: 1.3em;
+}
+
+.BVRRTag8 {
+  color: #444;
+  font-size: 1.3em;
+}
+
+.BVRRTag7 {
+  color: #555;
+  font-size: 1.3em;
+}
+
+.BVRRTag6 {
+  color: $c_dove-gray;
+  font-size: 1.3em;
+}
+
+.BVRRTag5 {
+  color: #777;
+  font-size: 1.3em;
+}
+
+.BVRRTag4 {
+  color: #777;
+  font-size: 1.2em;
+}
+
+.BVRRTag3 {
+  color: #777;
+  font-size: 1.1em;
+}
+
+.BVRRTag2 {
+  color: #777;
+  font-size: em(16);
+}
+
+.BVRRTag1 {
+  color: #777;
+  font-size: .9em;
+}
+
+.BVRRTag0 {
+  color: #777;
+  font-size: .8em;
+}
+
+.BVRRQuickTakeMore {
+  text-align: right;
+  //float: left;
+}
+
+.BVRRQuickTakeProTags {
+  vertical-align: top;
+}
+
+.BVRRQuickTakeProTagsSummaryTwoClouds {
+  width: 50%;
+}
+
+.BVRRQuickTakeProTagsSummaryOneCloud {
+  width: 100%;
+}
+
+.BVRRQuickTakeProTagsNoSummaryTwoClouds {
+  width: 50%;
+}
+
+.BVRRQuickTakeProTagsNoSummaryOneCloud {
+  width: 100%;
+}
+
+.BVRRQuickTakeNoResultsProTagsSummaryTwoClouds {
+  width: 50%;
+}
+
+.BVRRQuickTakeNoResultsProTagsNoSummaryTwoClouds {
+  width: 50%;
+}
+
+.BVRRQuickTakeConTags {
+  vertical-align: top;
+}
+
+.BVRRQuickTakeConTagsSummaryTwoClouds {
+  width: 50%;
+}
+
+.BVRRQuickTakeConTagsSummaryOneCloud {
+  width: 100%;
+}
+
+.BVRRQuickTakeConTagsNoSummaryTwoClouds {
+  width: 50%;
+}
+
+.BVRRQuickTakeConTagsNoSummaryOneCloud {
+  width: 100%;
+}
+
+.BVRRQuickTakeNoResultsConTagsSummaryTwoClouds {
+  width: 50%;
+}
+
+.BVRRQuickTakeNoResultsConTagsNoSummaryTwoClouds {
+  width: 50%;
+}
+
+.BVRRQuickTakeCloudCellSpacer {
+  width: 0;
+}
+
+.BVRRQuickTakeProTagsMore {
+  width: 100%;
+}
+
+.BVRRQuickTakeConTagsMore {
+  width: 100%;
+}
+
+//#BVCustomerRatings {
+//  background: #efefef url(/assets/moencom/images/catalog/product-details/reviews/average_rating.png) 0 0 no-repeat;
+//  height: 90px;
+//  padding: 35px 10px 10px 16px;
+//}
+
+#BVCustomerRatings .BVRRSecondaryRatingsContainer, #BVCustomerRatings .BVRRSocialBookmarkingLinks {
+  display: none;
+}
+
+#BVCustomerRatings a {
+  font-weight: bold;
+  font-size: em(11);
+}
+
+#BVCustomerRatings .BVRRRatingNormalImage {
+  background: transparent url(/assets/moencom/images/catalog/product-details/reviews/star_white.png) 0 0 no-repeat;
+  //float: none;
+  margin-bottom: em(10);
+  font-size: 0;
+}
+
+#BVCustomerRatings .BVRRRatingNormalOutOf {
+  font-size: em(11);
+  font-weight: bold;
+}
+
+#BVCustomerRatings .BVRRRatingSummaryLinks {
+  clear: none;
+  //float: right;
+  //width: 135px;
+}
+
+#BVCustomerRatings .BVRRRatingContainerStar {
+  //float: left;
+}
+
+#BVCustomerRatings .BVRRRatingsHistogramButton {
+  //float: left;
+  display: inline;
+  margin: em(23) 0 0 em(-15);
+  padding: 0;
+}
+
+#reviews .content {
+  padding: 0;
+  border: none;
+}
+
+#reviews .top-left, #reviews .top-right, #reviews .bottom-left, #reviews .bottom-right {
+  display: none;
+}
+
+.BVRRSeparatorContentBodyBottom {
+  border-bottom: 1px dotted $c_moen-gray;
+}
+
+#BVSVPLinkContainer, #BVContainerPageURL {
+  position: relative;
+}
+
+#BVSVPLinkContainer a {
+  display: block;
+  background: transparent url(/assets/moencom/images/catalog/product-details/sharing/print.png) 0 0 no-repeat;
+  padding: 0 0 0 em(10);
+}
+
+.BVRRMyVoiceBadgeGraphic {
+  background: url(/assets/moencom/images/product-reviews/myVoiceBadge.gif) no-repeat scroll left top transparent;
+  //width: 108px;
+  //height: 21px;
+}
+
+/* OVERRIDE BAZAARVOICE */
+.BVRRRatingNormalImage .ratings-meter .cutouts {
+  //font-size: em(20);
+  font-size: 0;
+}
+
+//.BVRRRatingNormalImage .ratings-meter {
+//  margin-left: -3px;
+//}
+
+.BVRRReviewDisplayStyle3Summary .BVRRRatingNormalImage .ratings-meter {
+  margin-top: em(6);
+}
+
+.BVRRReviewDisplayStyle3Summary .BVRRRatingNormalImage .ratings-meter .cutouts {
+  //font-size: em(18);
+  font-size: 0;
+}
+
+

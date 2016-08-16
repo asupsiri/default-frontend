@@ -1,0 +1,72 @@
+$c_white: #fff !default;
+$c_black: #000 !default;
+
+$c_moen-bright-blue: #00a9e0 !default;
+$c_moen-bright-aqua: #00b0ca !default;
+$c_moen-dark-blue: #002f5f !default;
+$c_moen-purple: #4b306a !default;
+$c_moen-maroon: #882345 !default;
+$c_moen-green: #427730 !default;
+$c_moen-gray: #8b8d8e !default;
+$c_moen-bright-gray: #e5e5e5 !default;
+
+$c_moen-logo-red: #C60C30 !default;
+$c_moen-logo-blue: #007ac9 !default;
+$c_moen-logo-black: #1e1e1e !default;
+
+$c_text-base: #727374 !default;
+$c_text-dark: darken($c_text-base, 20) !default;
+
+$c_error: $c_moen-logo-red !default;
+$c_disabled: #ccc !default;
+
+$c_concrete: #f3f3f3 !default; // table striping, product tile hover
+$c_light-gray: #aaaaaa !default; // site search dotted border
+$c_dove-gray: #6d6d6d !default; // site search text input
+$c_dark-gray: #434343 !default; // pdp page text
+
+$c_full-nav-grad-start: rgba(0, 0, 0, 0) !default;
+$c_full-nav-grad-end: rgba(0, 0, 0, .04) !default;
+$c_full-nav-shadow: rgba(0, 0, 0, 0.7) !default;
+
+$c_rule: $c_moen-gray !default;
+$c_shadow: $c_moen-gray !default;
+
+$c_link_color: $c_moen-bright-blue !default;
+
+// Banner specfific colors
+$c_chateu_green: #44B060 !default;
+$c_sea_green: #49B967 !default;
+
+// Table
+$c_table-head: #767676 !default;
+
+//Product Detail Page
+$c_pdp_collection: #dadada !default;
+$c_pdp_installation_support: $c_concrete !default;
+
+// even/odd background grays (e.g. table stripes, faq headers, etc.)
+$c_bg-gray-even: $c_concrete !default;
+$c_bg-gray-odd: $c_moen-bright-gray !default;
+
+$c_mid-gray: #5c5c5c !default;
+
+// Blue for Facets Filtering Select and button
+$c_jordy_blue: #22b9ea !default;
+$c_pattens_blue: #CFE3F3 !default;
+
+// Navigation Colors from MOEN.COM
+$c_nav_gray: #ccc !default;
+$c_nav_dark_gray: #666 !default;
+$c_nav_dark_gray_bg: $c_concrete !default;
+$c_nav_suplementary: #f2f2f2 !default;
+
+// Tool Tip
+$c_tooltip_gray: #efefef !default;
+
+// BazaarVoice colors:
+$c_bv_error-bg: #FBE3E4 !default;
+$c_bv_error: #740D00 !default;
+
+// Product Support Page
+$c_psp_bg_gray: $c_concrete !default;

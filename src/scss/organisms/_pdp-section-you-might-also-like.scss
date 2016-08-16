@@ -1,0 +1,63 @@
+/*
+PDP Y.M.A.L. Section
+
+Styleguide 4.10.9
+*/
+
+@include block (pdp-youmightlike) {
+  @include outer-container();
+  font-size: 1rem;
+  overflow: hidden;
+  text-align: center;
+  margin: 2em 0;
+
+  @include element(heading) {
+    font-family: $din-light;
+    font-size: em(30px);
+  }
+
+  @include element(body) {
+    @include clearfix();
+    margin-top: 1em;
+    padding: 0 1em;
+  }
+
+  @include element(title) {
+    color: $c_moen-bright-blue;
+    font-size: em(20px);
+    padding-bottom: .2em;
+  }
+
+  @include element(image) {
+    display: block;
+    padding: .5em;
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
+  // Instead, we have to hard-code it like this:
+
+  .slick-next,
+  .slick-prev {
+    height: 90px;
+    width: 40px;
+  }
+  .slick-prev {
+    z-index: 1;
+    left: 0;
+    @include media($bp-md) {
+      left: 0;
+    }
+    background-image: url("./images/icon-arrow_left_large-gray.svg");
+  }
+
+  .slick-next {
+    right: 0px;
+    @include media($bp-md) {
+      right: -5px;
+    }
+    background-image: url("./images/icon-arrow_right_large-gray.svg");
+  }
+}
