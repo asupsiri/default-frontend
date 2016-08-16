@@ -7,6 +7,7 @@
 // livereload       Monitors files for changes and reloads your web browser.
 // pump             Cleaner syntax (no need for .pipe), streamlined error handling, and pipe multiple streams.
 // run-sequence     Run tasks sequentially. Will be deprecated come Gulp 4.0.
+// sc5-styleguide   KSS-based styleguide generator
 
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
@@ -282,7 +283,7 @@ gulp.task('serve', ['default'], function() {
 
     gulp.watch(src.html, ['copy:html']);
     gulp.watch(src.css, ['copy:standaloneStyles']);
-    gulp.watch(src.styles, ['styles, styleguide']);
+    gulp.watch(src.styles, ['styles', 'styleguide']);
     gulp.watch(src.scripts, ['copy:standaloneScripts', 'scripts', 'modernizr']);
     gulp.watch(src.images, ['images']);
 });
@@ -292,6 +293,7 @@ gulp.task('styleguide:generate', function() {
     .pipe(styleguide.generate({
         title: 'Style Guide / Pattern Library',
         server: true,
+        port: 3002,
         rootPath: options.styleGuide.dest,
         overviewPath: 'README.md',
         disableEncapsulation: true

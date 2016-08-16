@@ -1,34 +1,23 @@
-// Moen Brand
-//
-// This is the brand chapter.
-//
-// Styleguide 1.0
+/*
+Colors and typography
 
-// Moen.com Color Palettes
-//
-// Primary color palette
-//
-//  Moen’s primary palette consists of two colors:
-//	Moen Bright Blue and White.
-//
-//	Moen Bright Blue is the anchor color. It is
-//	used in the graphic band, website navigation,
-//	in headlines, sub headings, icons and as a
-//	highlight color when appropriate.
-//
-//	Although we know that technically white isn’t
-//	a true color, let’s call it a color here—and use
-//	it wherever we can, liberally. White space will
-//	make for a cleaner, less cluttered, and more
-//	easily read layout.
-//
-// markup:
-//	<div style="background: $c_moen-bright-blue" class="styleguide-color">Moen Bright Blue | $c_moen-bright-blue | c_moen-bright-blue</div>
-//	<div style="background: $c_white" class="styleguide-color">White | $c_white | c_white</div>
-//
-// Styleguide 1.1.0
+This section describes base colors and typography.
 
-// Secondary color palette
+Styleguide 1.0
+*/
+
+/*
+Primary colors
+
+$c_moen-bright-blue - Primary color
+$c_white - Secondary color
+
+markup:
+<div style="background: {$modifiers};border:1px solid #666;" class="styleguide-color">{$modifiers}</div>
+
+Styleguide 1.1.0
+*/
+// Secondary colors
 //
 //	Moen’s secondary palette consists of six
 //	accent colors. Their role is to support the
