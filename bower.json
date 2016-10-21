@@ -1,5 +1,5 @@
 {
-  "name": "asupsiri-frontend",
+  "name": "default-frontend",
   "description": "Art Supsiri's default frontend setup",
   "main": [
     "js/index.js",
@@ -13,7 +13,6 @@
     "jquery-accessible-modal-window-aria": "*",
     "jquery-flipster": "1.1.2",
     "matchheight": "~0.7.0",
-    "modernizr": "~2.8.2",
     "sanitize-css": "^3.3.0",
     "slick-carousel": "^1.5.9"
   },

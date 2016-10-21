@@ -14,83 +14,13 @@ TODO: learn Copy To Clipobard functionality at https://angular.io/docs/ts/latest
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css?t=1477024713269">
 </head>
 <body class="">
 
-  <header id="site-header">
 
-    <div class="logo-and-tools">
-      <div class="container">
-        <a href="" id="toggle-responsive-menu">
-          <span class="open on">Menu</span>
-          <span class="close">Close</span>
-        </a>
-        <a class="logo" href="#"><img src="/images/axiom-logo-main.png" alt="Axium Apparel"></a>
-        <div class="tools">
-          <div id="site-search">
-            <div id="site-search_field-wrapper">
-              <input id="site-search_field" placeholder="Search for gear" maxlength="1024" name="q" autocomplete="off" title="Search" type="text" value="" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false">
-            </div>
-            <div id="site-search_button-wrapper">
-              <button id="site-search_button"><span>Search</span></button>
-            </div>
-          </div>
-          <ul class="share">
-            <li><a class="facebook" href="#"><span>Facebook</span></a></li>
-            <li><a class="twitter" href="#"><span>Twitter</span></a></li>
-          </ul>
-          <ul class="my-account">
-            <li><a href="#">My Account</a></li>
-            <li><a href="#">Cart</a></li>
-            <li><a href="#/login-form"  data-remodal-target="modal">Sign In</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <nav class="main">
-      <div class="container">
-        <ul id="global-nav-list">
-          <li class="has-dropdown">
-            <a href="" class="dropdown">Camping</a>
-            <ul>
-              <li><a href="">Tents</a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <a href="" class="dropdown">Clothing</a>
-            <ul>
-              <li><a href="">Outerwear</a></li>
-              <li><a href="">Hiking Shoes / Boots</a></li>
-              <li><a href="">Gloves</a></li>
-              <li><a href="">Hats</a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <a href="" class="dropdown">Fishing</a>
-            <ul>
-              <li><a href="">Hooks and Poles</a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <a href="" class="dropdown">Hiking</a>
-            <ul>
-              <li><a href="">Footwear</a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <a href="" class="dropdown">Biking</a>
-            <ul>
-              <li><a href="">Bikes</a></li>
-              <li><a href="">Accessories</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-  </header>
+  <!-- BEGIN HEADER INCLUDE -->
+  <!-- END HEADER INCLUDE -->
 
 
   <section id="product-details-and-options">
@@ -252,41 +182,10 @@ TODO: learn Copy To Clipobard functionality at https://angular.io/docs/ts/latest
     </div>
   </section>
 
-  <footer id="site-footer">
-    <div class="container">
 
-      <div class="grid">
-        <div class="1/4--medium-and-up grid__cell">
+  <!-- BEGIN FOOTER INCLUDE -->
+  <!-- END FOOTER INCLUDE -->
 
-          <a class="logo" href="#"><img src="/images/axiom-logo-small.png" alt="Axium Apparel"></a>
-
-        </div>
-        <div id="footer-links" class="3/4--medium-and-up grid__cell">
-
-          <ul class="links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#sign-in">Privacy Policy</a></li>
-            <li><a href="#sign-in">Terms of Service</a></li>
-            <li><a href="#sign-in">Sitemap</a></li>
-          </ul>
-          <ul class="share">
-            <li><a class="facebook" href="#"><span>Facebook</span></a></li>
-            <li><a class="twitter" href="#"><span>Twitter</span></a></li>
-          </ul>
-
-        </div>
-      </div><!-- .grid -->
-
-    </div><!-- .container -->
-  </footer>
-
-  <!-- MODAL WINDOW -->
-  <div class="remodal" data-remodal-id="modal" data-remodal-options="hashTracking: false">
-    <div ng-view></div>
-  </div>
-
-  <script data-main="/js/main" src="/js/require.js"></script>
 
 </body>
 </html>

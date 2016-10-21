@@ -1,0 +1,42 @@
+<footer id="site-footer">
+  <div class="container">
+
+    <div class="grid">
+      <div class="1/4--medium-and-up grid__cell">
+
+        <a class="logo" href="#"><img src="/images/axiom-logo-small.png" alt="Axium Apparel"></a>
+
+      </div>
+      <div id="footer-links" class="3/4--medium-and-up grid__cell">
+
+        <ul class="links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#sign-in">Privacy Policy</a></li>
+          <li><a href="#sign-in">Terms of Service</a></li>
+          <li><a href="#sign-in">Sitemap</a></li>
+        </ul>
+        <ul class="share">
+          <li><a class="facebook" href="#"><span>Facebook</span></a></li>
+          <li><a class="twitter" href="#"><span>Twitter</span></a></li>
+        </ul>
+
+      </div>
+    </div><!-- .grid -->
+
+  </div><!-- .container -->
+</footer>
+
+
+<!-- MODAL WINDOW -->
+<div class="remodal" data-remodal-id="modal" data-remodal-options="hashTracking: false">
+  <div ng-view></div>
+</div>
+
+<script data-main="/js/main" src="/js/require.js?t=1477024713277"></script>
+<script>
+require.config({
+  // Gulp will add a unique id value
+  urlArgs: "cacheBust="
+});
+</script>

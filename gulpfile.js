@@ -1,319 +1,321 @@
-/* DEPENDENCIES & PLUGINS =================================================== */
-// autoprefixer     Parse CSS and add vendor prefixes to rules by Can I Use.
-// gulp-buster      Creates JSON file for cache busting.
-// gulp-cache-bust  Append a query string to your assets to bust that cache!
-// gulp-sass        Sass plugin for Gulp.
-// gulp-uglify      JavaScript parser, mangler/compressor and beautifier toolkit.
-// livereload       Monitors files for changes and reloads your web browser.
-// pump             Cleaner syntax (no need for .pipe), streamlined error handling, and pipe multiple streams.
-// run-sequence     Run tasks sequentially. Will be deprecated come Gulp 4.0.
+/******************************************************
+ * DEFAULT FRONTEND
+ * The gulp wrapper around patternlab-node core, providing tasks to interact with the core library and move supporting frontend assets.
+******************************************************/
 
-var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
-var del = require('del');
+var gulp = require('gulp'),
+    browserSync = require('browser-sync').create();
 
-// Gulp plugins:
-var autoprefixer = require('autoprefixer');
-var bust = require('gulp-buster');
-var cachebust = require('gulp-cache-bust');
-var concat = require('gulp-concat');
-var cssnano = require('cssnano');
-var gutil = require('gulp-util');
-var livereload = require('gulp-livereload');
-var modernizr = require('gulp-modernizr');
-var newer = require('gulp-newer');
-var notify = require('gulp-notify');
-var postcss = require('gulp-postcss');
-var pump = require('pump');
-var require = require('requirejs');
-var runSequence = require('run-sequence');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var uglify = require('gulp-uglify');
+
+/* ADDITIONAL PLUGINS =================================================== */
+// autoprefixer         Parse CSS and add vendor prefixes to rules by Can I Use.
+// fs-utils             File system utils like reading file contents.
+// gulp-buster          Creates JSON file for cache busting.
+// gulp-exec            exec plugin for gulp
+// gulp-cache-bust      Append a query string to your assets to bust that cache!
+// gulp-inject-string   Inject a string into a file.
+// gulp-rename          Rename files.
+// gulp-sass            Sass plugin for Gulp.
+// gulp-uglify          JavaScript parser, mangler/compressor and beautifier toolkit.
+// livereload           Monitors files for changes and reloads your web browser.
+// pump                 Cleaner syntax (no need for .pipe), streamlined error handling, and pipe multiple streams.
+// gulp-run             Pipe to shell commands in gulp
+// run-sequence         Run tasks sequentially. Will be deprecated come Gulp 4.0.
+// sc5-styleguide       KSS-based styleguide generator
+
+var autoprefixer = require('autoprefixer'),
+  bust = require('gulp-buster'),
+  cachebust = require('gulp-cache-bust'),
+  concat = require('gulp-concat'),
+  cssnano = require('cssnano'),
+  del = require('del'),
+  fs = require('fs-utils'),
+  gutil = require('gulp-util'),
+    inject = require('gulp-inject-string'),
+  livereload = require('gulp-livereload'),
+  modernizr = require('gulp-modernizr'),
+  newer = require('gulp-newer'),
+  notify = require('gulp-notify'),
+  postcss = require('gulp-postcss'),
+  pump = require('pump'),
+  rename = require('gulp-rename'),
+  requirejs = require('requirejs'),
+  run = require('gulp-run');
+  runSequence = require('run-sequence').use(gulp),
+  sass = require('gulp-sass'),
+  styleguide = require('sc5-styleguide'),
+  sourcemaps = require('gulp-sourcemaps'),
+  uglify = require('gulp-uglify');
+
 
 /* GULPFILE GLOBALS ========================================================= */
 var isProd = gutil.env.type === 'prod';
 var reload = browserSync.reload;
 
-var src = {
-    dir: 'src',
-    css: 'src/css/**/*.css',
-    styles: 'src/scss/**/*.scss',
-    html: 'src/html/**/*.html',
-    fonts: 'src/fonts/**/*',
-    images: 'src/images/**/*',
-    scripts: 'src/js/**/*.js',
-    standaloneScripts: [
-        'src/js/**/*.js',
-        '!src/js/plugins.js',
-        '!src/js/vendor/jquery-plugins/**/*',
-        '!node_modules/remodal/dist/remodal.min.js'
-    ],
-    mergeScripts: {
-        standard: {
-            files: [
-                'src/js/plugins.js'
-            ],
-            name: 'scripts.js'
-        },
-        jquery: {
-            files: [
-                'src/js/vendor/jquery-plugins/**/*',
-                'node_modules/remodal/dist/remodal.min.js'
-            ],
-            name: 'jquery-scripts.js'
-        }
-    },
-    standaloneStyles: 'src/css/cms-request.css'
-};
-var dest = {
-    dir: 'public',
-    styles: 'public/css',
-    fonts: 'public/fonts',
-    images: 'public/images',
-    scripts: 'public/js'
-};
-var tomcat = {
-    css: '../bootstrap/webfiles/src/main/resources/site/css',
-    fonts: '../site/target/site/fonts',
-    images: '../site/target/site/images',
-    scripts: '../bootstrap/webfiles/src/main/resources/site/js'
-};
+// Gulp config file
+var config = require('./gulpfile-config.json');
 
 
 /* OPTIONS & CONFIGS ======================================================== */
 
-var options = {
-    sass: {
-        includePaths: [
-            'node_modules/node-normalize-scss',
-            'node_modules/bourbon/app/assets/stylesheets',
-            'node_modules/bourbon-neat/app/assets/stylesheets',
-            'node_modules/avalanche-css',
-            'node_modules/remodal/dist'
-        ],
-        outputStyle: 'expanded',
-        precision: 10
-    },
-    postcssProcessors: [
-        autoprefixer({
-            browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
-        }),
-        cssnano()
-    ],
-    uglify: {
-        mangle: false,
-        preserveComments: 'license'
-    },
-    browsersync: {
-        server: {
-            baseDir: dest.dir
-        }
-    }
-};
+var postcssProcessors = [
+    require('postcss-flexbugs-fixes'),
+    autoprefixer({
+      browsers: [
+        'last 2 versions', 'ie >= 9', 'and_chr >= 2.3'
+      ],
+      flexbox:true
+    }),
+    cssnano(),
+  ];
 
 
 /* GULP TASKS =============================================================== */
 
-gulp.task('build', function(cb) {
-    runSequence(
-        ['build-entry', 'build-clean'], ['copy:html', 'copy:standaloneScripts', 'scripts', 'modernizr', 'fonts', 'copy:standaloneStyles', 'styles', 'images'],
-        cb
-    );
-});
-
-gulp.task('build-entry', function(cb) {
+gulp.task('build-entry', function (done) {
     console.log("--------------------------------------------------------------------------------\n");
     console.log("Gulp Build \n");
     console.log("--------------------------------------------------------------------------------\n");
-    cb();
+    done();
 });
 
+/******************************************************
+ * CLEAN TASKS - remove assets from destination
+******************************************************/
 /* Gulp task to empty the /public directory */
-gulp.task('build-clean', function() {
-    return del([dest.dir + '/**/*', '!' + dest.dir]);
+function cleanBuild(){
+    return del([config.paths.dest.dir + '/**/*', '!' + config.paths.dest.dir, '!' + config.paths.dest.dir + 'README.md']);
+}
+gulp.task('build-clean', gulp.series(
+    cleanBuild
+));
+
+
+// Copy static html files as-is (no concatenation nor minfification)
+gulp.task('copy:html', function(done) {
+
+  pump([
+      // Igmore HTML includes
+      gulp.src(config.paths.src.htmlFiles),
+      gulp.dest(config.paths.dest.dir)
+    ],
+    done
+  );
 });
 
-/* Gulp task to copy certain static html files as-is (no concatenation nor minfification) from src to public */
-gulp.task('copy:html', function(cb) {
-    pump([
-            gulp.src(src.html, {
-                base: "src/html"
-            }),
-            cachebust({
-                type: 'timestamp'
-            }),
-            gulp.dest(dest.dir),
-            browserSync.reload({
-                stream: true
-            })
-        ],
-        cb
-    );
+// In destination folder: Add cache busting to HTML
+gulp.task('bust-cache', function(cb) {
+
+  pump([
+      gulp.src(config.paths.dest.htmlFiles),
+      cachebust({
+          type: 'timestamp'
+      }),
+      inject.after("cacheBust=", Date.now()),
+      gulp.dest(config.paths.dest.html),
+    ],
+    cb
+  );
 });
+
+// In destination folder: Inject includes into HTML pages
+gulp.task('insert:html-includes', function(done) {
+
+  // Read file contents of header and footer in destination
+  var htmlHeaderContent = fs.readFileSync(config.paths.dest.htmlHeader, "utf8");
+  var htmlFooterContent = fs.readFileSync(config.paths.dest.htmlFooter, "utf8");
+
+  pump([
+      gulp.src(config.paths.dest.htmlFiles),
+      // Inject header
+      inject.after(config.paths.dest.htmlHeaderSearchString, htmlHeaderContent),
+      // Inject footer
+      inject.after(config.paths.dest.htmlFooterSearchString, htmlFooterContent),
+      gulp.dest(config.paths.dest.html)
+    ],
+    done
+  );
+});
+
+gulp.task('process:html', gulp.series(
+  gulp.parallel(
+    'copy:html'
+  ),
+  gulp.parallel(
+    'bust-cache'
+  ),
+  gulp.parallel(
+    'insert:html-includes'
+  ),
+  function(done){
+    done();
+  })
+);
+
+
 
 /* Gulp task to copy certain scripts as-is (no concatenation or uglification) from src to public */
-gulp.task('copy:standaloneScripts', function(cb) {
+gulp.task('copy:standaloneScripts', function(done) {
     pump([
-            gulp.src(src.standaloneScripts, {
-                base: "src/js"
-            }),
-            //newer(dest.scripts),
-            uglify(options.uglify),
-            gulp.dest(tomcat.scripts),
-            gulp.dest(dest.scripts),
-            // pipe generated files into gulp-buster
-            bust(),
-            // output busters.json to project root
-            gulp.dest(dest.dir)
-        ],
-        cb
+        gulp.src(config.paths.src.standaloneScripts, {
+            base: "src/js"
+        }),
+        //newer(config.paths.dest.scripts),
+        uglify(config.uglify),
+        gulp.dest(config.paths.tomcat.scripts),
+        gulp.dest(config.paths.dest.scripts),
+        // pipe generated files into gulp-buster
+        bust(),
+        // output busters.json to project root
+        gulp.dest(config.paths.dest.dir)
+      ],
+      done
     );
 });
 
 /* Gulp task to pre-process JavaScript and deliver the concatenated + minified JS output */
-gulp.task('scripts', function() {
-    mergeScripts(src.mergeScripts.standard.files, src.mergeScripts.standard.name);
-    mergeScripts(src.mergeScripts.jquery.files, src.mergeScripts.jquery.name);
+gulp.task('process:scripts', function(done) {
+    mergeScripts(config.paths.src.mergeScripts.standard.files, config.paths.src.mergeScripts.standard.name);
+    mergeScripts(config.paths.src.mergeScripts.jquery.files, config.paths.src.mergeScripts.jquery.name);
+    done();
 });
 
 /* Create custom Modernizr file based on references in JS files. */
-gulp.task('modernizr', function(cb) {
+gulp.task('modernizr', function(done) {
     pump([
-            gulp.src(src.scripts),
+            gulp.src(config.paths.src.scripts),
             modernizr(),
-            uglify(options.uglify),
-            gulp.dest(dest.scripts)
+            uglify(config.uglify),
+            gulp.dest(config.paths.dest.scripts)
         ],
-        cb
+        done
     );
 });
 
 /* Gulp task to process images and deliver the optimized output  ==== */
-gulp.task('images', function(cb) {
+gulp.task('copy:images', function(done) {
     pump([
-            gulp.src(src.images),
+            gulp.src(config.paths.src.images),
             // copy to tomcat
-            gulp.dest(tomcat.images),
+            gulp.dest(config.paths.tomcat.images),
             // send livereload's reload signal
             livereload(),
-            gulp.dest(dest.images),
+            gulp.dest(config.paths.dest.images),
             // pipe generated files into gulp-buster
             bust(),
             // output busters.json to project root
-            gulp.dest(dest.dir),
-            browserSync.reload({
-                stream: true
-            })
+            gulp.dest(config.paths.dest.dir),
+            browserSync.reload({stream: true})
         ],
-        cb
+        done
     );
 });
 
-gulp.task('fonts', function(cb) {
+gulp.task('fonts', function(done) {
     pump([
-            gulp.src(src.fonts),
-            newer(dest.fonts),
-            gulp.dest(tomcat.fonts),
-            gulp.dest(dest.fonts)
+            gulp.src(config.paths.src.fonts),
+            newer(config.paths.dest.fonts),
+            gulp.dest(config.paths.tomcat.fonts),
+            gulp.dest(config.paths.dest.fonts)
         ],
-        cb
+        done
     );
 });
 
 /* Gulp task to copy certain css as-is (no concatenation or minfification) from src to public */
-gulp.task('copy:standaloneStyles', function(cb) {
+gulp.task('copy:standaloneStyles', function(done) {
     pump([
-            gulp.src(src.standaloneStyles),
-            newer(dest.styles),
-            gulp.dest(tomcat.css),
-            gulp.dest(dest.styles),
+            gulp.src(config.paths.src.standaloneStyles),
+            newer(config.paths.dest.styles),
+            gulp.dest(config.paths.tomcat.css),
+            gulp.dest(config.paths.dest.styles),
             // pipe generated files into gulp-buster
             bust(),
             // output busters.json to project root
-            gulp.dest(dest.dir)
+            gulp.dest(config.paths.dest.dir)
         ],
-        cb
+        done
     );
 });
 
 /* Gulp task to pre-process sass and deliver the concatenated + minified CSS output */
-gulp.task('styles', function(cb) {
+gulp.task('process:styles', function(done) {
     pump([
-            gulp.src(src.styles),
+            gulp.src(config.paths.src.styles),
             // aim the pipe's output at the CSS destination directory:
-            newer(dest.styles),
+            newer(config.paths.dest.styles),
             // initialize the sourceMaps processor
             sourcemaps.init(),
             // process SASS if the file type is .scss
-            sass(options.sass),
+            sass(config.sassOptions),
             // run the CSS stream through autoprefixer
-            postcss(options.postcssProcessors),
+            postcss(postcssProcessors),
             // write-out the CSS sourceMaps if gulp is run without '--type prod':
             sourcemaps.write("."),
             // send livereload's reload signal
             livereload(),
             // write out the CSS in its final processed form
-            gulp.dest(dest.styles),
+            gulp.dest(config.paths.dest.styles),
             // pipe generated files into gulp-buster
             bust(),
             // output busters.json to project root
-            gulp.dest(dest.dir),
+            gulp.dest(config.paths.dest.dir),
             // send browserSync's reload signal
-            browserSync.stream()
+            browserSync.stream({stream: true})
         ],
-        cb
+        done
     );
 });
 
-gulp.task('serve', ['default'], function() {
+/* Build task */
+gulp.task('build', gulp.series(['build-entry', 'build-clean'], ['process:html', 'copy:standaloneScripts', 'process:scripts', 'modernizr', 'fonts', 'copy:standaloneStyles', 'process:styles', 'copy:images']));
+
+/* Task for Maven build */
+gulp.task('default', gulp.series('build'));
+
+/* Task for local development */
+gulp.task('serve', gulp.series('build', function() {
 
     // start the browserSync server
-    browserSync.init(options.browsersync);
+    browserSync.init(config.browsersync);
 
     livereload.listen();
 
-    gulp.watch(src.html, ['copy:html']);
-    gulp.watch(src.css, ['copy:standaloneStyles']);
-    gulp.watch(src.styles, ['styles']);
-    gulp.watch(src.scripts, ['copy:standaloneScripts', 'scripts', 'modernizr']);
-    gulp.watch(src.images, ['images']);
-});
+    gulp.watch([config.paths.src.htmlFiles]).on('change', gulp.series('process:html'));
+    gulp.watch([config.paths.src.css]).on('change', gulp.series('copy:standaloneStyles'));
+    gulp.watch([config.paths.src.styles]).on('change', gulp.series('process:styles'));
+    gulp.watch([config.paths.src.scripts]).on('change', gulp.series('process:scripts'));
+    gulp.watch([config.paths.src.images]).on('change', gulp.series('copy:images'));
 
-/* Default gets called by Maven */
-gulp.task('default', function(cb) {
-    runSequence('build', cb);
-});
+}));
 
 
 /* HELPERS ================================================================== */
 
-var mergeScripts = function(files, filename, cb) {
-    pump([
-            gulp.src(files),
-            // aim the pipe's output at the JS destination directory
-            newer(dest.scripts),
-            // initialize the sourceMaps processor
-            sourcemaps.init(),
-            // concat the stream files into a single .js file
-            concat(filename),
-            // uglify (minify the js)
-            uglify(options.uglify),
-            // write-out the JavaScript sourceMaps
-            sourcemaps.write('.'),
-            // copy to Tomcat
-            gulp.dest(tomcat.scripts),
-            // write out the JavaScript in its final processed form
-            gulp.dest(dest.scripts),
-            // pipe generated files into gulp-buster
-            bust(),
-            // output busters.json to project root
-            gulp.dest(dest.dir),
-            // send browserSync's reload signal
-            browserSync.reload({
-                stream: true
-            })
-        ],
-        cb
-    );
+var mergeScripts = function(files, filename, done) {
+  pump([
+      gulp.src(files),
+      // aim the pipe's output at the JS destination directory
+      newer(config.paths.dest.scripts),
+      // initialize the sourceMaps processor
+      sourcemaps.init(),
+      // concat the stream files into a single .js file
+      concat(filename),
+      // uglify (minify the js)
+      uglify(config.uglify),
+      // write-out the JavaScript sourceMaps
+      sourcemaps.write('.'),
+      // copy to Tomcat
+      gulp.dest(config.paths.tomcat.scripts),
+      // write out the JavaScript in its final processed form
+      gulp.dest(config.paths.dest.scripts),
+      // pipe generated files into gulp-buster
+      bust(),
+      // output busters.json to project root
+      gulp.dest(config.paths.dest.dir),
+      // send browserSync's reload signal
+      browserSync.reload({stream: true})
+    ],
+    done
+  );
 };
