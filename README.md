@@ -1,9 +1,16 @@
 # default-frontend
-Default frontend setup for projects
+Default frontend setup for projects. Makes use of:
+* **Gulp** - Task runner
+* **npm** - Package Manager for task runner modules and some site libraries/plugins
+* **Bower** - Package Manager for site libraries/plugins
+* **RequireJS** - Javascript dependencies
+* **Angular 1.5.8** - Javascript framework
+* **SC5 Style Guide Generator** - Uses KSS
+* **SASS** - More powerful CSS
 
 ## Getting started
 
-1. [Install Node.js and update NPM](https://docs.npmjs.com/getting-started/installing-node), JavaScript runtime and JavaScript package managers
+1. [Install Node.js and update NPM](https://docs.npmjs.com/getting-started/installing-node), JavaScript runtime and JavaScript package managers. [This thread](http://stackoverflow.com/questions/16151018/npm-throws-error-without-sudo) may help OSX users who encounter permissions issues when trying to install NPM.
 2. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), source control
 3. [Install Bower](https://bower.io/#install-bower), front-end package manager
 4. If using Windows:

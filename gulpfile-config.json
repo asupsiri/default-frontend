@@ -1,0 +1,95 @@
+{
+  "paths" : {
+    "src": {
+      "dir": "src",
+      "css": "src/css/**/*.css",
+      "styles": "src/scss/**/*.scss",
+      "html": "src/html",
+      "htmlFiles": "src/html/**/*.html",
+      "htmlIncludes": "src/html/includes/**/*.html",
+      "fonts": "src/fonts/**/*",
+      "images": "src/images/**/*",
+      "scripts": "src/js/**/*.js",
+      "standaloneScripts": [
+        "src/js/**/*.js",
+        "!src/js/plugins.js",
+        "!src/js/vendor/jquery-plugins/**/*",
+        "!node_modules/remodal/dist/remodal.min.js"
+      ],
+      "mergeScripts": {
+        "standard": {
+            "files": [
+                "src/js/plugins.js"
+            ],
+            "name": "scripts.js"
+        },
+        "jquery": {
+            "files": [
+                "src/js/vendor/jquery-plugins/**/*",
+                "node_modules/remodal/dist/remodal.min.js"
+            ],
+            "name": "jquery-scripts.js"
+        }
+      },
+      "standaloneStyles": "src/css/cms-request.css"
+    },
+    "dest": {
+      "dir": "public",
+      "html": "public",
+      "htmlFiles": "public/**/*.html",
+      "htmlHeader": "public/includes/header.html",
+      "htmlHeaderSearchString": "<!-- BEGIN HEADER INCLUDE -->\n",
+      "htmlFooter": "public/includes/footer.html",
+      "htmlFooterSearchString": "<!-- BEGIN FOOTER INCLUDE -->\n",
+      "styles": "public/css",
+      "fonts": "public/fonts",
+      "images": "public/images",
+      "scripts": "public/js"
+    },
+    "tomcat": {
+      "css": "../target/css",
+      "fonts": "../target/fonts",
+      "images": "../target/images",
+      "scripts": "../target/js"
+    }
+  },
+  "sassOptions": {
+    "includePaths": [
+      "node_modules/avalanche-css",
+      "node_modules/node-normalize-scss",
+      "node_modules/bourbon/app/assets/stylesheets",
+      "node_modules/bourbon-neat/app/assets/stylesheets",
+      "node_modules/remodal/dist"
+    ],
+    "outputStyle": "expanded",
+    "precision": 10
+  },
+  "postcssProcessors": {
+    "comment": "This variable is set in gulpfile.js"
+  },
+  "mergeScripts": {
+      "utils": {
+          "files": [
+              "./source/js/utils/**/*"
+          ],
+          "name": "utils-merged.js"
+      },
+      "jquery": {
+          "files": [
+              "./source/js/vendor/jquery-plugins/**/*",
+              "node_modules/remodal/dist/remodal.min.js"
+          ],
+          "name": "jquery-scripts.js"
+      }
+  },
+  "uglify": {
+    "mangle": false,
+    "preserveComments": "license"
+  },
+  "browsersync": {
+    "server": {
+      "comment": "same value as paths.dest.dir",
+      "baseDir": "public"
+    }
+  }
+}
