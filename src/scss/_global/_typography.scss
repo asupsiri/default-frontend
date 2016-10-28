@@ -1,55 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Serif');
 
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-caption,
-.subheader{
-  font-family: $heading-font-family;
-  font-size: $base-font-size;
-  line-height: $heading-line-height;
-  margin: 0 0 $small-spacing;
-  font-weight: normal;
-}
-span.subheader{
-  display: inline-block;
-}
-legend{
-  font-family: $heading-font-family;
-  font-size: $base-font-size;
-  line-height: $heading-line-height;
-  margin: 0 0 8px;
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
-p {
-  margin: 0 0 $small-spacing;
+h1, h2, h3, h4, h5, h6{
+  color: $color-header;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: $action-color;
-  text-decoration: none;
-  transition: color $base-duration $base-timing;
-
-  &:active,
-  &:focus,
-  &:hover {
-    color: shade($action-color, 25%);
-  }
-}
-
-hr {
-  border-bottom: $base-border;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  margin: $base-spacing 0;
-}
-
-img,
-picture {
-  margin: 0;
-  max-width: 100%;
+.underline-flourish {
+  background-color: $color-flourish-green;
+  border-radius: 3px;
+  display: block;
+  height: 8px;
+  margin: .7em 0 5px;
+  width: 94px;
 }

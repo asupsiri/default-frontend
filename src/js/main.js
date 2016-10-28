@@ -21,27 +21,37 @@ requirejs.config({
   paths: {
     // Aliases and paths of modules
     angular: [
-      '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min',
+      //'//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min',
       // If CDN URL fails, load from this location
       'vendor/angular.min'
     ],
     angularAria: [
-      '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-aria',
+      //'//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-aria',
       // If CDN URL fails, load from this location
       'vendor/angular-aria'
     ],
     angularRoute: [
-      '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route',
+      //'//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route',
       // If CDN URL fails, load from this location
       'vendor/angular-route'
     ],
+    bootstrap: [
+      //'//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min',
+      // If CDN URL fails, load from this location
+      'frontend-frameworks/bootstrap/bootstrap.min'
+    ],
+    foundation: [
+      //'//dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation',
+      // If CDN URL fails, load from this location
+      'frontend-frameworks/foundation/foundation'
+    ],
     jquery: [
-      '//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min',
+      //'//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min',
       // If CDN URL fails, load from this location
       'vendor/jquery-3.1.0.min'
     ],
     jqueryMigrate: [
-      '//code.jquery.com/jquery-migrate-3.0.0',
+      //'//code.jquery.com/jquery-migrate-3.0.0',
       // If CDN URL fails, load from this location
       'vendor/jquery-migrate-3.0.0'
     ],
@@ -59,6 +69,8 @@ requirejs.config({
       deps: ['angular'],
       exports: 'angularRoute'
     },
+    'bootstrap':     { deps: ['jquery'] },
+    'foundation':     { deps: ['jquery'] },
     'jquery':         { exports: '$' },
     'jqueryMigrate':  { deps: ['jquery'] },
     'jqueryScripts':  { deps: ['jqueryMigrate'] },
@@ -80,6 +92,27 @@ require(['domReady!'], function (doc) {
     //document.
     console.log('document ready');
 });
+
+// Load Bootstrap Framework JS
+require(['bootstrap'], function(){
+  console.log('bootstrap loaded!');
+
+  // Back to top links
+  $('a.backToTop').click(function(){
+    document.getElementById('pageTop').focus();
+    event.preventDefault();
+  });
+
+});
+
+
+// Load Foundation Framework JS
+/*
+require(['foundation'], function(){
+  console.log('foundation loaded!');
+  $(document).foundation();
+});
+*/
 
 // Modular JS example
 require(['userSettings'],function(settings){

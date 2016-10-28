@@ -1,0 +1,118 @@
+/*
+VARIABLES
+*/
+
+// breakpoint map
+$breakpoints: (
+  'small'  : $screen-sm,
+  'medium' : $screen-md,
+  'large'  : $screen-lg
+);
+
+
+/*
+MIXINS
+*/
+
+// Mixin that shows hidden elements when screen width >= $breakpoint
+@mixin data-hide-element-max-breakpoint($breakpoint) {
+
+  // Retrieves the value from the breakpoint map
+  $value: map-get($breakpoints, $breakpoint);
+
+  // If the key exists in the map
+  @if $value != null {
+    // Prints a media query based on the value
+    @media (max-width: $value) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "A value couldn't be found from `#{$breakpoint}`. "
+        + "Is it defined in the `$breakpoints` map?";
+  }
+}
+
+// Mixin that shows hidden elements when screen width >= $breakpoint
+@mixin data-element-min-breakpoint($breakpoint) {
+
+  // Retrieves the value from the breakpoint map
+  $value: map-get($breakpoints, $breakpoint);
+
+  // If the key exists in the map
+  @if $value != null {
+    // Prints a media query based on the value
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "A value couldn't be found from `#{$breakpoint}`. "
+        + "Is it defined in the `$breakpoints` map?";
+  }
+}
+
+
+/*
+STYLES
+*/
+
+// Small
+*[data-hide-element-min-breakpoint="small"] {
+  @include data-element-min-breakpoint(small) {
+    display: none !important;
+  }
+}
+*[data-horizonal-list-min-breakpoint="small"] {
+  @include data-element-min-breakpoint(small) {
+  }
+}
+*[data-show-element-min-breakpoint="small"] {
+  @include data-element-min-breakpoint(small) {
+    display: block;
+  }
+}
+*[data-inactive-link-min-breakpoint="small"] {
+  @include data-element-min-breakpoint(small) {
+    pointer-events: none;
+    cursor: default;
+  }
+}
+.nav[data-horizontal-list-min-breakpoint="small"] > li,
+.nav[data-horizontal-list-min-breakpoint="small"] > li > a {
+  @include data-element-min-breakpoint(small) {
+    display: inline-block;
+  }
+}
+
+// Medium
+*[data-hide-element-min-breakpoint="medium"] {
+  @include data-element-min-breakpoint(medium) {
+    display: none !important;
+  }
+}
+*[data-horizonal-list-min-breakpoint="medium"] {
+  @include data-element-min-breakpoint(medium) {
+  }
+}
+*[data-show-element-min-breakpoint="medium"] {
+  @include data-element-min-breakpoint(medium) {
+    display: block;
+  }
+}
+*[data-inactive-link-min-breakpoint="medium"] {
+  @include data-element-min-breakpoint(medium) {
+    pointer-events: none;
+    cursor: default;
+  }
+}
+.nav[data-horizontal-list-min-breakpoint="medium"] > li,
+.nav[data-horizontal-list-min-breakpoint="medium"] > li > a {
+  @include data-element-min-breakpoint(medium) {
+    display: inline-block;
+  }
+}

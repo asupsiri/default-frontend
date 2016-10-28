@@ -1,30 +1,79 @@
-<footer id="site-footer">
+<!--
+
+-->
+
+<footer id="site-footer" class="site-footer">
   <div class="container">
-
-    <div class="grid">
-      <div class="1/4--medium-and-up grid__cell">
-
-        <a class="logo" href="#"><img src="/images/axiom-logo-small.png" alt="Axium Apparel"></a>
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="nav other-sites">
+          <li><a data-toggle="collapse" href="#footerLinkList1" data-hide-element-min-breakpoint="small">Other Site Sites</a>
+            <ul id="footerLinkList1" class="nav collapse" data-show-element-min-breakpoint="small" data-horizontal-list-min-breakpoint="small" >
+              <li><a href="#">Site Authorized China Agency</a></li>
+              <li><a href="#">Site Japan</a></li>
+              <li><a href="#">Site Foundation</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row clearfix visible-sm">
+      <div class="col-sm-12 col-md-6">
+        image
+        <a>
+          Get Connected to Your Local Site Community
+          <hr />
+          Find Your Chapter icon
+        </a>
 
       </div>
-      <div id="footer-links" class="3/4--medium-and-up grid__cell">
-
-        <ul class="links">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#sign-in">Privacy Policy</a></li>
-          <li><a href="#sign-in">Terms of Service</a></li>
-          <li><a href="#sign-in">Sitemap</a></li>
+      <div class="col-sm-6 col-md-3">
+        <ul class="nav">
+          <li><a class="h2 flourish" data-toggle="collapse" href="#footerLinkList2" data-inactive-link-min-breakpoint="small">Quick Links</a>
+            <ul id="footerLinkList2" class="nav collapse" data-show-element-min-breakpoint="small">
+              <li><a href="#">Frequently Asked Questions</a></li>
+              <li><a href="#">Submit CPEs</a></li>
+              <li><a href="#">Pay My AMFs</a></li>
+              <li><a href="#">Find CPE Opportunities</a></li>
+              <li><a href="#">Pay My AMFs</a></li>
+            </ul>
+          </li>
         </ul>
-        <ul class="share">
-          <li><a class="facebook" href="#"><span>Facebook</span></a></li>
-          <li><a class="twitter" href="#"><span>Twitter</span></a></li>
-        </ul>
-
       </div>
-    </div><!-- .grid -->
-
-  </div><!-- .container -->
+      <div class="col-sm-6 col-md-3">
+        <ul class="nav">
+          <li><a class="h2 flourish" data-toggle="collapse" href="#footerLinkList3" data-inactive-link-min-breakpoint="small">Contact</a>
+            <ul id="footerLinkList3" class="nav collapse" data-show-element-min-breakpoint="small">
+              <li><a href="#">Candidate and Member Services</a></li>
+              <li><a href="#">Certification and Training</a></li>
+              <li><a href="#">Exam Reschedule or Cancellation</a></li>
+              <li><a href="#">Sponsorship Opportunities</a></li>
+              <li><a href="#">Corporate Headquarters</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-push-6">
+        <span class="pull-right">
+          <h2 class="sr-only">Social Media</h2>
+          <ul class="social-network circle-icons">
+            <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+            <li><a href="#" class="icoYouTube" title="YouTube"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#" class="icoLinkedIn" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li><a href="#" class="icoBackToTop backToTop" title="Back to top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a></li>
+          </ul>
+        </span>
+      </div>
+      <div class="col-md-6">
+        <img class="colored-squares" src="/images/footer/colored-squares.png" alt="" />
+        &copy; Site All rights reserved.
+      </div>
+    </div>
+  </div><!-- container -->
 </footer>
 
 
@@ -33,10 +82,10 @@
   <div ng-view></div>
 </div>
 
-<script data-main="/js/main" src="/js/require.js?t=1477024713277"></script>
+<script data-main="/js/main" src="/js/require.js?t=1477024304247"></script>
 <script>
-require.config({
-  // Gulp will add a unique id value
-  urlArgs: "cacheBust="
-});
+  // Gulp will provide a UTC numeric value for cache busting purposes
+  require.config({
+    urlArgs: "cacheBust="
+  });
 </script>
