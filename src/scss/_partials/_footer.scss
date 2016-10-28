@@ -1,52 +1,116 @@
 footer#site-footer{
-  background-color: $black;
-  padding: 30px 0 26px;
+  border-top: 8px solid $color-brand-orange;
 
-  #footer-links{
-    text-align: right;
+  .other-sites {
+    @media (min-width: $screen-sm) {
+      ul {
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
   }
 
-  .share, .links{
-    display: inline-block;
-    padding-top: 10px;
-    font-size: 15px;
-    li{
+  .h2.flourish {
+    display: block;
+    font-size: 25px;
+    &::after {
+      @extend .underline-flourish;
+      content: '';
+      margin-bottom: .5em;
+    }
+  }
+
+  /*
+   * Icons
+   */
+
+  /* Variables */
+  $icon-size: 45px;
+  $back-to-top-bg-color: $color-brand-yellow;
+
+  /* footer social icons */
+  ul.social-network {
+    list-style: none;
+    display: inline;
+    margin-left:0 !important;
+    padding: 0;
+
+    li {
       display: inline;
+      margin: 0 5px;
     }
-  }
-  .share{
-    li{
-      a{
-        display: inline-block;
-        height: 17px;
-        background-size: auto;
-        padding-right: 30px;
-        &.facebook {
-          width:9px;
-          background-image: url("/images/fb-icon.png");
-          background-position: center 0px;
+
+    a {
+      background:#9d9c9c;
+
+      &.icoBackToTop {
+        background-color: $back-to-top-bg-color;
+      }
+    }
+
+    // colors
+    a.icoRss:hover {
+      background-color: #F56505;
+    }
+    a.icoFacebook:hover {
+      background-color:#3B5998;
+    }
+    a.icoTwitter:hover {
+      background-color:#33ccff;
+    }
+    a.icoGoogle:hover {
+      background-color:#BD3518;
+    }
+    a.icoVimeo:hover {
+      background-color:#0590B8;
+    }
+    a.icoYouTube:hover {
+      background-color:#c12025;
+    }
+    a.icoLinkedIn:hover {
+      background-color:#007bb7;
+    }
+
+    // hove colors
+    a[class^='ico']:hover i {
+      color:#fff;
+    }
+    a.icoBackToTop:hover {
+      background-color: darken($back-to-top-bg-color, 5%);
+    }
+
+    // icons
+    &.circle-icons {
+      li {
+        a {
+          display:inline-block;
+          position:relative;
+          margin:0 auto 0 auto;
+          border-radius:50%;
+          text-align:center;
+          width: $icon-size;
+          height: $icon-size;
+          font-size:20px;
+          transition: all $btn-transition-time;
+
+          &:hover i {
+            //transform: rotate(360deg);
+            transition: all 0.2s;
+          }
         }
-        &.twitter	{
-          width:17px;
-          background-image: url("/images/twitter-icon.png");
-          background-position: center 4px;
-        }
-        span{
-          @extend .reader-only;
+        i {
+          color: #fff;
+          margin:0;
+          line-height:$icon-size;
+          text-align: center;
+          text-shadow: 0 0 1px $gray;
+          transition: all 0.8s;
         }
       }
     }
   }
-  .links{
-    li{
-      a{
-        padding: 0 15px;
-        border-right: 1px solid $white;
-      }
-      &:last-child a{
-        padding-right: 0;
-        border-right: none;
-      }
-    }
+
+  .colored-squares{
+    padding-right: 16px;
   }
 }

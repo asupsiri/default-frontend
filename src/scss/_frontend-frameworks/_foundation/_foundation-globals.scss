@@ -1,0 +1,63 @@
+/*
+ These syles were missing from the original sass but existed in the Foundation
+ style guide, so I've aded them back in.
+*/
+
+*, :after, :before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body, html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+body {
+    font-family: $body-font-family;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+    display: inline-block;
+}
+
+.button, img {
+    vertical-align: middle;
+}
+button, img, legend {
+    border: 0;
+}
+
+// Dropdown Menu
+
+.dropdown.menu > li.has-submenu > .is-dropdown-submenu {
+    right: auto;
+    left: 0;
+    top: 100%;
+}
+
+// Site footer
+.site-footer {
+    // Display accoridon links when breakpoint >= large
+    ul.vertical.menu{
+        @include breakpoint(large) {
+            display: block !important;
+        }
+    }
+}
+
+
+// Portfolio template
+// Left rail
+.position-left.reveal-for-large {
+    @include breakpoint(large) {
+        min-height: 100%;
+    }
+}

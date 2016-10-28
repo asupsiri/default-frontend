@@ -20,9 +20,10 @@ Default frontend setup for projects. Makes use of:
 5. Download the project from Git.
 6. Open the terminal/command prompt and go to the project's root directory.
 7. On the command line:
-    1. Install NPM packages:
+    1. [Install Gulp 4](https://www.liquidlight.co.uk/blog/article/how-do-i-update-to-gulp-4/)
+    2. Install NPM packages:
     `$ npm install`
-    2. Install bower packages:
+    3. Install bower packages:
     `$ bower install`
-    3. Run gulp:
+    4. Run gulp:
     `$ gulp serve`
