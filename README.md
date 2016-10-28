@@ -8,6 +8,10 @@ Default frontend setup for projects. Makes use of:
 * **SC5 Style Guide Generator** - Uses KSS
 * **SASS** - More powerful CSS
 
+If you want to use one, these front-end frameworks are integrated:
+* Bootstrap 3.3.7
+* Foundation 6
+
 ## Getting started
 
 1. [Install Node.js and update NPM](https://docs.npmjs.com/getting-started/installing-node), JavaScript runtime and JavaScript package managers. [This thread](http://stackoverflow.com/questions/16151018/npm-throws-error-without-sudo) may help OSX users who encounter permissions issues when trying to install NPM.
